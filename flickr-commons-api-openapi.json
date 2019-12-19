@@ -1,0 +1,16 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Flickr Commons API",
+        "description": "The API for managing Flickr Commons",
+        "termsOfService": "https:\/\/www.flickr.com\/services\/api\/tos\/"
+    },
+    "servers": [
+        "httpswww.flickr.com\/services\/rest\/"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": []
+    }
+}
