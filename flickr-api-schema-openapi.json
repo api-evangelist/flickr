@@ -1,0 +1,1954 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Flickr API Schema",
+        "description": "A subset of Flickr's API defined in Swagger format.",
+        "termsOfService": "https:\/\/www.flickr.com\/services\/api\/tos\/"
+    },
+    "servers": [
+        "http:\/\/api.flickr.com\/services"
+    ],
+    "paths": {
+        "\/oauth\/access_token": {
+            "get": {
+                "summary": "",
+                "description": "Returns an access token",
+                "operationId": "GetAccessToken",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "oauth_consumer_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_nonce",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_timestamp",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_signature_method",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_version",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_signature",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_verifier",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_token",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/oauth\/request_token": {
+            "get": {
+                "summary": "",
+                "description": "Returns an oauth token and oauth token secret",
+                "operationId": "GetRequestToken",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "oauth_consumer_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_nonce",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_timestamp",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_signature_method",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_version",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_signature",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "oauth_callback",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.favorites.getContext": {
+            "get": {
+                "summary": "",
+                "description": "Returns next and previous favorites for a photo in a user's favorites",
+                "operationId": "GetFavoritesContextByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.favorites.getList": {
+            "get": {
+                "summary": "",
+                "description": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned.",
+                "operationId": "GetFavoritesByPersonID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "min_fave_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "max_fave_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.galleries.getPhotos": {
+            "get": {
+                "summary": "",
+                "description": "Returns a list of photos in a gallery.",
+                "operationId": "GetGalleryPhotosByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "gallery_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.groups.discuss.replies.getInfo": {
+            "get": {
+                "summary": "",
+                "description": "Get information on a group topic reply",
+                "operationId": "GetGroupTopicRepliesByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "topic_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "reply_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.groups.discuss.topics.getInfo": {
+            "get": {
+                "summary": "",
+                "description": "Get information about a group discussion topic",
+                "operationId": "GetGroupTopicByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "topic_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.groups.discuss.topics.getList": {
+            "get": {
+                "summary": "",
+                "description": "Get a list of discussion topics in a group.",
+                "operationId": "GetGroupDiscussionsByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.groups.getInfo": {
+            "get": {
+                "summary": "",
+                "description": "Get information about a group",
+                "operationId": "GetGroupByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "group_path_alias",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.groups.pools.getContext": {
+            "get": {
+                "summary": "",
+                "description": "Returns next and previous photos for a photo in a group pool",
+                "operationId": "RestMethodFlickrGroupsPoolsGetContextGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.groups.pools.getPhotos": {
+            "get": {
+                "summary": "",
+                "description": "Returns a list of pool photos for a given group",
+                "operationId": "RestMethodFlickrGroupsPoolsGetPhotosGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.people.getInfo": {
+            "get": {
+                "summary": "",
+                "description": "Returns a person",
+                "operationId": "GetPersonByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.people.getPhotos": {
+            "get": {
+                "summary": "",
+                "description": "Return photos from the given user's photostream",
+                "operationId": "GetMediaByPersonID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "safe_search",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "min_upload_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "max_upload_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "min_taken_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "max_taken_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "content_type",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "privacy_filter",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photolist.getContext": {
+            "get": {
+                "summary": "",
+                "description": "Returns next and previous photos in a photo list",
+                "operationId": "GetPhotolistContextByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photolist_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photos.getContext": {
+            "get": {
+                "summary": "",
+                "description": "Returns next and previous photos for a photo in a photostream",
+                "operationId": "GetPhotostreamContextByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photos.getExif": {
+            "get": {
+                "summary": "",
+                "description": "Retrieves a list of EXIF\/TIFF\/GPS tags for a given photo. The calling user must have permission to view the photo.",
+                "operationId": "GetPhotoExifByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "secret",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photos.getInfo": {
+            "get": {
+                "summary": "",
+                "description": "Returns a photo",
+                "operationId": "GetPhotoByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photos.getSizes": {
+            "get": {
+                "summary": "",
+                "description": "Returns photo sizes",
+                "operationId": "GetPhotoSizesByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photos.licenses.getInfo": {
+            "get": {
+                "summary": "",
+                "description": "Fetches a list of available photo licenses for Flickr",
+                "operationId": "GetLicenseByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photos.search": {
+            "get": {
+                "summary": "",
+                "description": "Return a list of photos matching some criteria.",
+                "operationId": "GetMediaBySearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "description": "A free text search. Photos who's title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character."
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": "A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "min_upload_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "max_upload_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "min_taken_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "max_taken_date",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "license",
+                        "in": "query",
+                        "description": "The license id for photos (for possible values see the flickr.photos.licenses.getInfo method). Multiple licenses may be comma-separated."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The order in which to sort returned photos. Deafults to date-posted-desc (unless you are doing a radial geo query, in which case the default sorting is by ascending distance from the point specified). The possible values are:\n  date-posted-asc,\n  date-posted-desc,\n  date-taken-asc,\n  date-taken-desc,\n  interestingness-desc,\n  interestingness-asc, and\n  relevance.\n"
+                    },
+                    {
+                        "name": "privacy_filter",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "bbox",
+                        "in": "query",
+                        "description": "A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched."
+                    },
+                    {
+                        "name": "accuracy",
+                        "in": "query",
+                        "description": "Recorded accuracy level of the location information. Current range is 1-16:\n  World level is 1\n  Country is ~3\n  Region is ~6\n  City is ~11\n  Street is ~16\n"
+                    },
+                    {
+                        "name": "safe_search",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "content_type",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "machine_tags",
+                        "in": "query",
+                        "description": "Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : \"machine_tags\" => \"dc:\" Find photos with a title in the 'dc' namespace : \"machine_tags\" => \"dc:title=\" Find photos titled \"mr. camera\" in the 'dc' namespace : \"machine_tags\" => \"dc:title=\\\"mr. camera\\\" Find photos whose value is \"mr. camera\" : \"machine_tags\" => \"*:*=\\\"mr. camera\\\"\" Find photos that have a title, in any namespace : \"machine_tags"
+                    },
+                    {
+                        "name": "machine_tag_mode",
+                        "in": "query",
+                        "description": "Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified."
+                    },
+                    {
+                        "name": "group_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "contacts",
+                        "in": "query",
+                        "description": "Search your contacts. Either 'all' or 'ff' for just friends and family. (Experimental)"
+                    },
+                    {
+                        "name": "woe_id",
+                        "in": "query",
+                        "description": "A 32-bit identifier that uniquely represents spatial entities. (not used if bbox argument is present)."
+                    },
+                    {
+                        "name": "place_id",
+                        "in": "query",
+                        "description": "A Flickr place id. (not used if bbox argument is present). Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the fu"
+                    },
+                    {
+                        "name": "media",
+                        "in": "query",
+                        "description": "Filter results by media type. Possible values are all (default), photos or videos"
+                    },
+                    {
+                        "name": "has_geo",
+                        "in": "query",
+                        "description": "Any photo that has been geotagged, or if the value is \"0\" any photo that has not been geotagged. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (th"
+                    },
+                    {
+                        "name": "geo_context",
+                        "in": "query",
+                        "description": "Geo context is a numeric value representing the photo's geotagginess beyond latitude and longitude. For example, you may wish to search for photos that were taken \"indoors\" or \"outdoors\". The current list of context IDs is: 0, not defined. 1, indoors. 2, outdoors. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a l"
+                    },
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "description": "A valid latitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit i"
+                    },
+                    {
+                        "name": "lon",
+                        "in": "query",
+                        "description": "A valid longitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit "
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries. The default value is 5 (km)."
+                    },
+                    {
+                        "name": "radius_units",
+                        "in": "query",
+                        "description": "The unit of measure when doing radial geo queries. Valid options are \"mi\" (miles) and \"km\" (kilometers). The default is \"km\"."
+                    },
+                    {
+                        "name": "is_commons",
+                        "in": "query",
+                        "description": "Limit the scope of the search to only photos that are part of the Flickr Commons project. Default is false."
+                    },
+                    {
+                        "name": "in_gallery",
+                        "in": "query",
+                        "description": "Limit the scope of the search to only photos that are in a gallery? Default is false, search all photos."
+                    },
+                    {
+                        "name": "is_getty",
+                        "in": "query",
+                        "description": "Limit the scope of the search to only photos that are for sale on Getty. Default is false."
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photosets.getContext": {
+            "get": {
+                "summary": "",
+                "description": "Returns next and previous photos for a photo in a set",
+                "operationId": "GetAlbumContextByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photoset_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photosets.getList": {
+            "get": {
+                "summary": "",
+                "description": "Returns the albums belonging to the specified user",
+                "operationId": "GetAlbumsByPersonID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.photosets.getPhotos": {
+            "get": {
+                "summary": "",
+                "description": "Returns a list of photos in an album.",
+                "operationId": "GetAlbumByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "photoset_id",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/rest?method=flickr.test.echo": {
+            "get": {
+                "summary": "",
+                "description": "Echos the input parameters back in the response",
+                "operationId": "Echo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "echo",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/upload": {
+            "post": {
+                "summary": "",
+                "description": "Uploads a new photo to Flickr",
+                "operationId": "UploadPhoto",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "photo",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "title",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "tags",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "is_public",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "is_friend",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "is_family",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "safety_level",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "content_type",
+                        "in": "formData",
+                        "description": ""
+                    },
+                    {
+                        "name": "hidden",
+                        "in": "formData",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Album": {
+                "type": "object",
+                "properties": {
+                    "can_comment": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "count_comments": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "count_views": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "date_create": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "date_update": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "farm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "photos": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "primary": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "secret": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "server": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "videos": {
+                        "description": "",
+                        "type": "number"
+                    }
+                }
+            },
+            "ContextPhoto": {
+                "type": "object",
+                "properties": {
+                    "farm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_faved": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "license": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "media": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "owner": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "safe": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "secret": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "server": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "thumb": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "ContextPhotos": {
+                "type": "object",
+                "properties": {
+                    "photos": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "photos": {
+                "type": "object"
+            },
+            "Cover": {
+                "type": "object",
+                "properties": {
+                    "farm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isfamily": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "isfriend": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "ispublic": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "owner": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "secret": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "server": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "y": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Group": {
+                "type": "object",
+                "properties": {
+                    "blast": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "Cover": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "cover": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "coverphoto_farm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "coverphoto_server": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "coverphoto_url": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "iconfarm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "iconserver": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_admin": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "is_member": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "is_moderator": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "ispoolmoderated": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "lang": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "members": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "path_alias": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pool_count": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "pool_rows": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "privacy": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "restrictions": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "roles": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "rules": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "throttle": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "topic_count": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "PhotoURLs": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "blast": {
+                "type": "object"
+            },
+            "coverphoto_url": {
+                "type": "object"
+            },
+            "description": {
+                "type": "object"
+            },
+            "members": {
+                "type": "object"
+            },
+            "name": {
+                "type": "object"
+            },
+            "pool_count": {
+                "type": "object"
+            },
+            "privacy": {
+                "type": "object"
+            },
+            "restrictions": {
+                "type": "object"
+            },
+            "roles": {
+                "type": "object"
+            },
+            "rules": {
+                "type": "object"
+            },
+            "throttle": {
+                "type": "object"
+            },
+            "topic_count": {
+                "type": "object"
+            },
+            "Note": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Owner": {
+                "type": "object",
+                "properties": {
+                    "iconfarm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "iconserver": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_ad_free": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "ispro": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "location": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "noindexfollow": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "nsid": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "path_alias": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "realname": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Person": {
+                "type": "object",
+                "properties": {
+                    "can_buy_pro": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "Cover": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "cover": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "coverphoto": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "coverphoto_farm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "coverphoto_server": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "disable_keyboard_shortcuts": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "expire": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "has_stats": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "iconfarm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "iconserver": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_ad_free": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "ispro": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "location": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "mbox_sha1sum": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "mobileurl": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "nsid": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "path_alias": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "photos": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "photosurl": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "profileurl": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "realname": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "unread_messages": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "user_secret": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "yintl": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "PhotoURLs": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "coverphoto": {
+                "type": "object"
+            },
+            "disable_keyboard_shortcuts": {
+                "type": "object"
+            },
+            "location": {
+                "type": "object"
+            },
+            "mbox_sha1sum": {
+                "type": "object"
+            },
+            "mobileurl": {
+                "type": "object"
+            },
+            "photosurl": {
+                "type": "object"
+            },
+            "profileurl": {
+                "type": "object"
+            },
+            "realname": {
+                "type": "object"
+            },
+            "timezone": {
+                "type": "object"
+            },
+            "unread_messages": {
+                "type": "object"
+            },
+            "username": {
+                "type": "object"
+            },
+            "Photo": {
+                "type": "object",
+                "properties": {
+                    "comments": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dates": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dateuploaded": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "editability": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "farm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isfavorite": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "license": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "media": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "notes": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "originalsecret": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "Owner": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "owner": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "people": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "permissions": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "publiceditability": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "rotation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "safe": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "safety_level": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "secret": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "server": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "urls": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "usage": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "views": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "visibility": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "comments": {
+                "type": "object"
+            },
+            "dates": {
+                "type": "object"
+            },
+            "editability": {
+                "type": "object"
+            },
+            "notes": {
+                "type": "object"
+            },
+            "people": {
+                "type": "object"
+            },
+            "permissions": {
+                "type": "object"
+            },
+            "publiceditability": {
+                "type": "object"
+            },
+            "tags": {
+                "type": "object"
+            },
+            "title": {
+                "type": "object"
+            },
+            "urls": {
+                "type": "object"
+            },
+            "usage": {
+                "type": "object"
+            },
+            "visibility": {
+                "type": "object"
+            },
+            "PhotoURLs": {
+                "type": "object",
+                "properties": {
+                    "h": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "l": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "s": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "t": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Size": {
+                "type": "object",
+                "properties": {
+                    "height": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "label": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "media": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "width": {
+                        "description": "",
+                        "type": "number"
+                    }
+                }
+            },
+            "Tag": {
+                "type": "object",
+                "properties": {
+                    "_content": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "author": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "authorname": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "machine_tag": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "raw": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Topic": {
+                "type": "object",
+                "properties": {
+                    "author": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "author_is_deleted": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "author_path_alias": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "authorname": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "can_delete": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "can_edit": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "can_reply": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "count_replies": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "datecreate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "datelastpost": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "iconfarm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "iconserver": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_locked": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "is_pro": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "is_sticky": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "last_reply": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "lastedit": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "role": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "message": {
+                "type": "object"
+            },
+            "TopicReply": {
+                "type": "object",
+                "properties": {
+                    "author": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "author_is_deleted": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "author_path_alias": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "authorname": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "can_delete": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "can_edit": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "datecreate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "iconfarm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "iconserver": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_pro": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "lastedit": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "URL": {
+                "type": "object",
+                "properties": {
+                    "_content": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
