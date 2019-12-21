@@ -1,5 +1,5 @@
 {
-    "id": "0864abad00207ebd9cf6be7a01770533",
+    "id": "15c18ae58df648f12749eb95b8138160",
     "name": "Flickr",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "4aefa20f48ed173e005e7ee8fe2d8380",
+            "id": "d0516425bb2573a3c480d0bbb623f135",
             "name": "Upload",
             "url": "httpsapi.flickr.com\/services\/\/upload",
             "description": "Uploads a photo. Uploading apps can call the flickr.people.getUploadStatus method in the regular API to obtain file and bandwidth limits for the user.",
@@ -100,11 +100,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "4c2bf8799b831d4a43a54e3896b64665",
+            "id": "d849bdadbc1698e1c3cf441737d86b3c",
             "name": "Replace",
             "url": "httpsapi.flickr.com\/services\/\/replace",
             "description": "Replaces a photo that has already been uploaded to Flickr. Uploading apps can call the flickr.people.getUploadStatus method in the regular API to obtain file and bandwidth limits for the user.",
@@ -138,11 +138,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "4de468df0d196b4d56993ad6f298fe85",
+            "id": "84b276302dc06cf8c9c10b36d6804fe9",
             "name": "Activity User Comments",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.activity.userComments",
             "description": "Returns a list of recent activity on photos commented on by the calling user. Do not poll this method more than once an hour.",
@@ -190,11 +190,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "28e2db566b816274be7c3fb67ecc7a72",
+            "id": "80fbba156bb0c7c86cbe904fa82a1606",
             "name": "Activity User Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.activity.userPhotos",
             "description": "Returns a list of recent activity on photos commented on by the calling user. Do not poll this method more than once an hour.",
@@ -249,11 +249,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "b14045678b7b0173c264d8ab6c234291",
+            "id": "5d00ca194ba0995be91ac75c10628131",
             "name": "Auth Check Token",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.auth.checkToken",
             "description": "Returns the credentials attached to an authentication token. This call must be signed as specified in the authentication API spec.",
@@ -294,11 +294,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a35b020e07429cb9387360db4af8cae1",
+            "id": "c7a2a617b153307a723c1511a92d9508",
             "name": "Auth Get Frob",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.auth.getFrob",
             "description": "Returns a frob to be used during authentication. This method call must be signed, and is deprecated in favour of OAuth.",
@@ -332,11 +332,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a346a692660f4b65352c35ecad6d16a3",
+            "id": "574649d489a14a176bfb613823188010",
             "name": "Auth Get Full Token",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.auth.getFullToken",
             "description": "Get the full authentication token for a mini-token. This method call must be signed.",
@@ -377,11 +377,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "460e9dacba21b015c0440041370348aa",
+            "id": "b6dca723bdf55d02bbebbf8594ef64cb",
             "name": "Auth Get Token",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.auth.getToken",
             "description": "Returns the auth token for the given frob, if one has been attached. This method call must be signed, and is deprecated in favour of OAuth.",
@@ -422,11 +422,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d66c0fe9c2215680ffe6962605c42990",
+            "id": "ceb147cb975577c97c9141c4332f6f40",
             "name": "Auth Oauth Get Access Token",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.auth.oauth.getAccessToken",
             "description": "Exchange an auth token from the old Authentication API, to an OAuth access token. Calling this method will delete the auth token used to make the request. The request must be signed.",
@@ -460,11 +460,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "222129d40f4eead77091aefe2a858df0",
+            "id": "bd9d4e438766c759d174b89e503cd975",
             "name": "Blogs Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.blogs.getList",
             "description": "Get a list of configured blogs for the calling user.",
@@ -505,11 +505,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "453c90fd97c3baae9125fdb3894069ae",
+            "id": "8a0036aaa8783e76f141982baa31d205",
             "name": "Blogs Get Services",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.blogs.getServices",
             "description": "Returns a list of Flickr supported blogging services.",
@@ -543,11 +543,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "3048d9678aedc783a54fdede0642f92e",
+            "id": "d458e8e6312c36f1c74c8d38d94731b7",
             "name": "Blogs Add Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.blogs.postPhoto",
             "description": "Posts a photo to a blog.",
@@ -623,11 +623,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d9027605a8ee742379452c604c69f3a9",
+            "id": "4aa065461e657bc3c9947c62bb634549",
             "name": "Collections Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.collections.getInfo",
             "description": "Returns information for a single collection. Currently can only be called by the collection owner, this may change.",
@@ -668,11 +668,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f611d61c452452058fa76532764fe9f8",
+            "id": "0eeb16147107477ef4f58de0ad435031",
             "name": "Collections Get Tree",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.collections.getTree",
             "description": "Returns a tree (or sub tree) of collections belonging to a given user.",
@@ -720,11 +720,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d00a606442652a8bdc9505189cfb6e4e",
+            "id": "3b998c98930b0ec8d4c52bd542ec83d8",
             "name": "Commons Get Institutions",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.commons.getInstitutions",
             "description": "Retrieves a list of the current Commons institutions.",
@@ -758,11 +758,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "2422cabd04c6499a6e743591cb729b36",
+            "id": "24d05dd781760d3c1ce28e9d7effcbf3",
             "name": "Contacts Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.contacts.getList",
             "description": "Get a list of contacts for the calling user.",
@@ -817,11 +817,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8ea3456d6389da8e2a18d9a625f7eb2f",
+            "id": "0576bad3228c57edf32e3fddd59990d6",
             "name": "Contacts Get List Recently Uploaded",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.contacts.getListRecentlyUploaded",
             "description": "Return a list of contacts for a user who have recently uploaded photos along with the total count of photos uploaded. This method is still considered experimental. We don't plan for it to change or to go away but so long as this notice is present you should write your code accordingly.",
@@ -869,11 +869,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "95cfc7d67171ae5a6349f8af7a8b1c31",
+            "id": "46015c37fe735650bd3a36f5f5616297",
             "name": "Contacts Get Public List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.contacts.getPublicList",
             "description": "Get the contact list for a user.",
@@ -928,11 +928,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8bb2fdbe2ae2f4472e5248c0719ae7bb",
+            "id": "86713b7b738dc97e142ab885ecbd746f",
             "name": "Favorites Add",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.favorites.add",
             "description": "Adds a photo to a user's favorites list.",
@@ -973,11 +973,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "7d17edf5c48c98923b8cec7433bde8ec",
+            "id": "6dbe86653f336b664bae5131ba1f955d",
             "name": "Favorites Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.favorites.getList",
             "description": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned.",
@@ -1046,11 +1046,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6746e0133e3abcfe6b6f106c5ef21ee0",
+            "id": "b5bc8ce3658c4d12d210407fcca83fdc",
             "name": "Favorites Get Public List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.favorites.getPublicList",
             "description": "Returns a list of favorite public photos for the given user.",
@@ -1126,11 +1126,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "9ad4711b558d9c02e7496e65afc61369",
+            "id": "23528a09ed28fe0f62aa608eeb03f99f",
             "name": "Favorites Remove",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.favorites.remove",
             "description": "Adds a photo to a user's favorites list.",
@@ -1171,11 +1171,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "9185effc4bd101c98f5b9be21ec29314",
+            "id": "effe1e46f0690f89b90a360530bd23e0",
             "name": "Galleries Add Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.addPhoto",
             "description": "Add a photo to a gallery.",
@@ -1223,11 +1223,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "cb0e508b8936f634f3e4cec2bad3d0cf",
+            "id": "7bb84f16cda891f220a63df8d9d2e325",
             "name": "Galleries Create",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.create",
             "description": "Create a new gallery for the calling user.",
@@ -1282,11 +1282,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "4a14e2b295f3b890963a96d0bfbab296",
+            "id": "d09d8f3511a87fdb72297da6611aefaa",
             "name": "Galleries Edit Meta",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.editMeta",
             "description": "Modify the metadata for a gallery.",
@@ -1334,11 +1334,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "35273a4de7355b97c3c39ba71fec9b9c",
+            "id": "6b4aa8a0720dfae21132d318afd77dd2",
             "name": "Galleries Edit Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.editPhoto",
             "description": "Edit the comment for a gallery photo.",
@@ -1386,11 +1386,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "1dec9737f7c385b6ba19cd1b663f712f",
+            "id": "c1b6462a7f0aea026e878020fb5121e4",
             "name": "Galleries Edit Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.editPhotos",
             "description": "Modify the photos in a gallery. Use this method to add, remove and re-order photos.",
@@ -1438,11 +1438,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a5b739d343ca1edcb44e3e80193522df",
+            "id": "62f093eb7a2cc9c120ce5c47ff34677c",
             "name": "Galleries Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.getInfo",
             "description": "Returns information about a gallery.",
@@ -1483,11 +1483,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "c1773c91bb766dba1d7dd2caa0e9b38b",
+            "id": "a3717d4d071bc79694b53b4ca77e86e2",
             "name": "Galleries Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.getList",
             "description": "Return the list of galleries created by a user. Sorted from newest to oldest.",
@@ -1542,11 +1542,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "e791dabaaba2c0352998f4cd3c3bee8c",
+            "id": "f765eb05be96eee411e0f3b5213fbdf3",
             "name": "Galleries Get List For Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.getListForPhoto",
             "description": "Return the list of galleries to which a photo has been added. Galleries are returned sorted by date which the photo was added to the gallery.",
@@ -1601,11 +1601,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "7d0b04cfe01b2ff7dc7d5f52aa506597",
+            "id": "784e7afb04032224ebd675323bc1f483",
             "name": "Galleries Get Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.galleries.getPhotos",
             "description": "Return the list of photos for a gallery.",
@@ -1667,11 +1667,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "457d811fd36ee76bcf2e96dde15fb24c",
+            "id": "d1d0438cb20a2cfa540bacbb7c9702cc",
             "name": "Groups Browse",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.browse",
             "description": "Browse the group category tree, finding groups and sub-categories.",
@@ -1712,11 +1712,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d629686501d1f31005d9e7ac95bedb40",
+            "id": "0aa6d727a8babae3696ee77260be5b53",
             "name": "Groups Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.getInfo",
             "description": "Get information about a group.",
@@ -1764,11 +1764,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "154dcd668972df2142680b9f8131d5aa",
+            "id": "b17e5b4025c4c2fc7f7ae688155296e1",
             "name": "Groups Search",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.search",
             "description": "Search for groups. 18+ groups will only be returned for authenticated calls where the authenticated user is over 18.",
@@ -1823,11 +1823,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "cd4d2a885fbdc2373ac15ef9fe21ad1a",
+            "id": "fbfc4388e7bf9a9a42acbba2f8cfb892",
             "name": "Groups Members Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.members.getList",
             "description": "Get a list of the members of a group. The call must be signed on behalf of a Flickr member, and the ability to see the group membership will be determined by the Flickr member's group privileges.",
@@ -1889,11 +1889,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "ccc5dbe1f1b31c28d14fb6c34e8a5149",
+            "id": "c264ffaeb030475390889686a32ad30d",
             "name": "Groups Pools Add",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.pools.add",
             "description": "Add a photo to a group's pool.",
@@ -1934,11 +1934,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "22466024de73ade2ae1991a07e918734",
+            "id": "78542031a93c48f86d29d797ae966426",
             "name": "Groups Pools Get Context",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.pools.getContext",
             "description": "Returns next and previous photos for a photo in a group pool.",
@@ -1986,11 +1986,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "155c3483f805ae876d97387c8556b13d",
+            "id": "969eaf99bca3a83844badaed4aa920d2",
             "name": "Groups Pools Get Groups",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.pools.getGroups",
             "description": "Returns a list of groups to which you can add photos.",
@@ -2038,11 +2038,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d2af4fd80b0ec3a1fdd835ceb375ff7b",
+            "id": "967874415e33f77fcb1cd367be373ed8",
             "name": "Groups Pools Get Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.pools.getPhotos",
             "description": "Returns a list of pool photos for a given group, based on the permissions of the group and the user logged in (if any).",
@@ -2111,11 +2111,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "3de34cd774363ab90c843f675ddf9878",
+            "id": "9588f1711ef4846a053f3a149d51aad4",
             "name": "Groups Pools Remove",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.groups.pools.remove",
             "description": "Remove a photo from a group pool.",
@@ -2156,11 +2156,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "e9bd6fab08211a7ddba315038d621088",
+            "id": "b0dd92e0e6fb18fdeacc7074120ad591",
             "name": "Interestingness Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.interestingness.getList",
             "description": "Returns the list of interesting photos for the most recent day or a user-specified date.",
@@ -2222,11 +2222,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "5afa4d3a5443a440c683c6d53309503b",
+            "id": "ceb75b06a53fc570fb933e9a8632a74f",
             "name": "Machinetags Get Namespaces",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.machinetags.getNamespaces",
             "description": "Return a list of unique namespaces, optionally limited by a given predicate, in alphabetical order.",
@@ -2281,11 +2281,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "55300f62f17f273085779309d32978fd",
+            "id": "c8670f061854e0d6b54b72174e6c8402",
             "name": "Machinetags Get Pairs",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.machinetags.getPairs",
             "description": "Return a list of unique namespace and predicate pairs, optionally limited by predicate or namespace, in alphabetical order.",
@@ -2347,11 +2347,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a80df58425d9b4deafd82c2c8b427a1c",
+            "id": "39f8948ac3d8ef217fe3fd2ccf4304cd",
             "name": "Machinetags Get Predicates",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.machinetags.getPredicates",
             "description": "Return a list of unique predicates, optionally limited by a given namespace.",
@@ -2406,11 +2406,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "05edc6b29a3cacd7be9ac6b803b01e2d",
+            "id": "e0d7e64426d39881393f97747ab2b211",
             "name": "Machinetags Get Recent Values",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.machinetags.getRecentValues",
             "description": "Fetch recently used (or created) machine tags values.",
@@ -2472,11 +2472,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "c41ec1f213c62bb8637ac97efc9e18f4",
+            "id": "1247c24f55eaa52b92a4bf5bf3607afe",
             "name": "Machinetags Get Values",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.machinetags.getValues",
             "description": "Return a list of unique values for a namespace and predicate.",
@@ -2538,11 +2538,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "94cecd5f701949923cda1b33a4442c0c",
+            "id": "6140bda53e2a20120fd3010e044195d3",
             "name": "Panda Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.panda.getList",
             "description": "Return a list of Flickr pandas, from whom you can request photos using the flickr.panda.getPhotos API method. More information about the pandas can be found on the dev blog.",
@@ -2576,11 +2576,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8c5d25d0e920d73002bb0393189720d2",
+            "id": "04c816684e317c90955ed9f76ffbf262",
             "name": "Panda Get Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.panda.getPhotos",
             "description": "Ask the Flickr Pandas for a list of recent public (and \"safe\") photos. More information about the pandas can be found on the dev blog.",
@@ -2642,11 +2642,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "2f5db2753927cfb572588aafba0cf14a",
+            "id": "85b01af9f12e8c90f3044f313c3d77c9",
             "name": "People Find By Email",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.findByEmail",
             "description": "Return a user's NSID, given their email address",
@@ -2687,11 +2687,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "731cee93507b417c29f8223d9e5a1e8a",
+            "id": "3554594116682e3ec879e348cd42afde",
             "name": "People Find By Username",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.findByUsername",
             "description": "Return a user's NSID, given their username.",
@@ -2732,11 +2732,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d0259fee7a42f4409359f2f163a4fd21",
+            "id": "0583358a51dc1e7ec23c32fdca8fcd87",
             "name": "People Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.getInfo",
             "description": "Get information about a user.",
@@ -2777,11 +2777,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "57fc0eb8fcfaa6bf393fbc47e3cd3aa1",
+            "id": "bdf49f3e539812803fca94e2d20c932d",
             "name": "People Get Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.getPhotos",
             "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. This method must be authenticated; to return public photos for a user, use flickr.people.getPublicPhotos.",
@@ -2892,11 +2892,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "4e04ed82a5f3bce44ba2590e5516c8ee",
+            "id": "9d2144573beea5fc28b3f5075185174f",
             "name": "People Get Photos Of",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.getPhotosOf",
             "description": "Returns a list of photos containing a particular Flickr member.",
@@ -2965,11 +2965,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "3f8f776d2432c9a9bbc56b2783cc9844",
+            "id": "02cfdc5d7f6e0b866d090af7099efd33",
             "name": "People Get Public Groups",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.getPublicGroups",
             "description": "Returns the list of public groups a user is a member of.",
@@ -3010,11 +3010,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6d5995d80a818ce0b9ff8e392c86d8a3",
+            "id": "833aae1595ee140f12e69b968137dd28",
             "name": "People Get Public Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.getPublicPhotos",
             "description": "Get a list of public photos for the given user.",
@@ -3083,11 +3083,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f6d3b51baa25cd9db2b074d52e5b0518",
+            "id": "9f506352f513cf7a98fcdf9159a621f9",
             "name": "People Get Upload Status",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.people.getUploadStatus",
             "description": "Returns information for the calling user related to photo uploads.",
@@ -3121,11 +3121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8afbbeda3542826efa154dc9a79b5eb9",
+            "id": "b78c8b0f6a5f34ca6f3c819d7ca628bf",
             "name": "Photos Add Tags",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.addTags",
             "description": "Add tags to a photo.",
@@ -3166,11 +3166,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a838733f398207c7d9e471376f33dab3",
+            "id": "64209a408d677b2e0552763f53f56e7b",
             "name": "Photos Delete",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.delete",
             "description": "Delete a photo from Flickr.",
@@ -3204,11 +3204,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "29be0debeae72058d017a08fc20c2962",
+            "id": "7e5e293eb4c35e7999fc49029d5ddf5a",
             "name": "Photos Get All Contexts",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getAllContexts",
             "description": "Returns all visible sets and pools the photo belongs to.",
@@ -3249,11 +3249,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "0491102409631db264eb90528696e4d9",
+            "id": "c4852030c2a024c51640b7844626d598",
             "name": "Photos Get Contacts Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getContactsPhotos",
             "description": "Fetch a list of recent photos from the calling users' contacts.",
@@ -3322,11 +3322,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "756be21f6cdd78d077c1464525e9b5e6",
+            "id": "2d488da7933d8065f630be8b6b517275",
             "name": "Photos Get Contacts Public Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getContactsPublicPhotos",
             "description": "Fetch a list of recent public photos from a users' contacts.",
@@ -3402,11 +3402,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f5000f244b36d4171ec6d808147257f5",
+            "id": "6695f2370ef3a995febc7940cc78477d",
             "name": "Photos Get Context",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getContext",
             "description": "Returns next and previous photos for a photo in a photostream.",
@@ -3447,11 +3447,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "0ef75593c761b97794bfb8155e69c3eb",
+            "id": "04d0dd6c479f28b32d2e9f9be95e4ed5",
             "name": "Photos Get Counts",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getCounts",
             "description": "Returns next and previous photos for a photo in a photostream.",
@@ -3499,11 +3499,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "ea1457b08eacaf3cb399bddc637dfa21",
+            "id": "c6c77451ffa4b5369f341e4a7fcdb3f0",
             "name": "Photos Get Exif",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getExif",
             "description": "Retrieves a list of EXIF\/TIFF\/GPS tags for a given photo. The calling user must have permission to view the photo.",
@@ -3551,11 +3551,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "5e4ab9fba76c98bd6735ac24081282a7",
+            "id": "03e825db379c2915d3b0a4bc9ccf0e66",
             "name": "Photos Get Favorites",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getFavorites",
             "description": "Returns the list of people who have favorited a given photo.",
@@ -3610,11 +3610,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "4932b274ce2191b904e867605263ca61",
+            "id": "db49c2e1078a515a3d56eec343d458c5",
             "name": "Photos Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getInfo",
             "description": "Get information about a photo. The calling user must have permission to view the photo.",
@@ -3662,11 +3662,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "76e8cce68a45598189c5d50b17f6470f",
+            "id": "edb0113bd3d1abf768503af01cf33399",
             "name": "Photos Get Not In Set",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getNotInSet",
             "description": "Returns a list of your photos that are not part of any sets.",
@@ -3763,11 +3763,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "fdd83ec516f7cd48dda330e0499c1cec",
+            "id": "a803088615f9d4a956656b08063314ca",
             "name": "Photos Get Perms",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getPerms",
             "description": "Get permissions for a photo.",
@@ -3808,11 +3808,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "1f7428196a304ad013945261d8cacefe",
+            "id": "a3a2170358cdf275d2c2f7836f11b2d6",
             "name": "Photos Get Recent",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getRecent",
             "description": "Returns the list of people who have favorited a given photo.",
@@ -3867,11 +3867,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "aa038ba3dc23e9391352a6087b870788",
+            "id": "d5fd02fd5dcb1c782229cd5476791026",
             "name": "Photos Get Sizes",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getSizes",
             "description": "Returns the available sizes for a photo. The calling user must have permission to view the photo.",
@@ -3912,11 +3912,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a6f0af7a123650f05dfd724e03512de2",
+            "id": "35b0f7396d1c42238116ebc5fa523117",
             "name": "Photos Get Untagged",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getUntagged",
             "description": "Returns a list of your photos that are not tagged.",
@@ -4013,11 +4013,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "ce47cba1813e856aa92372a32800bd2f",
+            "id": "205cb0c545b8c2ac0496ee57fc4c9867",
             "name": "Photos Get With Geo Data",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getWithGeoData",
             "description": "Returns a list of your geo-tagged photos.",
@@ -4114,11 +4114,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "431b54b8b26371174bf631469049fe9a",
+            "id": "f4851ed3b409aaf5a0b5830fceda0775",
             "name": "Photos Get Without Geo Data",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getWithoutGeoData",
             "description": "Returns a list of your photos which haven't been geo-tagged.",
@@ -4215,11 +4215,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "b8a97f2afe55b02917a0c557292b7a34",
+            "id": "677f0ceb8eebce5dd1bb0ed9e5690cbc",
             "name": "Photos Get Recently Updated",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.getRecentlyUpdated",
             "description": "Return a list of your photos that have been recently created or which have been recently modified. Recently modified may mean that the photo's metadata (title, description, tags) may have been changed or a comment has been added (or just modified somehow :-)",
@@ -4281,11 +4281,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "449e16881f1aa6850256e3557fe6af58",
+            "id": "843866334391858f87d15bacfbde8ddf",
             "name": "Photos Remove Tag",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.removeTag",
             "description": "Remove a tag from a photo.",
@@ -4326,11 +4326,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "63c7779d4dd310838bafc61578a828d6",
+            "id": "6c3287e47b1648d3cb4ac8370b664ea0",
             "name": "Photos Search",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.search",
             "description": "Return a list of photos matching some criteria. Only photos visible to the calling user will be returned. To return private or semi-private photos, the caller must be authenticated with 'read' permissions, and have permission to view the photos. Unauthenticated calls will only return public photos.",
@@ -4602,11 +4602,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "dc546ec05ce811e87318159962e4a1d7",
+            "id": "37ab8205d7b6119dd80b6dbaa8cd2f8f",
             "name": "Photos Set Content Type",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.setContentType",
             "description": "Set the content type of a photo.",
@@ -4647,11 +4647,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d69ceed0aee63f519460709d52ecd928",
+            "id": "1fa6e289dc5a356cefab5f2b986ae875",
             "name": "Photos Set Dates",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.setDates",
             "description": "Set one or both of the dates for a photo.",
@@ -4706,11 +4706,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "ef6084d27fa7e9be43ccadcd6f4894e3",
+            "id": "85fe0846e578e3183987c12fce07e939",
             "name": "Photos Set Meta",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.setMeta",
             "description": "Set the meta information for a photo.",
@@ -4758,11 +4758,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "0dd23cf7cc636911bc3c9345701f7bcd",
+            "id": "e6fc1f4aa0614e1e0b3d85bed57794d4",
             "name": "Photos Set Perms",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.setPerms",
             "description": "Set permissions for a photo.",
@@ -4838,11 +4838,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "80df3c1fefdce5e54af13135163d66a7",
+            "id": "5d4509afd37f762c5215699875f95df9",
             "name": "Photos Set Safety Level",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.setSafetyLevel",
             "description": "Set the safety level of a photo.",
@@ -4897,11 +4897,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "1db2d97b105320d76138e2d1be126db2",
+            "id": "099ada66cb7dd2fc870f8b0016a035d7",
             "name": "Photos Set Tags",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.setTags",
             "description": "Set the tags for a photo.",
@@ -4942,11 +4942,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8833e6af973495587820a7d111980949",
+            "id": "153f4c8252859f096cbae85bfa35efb1",
             "name": "Photos Comments Add Comment",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.comments.addComment",
             "description": "Add comment to a photo as the currently authenticated user.",
@@ -4994,11 +4994,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "019f83d34f5fe4a4924ad9522b60475c",
+            "id": "3da7225564055133e07fa62c34d926f7",
             "name": "Photos Comments Delete Comment",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.comments.deleteComment",
             "description": "Delete comment as the currently authenticated user.",
@@ -5032,11 +5032,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "390bf4666cfda3d6f15e834482c3f753",
+            "id": "e1981c01d38e1f41d9bda69665395f42",
             "name": "Photos Comments Edit Comment",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.comments.editComment",
             "description": "Edit the text of a comment as the currently authenticated user.",
@@ -5077,11 +5077,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "314e0a5c141833f1026e7d8a589656de",
+            "id": "8b18df96975a206d82658e204c6f4b01",
             "name": "Photos Comments Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.comments.getList",
             "description": "Returns the comments for a photo.",
@@ -5136,11 +5136,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8cbcee31a569b7e57314376839699848",
+            "id": "8e385b650445adb9701bb6a62680bd5d",
             "name": "Photos Comments Get Recent For Contacts",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.comments.getRecentForContacts",
             "description": "Return the list of photos belonging to your contacts that have been commented on recently.",
@@ -5209,11 +5209,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "c1003ff37e873c579c07bfa0c4ac756c",
+            "id": "5d17558eed5aec78102561b4ce43b0c5",
             "name": "Photos Geo Batch Correct Location",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.batchCorrectLocation",
             "description": "Correct the places hierarchy for all the photos for a user at a given latitude, longitude and accuracy. Batch corrections are processed in a delayed queue so it may take a few minutes before the changes are reflected in a user's photos.",
@@ -5275,11 +5275,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "98f985243a7b74eb8dac00338be5ff93",
+            "id": "1aa05f5781c896bdeed5ae59fe9a42a6",
             "name": "Photos Geo Correct Location",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.correctLocation",
             "description": "Corrects a photo's location.",
@@ -5327,11 +5327,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "e29fa38585c6145d3299ddb55136fda1",
+            "id": "36b98a3e18cb75f800c977f8461858db",
             "name": "Photos Geo Get Location",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.getLocation",
             "description": "Get the geo data (latitude and longitude and the accuracy level) for a photo.",
@@ -5372,11 +5372,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "2fbd031c41b294effe337a3545a91a16",
+            "id": "c4cfdb2263e8609225a9c0099a39c0a4",
             "name": "Photos Geo Get Perms",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.getPerms",
             "description": "Get permissions for who may view geo data for a photo.",
@@ -5417,11 +5417,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "095940637d45b4d555217cadab935551",
+            "id": "223640060c85b4631aafa614b92e6e15",
             "name": "Photos Geo Photos For Location",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.photosForLocation",
             "description": "Return a list of photos for the calling user at a specific latitude, longitude and accuracy",
@@ -5497,11 +5497,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f6a7b164388a67eb8db0f63782ada225",
+            "id": "15da8b5c49346b8715c373d3bd1251f3",
             "name": "Photos Geo Remove Location",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.removeLocation",
             "description": "Removes the geo data associated with a photo.",
@@ -5535,11 +5535,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "89719ebb1442018988f68caffbe7222d",
+            "id": "d173d4d9005f3517220ff9addfd4202e",
             "name": "Photos Geo Set Context",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.setContext",
             "description": "Indicate the state of a photo's geotagginess beyond latitude and longitude. Note : photos passed to this method must already be geotagged (using the flickr.photos.geo.setLocation method).",
@@ -5580,11 +5580,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "307e07ebbb422ce2faa5090b626f505b",
+            "id": "c47070994ca9783f9df7d77b72853c50",
             "name": "Photos Geo Set Location",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.setLocation",
             "description": "Sets the geo data (latitude and longitude and, optionally, the accuracy level) for a photo. Before users may assign location data to a photo they must define who, by default, may view that information. Users can edit this preference at http:\/\/www.flickr.com\/account\/geo\/privacy\/. If a user has not set this preference, the API method will return an error.",
@@ -5653,11 +5653,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "409bf3d84c5cff88b9c22b2930dc743d",
+            "id": "e425da2e78ab51444a33900515cccc12",
             "name": "Photos Geo Set Perms",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.geo.setPerms",
             "description": "Set the permission for who may view the geo data associated with a photo.",
@@ -5719,11 +5719,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6be18bb6d32d0022e062c14392ceca01",
+            "id": "95d40da46048ec37ef5b0f62dc840c7b",
             "name": "Photos Licenses Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.licenses.getInfo",
             "description": "Fetches a list of available photo licenses for Flickr.",
@@ -5757,11 +5757,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "1928e9262cb5bd5d436605a6465ab054",
+            "id": "cbbb47814b893f6e478c9c4f8c581c47",
             "name": "Photos Licenses Set Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.licenses.setInfo",
             "description": "Sets the license for a photo.",
@@ -5802,11 +5802,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a4d1bc9ad65dc832122e38c02a784173",
+            "id": "ad205fd03cca6fe4b426ccc8041663c5",
             "name": "Photos Notes Add",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.notes.add",
             "description": "Add a note to a photo. Coordinates and sizes are in pixels, based on the 500px image size shown on individual photo pages.",
@@ -5882,11 +5882,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "70620ab2ef66d9e66b482bca3f82243d",
+            "id": "e9cfcfb02ead41c2637d93b689079194",
             "name": "Photos Notes Delete",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.notes.delete",
             "description": "Delete a note from a photo.",
@@ -5920,11 +5920,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "0264399ba7e6857a661fc632c71db0f4",
+            "id": "1ba7d64a15407151274ebfa9e07a73ba",
             "name": "Photos Notes Edit",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.notes.edit",
             "description": "Edit a note on a photo. Coordinates and sizes are in pixels, based on the 500px image size shown on individual photo pages.",
@@ -5993,11 +5993,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "07ba7a81d73235d84cb0b5d0a46c3c9c",
+            "id": "154d6f94c0eac9dab6713bf498fce666",
             "name": "Photos People Add",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.people.add",
             "description": "Add a person to a photo. Coordinates and sizes are in pixels, based on the 500px image size shown on individual photo pages.",
@@ -6066,11 +6066,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "c0cb6af3049b51578620b7fb9af78e89",
+            "id": "eb612f1bc016977e2b457058aeda91d0",
             "name": "Photos People Delete",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.people.delete",
             "description": "Remove a person from a photo.",
@@ -6111,11 +6111,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "369a3f7d1bc91befff248de7d9d9d493",
+            "id": "a5d80d3f88ca0805be450e4ecc65bf99",
             "name": "Photos People Delete Coords",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.people.deleteCoords",
             "description": "Remove the bounding box from a person in a photo",
@@ -6156,11 +6156,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "5a25ec678b9e8e2c1464b88c6983c1af",
+            "id": "8160576a115917d3788b1709ae4b64fa",
             "name": "Photos People Edit Coords",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.people.editCoords",
             "description": "Edit the bounding box of an existing person on a photo.",
@@ -6229,11 +6229,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "db792585235dc9c8503a71652d8ce410",
+            "id": "7107a7e012bf02af8fe1b1deb2efe3e9",
             "name": "Photos People Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.people.getList",
             "description": "Get a list of people in a given photo.",
@@ -6274,11 +6274,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d3191deb8e9c498675ab29d6fc75c4c6",
+            "id": "670b95c36c7b6cb75d438ae105079b24",
             "name": "Photos Transform Rotate",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.transform.rotate",
             "description": "Rotate a photo.",
@@ -6326,11 +6326,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "5677edb04489bca63eda33b8260863eb",
+            "id": "c4f6aabe6f9c5970a8e338e86989d455",
             "name": "Photos Upload Check Tickets",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photos.upload.checkTickets",
             "description": "Checks the status of one or more asynchronous photo upload tickets.",
@@ -6371,11 +6371,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "b6274c6f15286b3106acafdba9fbb09d",
+            "id": "9a714219e3fa6f5a008dc0ae2399f3c9",
             "name": "Photosets Add Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.addPhoto",
             "description": "Add a photo to the end of an existing photoset.",
@@ -6416,11 +6416,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "90177b0d6d61ea4c98c190ff6c913232",
+            "id": "b9ca57ae034fe95ee527d3578f5e03e1",
             "name": "Photosets Create",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.create",
             "description": "Create a new photoset for the calling user.",
@@ -6475,11 +6475,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "935d42e6980cd5e16733e998db2549c5",
+            "id": "18a996795127b6f1aa04486129646112",
             "name": "Photosets Delete",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.delete",
             "description": "Delete a new photoset.",
@@ -6513,11 +6513,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "76969a1fb20891ced577041865f3c905",
+            "id": "f5191a7e2bc72280406cd4a51dd41056",
             "name": "Photosets Edit Meta",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.editMeta",
             "description": "Modify the meta-data for a photoset.",
@@ -6565,11 +6565,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6538740eae56fb32a2b2348f4b45f774",
+            "id": "f43cb3b74ba8934aef50a4f451b7d4b7",
             "name": "Photosets Edit Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.editPhotos",
             "description": "Modify the photos in a photoset. Use this method to add, remove and re-order photos.",
@@ -6617,11 +6617,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "bdf6b6ff2ba42ee074e32a0cff011ee7",
+            "id": "949d2b4071c2c1bf970a54a62944fed3",
             "name": "Photosets Get Context",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.getContext",
             "description": "Returns next and previous photos for a photo in a set.",
@@ -6669,11 +6669,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "04f8a45cea07266c5a1c30faa3c2e072",
+            "id": "e49098a3b96b2b76c90533dc435fb11f",
             "name": "Photosets Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.getInfo",
             "description": "Gets information about a photoset.",
@@ -6714,11 +6714,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f1a2674842c3a79ace2609d28ccf32f4",
+            "id": "ea674e68aa004c759163b50f41de75fd",
             "name": "Photosets Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.getList",
             "description": "Returns the photosets belonging to the specified user.",
@@ -6759,11 +6759,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "3a0b6ed13a71de87dd2a4ceaddf7559e",
+            "id": "1906ed512e84ed23e3d5e3e1af7cc927",
             "name": "Photosets Get Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.getPhotos",
             "description": "Get the list of photos in a set.",
@@ -6839,11 +6839,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6eb1f78d5f62e7e538dc59e53534632c",
+            "id": "9bedc6daf3b455dea1f5e7c065e9ceac",
             "name": "Photosets Order Sets",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.orderSets",
             "description": "Set the order of photosets for the calling user.",
@@ -6877,11 +6877,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "2c0878c9fcaa97e05b5acdd34b9fcf84",
+            "id": "fc9bd541916384cc15a51ca502415ca3",
             "name": "Photosets Remove Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.removePhoto",
             "description": "Remove a photo from a photoset.",
@@ -6922,11 +6922,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "0f4672584750e37610cf640a85aecef6",
+            "id": "94d9ab4311714307ffd7f357b2595ffb",
             "name": "Photosets Remove Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.removePhotos",
             "description": "Remove multiple photos from a photoset.",
@@ -6967,11 +6967,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d2aeaef1ed1385e01b21d4586a2d2267",
+            "id": "44e94c92a8f1e90aaebb3945ab3aed2b",
             "name": "Photosets Reorder Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.reorderPhotos",
             "description": "Update the order of photos in a photoset.",
@@ -7012,11 +7012,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8086a4b8a27aa173eb33e83ea4e8617f",
+            "id": "f869ff59da38a15cab56e940b11a4216",
             "name": "Photosets Set Primary Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.setPrimaryPhoto",
             "description": "Set photoset primary photo",
@@ -7057,11 +7057,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "369df7490c63cf07e1ddaa8328105d61",
+            "id": "02dc8907dbe084c1c29fbaa099d820b3",
             "name": "Photosets Comments Add Comment",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.comments.addComment",
             "description": "Add a comment to a photoset.",
@@ -7109,11 +7109,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6538c007debb3b7acf1845f003fb5630",
+            "id": "a21cd015298f2383c54acb743f416cb0",
             "name": "Photosets Comments Delete Comment",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.comments.deleteComment",
             "description": "Delete a photoset comment as the currently authenticated user.",
@@ -7147,11 +7147,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "b5a37ac35b2a48be15ec53ff14f29471",
+            "id": "1db14d06f33f84acb207379c7c0c92cf",
             "name": "Photosets Comments Edit Comment",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.comments.editComment",
             "description": "Edit the text of a comment as the currently authenticated user.",
@@ -7192,11 +7192,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "2d596c167ff64e66ad7c7c22909d0781",
+            "id": "c4da1d07d4d64f5a49865c0583700a66",
             "name": "Photosets Comments Get List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.photosets.comments.getList",
             "description": "Returns the comments for a photoset.",
@@ -7237,11 +7237,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "11405ee32a71391f2eca0df633ad8adf",
+            "id": "5cf573709055b299ef05616d0b269efe",
             "name": "Places Find",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.find",
             "description": "Return a list of place IDs for a query string.",
@@ -7282,11 +7282,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d5f24de50310c7455b43815adfa17529",
+            "id": "9c8545fb7eca98f96ea61ad62ab7923e",
             "name": "Places Find By Lat Lon",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.findByLatLon",
             "description": "Return a place ID for a latitude, longitude and accuracy triple.",
@@ -7341,11 +7341,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "4cbdd93019c8f88bd60b0082d586fe14",
+            "id": "5a5cd1691df979a6e8d6ddfb896c7317",
             "name": "Places Get Children With Photos Public",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.getChildrenWithPhotosPublic",
             "description": "Return a list of locations with public photos that are parented by a Where on Earth (WOE) or Places ID.",
@@ -7393,11 +7393,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "68907de3a64866ff297a2f3a1d104c02",
+            "id": "f6305d53def35d08cac6c022329d736d",
             "name": "Places Get Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.getInfo",
             "description": "Get information about a place.",
@@ -7445,11 +7445,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "e65548e22eda0b7762aac8fe2b00c3aa",
+            "id": "7afd6a44a749a93004c17f34a1b96237",
             "name": "Places Get Info By Url",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.getInfoByUrl",
             "description": "Lookup information about a place, by its flickr.com\/places URL.",
@@ -7490,11 +7490,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6a51d64dcab0baf80fc8e22748b86342",
+            "id": "daf86117de5ec18dd4428e762ae7b325",
             "name": "Places Get Place Types",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.getPlaceTypes",
             "description": "Fetches a list of available place types for Flickr.",
@@ -7528,11 +7528,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "9f4acff3b8bdd255f55708e182056d1b",
+            "id": "e19a573ca338f9d464a9e701edb375a9",
             "name": "Places Get Shape History",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.getShapeHistory",
             "description": "Return an historical list of all the shape data generated for a Places or Where on Earth (WOE) ID.",
@@ -7580,11 +7580,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "bd909525dabc2cc843b7d7af93fc4019",
+            "id": "7f67503a60eeac28b959ea429ab1a910",
             "name": "Places Get Top Places List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.getTopPlacesList",
             "description": "Return the top 100 most geotagged places for a day.",
@@ -7646,11 +7646,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "890914228072a84ecc0180c97d5f6c14",
+            "id": "459437f45a62a6c916f8080c5414a0d9",
             "name": "Places Places For Bounding Box",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.placesForBoundingBox",
             "description": "Return all the locations of a matching place type for a bounding box.",
@@ -7705,11 +7705,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "ddfff409e68efc7d8d72429b8cc5fd95",
+            "id": "4143420d0dbd289aeea71d1bda879e24",
             "name": "Places Places For Contacts",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.placesForContacts",
             "description": "Return a list of the top 100 unique places clustered by a given placetype for a user's contacts.",
@@ -7813,11 +7813,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "7495677ca3f247880202cfe459c33267",
+            "id": "158d64cbab1aca131f8be1eeef40fee0",
             "name": "Places Places For Tags",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.placesForTags",
             "description": "Return a list of the top 100 unique places clustered by a given placetype for set of tags or machine tags.",
@@ -7935,11 +7935,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "43655a8bd856ab4c534bce24e74ff19b",
+            "id": "14620caae01a2a1c9423646be247228c",
             "name": "Places Places For User",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.placesForUser",
             "description": "Return a list of the top 100 unique places clustered by a given placetype for a user.",
@@ -8036,11 +8036,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "4d05dc4ec575e41bbaf02530342fb27c",
+            "id": "313c3dffb5a8e6317ca1101ccdca7836",
             "name": "Places Resolve Place Id",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.resolvePlaceId",
             "description": "Find Flickr Places information by Place ID. This method has been deprecated. It won't be removed but you should use flickr.places.getInfo instead.",
@@ -8081,11 +8081,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8c9c50df80c0ab7b6ab9fce8ee4fb1ff",
+            "id": "d3aed5153e1dfc0ad99f612f346250c9",
             "name": "Places Resolve Place U R L",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.resolvePlaceURL",
             "description": "Find Flickr Places information by Place URL. This method has been deprecated. It won't be removed but you should use flickr.places.getInfo instead.",
@@ -8126,11 +8126,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "61f68a600aeb13b26758d1eca63b5126",
+            "id": "87cbfa4bd06f6e0365bd3825f8fec95e",
             "name": "Places Tags For Place",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.places.tagsForPlace",
             "description": "Return a list of the top 100 unique tags for a Flickr Places or Where on Earth (WOE) ID.",
@@ -8206,11 +8206,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "2338549a2a90b0cc56b7b93550081345",
+            "id": "1029adef6cdfea5aa084a89612cc5be8",
             "name": "Prefs Get Content Type",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.prefs.getContentType",
             "description": "Returns the default content type preference for the user.",
@@ -8244,11 +8244,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "353dc30691b7233d37c79b338ebbf800",
+            "id": "e760a3e4a1916d744a2554429258905a",
             "name": "Prefs Get Geo Perms",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.prefs.getGeoPerms",
             "description": "Returns the default privacy level for geographic information attached to the user's photos and whether or not the user has chosen to use geo-related EXIF information to automatically geotag their photos.",
@@ -8282,11 +8282,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "1d24041808a041a4284e9495e3c6d490",
+            "id": "298743d87945ecef54a2ca9928ee6f35",
             "name": "Prefs Get Hden",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.prefs.getHidden",
             "description": "Returns the default hidden preference for the user.",
@@ -8320,11 +8320,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8b1e27e388639a97ee356ccff52abf02",
+            "id": "4be6b93b363fc60380a74201edc8ce1f",
             "name": "Prefs Get Privacy",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.prefs.getPrivacy",
             "description": "Returns the default privacy level preference for the user.",
@@ -8358,11 +8358,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "8345a4db2ebcc6fd9258334de129aa10",
+            "id": "4ff309b07928285a35b42dec341927f9",
             "name": "Prefs Get Safety Level",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.prefs.getSafetyLevel",
             "description": "Returns the default safety level preference for the user.",
@@ -8396,11 +8396,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "0850946e4c09520c6175c58b32dacc60",
+            "id": "c83aad325cd3359f54772bb99a947066",
             "name": "Reflection Get Method Info",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.reflection.getMethodInfo",
             "description": "Returns information for a given Flickr API method.",
@@ -8441,11 +8441,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "e004b836316efc90b111355eb2e45f20",
+            "id": "b083c5f9cba20511a2917758cf071a7f",
             "name": "Reflection Get Methods",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.reflection.getMethods",
             "description": "Returns a list of available Flickr API methods.",
@@ -8479,11 +8479,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "aa1c39930ea62922f5e9097140bb171a",
+            "id": "379ab44fa9276bba9507db3654132aa0",
             "name": "Stats Get Collection Domains",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getCollectionDomains",
             "description": "Get a list of referring domains for a collection",
@@ -8545,11 +8545,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "2490b19181fa2d0d7f3b7830accefa58",
+            "id": "8c0fd1693e92b9f0343641e5501b7437",
             "name": "Stats Get Collection Referrers",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getCollectionReferrers",
             "description": "Get a list of referrers from a given domain to a collection",
@@ -8618,11 +8618,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "c3b0025f3d770f053d2af37b8de019b6",
+            "id": "ae3cf132e60dde91e4fb7321364cf145",
             "name": "Stats Get Collection Stats",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getCollectionStats",
             "description": "Get the number of views on a collection for a given date.",
@@ -8670,11 +8670,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "c74c44829e367b4bfacc99f5d0b04009",
+            "id": "47f726ed0ca94ce3ec5294bf692a755c",
             "name": "Stats Get Photo Domains",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotoDomains",
             "description": "Get a list of referring domains for a photo.",
@@ -8736,11 +8736,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "93df1dddefe72b7c359726913913e285",
+            "id": "6c593d9332c394145f5c4ec8feb0ec37",
             "name": "Stats Get Photo Referrers",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotoReferrers",
             "description": "Get a list of referring domains for a photo.",
@@ -8802,11 +8802,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "90c4284b878234a723adb08f7d926acf",
+            "id": "3c6544947fcf35f7ad078d31bb594744",
             "name": "Stats Get Photo Stats",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotoStats",
             "description": "Get the number of views, comments and favorites on a photo for a given date.",
@@ -8854,11 +8854,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "a964f5a9bb9077275aead10cca2c665f",
+            "id": "b72d0a592684daea87e6887c809fe85a",
             "name": "Stats Get Photoset Domains",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotosetDomains",
             "description": "Get a list of referring domains for a photoset.",
@@ -8920,11 +8920,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "97952d6bac781c953c59717bfeceb6e6",
+            "id": "24c94a6416f7137102fbc2633df521cb",
             "name": "Stats Get Photoset Referrers",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotosetReferrers",
             "description": "Get a list of referring domains for a photoset.",
@@ -8986,11 +8986,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "871090836513615e84d8403447daa61e",
+            "id": "c77a1e2376a5cf9950f69066dd3f037a",
             "name": "Stats Get Photoset Stats",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotosetStats",
             "description": "Get the number of views on a photoset for a given date.",
@@ -9038,11 +9038,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "fa8ca076effa32f4289733c457729f30",
+            "id": "d6c92a640bc2f0e10782374a64cb49bf",
             "name": "Stats Get Photostream Domains",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotostreamDomains",
             "description": "Get a list of referring domains for a photostream.",
@@ -9097,11 +9097,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "bf0debb4b4956bdcf89f1fda58d6f267",
+            "id": "b81bbcc31a5a17cfd9a56b37b1195bcd",
             "name": "Stats Get Photostream Referrers",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotostreamReferrers",
             "description": "Get a list of referrers from a given domain to a user's photostream",
@@ -9156,11 +9156,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f7a99e4743de2fa47dcef5cde3801677",
+            "id": "d1a146f0ca119045718866f6e7d8bcff",
             "name": "Stats Get Photostream Stats",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPhotostreamStats",
             "description": "Get the number of views on a user's photostream for a given date.",
@@ -9201,11 +9201,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "46f292e60750a74eded3f06b69bd6100",
+            "id": "d9d5b5057884b33ff6bb225976f3b258",
             "name": "Stats Get Popular Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getPopularPhotos",
             "description": "List the photos with the most views, comments or favorites.",
@@ -9267,11 +9267,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f9cdd97ee17837fa62cf5bca11e3df01",
+            "id": "392b3c912daaacabfecf43be145685a8",
             "name": "Stats Get Total Views",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.stats.getTotalViews",
             "description": "Get the overall view counts for an account.",
@@ -9312,11 +9312,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "99aa1e372a87bdc9213be60aac22cd74",
+            "id": "2f0a386851e2274be21f4bba38b7ce04",
             "name": "Tags Get Cluster Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getClusterPhotos",
             "description": "Returns the first 24 photos for a given tag cluster.",
@@ -9364,11 +9364,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d2729d38d4bd513d9b8f2b02c46cc5cf",
+            "id": "f2e19109d635c971f5b79cff41e9e0f1",
             "name": "Tags Get Clusters",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getClusters",
             "description": "Returns a list of tag clusters for the given tag.",
@@ -9409,11 +9409,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "94166f765bbf0d3769544b2a551f9b5d",
+            "id": "84cd047982c493db03118d8918958852",
             "name": "Tags Get Hot List",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getHotList",
             "description": "Returns a list of hot tags for the given period.",
@@ -9461,11 +9461,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "b047a3ab2b3251e8b691c24fd94cbdbd",
+            "id": "776f5bdb263b1c4e008b5db419df3a6b",
             "name": "Tags Get List Photo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getListPhoto",
             "description": "Get the tag list for a given photo.",
@@ -9506,11 +9506,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f4e118c9ea1b04f095b877795be17f7a",
+            "id": "0afb6a62b8af8a549cd3d4c08f14165c",
             "name": "Tags Get List User",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getListUser",
             "description": "Get the tag list for a given user (or the currently logged in user).",
@@ -9551,11 +9551,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f986371f3d408298394fd9f4a0ae8ea4",
+            "id": "ec438d4fa07cc595a5f63fec81a60544",
             "name": "Tags Get List User Popular",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getListUserPopular",
             "description": "Get the popular tags for a given user (or the currently logged in user).",
@@ -9603,11 +9603,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "7b78ebd76d0e3882630312de072d84b0",
+            "id": "8a4ad548a88f6d4b66b21491305d3e3c",
             "name": "Tags Get List User Raw",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getListUserRaw",
             "description": "Get the raw versions of a given tag (or all tags) for the currently logged-in user.",
@@ -9648,11 +9648,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "d0c8f0c043bfdd7e0217514dd68c6a5c",
+            "id": "6d65e986072fa61536cca274e3bfeb8c",
             "name": "Tags Get Related",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.tags.getRelated",
             "description": "Returns a list of tags 'related' to the given tag, based on clustered usage analysis.",
@@ -9693,11 +9693,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "6e4624dedefe69ca1d7a28fd38939396",
+            "id": "03235b10078309ccdd6dfd273b039579",
             "name": "Test Echo",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.test.echo",
             "description": "A testing method which echoes all parameters back in the response.",
@@ -9731,11 +9731,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "f65b4fa1059ec548d013f3fa810643a7",
+            "id": "16e149c0ea9beab71424736deb600187",
             "name": "Test Login",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.test.login",
             "description": "A testing method which checks if the caller is logged in then returns their username.",
@@ -9769,11 +9769,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "823d65b6a6bccb7c0658bb9cd02c22a6",
+            "id": "efc0da04bda8edc965e55ec6036e8b77",
             "name": "Test Null",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.test.null",
             "description": "This method doesn't do anything.",
@@ -9800,11 +9800,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "998f59327b0b843a601001d503628026",
+            "id": "63983ae3310b7d45736761f418f2e880",
             "name": "Urls Get Group",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.urls.getGroup",
             "description": "Returns the url to a group's page.",
@@ -9845,11 +9845,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "b2b9aa84c86cda45cfb9d4c6c15b8872",
+            "id": "ff886a621bf0b4e1b2f6d7c92c8fda30",
             "name": "Urls Get User Photos",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.urls.getUserPhotos",
             "description": "Returns the url to a user's photos.",
@@ -9890,11 +9890,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "0e26e17d34c9d9ae9caa19f549d30c70",
+            "id": "c195447a8de0ef4f4c38651832ecf516",
             "name": "Urls Get User Profile",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.urls.getUserProfile",
             "description": "Returns the url to a user's profile.",
@@ -9935,11 +9935,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "06a8e6ab053045ed295aa378c1cf4814",
+            "id": "bfc370790a9cd53760633073c9fb993c",
             "name": "Urls Lookup Gallery",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.urls.lookupGallery",
             "description": "Returns gallery info, by url.",
@@ -9980,11 +9980,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "79ef4662e6944eb7ebdd94f2b14825e3",
+            "id": "13f473ca5bad1f7bb78f5e712ec1cb90",
             "name": "Urls Lookup Group",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.urls.lookupGroup",
             "description": "Returns a group NSID, given the url to a group's page or photo pool.",
@@ -10025,11 +10025,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         },
         {
-            "id": "723c0edec38df37fb5ceda78dcd9d974",
+            "id": "745a89945e348cc2af153bb315655fe5",
             "name": "Urls Lookup User",
             "url": "httpsapi.flickr.com\/services\/\/rest\/?method=flickr.urls.lookupUser",
             "description": "Returns a user NSID, given the url to a user's photos or profile.",
@@ -10070,7 +10070,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "0864abad00207ebd9cf6be7a01770533",
+            "collectionId": "15c18ae58df648f12749eb95b8138160",
             "rawModeData": ""
         }
     ]
