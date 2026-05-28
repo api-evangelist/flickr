@@ -1,0 +1,32 @@
+aid: flickr
+name: Flickr
+description: "Flickr Services"
+url: https://www.flickr.com/services/api/
+specificationVersion: '0.20'
+created: '2026-05-28'
+modified: '2026-05-28'
+x-source: public-apis/public-apis
+x-category: "Photography"
+x-tier: 3
+x-tier-reason: bulk-registered-from-public-apis
+tags:
+  - Photography
+  - Public APIs
+apis:
+  - name: Flickr
+    description: "Flickr Services"
+    humanURL: https://www.flickr.com/services/api/
+    baseURL: https://www.flickr.com/services/api/
+    tags:
+      - Photography
+    properties:
+      - type: Documentation
+        url: https://www.flickr.com/services/api/
+common:
+  - type: Website
+    url: https://www.flickr.com/services/api/
+  - type: PublicAPIsListing
+    url: https://github.com/public-apis/public-apis
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
