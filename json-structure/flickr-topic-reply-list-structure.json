@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-topic-reply-list-structure.json",
+  "name": "TopicReplyList",
+  "description": "TopicReplyList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "int32",
+      "example": 1
+    },
+    "pages": {
+      "type": "int32",
+      "example": 12
+    },
+    "total": {
+      "type": "int32",
+      "example": 1183
+    },
+    "reply": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "author": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "message": {
+            "type": "object",
+            "properties": {
+              "_content": {
+                "type": "string",
+                "example": "100"
+              }
+            }
+          },
+          "datecreate": {
+            "type": "string",
+            "example": "1715000000"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-size-list-structure.json",
+  "name": "SizeList",
+  "description": "SizeList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "canblog": {
+      "type": "int32",
+      "example": 0
+    },
+    "canprint": {
+      "type": "int32",
+      "example": 1
+    },
+    "candownload": {
+      "type": "int32",
+      "example": 1
+    },
+    "size": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "example": "Original"
+          },
+          "width": {
+            "type": "int32",
+            "example": 6048
+          },
+          "height": {
+            "type": "int32",
+            "example": 4032
+          },
+          "source": {
+            "type": "uri",
+            "example": "https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg"
+          },
+          "url": {
+            "type": "uri",
+            "example": "https://www.flickr.com/galleries/12345678@N00/72157712345/"
+          },
+          "media": {
+            "type": "string",
+            "example": "photo"
+          }
+        }
+      }
+    }
+  }
+}

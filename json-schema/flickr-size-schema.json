@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-size-schema.json",
+  "title": "Size",
+  "description": "Size schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "example": "Original"
+    },
+    "width": {
+      "type": "integer",
+      "example": 6048
+    },
+    "height": {
+      "type": "integer",
+      "example": 4032
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://www.flickr.com/galleries/12345678@N00/72157712345/"
+    },
+    "media": {
+      "type": "string",
+      "example": "photo"
+    }
+  }
+}

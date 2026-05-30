@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-machine-tag-namespace-list-schema.json",
+  "title": "MachineTagNamespaceList",
+  "description": "MachineTagNamespaceList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "example": 1
+    },
+    "pages": {
+      "type": "integer",
+      "example": 12
+    },
+    "total": {
+      "type": "integer",
+      "example": 1183
+    },
+    "namespace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "usage": {
+            "type": "integer",
+            "example": 18421
+          },
+          "predicates": {
+            "type": "integer",
+            "example": 14
+          },
+          "_content": {
+            "type": "string",
+            "example": "100"
+          }
+        }
+      }
+    }
+  }
+}

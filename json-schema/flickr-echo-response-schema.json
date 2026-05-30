@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-echo-response-schema.json",
+  "title": "EchoResponse",
+  "description": "EchoResponse schema from Flickr API",
+  "type": "object",
+  "additionalProperties": true
+}

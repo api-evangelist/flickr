@@ -1,0 +1,136 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Photos Licenses
+  description: 'Photos — Photos Licenses. 2 operations. Lead operation: List Photo Licenses. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Photos Licenses
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-photos-licenses
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Photos Licenses business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-photos-licenses-getinfo
+          path: /rest/flickr.photos.licenses.getInfo
+          operations:
+            - name: photosLicensesGetInfo
+              method: GET
+              description: List Photo Licenses
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-photos-licenses-setlicense
+          path: /rest/flickr.photos.licenses.setLicense
+          operations:
+            - name: photosLicensesSetLicense
+              method: POST
+              description: Set Photo License
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photo_id
+                - name: license_id
+                  in: query
+                  type: integer
+                  required: true
+                  description: license_id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-photos-licenses-rest
+      port: 8080
+      description: REST adapter for Flickr API — Photos Licenses. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/photos/licenses/get-info
+          name: rest-flickr-photos-licenses-getinfo
+          description: REST surface for List Photo Licenses.
+          operations:
+            - method: GET
+              name: photosLicensesGetInfo
+              description: List Photo Licenses
+              call: flickr-photos-licenses.photosLicensesGetInfo
+              with:
+                api_key: rest.api_key
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/photos/licenses/set-license
+          name: rest-flickr-photos-licenses-setlicense
+          description: REST surface for Set Photo License.
+          operations:
+            - method: POST
+              name: photosLicensesSetLicense
+              description: Set Photo License
+              call: flickr-photos-licenses.photosLicensesSetLicense
+              with:
+                api_key: rest.api_key
+                photo_id: rest.photo_id
+                license_id: rest.license_id
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-photos-licenses-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Photos Licenses. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-photo-licenses
+          description: List Photo Licenses
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photos-licenses.photosLicensesGetInfo
+          with:
+            api_key: tools.api_key
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: set-photo-license
+          description: Set Photo License
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: flickr-photos-licenses.photosLicensesSetLicense
+          with:
+            api_key: tools.api_key
+            photo_id: tools.photo_id
+            license_id: tools.license_id
+          outputParameters:
+            - type: object
+              mapping: $.

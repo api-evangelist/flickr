@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-photo-schema.json",
+  "title": "Photo",
+  "description": "A photo.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "owner": {
+      "type": "string",
+      "example": "12345678@N00"
+    },
+    "secret": {
+      "type": "string",
+      "example": "abc1234def"
+    },
+    "server": {
+      "type": "string",
+      "example": "65535"
+    },
+    "farm": {
+      "type": "integer",
+      "example": 66
+    },
+    "title": {
+      "type": "string",
+      "example": "Golden Gate Sunset"
+    },
+    "ispublic": {
+      "type": "integer",
+      "example": 1
+    },
+    "isfriend": {
+      "type": "integer",
+      "example": 0
+    },
+    "isfamily": {
+      "type": "integer",
+      "example": 0
+    },
+    "datetaken": {
+      "type": "string",
+      "example": "2026-04-12 18:24:11"
+    },
+    "url_o": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg"
+    },
+    "height_o": {
+      "type": "integer",
+      "example": 4032
+    },
+    "width_o": {
+      "type": "integer",
+      "example": 6048
+    }
+  }
+}

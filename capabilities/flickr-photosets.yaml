@@ -1,0 +1,241 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Photosets
+  description: "Photos — Photosets. 3 operations. Lead operation: List A User's Photosets. Self-contained Naftiko capability covering one Flickr business surface."
+  tags:
+    - Flickr
+    - Photos
+    - Photosets
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-photosets
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Photosets business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-photosets-getlist
+          path: /rest/flickr.photosets.getList
+          operations:
+            - name: photosetsGetList
+              method: GET
+              description: List A User's Photosets
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: user_id
+                  in: query
+                  type: string
+                  required: false
+                  description: user_id
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-photosets-getphotos
+          path: /rest/flickr.photosets.getPhotos
+          operations:
+            - name: photosetsGetPhotos
+              method: GET
+              description: List Photos In A Photoset
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: photoset_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photoset_id
+                - name: user_id
+                  in: query
+                  type: string
+                  required: false
+                  description: user_id
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+                - name: extras
+                  in: query
+                  type: string
+                  required: false
+                  description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-photosets-create
+          path: /rest/flickr.photosets.create
+          operations:
+            - name: photosetsCreate
+              method: POST
+              description: Create A New Photoset
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: title
+                  in: query
+                  type: string
+                  required: true
+                  description: title
+                - name: description
+                  in: query
+                  type: string
+                  required: false
+                  description: description
+                - name: primary_photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: primary_photo_id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-photosets-rest
+      port: 8080
+      description: REST adapter for Flickr API — Photosets. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/photosets/get-list
+          name: rest-flickr-photosets-getlist
+          description: REST surface for List A User's Photosets.
+          operations:
+            - method: GET
+              name: photosetsGetList
+              description: List A User's Photosets
+              call: flickr-photosets.photosetsGetList
+              with:
+                api_key: rest.api_key
+                user_id: rest.user_id
+                page: rest.page
+                per_page: rest.per_page
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/photosets/get-photos
+          name: rest-flickr-photosets-getphotos
+          description: REST surface for List Photos In A Photoset.
+          operations:
+            - method: GET
+              name: photosetsGetPhotos
+              description: List Photos In A Photoset
+              call: flickr-photosets.photosetsGetPhotos
+              with:
+                api_key: rest.api_key
+                photoset_id: rest.photoset_id
+                user_id: rest.user_id
+                page: rest.page
+                per_page: rest.per_page
+                extras: rest.extras
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/photosets/create
+          name: rest-flickr-photosets-create
+          description: REST surface for Create A New Photoset.
+          operations:
+            - method: POST
+              name: photosetsCreate
+              description: Create A New Photoset
+              call: flickr-photosets.photosetsCreate
+              with:
+                api_key: rest.api_key
+                title: rest.title
+                description: rest.description
+                primary_photo_id: rest.primary_photo_id
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-photosets-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Photosets. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-user-s-photosets
+          description: List A User's Photosets
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photosets.photosetsGetList
+          with:
+            api_key: tools.api_key
+            user_id: tools.user_id
+            page: tools.page
+            per_page: tools.per_page
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: list-photos-photoset
+          description: List Photos In A Photoset
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photosets.photosetsGetPhotos
+          with:
+            api_key: tools.api_key
+            photoset_id: tools.photoset_id
+            user_id: tools.user_id
+            page: tools.page
+            per_page: tools.per_page
+            extras: tools.extras
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: create-new-photoset
+          description: Create A New Photoset
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: flickr-photosets.photosetsCreate
+          with:
+            api_key: tools.api_key
+            title: tools.title
+            description: tools.description
+            primary_photo_id: tools.primary_photo_id
+          outputParameters:
+            - type: object
+              mapping: $.

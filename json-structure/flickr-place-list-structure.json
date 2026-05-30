@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-place-list-structure.json",
+  "name": "PlaceList",
+  "description": "PlaceList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "place": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "place_id": {
+            "type": "string",
+            "example": "kH8dLOBTUrHLjKxQqw"
+          },
+          "woeid": {
+            "type": "string",
+            "example": "2487956"
+          },
+          "latitude": {
+            "type": "double",
+            "example": 37.7749
+          },
+          "longitude": {
+            "type": "double",
+            "example": -122.4194
+          },
+          "place_url": {
+            "type": "string",
+            "example": "/United+States/California/San+Francisco"
+          },
+          "place_type": {
+            "type": "string",
+            "example": "locality"
+          },
+          "_content": {
+            "type": "string",
+            "example": "100"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Flickr
+providerId: flickr
+created: '2026-05-30'
+modified: '2026-05-30'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - Photography
+  - Photos
+  - Developer API
+description: >-
+  FOCUS-aligned FinOps for Flickr's API surface. The Flickr REST API is free
+  of charge for both non-commercial and (permission-granted) commercial use,
+  so the financial dimension is zero-cost. The FinOps surface is therefore
+  oriented around consumption visibility (per-key request volume, upload
+  bytes), attribution (one key per app), and optimisation (preferring push
+  over polling to stay under the per-key hourly cap). Consumer-side
+  storage/seat costs for end-user Flickr accounts (Free / Pro) are out of
+  scope for this API artifact.
+sources:
+  - https://www.flickr.com/services/api/
+  - https://www.flickr.com/services/api/misc.api_keys.html
+  - https://www.flickr.com/services/api/tos/
+  - https://www.flickr.com/services/developer/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Flickr, Inc. (SmugMug)
+serviceCategory: Media + Photo Hosting + Developer API
+billingModel:
+  pricingCategory: Free + Permissioned Commercial
+  billingFrequency: None
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+focusColumns:
+  ServiceName: Flickr API
+  ServiceCategory: Photo Hosting / Developer Platform
+  ServiceSubcategory: Photo + Group + People + Place + Tag + Photoset API
+  ProviderName: Flickr
+  PublisherName: Flickr, Inc.
+  InvoiceIssuerName: Flickr, Inc.
+  BillingCurrency: USD
+  RegionId: global
+meters:
+  - name: api_requests
+    unit: request
+    aggregation: sum
+    dimensions:
+      - api_key
+      - method_namespace
+      - http_status
+    notes: >-
+      Tracked locally by the client; Flickr does not return remaining-quota
+      headers. Used for per-key hourly cap monitoring.
+  - name: photos_uploaded
+    unit: photo
+    aggregation: sum
+    dimensions:
+      - api_key
+      - sync_or_async
+  - name: upload_bytes
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - api_key
+  - name: push_subscriptions
+    unit: subscription
+    aggregation: max
+    dimensions:
+      - api_key
+      - topic
+  - name: oauth_users
+    unit: user
+    aggregation: max
+    dimensions:
+      - api_key
+principles:
+  - name: Visibility
+    description: >-
+      Flickr does not emit billing telemetry; meter consumption client-side
+      by instrumenting your Flickr SDK calls and aggregating per-key request
+      counts, upload bytes, and push subscription counts. Surface these in
+      your existing observability stack (Prometheus / Datadog / Honeycomb).
+  - name: Allocation
+    description: >-
+      Allocate consumption by API key. Per Flickr's API ToS, each
+      application MUST have its own API key, which naturally maps to a
+      team / product / environment. Tag downstream usage records with the
+      API key as the allocation dimension.
+  - name: Optimization
+    description: >-
+      Reduce per-key request volume by preferring `flickr.push.*` PubSubHubbub
+      subscriptions over high-frequency polling, batching reads with `extras`
+      to consolidate per-photo metadata into a single call, and caching
+      `flickr.photos.licenses.getInfo` and `flickr.cameras.*` reference data
+      locally. Async uploads (`async=1`) decouple ticket-status polling from
+      the upload itself.
+  - name: Accountability
+    description: >-
+      Each application owner is accountable for staying inside the per-key
+      hourly cap and for honouring the commercial-vs-non-commercial terms
+      attached to their key. Document the responsible owner per key in your
+      app catalogue, and alert when per-key request rates trend toward the
+      hourly cap so the owner can react before Flickr throttles the key.

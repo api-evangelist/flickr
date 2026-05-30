@@ -1,0 +1,18 @@
+{
+  "photo": {
+    "id": "52345678901",
+    "secret": "abc1234def",
+    "camera": "example",
+    "exif": [
+      {
+        "tagspace": "EXIF",
+        "tagspaceid": 0,
+        "tag": "ISO",
+        "label": "Original",
+        "raw": {
+          "_content": "100"
+        }
+      }
+    ]
+  }
+}

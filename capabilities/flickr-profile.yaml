@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Profile
+  description: 'Photos — Profile. 1 operations. Lead operation: Get A User Profile. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Profile
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-profile
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Profile business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-profile-getprofile
+          path: /rest/flickr.profile.getProfile
+          operations:
+            - name: profileGetProfile
+              method: GET
+              description: Get A User Profile
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: user_id
+                  in: query
+                  type: string
+                  required: true
+                  description: user_id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-profile-rest
+      port: 8080
+      description: REST adapter for Flickr API — Profile. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/profile/get-profile
+          name: rest-flickr-profile-getprofile
+          description: REST surface for Get A User Profile.
+          operations:
+            - method: GET
+              name: profileGetProfile
+              description: Get A User Profile
+              call: flickr-profile.profileGetProfile
+              with:
+                api_key: rest.api_key
+                user_id: rest.user_id
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-profile-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Profile. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: get-user-profile
+          description: Get A User Profile
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-profile.profileGetProfile
+          with:
+            api_key: tools.api_key
+            user_id: tools.user_id
+          outputParameters:
+            - type: object
+              mapping: $.

@@ -1,32 +1,234 @@
 aid: flickr
 name: Flickr
-description: "Flickr Services"
+description: >-
+  Flickr is the long-running photo, group, people, place, tag, gallery,
+  photoset, and Commons platform now owned by SmugMug. Its REST-like API
+  dispatches every operation through a single endpoint
+  (https://api.flickr.com/services/rest?method=flickr.{namespace}.{method}),
+  spanning ~250 methods across 30 namespaces — covering activity, auth,
+  blogs, cameras, collections, commons, contacts, favorites, galleries,
+  groups, group discussions, interestingness, machine tags, panda,
+  people, photos (plus photos.geo / photos.licenses / photos.notes /
+  photos.transform / photos.upload), photosets, places, prefs, profile,
+  push, reflection, stats, tags, test, and URLs. Authentication is
+  API key + OAuth 1.0a (HMAC-SHA1). Commercial use requires a
+  permission-granted commercial key.
 url: https://www.flickr.com/services/api/
+image: https://combine.swagger.io/flickr.png
 specificationVersion: '0.20'
 created: '2026-05-28'
-modified: '2026-05-28'
+modified: '2026-05-30'
 x-source: public-apis/public-apis
-x-category: "Photography"
+x-category: Photography
 x-tier: 3
 x-tier-reason: bulk-registered-from-public-apis
 tags:
   - Photography
+  - Photos
+  - Social Media
   - Public APIs
 apis:
-  - name: Flickr
-    description: "Flickr Services"
+  - name: Flickr API
+    description: >-
+      The full Flickr REST API. Method-dispatched single-endpoint API:
+      every call is `GET/POST https://api.flickr.com/services/rest?method=flickr.{namespace}.{method}`.
+      Uploads use a separate `https://up.flickr.com/services/upload` endpoint.
+      Coverage profiled here: ~30 most-important methods across all 30
+      method namespaces (activity, auth, blogs, cameras, collections,
+      commons, contacts, favorites, galleries, groups, groupsDiscuss,
+      interestingness, machinetags, panda, people, photos, photos.geo,
+      photos.licenses, photos.notes, photos.transform, photos.upload,
+      photosets, places, prefs, profile, push, reflection, stats, tags,
+      test, urls).
     humanURL: https://www.flickr.com/services/api/
-    baseURL: https://www.flickr.com/services/api/
+    baseURL: https://api.flickr.com/services
     tags:
       - Photography
+      - Photos
     properties:
       - type: Documentation
         url: https://www.flickr.com/services/api/
+      - type: APIReference
+        url: https://www.flickr.com/services/api/
+      - type: OpenAPI
+        url: openapi/flickr-openapi.yml
+      - type: Authentication
+        url: https://www.flickr.com/services/api/auth.oauth.html
+      - type: Quickstart
+        url: https://www.flickr.com/services/developer/
+      - type: SDK
+        title: Node.js SDK
+        url: https://www.npmjs.com/package/flickr-sdk
+      - type: SDK
+        title: Node.js SDK source
+        url: https://github.com/flickr/flickr-sdk
+      - type: SDK
+        title: Python SDK (python-flickr-api)
+        url: https://pypi.org/project/flickr-api/
+      - type: NaftikoCapability
+        url: capabilities/flickr-activity.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-auth.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-blogs.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-cameras.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-collections.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-commons.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-contacts.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-favorites.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-galleries.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-groups.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-groups-discuss.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-interestingness.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-machine-tags.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-panda.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-people.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-photos.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-photos-geo.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-photos-licenses.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-photos-notes.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-photos-transform.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-photos-upload.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-photosets.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-places.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-prefs.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-profile.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-push.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-reflection.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-stats.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-tags.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-test.yaml
+      - type: NaftikoCapability
+        url: capabilities/flickr-urls.yaml
 common:
   - type: Website
+    url: https://www.flickr.com/
+  - type: Portal
     url: https://www.flickr.com/services/api/
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SignUp
+    url: https://www.flickr.com/services/apps/create/apply/
+  - type: TermsOfService
+    url: https://www.flickr.com/services/api/tos/
+  - type: PrivacyPolicy
+    url: https://www.flickr.com/help/privacy
+  - type: Pricing
+    url: https://www.flickr.com/services/api/misc.api_keys.html
+  - type: Blog
+    url: https://blog.flickr.net/
+  - type: ChangeLog
+    url: https://www.flickr.com/services/developer/changelog/
+  - type: FAQ
+    url: https://flickrhelp.com/
+  - type: Support
+    url: https://flickrhelp.com/
+  - type: StatusPage
+    url: https://www.flickr.com/
+  - type: GitHubOrganization
+    url: https://github.com/flickr
+  - type: GitHubRepository
+    title: Flickr API Swagger
+    url: https://github.com/flickr/flickr-api-swagger
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
+  - type: SpectralRules
+    url: rules/flickr-rules.yml
+  - type: Vocabulary
+    url: vocabulary/flickr-vocabulary.yml
+  - type: JSON-LD
+    url: json-ld/flickr-context.jsonld
+  - type: Plans
+    url: plans/flickr-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/flickr-rate-limits.yml
+  - type: FinOps
+    url: finops/flickr-finops.yml
+  - type: Features
+    data:
+      - name: Method-Dispatched REST API
+        description: Single endpoint with `method=flickr.{namespace}.{method}` selector covering 250+ methods across 30 namespaces.
+      - name: Photo Search
+        description: Rich text/tag/geo/license/date/content-filter search across the public photo corpus.
+      - name: OAuth 1.0a Authentication
+        description: HMAC-SHA1 three-legged OAuth flow for accessing user-owned content.
+      - name: Sync + Async Photo Upload
+        description: Multipart upload endpoint with synchronous or ticket-based asynchronous status polling.
+      - name: PubSubHubbub Push
+        description: Push subscriptions for change-driven workloads instead of polling.
+      - name: Reflection
+        description: flickr.reflection.getMethods and getMethodInfo for programmatic API discovery.
+      - name: Flickr Commons
+        description: Institutional partner program (museums, libraries, archives) with no-known-copyright photos.
+      - name: Geotagging
+        description: Lat/lon attachment plus Places (WOEID) resolution.
+      - name: Machine Tags
+        description: Structured namespace.predicate=value tagging for machine-readable taxonomies.
+      - name: Stats
+        description: Per-day view/comment/favorite counts for owned content.
+  - type: UseCases
+    data:
+      - name: Photo-Powered App
+        description: Build a third-party app that searches, displays, or remixes the public Flickr photo corpus.
+      - name: Photo Backup / Sync
+        description: Bulk-upload pipeline pushing a user's photos into Flickr (or pulling them out).
+      - name: Curator Tooling
+        description: Editorial workflows that build galleries, photosets, and collections programmatically.
+      - name: Community Bot
+        description: Group moderation, topic listing, and reply harvesting for community managers.
+      - name: Cultural Heritage Research
+        description: Access Flickr Commons institutional collections for research or aggregation.
+      - name: Geo-Photo Analytics
+        description: Map-based analytics over the geotagged photo corpus by place / WOEID.
+      - name: Discovery / Recommendation
+        description: Interestingness and Panda feeds plus tag clusters for content-discovery surfaces.
+  - type: Integrations
+    data:
+      - name: PubSubHubbub
+        description: Push subscription protocol used by `flickr.push.*` topics.
+      - name: OAuth 1.0a
+        description: Industry-standard delegated-authorization protocol used for all user-context calls.
+      - name: Blogger / WordPress
+        description: Configured blog services available through `flickr.blogs.*` for cross-posting from Flickr.
+      - name: SmugMug
+        description: Parent company; account ecosystem and import/export flows.
+      - name: Yahoo Login (legacy)
+        description: Historic Yahoo-account login path now superseded by direct Flickr accounts.
+  - type: Solutions
+    data:
+      - name: Non-Commercial API Key
+        description: Free API key for personal/non-commercial apps; standard online sign-up.
+      - name: Commercial API Key
+        description: Permission-only commercial API key reviewed individually by Flickr.
+      - name: Flickr Pro (consumer)
+        description: Consumer-side paid Flickr account (out of scope for API pricing).
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

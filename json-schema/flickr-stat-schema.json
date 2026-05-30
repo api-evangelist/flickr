@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-stat-schema.json",
+  "title": "Stat",
+  "description": "Stat schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "example": "2026-04-30"
+    },
+    "views": {
+      "type": "integer",
+      "example": 1842
+    },
+    "comments": {
+      "type": "integer",
+      "example": 12
+    },
+    "favorites": {
+      "type": "integer",
+      "example": 47
+    }
+  }
+}

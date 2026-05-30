@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-blog-list-schema.json",
+  "title": "BlogList",
+  "description": "BlogList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "blog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "name": {
+            "type": "string",
+            "example": "Bay Area Photographers"
+          },
+          "service": {
+            "type": "string",
+            "example": "blogger"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://www.flickr.com/galleries/12345678@N00/72157712345/"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-institution-schema.json",
+  "title": "Institution",
+  "description": "Institution schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "nsid": {
+      "type": "string",
+      "example": "12345678@N00"
+    },
+    "name": {
+      "type": "string",
+      "example": "Bay Area Photographers"
+    },
+    "date_launch": {
+      "type": "string",
+      "example": "1232409600"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-activity-list-schema.json",
+  "title": "ActivityList",
+  "description": "ActivityList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "example": 1
+    },
+    "pages": {
+      "type": "integer",
+      "example": 12
+    },
+    "total": {
+      "type": "integer",
+      "example": 1183
+    },
+    "item": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "photo"
+          },
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "owner": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "secret": {
+            "type": "string",
+            "example": "abc1234def"
+          },
+          "server": {
+            "type": "string",
+            "example": "65535"
+          },
+          "farm": {
+            "type": "integer",
+            "example": 66
+          },
+          "title": {
+            "type": "string",
+            "example": "Golden Gate Sunset"
+          }
+        }
+      }
+    }
+  }
+}

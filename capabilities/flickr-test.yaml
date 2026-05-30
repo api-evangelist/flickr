@@ -1,0 +1,122 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Test
+  description: 'Photos — Test. 2 operations. Lead operation: Echo Test Parameters. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Test
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-test
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Test business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-test-echo
+          path: /rest/flickr.test.echo
+          operations:
+            - name: testEcho
+              method: GET
+              description: Echo Test Parameters
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-test-login
+          path: /rest/flickr.test.login
+          operations:
+            - name: testLogin
+              method: GET
+              description: Test Authentication
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-test-rest
+      port: 8080
+      description: REST adapter for Flickr API — Test. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/test/echo
+          name: rest-flickr-test-echo
+          description: REST surface for Echo Test Parameters.
+          operations:
+            - method: GET
+              name: testEcho
+              description: Echo Test Parameters
+              call: flickr-test.testEcho
+              with:
+                api_key: rest.api_key
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/test/login
+          name: rest-flickr-test-login
+          description: REST surface for Test Authentication.
+          operations:
+            - method: GET
+              name: testLogin
+              description: Test Authentication
+              call: flickr-test.testLogin
+              with:
+                api_key: rest.api_key
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-test-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Test. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: echo-test-parameters
+          description: Echo Test Parameters
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-test.testEcho
+          with:
+            api_key: tools.api_key
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: test-authentication
+          description: Test Authentication
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-test.testLogin
+          with:
+            api_key: tools.api_key
+          outputParameters:
+            - type: object
+              mapping: $.

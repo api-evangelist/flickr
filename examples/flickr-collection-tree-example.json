@@ -1,0 +1,16 @@
+{
+  "collection": [
+    {
+      "id": "52345678901",
+      "title": "Golden Gate Sunset",
+      "description": "Detailed photo metadata.",
+      "iconlarge": "https://www.flickr.com/services/api/",
+      "set": [
+        {
+          "id": "52345678901",
+          "title": "Golden Gate Sunset"
+        }
+      ]
+    }
+  ]
+}

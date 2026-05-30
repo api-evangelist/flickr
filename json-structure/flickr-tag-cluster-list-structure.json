@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-tag-cluster-list-structure.json",
+  "name": "TagClusterList",
+  "description": "TagClusterList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "example": "https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg"
+    },
+    "total": {
+      "type": "int32",
+      "example": 1183
+    },
+    "cluster": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "int32",
+            "example": 1183
+          },
+          "tag": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "_content": {
+                  "type": "string",
+                  "example": "100"
+                },
+                "score": {
+                  "type": "int32",
+                  "example": 87
+                },
+                "thm_data": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

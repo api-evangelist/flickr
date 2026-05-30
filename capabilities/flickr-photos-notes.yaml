@@ -1,0 +1,122 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Photos Notes
+  description: 'Photos — Photos Notes. 1 operations. Lead operation: Add Photo Note. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Photos Notes
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-photos-notes
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Photos Notes business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-photos-notes-add
+          path: /rest/flickr.photos.notes.add
+          operations:
+            - name: photosNotesAdd
+              method: POST
+              description: Add Photo Note
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photo_id
+                - name: note_x
+                  in: query
+                  type: integer
+                  required: true
+                  description: note_x
+                - name: note_y
+                  in: query
+                  type: integer
+                  required: true
+                  description: note_y
+                - name: note_w
+                  in: query
+                  type: integer
+                  required: true
+                  description: note_w
+                - name: note_h
+                  in: query
+                  type: integer
+                  required: true
+                  description: note_h
+                - name: note_text
+                  in: query
+                  type: string
+                  required: true
+                  description: note_text
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-photos-notes-rest
+      port: 8080
+      description: REST adapter for Flickr API — Photos Notes. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/photos/notes/add
+          name: rest-flickr-photos-notes-add
+          description: REST surface for Add Photo Note.
+          operations:
+            - method: POST
+              name: photosNotesAdd
+              description: Add Photo Note
+              call: flickr-photos-notes.photosNotesAdd
+              with:
+                api_key: rest.api_key
+                photo_id: rest.photo_id
+                note_x: rest.note_x
+                note_y: rest.note_y
+                note_w: rest.note_w
+                note_h: rest.note_h
+                note_text: rest.note_text
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-photos-notes-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Photos Notes. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: add-photo-note
+          description: Add Photo Note
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: flickr-photos-notes.photosNotesAdd
+          with:
+            api_key: tools.api_key
+            photo_id: tools.photo_id
+            note_x: tools.note_x
+            note_y: tools.note_y
+            note_w: tools.note_w
+            note_h: tools.note_h
+            note_text: tools.note_text
+          outputParameters:
+            - type: object
+              mapping: $.

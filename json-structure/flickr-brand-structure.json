@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-brand-structure.json",
+  "name": "Brand",
+  "description": "Brand schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "name": {
+      "type": "string",
+      "example": "Bay Area Photographers"
+    }
+  }
+}

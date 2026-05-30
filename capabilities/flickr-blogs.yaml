@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Blogs
+  description: 'Photos — Blogs. 1 operations. Lead operation: Get Configured Blogs. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Blogs
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-blogs
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Blogs business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-blogs-getlist
+          path: /rest/flickr.blogs.getList
+          operations:
+            - name: blogsGetList
+              method: GET
+              description: Get Configured Blogs
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: service
+                  in: query
+                  type: string
+                  required: false
+                  description: Optional service ID filter.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-blogs-rest
+      port: 8080
+      description: REST adapter for Flickr API — Blogs. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/blogs/get-list
+          name: rest-flickr-blogs-getlist
+          description: REST surface for Get Configured Blogs.
+          operations:
+            - method: GET
+              name: blogsGetList
+              description: Get Configured Blogs
+              call: flickr-blogs.blogsGetList
+              with:
+                api_key: rest.api_key
+                service: rest.service
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-blogs-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Blogs. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: get-configured-blogs
+          description: Get Configured Blogs
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-blogs.blogsGetList
+          with:
+            api_key: tools.api_key
+            service: tools.service
+          outputParameters:
+            - type: object
+              mapping: $.

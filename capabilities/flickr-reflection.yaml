@@ -1,0 +1,192 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Reflection
+  description: 'Photos — Reflection. 3 operations. Lead operation: Invoke Any Flickr Method. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Reflection
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-reflection
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Reflection business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest
+          path: /rest
+          operations:
+            - name: invokeFlickrMethod
+              method: GET
+              description: Invoke Any Flickr Method
+              inputParameters:
+                - name: method
+                  in: query
+                  type: string
+                  required: true
+                  description: Fully qualified flickr method, e.g. `flickr.photos.search`.
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: format
+                  in: query
+                  type: string
+                  required: false
+                  description: Response format (json/xml/php_serial/rest).
+                - name: nojsoncallback
+                  in: query
+                  type: integer
+                  required: false
+                  description: Set to 1 to receive raw JSON instead of JSONP.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-reflection-getmethods
+          path: /rest/flickr.reflection.getMethods
+          operations:
+            - name: reflectionGetMethods
+              method: GET
+              description: List Available API Methods
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-reflection-getmethodinfo
+          path: /rest/flickr.reflection.getMethodInfo
+          operations:
+            - name: reflectionGetMethodInfo
+              method: GET
+              description: Get API Method Info
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: method_name
+                  in: query
+                  type: string
+                  required: true
+                  description: method_name
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-reflection-rest
+      port: 8080
+      description: REST adapter for Flickr API — Reflection. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/
+          name: rest
+          description: REST surface for Invoke Any Flickr Method.
+          operations:
+            - method: GET
+              name: invokeFlickrMethod
+              description: Invoke Any Flickr Method
+              call: flickr-reflection.invokeFlickrMethod
+              with:
+                method: rest.method
+                api_key: rest.api_key
+                format: rest.format
+                nojsoncallback: rest.nojsoncallback
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/reflection/get-methods
+          name: rest-flickr-reflection-getmethods
+          description: REST surface for List Available API Methods.
+          operations:
+            - method: GET
+              name: reflectionGetMethods
+              description: List Available API Methods
+              call: flickr-reflection.reflectionGetMethods
+              with:
+                api_key: rest.api_key
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/reflection/get-method-info
+          name: rest-flickr-reflection-getmethodinfo
+          description: REST surface for Get API Method Info.
+          operations:
+            - method: GET
+              name: reflectionGetMethodInfo
+              description: Get API Method Info
+              call: flickr-reflection.reflectionGetMethodInfo
+              with:
+                api_key: rest.api_key
+                method_name: rest.method_name
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-reflection-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Reflection. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: invoke-any-flickr-method
+          description: Invoke Any Flickr Method
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-reflection.invokeFlickrMethod
+          with:
+            method: tools.method
+            api_key: tools.api_key
+            format: tools.format
+            nojsoncallback: tools.nojsoncallback
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: list-available-api-methods
+          description: List Available API Methods
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-reflection.reflectionGetMethods
+          with:
+            api_key: tools.api_key
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-api-method-info
+          description: Get API Method Info
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-reflection.reflectionGetMethodInfo
+          with:
+            api_key: tools.api_key
+            method_name: tools.method_name
+          outputParameters:
+            - type: object
+              mapping: $.

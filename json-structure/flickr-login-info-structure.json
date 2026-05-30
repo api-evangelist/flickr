@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-login-info-structure.json",
+  "name": "LoginInfo",
+  "description": "LoginInfo schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "52345678901"
+        },
+        "username": {
+          "type": "object",
+          "properties": {
+            "_content": {
+              "type": "string",
+              "example": "100"
+            }
+          }
+        },
+        "path_alias": {
+          "type": "string",
+          "example": "shutterbug"
+        }
+      }
+    }
+  }
+}

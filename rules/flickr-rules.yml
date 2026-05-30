@@ -1,0 +1,310 @@
+# Flickr API Spectral Ruleset
+#
+# Enforces the conventions observed across the Flickr REST API:
+#   - Single dispatcher endpoint pattern: /rest/flickr.{namespace}.{method}
+#   - api_key + OAuth 1.0a auth
+#   - snake_case query parameters
+#   - JSON responses with a top-level `stat` field
+#   - Operation IDs are camelCase matching the method name
+#   - Tags are Title Case namespace groupings (e.g. "Photos", "Photos Geo")
+
+extends: [[spectral:oas, recommended]]
+
+rules:
+  # ============================================================
+  # INFO / METADATA
+  # ============================================================
+  flickr-info-title-prefix:
+    description: Spec title should start with "Flickr".
+    severity: warn
+    given: $.info.title
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Flickr"
+  flickr-info-description-required:
+    description: API description must be present and substantive.
+    severity: warn
+    given: $.info.description
+    then:
+      function: length
+      functionOptions:
+        min: 80
+  flickr-info-contact-required:
+    description: An info.contact block is required.
+    severity: warn
+    given: $.info.contact
+    then:
+      function: truthy
+  flickr-info-tos-required:
+    description: termsOfService should be set (Flickr API ToS).
+    severity: warn
+    given: $.info.termsOfService
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # ============================================================
+  # OPENAPI VERSION
+  # ============================================================
+  flickr-openapi-version:
+    description: OpenAPI version must be 3.0.x.
+    severity: error
+    given: $.openapi
+    then:
+      function: pattern
+      functionOptions:
+        match: "^3\\.0\\."
+
+  # ============================================================
+  # SERVERS
+  # ============================================================
+  flickr-servers-required:
+    description: At least one server must be declared.
+    severity: error
+    given: $.servers
+    then:
+      function: length
+      functionOptions:
+        min: 1
+  flickr-servers-https:
+    description: All Flickr API servers MUST use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+  flickr-servers-flickr-host:
+    description: Servers should point at api.flickr.com or up.flickr.com.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "flickr\\.com"
+
+  # ============================================================
+  # PATHS — NAMING CONVENTIONS
+  # ============================================================
+  flickr-paths-rest-prefix:
+    description: Per-method paths should live under /rest or be the bare /rest dispatcher; uploads under /upload.
+    severity: warn
+    given: $.paths.*~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/(rest|upload)"
+  flickr-paths-method-naming:
+    description: Per-method paths should match /rest/flickr.{namespace}.{method} using camelCase method names.
+    severity: warn
+    given: $.paths.*~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/(rest(/flickr\\.[a-z]+(\\.[a-z]+){0,3}\\.[a-z][a-zA-Z]*)?|upload)$"
+  flickr-paths-no-trailing-slash:
+    description: Paths must not end with a trailing slash.
+    severity: error
+    given: $.paths.*~
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: ".+/$"
+
+  # ============================================================
+  # OPERATIONS
+  # ============================================================
+  flickr-operation-id-required:
+    description: Every operation must have an operationId.
+    severity: error
+    given: $.paths.*[get,post,put,delete,patch].operationId
+    then:
+      function: truthy
+  flickr-operation-id-camel-case:
+    description: operationId must be camelCase.
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].operationId
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+  flickr-operation-summary-required:
+    description: Every operation must have a summary.
+    severity: error
+    given: $.paths.*[get,post,put,delete,patch].summary
+    then:
+      function: truthy
+  flickr-operation-summary-title-case:
+    description: Operation summaries should be in Title Case.
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z]"
+  flickr-operation-description-required:
+    description: Every operation must have a description.
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].description
+    then:
+      function: truthy
+  flickr-operation-tags-required:
+    description: Every operation must have at least one tag.
+    severity: error
+    given: $.paths.*[get,post,put,delete,patch].tags
+    then:
+      function: length
+      functionOptions:
+        min: 1
+
+  # ============================================================
+  # TAGS
+  # ============================================================
+  flickr-tags-global-required:
+    description: Global tags array must be declared at root.
+    severity: warn
+    given: $.tags
+    then:
+      function: truthy
+  flickr-tags-title-case:
+    description: Tag names should be Title Case (e.g. "Photos Geo").
+    severity: warn
+    given: $.tags[*].name
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][A-Za-z0-9 ]*$"
+  flickr-tags-description-required:
+    description: Every global tag should have a description.
+    severity: warn
+    given: $.tags[*].description
+    then:
+      function: truthy
+
+  # ============================================================
+  # PARAMETERS
+  # ============================================================
+  flickr-parameter-description-required:
+    description: Every inline parameter should have a description.
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].parameters[?(@.in)].description
+    then:
+      function: truthy
+  flickr-parameter-snake-case:
+    description: Query parameter names must be snake_case (Flickr convention).
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].parameters[?(@.in=='query')].name
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9_]*$"
+  flickr-parameter-api-key-required:
+    description: api_key parameter must be present on REST operations.
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].parameters[?(@.in=='query' && @.name=='api_key')]
+    then:
+      function: truthy
+  flickr-parameter-schema-required:
+    description: Every parameter must declare a schema with a type.
+    severity: error
+    given: $.paths.*[get,post,put,delete,patch].parameters[?(@.in)].schema
+    then:
+      function: truthy
+
+  # ============================================================
+  # REQUEST BODIES
+  # ============================================================
+  flickr-requestbody-content-required:
+    description: Request bodies must declare content media types.
+    severity: error
+    given: $.paths.*[post,put,patch].requestBody.content
+    then:
+      function: truthy
+
+  # ============================================================
+  # RESPONSES
+  # ============================================================
+  flickr-response-200-required:
+    description: Every operation must declare a 200 response.
+    severity: error
+    given: $.paths.*[get,post,put,delete,patch].responses
+    then:
+      field: "200"
+      function: truthy
+  flickr-response-content-required:
+    description: Successful responses should declare a content media type.
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].responses[?(@property.match(/^2/))].content
+    then:
+      function: truthy
+  flickr-response-json-preferred:
+    description: Successful responses should include application/json.
+    severity: warn
+    given: $.paths.*[get,post,put,delete,patch].responses[?(@property.match(/^2/))].content
+    then:
+      field: application/json
+      function: truthy
+
+  # ============================================================
+  # SCHEMAS — PROPERTY NAMING
+  # ============================================================
+  flickr-schema-property-snake-case:
+    description: Schema property names should be snake_case to match Flickr response shape (allow _content underscore-prefix).
+    severity: warn
+    given: $.components.schemas[*].properties[*]~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^_?[a-z][a-z0-9_]*$"
+  flickr-schema-type-required:
+    description: Top-level schemas must declare a type.
+    severity: warn
+    given: $.components.schemas[*]
+    then:
+      field: type
+      function: truthy
+
+  # ============================================================
+  # SECURITY
+  # ============================================================
+  flickr-security-global-defined:
+    description: Global security must be defined.
+    severity: error
+    given: $.security
+    then:
+      function: truthy
+  flickr-security-scheme-apikey:
+    description: An ApiKeyAuth security scheme must be defined.
+    severity: error
+    given: $.components.securitySchemes.ApiKeyAuth
+    then:
+      function: truthy
+  flickr-security-scheme-oauth:
+    description: An OAuth1 security scheme placeholder must be defined for write/delete operations.
+    severity: warn
+    given: $.components.securitySchemes.OAuth1
+    then:
+      function: truthy
+
+  # ============================================================
+  # HTTP METHOD CONVENTIONS
+  # ============================================================
+  flickr-get-no-request-body:
+    description: GET operations must not declare a request body.
+    severity: error
+    given: $.paths.*.get.requestBody
+    then:
+      function: falsy
+
+  # ============================================================
+  # MICROCKS / MOCKING
+  # ============================================================
+  flickr-microcks-operation-extension:
+    description: Each operation should declare x-microcks-operation for mock-friendly tooling.
+    severity: info
+    given: $.paths.*[get,post,put,delete,patch]
+    then:
+      field: x-microcks-operation
+      function: truthy

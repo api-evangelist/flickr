@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-institution-list-structure.json",
+  "name": "InstitutionList",
+  "description": "InstitutionList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "institution": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nsid": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "name": {
+            "type": "string",
+            "example": "Bay Area Photographers"
+          },
+          "date_launch": {
+            "type": "string",
+            "example": "1232409600"
+          }
+        }
+      }
+    }
+  }
+}

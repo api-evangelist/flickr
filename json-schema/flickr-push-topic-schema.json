@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-push-topic-schema.json",
+  "title": "PushTopic",
+  "description": "PushTopic schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "example": "Bay Area Photographers"
+    }
+  }
+}

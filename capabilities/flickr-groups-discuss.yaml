@@ -1,0 +1,164 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Groups Discuss
+  description: 'Photos — Groups Discuss. 2 operations. Lead operation: List Group Discussion Topics. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Groups Discuss
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-groups-discuss
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Groups Discuss business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-groups-discuss-topics-getlist
+          path: /rest/flickr.groups.discuss.topics.getList
+          operations:
+            - name: groupsDiscussTopicsGetList
+              method: GET
+              description: List Group Discussion Topics
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: group_id
+                  in: query
+                  type: string
+                  required: true
+                  description: group_id
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-groups-discuss-replies-getlist
+          path: /rest/flickr.groups.discuss.replies.getList
+          operations:
+            - name: groupsDiscussRepliesGetList
+              method: GET
+              description: List Replies For A Discussion Topic
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: topic_id
+                  in: query
+                  type: string
+                  required: true
+                  description: topic_id
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-groups-discuss-rest
+      port: 8080
+      description: REST adapter for Flickr API — Groups Discuss. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/groups/discuss/topics/get-list
+          name: rest-flickr-groups-discuss-topics-getlist
+          description: REST surface for List Group Discussion Topics.
+          operations:
+            - method: GET
+              name: groupsDiscussTopicsGetList
+              description: List Group Discussion Topics
+              call: flickr-groups-discuss.groupsDiscussTopicsGetList
+              with:
+                api_key: rest.api_key
+                group_id: rest.group_id
+                page: rest.page
+                per_page: rest.per_page
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/groups/discuss/replies/get-list
+          name: rest-flickr-groups-discuss-replies-getlist
+          description: REST surface for List Replies For A Discussion Topic.
+          operations:
+            - method: GET
+              name: groupsDiscussRepliesGetList
+              description: List Replies For A Discussion Topic
+              call: flickr-groups-discuss.groupsDiscussRepliesGetList
+              with:
+                api_key: rest.api_key
+                topic_id: rest.topic_id
+                page: rest.page
+                per_page: rest.per_page
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-groups-discuss-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Groups Discuss. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-group-discussion-topics
+          description: List Group Discussion Topics
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-groups-discuss.groupsDiscussTopicsGetList
+          with:
+            api_key: tools.api_key
+            group_id: tools.group_id
+            page: tools.page
+            per_page: tools.per_page
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: list-replies-discussion-topic
+          description: List Replies For A Discussion Topic
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-groups-discuss.groupsDiscussRepliesGetList
+          with:
+            api_key: tools.api_key
+            topic_id: tools.topic_id
+            page: tools.page
+            per_page: tools.per_page
+          outputParameters:
+            - type: object
+              mapping: $.

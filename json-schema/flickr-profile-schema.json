@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-profile-schema.json",
+  "title": "Profile",
+  "description": "Profile schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "first_name": {
+      "type": "string",
+      "example": "Jane"
+    },
+    "last_name": {
+      "type": "string",
+      "example": "Photographer"
+    },
+    "join_date": {
+      "type": "string",
+      "example": "2008-06-15"
+    },
+    "occupation": {
+      "type": "string",
+      "example": "Photographer"
+    },
+    "city": {
+      "type": "string",
+      "example": "San Francisco"
+    },
+    "country": {
+      "type": "string",
+      "example": "USA"
+    },
+    "hometown": {
+      "type": "string",
+      "example": "Portland"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://janephotographer.example.com"
+    }
+  }
+}

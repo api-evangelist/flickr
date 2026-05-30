@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-note-structure.json",
+  "name": "Note",
+  "description": "Note schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "author": {
+      "type": "string",
+      "example": "12345678@N00"
+    },
+    "x": {
+      "type": "int32",
+      "example": 320
+    },
+    "y": {
+      "type": "int32",
+      "example": 240
+    },
+    "w": {
+      "type": "int32",
+      "example": 100
+    },
+    "h": {
+      "type": "int32",
+      "example": 100
+    },
+    "_content": {
+      "type": "string",
+      "example": "100"
+    }
+  }
+}

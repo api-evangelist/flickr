@@ -1,0 +1,94 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Flickr
+providerId: flickr
+created: '2026-05-30'
+modified: '2026-05-30'
+reconciled: false
+tags:
+  - Rate Limiting
+  - Photography
+  - Photos
+  - Developer API
+description: >-
+  Flickr enforces request-rate throttling per API key. Limits are not aggressively
+  published, but the long-standing documented guideline is 3,600 queries per hour
+  per non-commercial API key, with commercial keys reviewed and adjusted on a
+  case-by-case basis. Excessive request rates can result in the key being
+  temporarily or permanently throttled. There is no formal sandbox environment;
+  all calls hit api.flickr.com. Burst patterns and abusive usage are addressed
+  via Flickr's API Terms of Use, not via a public rate-limit HTTP header.
+sources:
+  - https://www.flickr.com/services/api/
+  - https://www.flickr.com/services/api/tos/
+  - https://www.flickr.com/services/developer/
+  - https://www.flickr.com/services/api/misc.api_keys.html
+responseCodes:
+  throttled: 429
+  throttledLegacy: 503
+  invalidKey: 100
+  badRequest: 105
+limits:
+  - name: Per-key queries per hour (non-commercial)
+    scope: key
+    metric: requests_per_hour
+    limit: 3600
+    timeFrame: hour
+    notes: >-
+      Long-standing documented guideline for non-commercial keys. Flickr may
+      temporarily throttle keys that exceed this; sustained abuse can revoke
+      the key.
+  - name: Per-key queries per second (burst)
+    scope: key
+    metric: requests_per_second
+    limit: 1
+    timeFrame: second
+    notes: >-
+      Practical burst guidance derived from the per-hour limit; Flickr does
+      not publish a hard per-second number.
+  - name: Per-key queries per hour (commercial)
+    scope: key
+    metric: requests_per_hour
+    limit: 'negotiated with Flickr'
+    notes: >-
+      Commercial keys may have a higher ceiling; the exact number is set
+      during the commercial review process.
+  - name: Photo upload throughput
+    scope: key
+    metric: varies
+    limit: 'subject to per-key hourly cap and per-file size limits'
+    notes: >-
+      Uploads count against the per-key hourly cap. Per-file size caps are
+      enforced at the upload endpoint (`https://up.flickr.com/services/upload`).
+policies:
+  - name: Exponential backoff
+    description: >-
+      Clients receiving a 429 or 503 should back off exponentially before
+      retrying. Flickr does not publish a specific backoff curve; treat 503
+      as a transient-throttling signal.
+  - name: One key per application
+    description: >-
+      Each distinct application MUST use its own API key. Sharing keys
+      between applications is grounds for revocation and skews
+      per-key throttling decisions.
+  - name: Identify your app
+    description: >-
+      Flickr's TOS asks that all requests include identifying parameters
+      (the API key, optionally a User-Agent that names your application)
+      so abusive callers can be isolated without affecting compliant ones.
+  - name: Commercial use requires permission
+    description: >-
+      Any commercial use of the API requires a commercial API key approved
+      by Flickr. Throttling and quota terms for commercial keys are
+      negotiated as part of approval.
+  - name: No public quota / remaining headers
+    description: >-
+      Flickr does not document `X-RateLimit-*` style response headers.
+      Clients should track their own request rates locally rather than
+      relying on server-returned remaining-quota signals.
+  - name: Push subscriptions vs polling
+    description: >-
+      For change-driven workloads, prefer the PubSubHubbub push API
+      (`flickr.push.*`) over high-frequency polling — push subscriptions
+      do not count toward the per-key hourly cap once established.

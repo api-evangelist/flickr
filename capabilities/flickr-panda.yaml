@@ -1,0 +1,136 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Panda
+  description: 'Photos — Panda. 2 operations. Lead operation: List Flickr Panda Feeds. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Panda
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-panda
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Panda business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-panda-getlist
+          path: /rest/flickr.panda.getList
+          operations:
+            - name: pandaGetList
+              method: GET
+              description: List Flickr Panda Feeds
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-panda-getphotos
+          path: /rest/flickr.panda.getPhotos
+          operations:
+            - name: pandaGetPhotos
+              method: GET
+              description: Get Panda Firehose Photos
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: panda_name
+                  in: query
+                  type: string
+                  required: true
+                  description: panda_name
+                - name: extras
+                  in: query
+                  type: string
+                  required: false
+                  description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-panda-rest
+      port: 8080
+      description: REST adapter for Flickr API — Panda. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/panda/get-list
+          name: rest-flickr-panda-getlist
+          description: REST surface for List Flickr Panda Feeds.
+          operations:
+            - method: GET
+              name: pandaGetList
+              description: List Flickr Panda Feeds
+              call: flickr-panda.pandaGetList
+              with:
+                api_key: rest.api_key
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/panda/get-photos
+          name: rest-flickr-panda-getphotos
+          description: REST surface for Get Panda Firehose Photos.
+          operations:
+            - method: GET
+              name: pandaGetPhotos
+              description: Get Panda Firehose Photos
+              call: flickr-panda.pandaGetPhotos
+              with:
+                api_key: rest.api_key
+                panda_name: rest.panda_name
+                extras: rest.extras
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-panda-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Panda. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-flickr-panda-feeds
+          description: List Flickr Panda Feeds
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-panda.pandaGetList
+          with:
+            api_key: tools.api_key
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-panda-firehose-photos
+          description: Get Panda Firehose Photos
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-panda.pandaGetPhotos
+          with:
+            api_key: tools.api_key
+            panda_name: tools.panda_name
+            extras: tools.extras
+          outputParameters:
+            - type: object
+              mapping: $.

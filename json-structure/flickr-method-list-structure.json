@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-method-list-structure.json",
+  "name": "MethodList",
+  "description": "MethodList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "methods": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "_content": {
+                "type": "string",
+                "example": "100"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,220 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Groups
+  description: 'Photos — Groups. 3 operations. Lead operation: Get Group Info. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Groups
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-groups
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Groups business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-groups-getinfo
+          path: /rest/flickr.groups.getInfo
+          operations:
+            - name: groupsGetInfo
+              method: GET
+              description: Get Group Info
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: group_id
+                  in: query
+                  type: string
+                  required: true
+                  description: group_id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-groups-search
+          path: /rest/flickr.groups.search
+          operations:
+            - name: groupsSearch
+              method: GET
+              description: Search Groups By Text
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: text
+                  in: query
+                  type: string
+                  required: true
+                  description: text
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-groups-pools-getphotos
+          path: /rest/flickr.groups.pools.getPhotos
+          operations:
+            - name: groupsPoolsGetPhotos
+              method: GET
+              description: List Photos In A Group Pool
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: group_id
+                  in: query
+                  type: string
+                  required: true
+                  description: group_id
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+                - name: extras
+                  in: query
+                  type: string
+                  required: false
+                  description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-groups-rest
+      port: 8080
+      description: REST adapter for Flickr API — Groups. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/groups/get-info
+          name: rest-flickr-groups-getinfo
+          description: REST surface for Get Group Info.
+          operations:
+            - method: GET
+              name: groupsGetInfo
+              description: Get Group Info
+              call: flickr-groups.groupsGetInfo
+              with:
+                api_key: rest.api_key
+                group_id: rest.group_id
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/groups/search
+          name: rest-flickr-groups-search
+          description: REST surface for Search Groups By Text.
+          operations:
+            - method: GET
+              name: groupsSearch
+              description: Search Groups By Text
+              call: flickr-groups.groupsSearch
+              with:
+                api_key: rest.api_key
+                text: rest.text
+                page: rest.page
+                per_page: rest.per_page
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/groups/pools/get-photos
+          name: rest-flickr-groups-pools-getphotos
+          description: REST surface for List Photos In A Group Pool.
+          operations:
+            - method: GET
+              name: groupsPoolsGetPhotos
+              description: List Photos In A Group Pool
+              call: flickr-groups.groupsPoolsGetPhotos
+              with:
+                api_key: rest.api_key
+                group_id: rest.group_id
+                page: rest.page
+                per_page: rest.per_page
+                extras: rest.extras
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-groups-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Groups. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: get-group-info
+          description: Get Group Info
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-groups.groupsGetInfo
+          with:
+            api_key: tools.api_key
+            group_id: tools.group_id
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: search-groups-text
+          description: Search Groups By Text
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-groups.groupsSearch
+          with:
+            api_key: tools.api_key
+            text: tools.text
+            page: tools.page
+            per_page: tools.per_page
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: list-photos-group-pool
+          description: List Photos In A Group Pool
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-groups.groupsPoolsGetPhotos
+          with:
+            api_key: tools.api_key
+            group_id: tools.group_id
+            page: tools.page
+            per_page: tools.per_page
+            extras: tools.extras
+          outputParameters:
+            - type: object
+              mapping: $.

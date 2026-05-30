@@ -1,0 +1,367 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Photos
+  description: 'Photos — Photos. 5 operations. Lead operation: Search Photos. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Photos
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-photos
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Photos business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-photos-search
+          path: /rest/flickr.photos.search
+          operations:
+            - name: photosSearch
+              method: GET
+              description: Search Photos
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: text
+                  in: query
+                  type: string
+                  required: false
+                  description: text
+                - name: tags
+                  in: query
+                  type: string
+                  required: false
+                  description: tags
+                - name: tag_mode
+                  in: query
+                  type: string
+                  required: false
+                  description: tag_mode
+                - name: license
+                  in: query
+                  type: string
+                  required: false
+                  description: license
+                - name: media
+                  in: query
+                  type: string
+                  required: false
+                  description: media
+                - name: user_id
+                  in: query
+                  type: string
+                  required: false
+                  description: user_id
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+                - name: extras
+                  in: query
+                  type: string
+                  required: false
+                  description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-photos-getinfo
+          path: /rest/flickr.photos.getInfo
+          operations:
+            - name: photosGetInfo
+              method: GET
+              description: Get Photo Info
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photo_id
+                - name: secret
+                  in: query
+                  type: string
+                  required: false
+                  description: secret
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-photos-getsizes
+          path: /rest/flickr.photos.getSizes
+          operations:
+            - name: photosGetSizes
+              method: GET
+              description: Get Available Photo Sizes
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photo_id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-photos-getexif
+          path: /rest/flickr.photos.getExif
+          operations:
+            - name: photosGetExif
+              method: GET
+              description: Get Photo EXIF Data
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photo_id
+                - name: secret
+                  in: query
+                  type: string
+                  required: false
+                  description: secret
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: rest-flickr-photos-getrecent
+          path: /rest/flickr.photos.getRecent
+          operations:
+            - name: photosGetRecent
+              method: GET
+              description: Get Recent Public Photos
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: extras
+                  in: query
+                  type: string
+                  required: false
+                  description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: page
+                - name: per_page
+                  in: query
+                  type: integer
+                  required: false
+                  description: per_page
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-photos-rest
+      port: 8080
+      description: REST adapter for Flickr API — Photos. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/photos/search
+          name: rest-flickr-photos-search
+          description: REST surface for Search Photos.
+          operations:
+            - method: GET
+              name: photosSearch
+              description: Search Photos
+              call: flickr-photos.photosSearch
+              with:
+                api_key: rest.api_key
+                text: rest.text
+                tags: rest.tags
+                tag_mode: rest.tag_mode
+                license: rest.license
+                media: rest.media
+                user_id: rest.user_id
+                page: rest.page
+                per_page: rest.per_page
+                extras: rest.extras
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/photos/get-info
+          name: rest-flickr-photos-getinfo
+          description: REST surface for Get Photo Info.
+          operations:
+            - method: GET
+              name: photosGetInfo
+              description: Get Photo Info
+              call: flickr-photos.photosGetInfo
+              with:
+                api_key: rest.api_key
+                photo_id: rest.photo_id
+                secret: rest.secret
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/photos/get-sizes
+          name: rest-flickr-photos-getsizes
+          description: REST surface for Get Available Photo Sizes.
+          operations:
+            - method: GET
+              name: photosGetSizes
+              description: Get Available Photo Sizes
+              call: flickr-photos.photosGetSizes
+              with:
+                api_key: rest.api_key
+                photo_id: rest.photo_id
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/photos/get-exif
+          name: rest-flickr-photos-getexif
+          description: REST surface for Get Photo EXIF Data.
+          operations:
+            - method: GET
+              name: photosGetExif
+              description: Get Photo EXIF Data
+              call: flickr-photos.photosGetExif
+              with:
+                api_key: rest.api_key
+                photo_id: rest.photo_id
+                secret: rest.secret
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/photos/get-recent
+          name: rest-flickr-photos-getrecent
+          description: REST surface for Get Recent Public Photos.
+          operations:
+            - method: GET
+              name: photosGetRecent
+              description: Get Recent Public Photos
+              call: flickr-photos.photosGetRecent
+              with:
+                api_key: rest.api_key
+                extras: rest.extras
+                page: rest.page
+                per_page: rest.per_page
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-photos-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Photos. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: search-photos
+          description: Search Photos
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photos.photosSearch
+          with:
+            api_key: tools.api_key
+            text: tools.text
+            tags: tools.tags
+            tag_mode: tools.tag_mode
+            license: tools.license
+            media: tools.media
+            user_id: tools.user_id
+            page: tools.page
+            per_page: tools.per_page
+            extras: tools.extras
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-photo-info
+          description: Get Photo Info
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photos.photosGetInfo
+          with:
+            api_key: tools.api_key
+            photo_id: tools.photo_id
+            secret: tools.secret
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-available-photo-sizes
+          description: Get Available Photo Sizes
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photos.photosGetSizes
+          with:
+            api_key: tools.api_key
+            photo_id: tools.photo_id
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-photo-exif-data
+          description: Get Photo EXIF Data
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photos.photosGetExif
+          with:
+            api_key: tools.api_key
+            photo_id: tools.photo_id
+            secret: tools.secret
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-recent-public-photos
+          description: Get Recent Public Photos
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-photos.photosGetRecent
+          with:
+            api_key: tools.api_key
+            extras: tools.extras
+            page: tools.page
+            per_page: tools.per_page
+          outputParameters:
+            - type: object
+              mapping: $.

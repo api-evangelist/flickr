@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-stat-structure.json",
+  "name": "Stat",
+  "description": "Stat schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "example": "2026-04-30"
+    },
+    "views": {
+      "type": "int32",
+      "example": 1842
+    },
+    "comments": {
+      "type": "int32",
+      "example": 12
+    },
+    "favorites": {
+      "type": "int32",
+      "example": 47
+    }
+  }
+}

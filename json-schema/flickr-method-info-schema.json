@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-method-info-schema.json",
+  "title": "MethodInfo",
+  "description": "MethodInfo schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Bay Area Photographers"
+        },
+        "needslogin": {
+          "type": "integer",
+          "example": 0
+        },
+        "needssigning": {
+          "type": "integer",
+          "example": 1
+        },
+        "requiredperms": {
+          "type": "integer",
+          "example": 0
+        },
+        "description": {
+          "type": "object",
+          "properties": {
+            "_content": {
+              "type": "string",
+              "example": "100"
+            }
+          }
+        }
+      }
+    },
+    "arguments": {
+      "type": "object",
+      "properties": {
+        "argument": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "Bay Area Photographers"
+              },
+              "optional": {
+                "type": "integer",
+                "example": 0
+              },
+              "_content": {
+                "type": "string",
+                "example": "100"
+              }
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer",
+                "example": 100
+              },
+              "message": {
+                "type": "string",
+                "example": "Invalid API Key"
+              },
+              "_content": {
+                "type": "string",
+                "example": "100"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

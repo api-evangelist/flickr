@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-photoset-list-schema.json",
+  "title": "PhotosetList",
+  "description": "PhotosetList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "example": 1
+    },
+    "pages": {
+      "type": "integer",
+      "example": 12
+    },
+    "perpage": {
+      "type": "integer",
+      "example": 100
+    },
+    "total": {
+      "type": "integer",
+      "example": 1183
+    },
+    "photoset": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "primary": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "owner": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "_content": {
+                "type": "string",
+                "example": "100"
+              }
+            }
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "_content": {
+                "type": "string",
+                "example": "100"
+              }
+            }
+          },
+          "photos": {
+            "type": "integer",
+            "example": 248
+          },
+          "videos": {
+            "type": "integer",
+            "example": 3
+          }
+        }
+      }
+    }
+  }
+}

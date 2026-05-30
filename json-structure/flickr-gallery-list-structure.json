@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-gallery-list-structure.json",
+  "name": "GalleryList",
+  "description": "GalleryList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "int32",
+      "example": 1
+    },
+    "pages": {
+      "type": "int32",
+      "example": 12
+    },
+    "total": {
+      "type": "int32",
+      "example": 1183
+    },
+    "gallery": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "url": {
+            "type": "uri",
+            "example": "https://www.flickr.com/galleries/12345678@N00/72157712345/"
+          },
+          "owner": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "date_create": {
+            "type": "string",
+            "example": "1715000000"
+          },
+          "count_photos": {
+            "type": "int32",
+            "example": 18
+          },
+          "count_videos": {
+            "type": "int32",
+            "example": 0
+          }
+        }
+      }
+    }
+  }
+}

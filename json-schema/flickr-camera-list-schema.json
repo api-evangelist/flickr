@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-camera-list-schema.json",
+  "title": "CameraList",
+  "description": "CameraList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "camera": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "name": {
+            "type": "string",
+            "example": "Bay Area Photographers"
+          },
+          "details": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {}
+          }
+        }
+      }
+    }
+  }
+}

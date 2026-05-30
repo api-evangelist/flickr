@@ -1,0 +1,94 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Stats
+  description: 'Photos — Stats. 1 operations. Lead operation: Get Photo View Stats. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Stats
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-stats
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Stats business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-stats-getphotostats
+          path: /rest/flickr.stats.getPhotoStats
+          operations:
+            - name: statsGetPhotoStats
+              method: GET
+              description: Get Photo View Stats
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: date
+                  in: query
+                  type: string
+                  required: true
+                  description: date
+                - name: photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photo_id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-stats-rest
+      port: 8080
+      description: REST adapter for Flickr API — Stats. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/stats/get-photo-stats
+          name: rest-flickr-stats-getphotostats
+          description: REST surface for Get Photo View Stats.
+          operations:
+            - method: GET
+              name: statsGetPhotoStats
+              description: Get Photo View Stats
+              call: flickr-stats.statsGetPhotoStats
+              with:
+                api_key: rest.api_key
+                date: rest.date
+                photo_id: rest.photo_id
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-stats-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Stats. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: get-photo-view-stats
+          description: Get Photo View Stats
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: flickr-stats.statsGetPhotoStats
+          with:
+            api_key: tools.api_key
+            date: tools.date
+            photo_id: tools.photo_id
+          outputParameters:
+            - type: object
+              mapping: $.

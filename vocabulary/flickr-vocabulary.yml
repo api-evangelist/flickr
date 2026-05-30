@@ -1,0 +1,611 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Flickr"
+  description: >-
+    Vocabulary for Flickr's photo, group, people, place, tag, and photoset
+    API surface. Captures the operational dimension (single dispatcher
+    endpoint with ~250 flickr.{namespace}.{method} methods grouped into 30
+    namespaces) and the capability dimension (one Naftiko capability per
+    namespace, each with REST and MCP adapters).
+  created: "2026-05-30"
+  modified: "2026-05-30"
+  tags:
+    - Flickr
+    - Photography
+    - Photos
+    - Social Media
+
+operational:
+  apis:
+    - name: Flickr API
+      namespace: flickr
+      version: "1.0.0"
+      baseUrl: https://api.flickr.com/services
+      status: active
+      dispatch: method-query-parameter
+      methodCount: 250
+      namespacesCovered: 30
+      namespaces:
+        - activity
+        - auth
+        - blogs
+        - cameras
+        - collections
+        - commons
+        - contacts
+        - favorites
+        - galleries
+        - groups
+        - groupsDiscuss
+        - interestingness
+        - machinetags
+        - panda
+        - people
+        - photos
+        - photos.geo
+        - photos.licenses
+        - photos.notes
+        - photos.transform
+        - photos.upload
+        - photosets
+        - places
+        - prefs
+        - profile
+        - push
+        - reflection
+        - stats
+        - tags
+        - test
+        - urls
+
+  resources:
+    - name: photo
+      description: A single image or video uploaded to Flickr.
+      apis: [Flickr API]
+      actions: [search, getInfo, getSizes, getExif, getRecent, upload, geoTag, rotate, license]
+    - name: photoset
+      description: A user-curated album of photos.
+      apis: [Flickr API]
+      actions: [list, create, addPhoto, getPhotos]
+    - name: gallery
+      description: A themed, curator-built collection of photos drawn from across Flickr.
+      apis: [Flickr API]
+      actions: [list, getPhotos]
+    - name: group
+      description: A community pool of photos around a topic, place, or interest.
+      apis: [Flickr API]
+      actions: [search, getInfo, getPoolPhotos, listTopics, listReplies]
+    - name: person
+      description: A Flickr user.
+      apis: [Flickr API]
+      actions: [getInfo, getPhotos, findByEmail, getProfile, getContacts]
+    - name: place
+      description: A geocoded place ID (WOEID) used to anchor geotagged photos.
+      apis: [Flickr API]
+      actions: [find, findByLatLon]
+    - name: tag
+      description: A keyword applied to photos, plus the cluster and hot-list views over it.
+      apis: [Flickr API]
+      actions: [getHotList, getClusters, getNamespaces]
+    - name: license
+      description: One of Flickr's permitted Creative Commons or rights-reserved license options.
+      apis: [Flickr API]
+      actions: [getInfo, set]
+    - name: stat
+      description: Per-day view, comment, and favorite counts for owned content.
+      apis: [Flickr API]
+      actions: [getPhotoStats]
+    - name: activity
+      description: Recent interactions on the calling user's photos.
+      apis: [Flickr API]
+      actions: [userPhotos]
+
+  actions:
+    - name: list
+      pattern: read
+      httpMethod: GET
+    - name: get
+      pattern: read
+      httpMethod: GET
+    - name: search
+      pattern: query
+      httpMethod: GET
+    - name: create
+      pattern: write
+      httpMethod: POST
+    - name: add
+      pattern: write
+      httpMethod: POST
+    - name: set
+      pattern: write
+      httpMethod: POST
+    - name: rotate
+      pattern: write
+      httpMethod: POST
+    - name: upload
+      pattern: write
+      httpMethod: POST
+    - name: delete
+      pattern: destructive
+      httpMethod: POST
+
+  schemas:
+    core:
+      - Photo
+      - PhotoList
+      - Person
+      - Profile
+      - Photoset
+      - PhotosetList
+      - Group
+      - GroupList
+      - Gallery
+      - GalleryList
+    social:
+      - Contact
+      - ContactList
+      - ActivityItem
+      - ActivityList
+      - Topic
+      - TopicList
+      - TopicReply
+      - TopicReplyList
+    media:
+      - Size
+      - SizeList
+      - Exif
+      - ExifList
+      - License
+      - LicenseList
+      - Note
+      - Ticket
+      - TicketList
+      - UploadResponse
+    geo:
+      - Place
+      - PlaceList
+    taxonomy:
+      - Tag
+      - TagList
+      - TagClusterList
+      - MachineTagNamespace
+      - MachineTagNamespaceList
+      - Brand
+      - BrandList
+      - Camera
+      - CameraList
+    discovery:
+      - MethodList
+      - MethodInfo
+      - Panda
+      - PandaList
+      - PushTopic
+      - PushTopicList
+    auth:
+      - OAuthCredentials
+      - LoginInfo
+      - UserUrlLookup
+    response:
+      - FlickrError
+      - SuccessResponse
+      - MethodResponse
+      - EchoResponse
+
+  parameters:
+    pagination:
+      - page
+      - per_page
+    identifiers:
+      - api_key
+      - oauth_token
+      - user_id
+      - photo_id
+      - group_id
+      - photoset_id
+      - gallery_id
+      - topic_id
+      - place_id
+      - woeid
+    filters:
+      - text
+      - tags
+      - tag_mode
+      - license
+      - media
+      - extras
+      - filter
+    geo:
+      - lat
+      - lon
+      - accuracy
+    write:
+      - title
+      - description
+      - primary_photo_id
+      - note_text
+      - note_x
+      - note_y
+      - note_w
+      - note_h
+      - degrees
+      - license_id
+
+  enums:
+    contactFilter: [friends, family, both, neither]
+    mediaType: [all, photos, videos]
+    tagMode: [any, all]
+    rotation: [90, 180, 270]
+    format: [json, xml, rest, php_serial]
+    tagPeriod: [day, week]
+
+  authentication:
+    - scheme: ApiKeyAuth
+      type: apiKey
+      placement: query
+      parameter: api_key
+      use: Read-only public methods (no user context required).
+    - scheme: OAuth1
+      type: oauth1
+      signatureMethod: HMAC-SHA1
+      requestTokenUrl: https://www.flickr.com/services/oauth/request_token
+      authorizeUrl: https://www.flickr.com/services/oauth/authorize
+      accessTokenUrl: https://www.flickr.com/services/oauth/access_token
+      scopes: [read, write, delete]
+      use: All methods that touch user-owned or private content.
+
+capability:
+  workflows:
+    - name: Photos
+      file: capabilities/flickr-photos.yaml
+      description: Core photo metadata, search, EXIF, and recent feeds.
+      apis: [Flickr API]
+      toolCount: 5
+      personas: [photographer, app-developer, search-integrator]
+      domains: [Photos]
+    - name: Photo Upload
+      file: capabilities/flickr-photos-upload.yaml
+      description: Upload photos/videos and poll asynchronous ticket status.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [photographer, photo-ingest-pipeline]
+      domains: [Photos, Ingestion]
+    - name: Photo Geo
+      file: capabilities/flickr-photos-geo.yaml
+      description: Attach latitude/longitude to photos.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [photographer, geo-curator]
+      domains: [Photos, Geo]
+    - name: Photo Licenses
+      file: capabilities/flickr-photos-licenses.yaml
+      description: List available licenses and assign them to photos.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [rights-manager, photographer]
+      domains: [Photos, Rights]
+    - name: Photo Notes
+      file: capabilities/flickr-photos-notes.yaml
+      description: Add note annotations drawn over photos.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [photographer, community-moderator]
+      domains: [Photos, Engagement]
+    - name: Photo Transform
+      file: capabilities/flickr-photos-transform.yaml
+      description: Rotate photos server-side.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [photographer]
+      domains: [Photos]
+    - name: Photosets
+      file: capabilities/flickr-photosets.yaml
+      description: Create and manage user albums (photosets).
+      apis: [Flickr API]
+      toolCount: 3
+      personas: [photographer, album-curator]
+      domains: [Photos, Curation]
+    - name: Galleries
+      file: capabilities/flickr-galleries.yaml
+      description: Curator-built themed galleries.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [editor, album-curator]
+      domains: [Curation]
+    - name: People
+      file: capabilities/flickr-people.yaml
+      description: Look up users, profiles, and photostreams.
+      apis: [Flickr API]
+      toolCount: 3
+      personas: [community-manager, app-developer]
+      domains: [Identity, Community]
+    - name: Contacts
+      file: capabilities/flickr-contacts.yaml
+      description: Read the calling user's contacts.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [community-manager]
+      domains: [Identity, Community]
+    - name: Favorites
+      file: capabilities/flickr-favorites.yaml
+      description: Browse and add user favorites.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [community-manager, photographer]
+      domains: [Engagement]
+    - name: Groups
+      file: capabilities/flickr-groups.yaml
+      description: Group metadata, search, and pool photos.
+      apis: [Flickr API]
+      toolCount: 3
+      personas: [community-manager, group-admin]
+      domains: [Community]
+    - name: Group Discussions
+      file: capabilities/flickr-groups-discuss.yaml
+      description: List discussion topics and replies for a group.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [community-manager]
+      domains: [Community, Engagement]
+    - name: Places
+      file: capabilities/flickr-places.yaml
+      description: Resolve geographic places and lat/lon → WOEID lookups.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [geo-curator, app-developer]
+      domains: [Geo]
+    - name: Tags
+      file: capabilities/flickr-tags.yaml
+      description: Tag hot list and cluster lookups.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [content-discovery-engineer]
+      domains: [Discovery, Taxonomy]
+    - name: Machine Tags
+      file: capabilities/flickr-machine-tags.yaml
+      description: Namespace registry for structured machine tags.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [content-discovery-engineer, data-ingest-engineer]
+      domains: [Discovery, Taxonomy]
+    - name: Interestingness
+      file: capabilities/flickr-interestingness.yaml
+      description: Most-interesting photos for a given day.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [content-discovery-engineer, editor]
+      domains: [Discovery]
+    - name: Panda
+      file: capabilities/flickr-panda.yaml
+      description: The Flickr Panda firehose of interesting photos.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [content-discovery-engineer]
+      domains: [Discovery]
+    - name: Stats
+      file: capabilities/flickr-stats.yaml
+      description: Per-day view/comment/favorite counts.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [photographer, analyst]
+      domains: [Analytics]
+    - name: Activity
+      file: capabilities/flickr-activity.yaml
+      description: Recent activity on the calling user's photos.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [photographer]
+      domains: [Engagement, Analytics]
+    - name: Blogs
+      file: capabilities/flickr-blogs.yaml
+      description: List configured blog services for cross-posting.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [photographer]
+      domains: [Publishing]
+    - name: Cameras
+      file: capabilities/flickr-cameras.yaml
+      description: Catalog of camera brands and models.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [photographer, app-developer]
+      domains: [Taxonomy]
+    - name: Collections
+      file: capabilities/flickr-collections.yaml
+      description: Hierarchical collections of photosets.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [album-curator]
+      domains: [Curation]
+    - name: Commons
+      file: capabilities/flickr-commons.yaml
+      description: Flickr Commons institutional partners.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [editor, researcher]
+      domains: [Cultural Heritage]
+    - name: Profile
+      file: capabilities/flickr-profile.yaml
+      description: User profile fields.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [app-developer]
+      domains: [Identity]
+    - name: Prefs
+      file: capabilities/flickr-prefs.yaml
+      description: Default privacy preference for the calling user.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [photographer]
+      domains: [Identity, Privacy]
+    - name: Push
+      file: capabilities/flickr-push.yaml
+      description: PubSubHubbub push subscription topics.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [app-developer]
+      domains: [Eventing]
+    - name: Reflection
+      file: capabilities/flickr-reflection.yaml
+      description: Programmatic discovery of available methods.
+      apis: [Flickr API]
+      toolCount: 3
+      personas: [app-developer]
+      domains: [Meta]
+    - name: Auth
+      file: capabilities/flickr-auth.yaml
+      description: OAuth 1.0a token check.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [app-developer]
+      domains: [Identity, Security]
+    - name: Test
+      file: capabilities/flickr-test.yaml
+      description: Echo and login test methods.
+      apis: [Flickr API]
+      toolCount: 2
+      personas: [app-developer]
+      domains: [Meta]
+    - name: URLs
+      file: capabilities/flickr-urls.yaml
+      description: Resolve Flickr URLs to NSIDs.
+      apis: [Flickr API]
+      toolCount: 1
+      personas: [app-developer]
+      domains: [Identity, Meta]
+
+  personas:
+    - id: photographer
+      name: Photographer
+      description: Individual creator publishing and managing their own photos.
+    - id: app-developer
+      name: App Developer
+      description: Engineer building a third-party Flickr-powered application.
+    - id: community-manager
+      name: Community Manager
+      description: Operator running a group, photoset, or discussion space.
+    - id: group-admin
+      name: Group Admin
+      description: Owner/administrator of a Flickr Group's pool and topics.
+    - id: album-curator
+      name: Album Curator
+      description: Editor organising photosets, collections, and galleries.
+    - id: editor
+      name: Editor
+      description: Editorial role surfacing photos via galleries and Interestingness.
+    - id: geo-curator
+      name: Geo Curator
+      description: Person managing geotagging quality across a corpus of photos.
+    - id: rights-manager
+      name: Rights Manager
+      description: Person managing licensing metadata across a photo catalogue.
+    - id: content-discovery-engineer
+      name: Content Discovery Engineer
+      description: Engineer building search/discovery experiences over Flickr's catalog.
+    - id: data-ingest-engineer
+      name: Data Ingest Engineer
+      description: Engineer ingesting photo metadata into a downstream system.
+    - id: photo-ingest-pipeline
+      name: Photo Ingest Pipeline
+      description: Automated pipeline uploading photos in bulk to Flickr.
+    - id: analyst
+      name: Analyst
+      description: Person reading photo view/engagement stats.
+    - id: researcher
+      name: Researcher
+      description: Researcher accessing The Commons institutional collections.
+    - id: search-integrator
+      name: Search Integrator
+      description: Engineer wiring Flickr search into another product.
+
+  domains:
+    - name: Photos
+    - name: Curation
+    - name: Community
+    - name: Engagement
+    - name: Identity
+    - name: Geo
+    - name: Rights
+    - name: Discovery
+    - name: Taxonomy
+    - name: Analytics
+    - name: Publishing
+    - name: Privacy
+    - name: Security
+    - name: Eventing
+    - name: Meta
+    - name: Cultural Heritage
+    - name: Ingestion
+
+  namespaces:
+    - consumed: flickr-photos
+      rest: flickr-photos-rest
+      mcp: flickr-photos-mcp
+      restPort: 8080
+      mcpPort: 9090
+    - consumed: flickr-photosets
+      rest: flickr-photosets-rest
+      mcp: flickr-photosets-mcp
+      restPort: 8080
+      mcpPort: 9090
+    - consumed: flickr-groups
+      rest: flickr-groups-rest
+      mcp: flickr-groups-mcp
+      restPort: 8080
+      mcpPort: 9090
+
+  binds:
+    - env: FLICKR_API_KEY
+      description: Flickr application API key.
+      usedBy: all capabilities
+    - env: FLICKR_API_SECRET
+      description: Flickr application secret for OAuth 1.0a signing.
+      usedBy: write/delete capabilities
+    - env: FLICKR_OAUTH_TOKEN
+      description: Per-user OAuth access token.
+      usedBy: user-context capabilities
+    - env: FLICKR_OAUTH_TOKEN_SECRET
+      description: Per-user OAuth access token secret.
+      usedBy: user-context capabilities
+
+crossReference:
+  - resource: photo
+    operations:
+      - photosSearch
+      - photosGetInfo
+      - photosGetSizes
+      - photosGetExif
+      - photosGetRecent
+      - photosUpload
+      - photosGeoSetLocation
+      - photosTransformRotate
+    workflows: [Photos, Photo Upload, Photo Geo, Photo Transform]
+    personas: [photographer, app-developer, search-integrator]
+  - resource: photoset
+    operations: [photosetsGetList, photosetsGetPhotos, photosetsCreate]
+    workflows: [Photosets]
+    personas: [photographer, album-curator]
+  - resource: group
+    operations: [groupsGetInfo, groupsSearch, groupsPoolsGetPhotos, groupsDiscussTopicsGetList, groupsDiscussRepliesGetList]
+    workflows: [Groups, Group Discussions]
+    personas: [community-manager, group-admin]
+  - resource: person
+    operations: [peopleGetInfo, peopleGetPhotos, peopleFindByEmail, profileGetProfile, contactsGetList]
+    workflows: [People, Contacts, Profile]
+    personas: [app-developer, community-manager]
+  - resource: place
+    operations: [placesFind, placesFindByLatLon]
+    workflows: [Places]
+    personas: [geo-curator, app-developer]
+  - resource: tag
+    operations: [tagsGetHotList, tagsGetClusters, machinetagsGetNamespaces]
+    workflows: [Tags, Machine Tags]
+    personas: [content-discovery-engineer]
+  - resource: stat
+    operations: [statsGetPhotoStats]
+    workflows: [Stats]
+    personas: [photographer, analyst]
+  - resource: license
+    operations: [photosLicensesGetInfo, photosLicensesSetLicense]
+    workflows: [Photo Licenses]
+    personas: [rights-manager, photographer]

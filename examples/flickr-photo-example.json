@@ -1,0 +1,15 @@
+{
+  "id": "52345678901",
+  "owner": "12345678@N00",
+  "secret": "abc1234def",
+  "server": "65535",
+  "farm": 66,
+  "title": "Golden Gate Sunset",
+  "ispublic": 1,
+  "isfriend": 0,
+  "isfamily": 0,
+  "datetaken": "2026-04-12 18:24:11",
+  "url_o": "https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg",
+  "height_o": 4032,
+  "width_o": 6048
+}

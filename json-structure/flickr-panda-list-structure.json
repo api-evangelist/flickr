@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-panda-list-structure.json",
+  "name": "PandaList",
+  "description": "PandaList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "panda": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "_content": {
+            "type": "string",
+            "example": "100"
+          }
+        }
+      }
+    }
+  }
+}

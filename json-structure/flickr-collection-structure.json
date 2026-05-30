@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-collection-structure.json",
+  "name": "Collection",
+  "description": "Collection schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "name": {
+      "type": "string",
+      "example": "Golden Gate Sunset"
+    },
+    "description": {
+      "type": "string",
+      "example": "Detailed photo metadata."
+    },
+    "iconlarge": {
+      "type": "uri",
+      "example": "https://www.flickr.com/services/api/"
+    },
+    "set": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "name": {
+            "type": "string",
+            "example": "Golden Gate Sunset"
+          }
+        }
+      }
+    }
+  }
+}

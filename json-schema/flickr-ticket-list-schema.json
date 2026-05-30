@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-ticket-list-schema.json",
+  "title": "TicketList",
+  "description": "TicketList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "ticket": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "complete": {
+            "type": "integer",
+            "example": 1
+          },
+          "photoid": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "invalid": {
+            "type": "integer",
+            "example": 0
+          }
+        }
+      }
+    }
+  }
+}

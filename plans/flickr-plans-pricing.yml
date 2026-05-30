@@ -1,0 +1,91 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Flickr
+providerId: flickr
+created: '2026-05-30'
+modified: '2026-05-30'
+reconciled: true
+tags:
+  - Photography
+  - Photos
+  - Social Media
+  - Developer API
+description: >-
+  Flickr offers a single, free-of-charge developer API. There is no metered
+  or tiered commercial pricing surface for API usage itself: any developer can
+  request an API key online and use the API to build a non-commercial app at
+  no cost. Commercial use of the API is allowed only with prior permission
+  from Flickr; commercial keys are reviewed manually by Flickr staff and have
+  no published price list. End-user Flickr accounts (Free / Pro) have a
+  separate consumer pricing surface that is unrelated to API access.
+sources:
+  - https://www.flickr.com/services/api/
+  - https://www.flickr.com/services/api/misc.api_keys.html
+  - https://www.flickr.com/services/developer/
+  - https://www.flickr.com/services/api/tos/
+plans:
+  - id: flickr-noncommercial-api-key
+    name: Non-Commercial API Key
+    type: freemium
+    description: >-
+      Free API key for personal, artistic, free, or non-commercial projects.
+      Standard option; granted on request with a short usage description.
+    entries:
+      - label: API Key Cost
+        name: api_key_cost
+        type: flat
+        metric: key
+        limit: 1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'free'
+      - label: API Calls
+        name: api_calls
+        type: metered
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'free (subject to documented rate limits)'
+    elements:
+      - name: All flickr.* methods (read + write)
+      - name: OAuth 1.0a HMAC-SHA1 authentication
+      - name: Photo upload (synchronous and asynchronous)
+      - name: PubSubHubbub push subscriptions
+      - name: Flickr Commons access
+  - id: flickr-commercial-api-key
+    name: Commercial API Key
+    type: enterprise
+    description: >-
+      Permission-only commercial API key. Required for any commercial use of
+      the Flickr API. Submitted via the same online application portal as
+      non-commercial keys but with a commercial-use description; reviewed and
+      approved by Flickr staff. No published price list — terms are negotiated.
+    entries:
+      - label: Commercial License
+        name: commercial_license
+        type: flat
+        metric: key
+        limit: 1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'contact flickr (negotiated)'
+      - label: API Calls
+        name: api_calls
+        type: metered
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'contact flickr (negotiated)'
+    elements:
+      - name: All flickr.* methods
+      - name: Commercial-use rights subject to Flickr's API Terms of Use
+      - name: OAuth 1.0a HMAC-SHA1 authentication
+      - name: Photo upload (synchronous and asynchronous)
+      - name: PubSubHubbub push subscriptions

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-license-structure.json",
+  "name": "License",
+  "description": "License schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int32",
+      "example": "52345678901"
+    },
+    "name": {
+      "type": "string",
+      "example": "Bay Area Photographers"
+    },
+    "url": {
+      "type": "uri",
+      "example": "https://www.flickr.com/galleries/12345678@N00/72157712345/"
+    }
+  }
+}

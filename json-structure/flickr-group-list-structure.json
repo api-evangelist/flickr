@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-group-list-structure.json",
+  "name": "GroupList",
+  "description": "GroupList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "int32",
+      "example": 1
+    },
+    "pages": {
+      "type": "int32",
+      "example": 12
+    },
+    "total": {
+      "type": "int32",
+      "example": 1183
+    },
+    "group": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "nsid": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "name": {
+            "type": "string",
+            "example": "Bay Area Photographers"
+          },
+          "members": {
+            "type": "int32",
+            "example": 18324
+          },
+          "pool_count": {
+            "type": "int32",
+            "example": 942113
+          },
+          "topic_count": {
+            "type": "int32",
+            "example": 8421
+          }
+        }
+      }
+    }
+  }
+}

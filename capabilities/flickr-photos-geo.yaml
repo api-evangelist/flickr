@@ -1,0 +1,108 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Flickr API — Photos Geo
+  description: 'Photos — Photos Geo. 1 operations. Lead operation: Set Photo Geo Location. Self-contained Naftiko capability covering one Flickr business surface.'
+  tags:
+    - Flickr
+    - Photos
+    - Photos Geo
+  created: '2026-05-30'
+  modified: '2026-05-30'
+binds:
+  - namespace: env
+    keys:
+      FLICKR_API_KEY: FLICKR_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: flickr-photos-geo
+      baseUri: https://api.flickr.com/services
+      description: Flickr API — Photos Geo business capability. Self-contained, no shared references.
+      authentication:
+        type: apikey
+        key: api_key
+        value: '{{env.FLICKR_API_KEY}}'
+        placement: query
+      resources:
+        - name: rest-flickr-photos-geo-setlocation
+          path: /rest/flickr.photos.geo.setLocation
+          operations:
+            - name: photosGeoSetLocation
+              method: POST
+              description: Set Photo Geo Location
+              inputParameters:
+                - name: api_key
+                  in: query
+                  type: string
+                  required: true
+                  description: Application API key.
+                - name: photo_id
+                  in: query
+                  type: string
+                  required: true
+                  description: photo_id
+                - name: lat
+                  in: query
+                  type: number
+                  required: true
+                  description: lat
+                - name: lon
+                  in: query
+                  type: number
+                  required: true
+                  description: lon
+                - name: accuracy
+                  in: query
+                  type: integer
+                  required: false
+                  description: accuracy
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+  exposes:
+    - type: rest
+      namespace: flickr-photos-geo-rest
+      port: 8080
+      description: REST adapter for Flickr API — Photos Geo. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/photos/geo/set-location
+          name: rest-flickr-photos-geo-setlocation
+          description: REST surface for Set Photo Geo Location.
+          operations:
+            - method: POST
+              name: photosGeoSetLocation
+              description: Set Photo Geo Location
+              call: flickr-photos-geo.photosGeoSetLocation
+              with:
+                api_key: rest.api_key
+                photo_id: rest.photo_id
+                lat: rest.lat
+                lon: rest.lon
+                accuracy: rest.accuracy
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: flickr-photos-geo-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Flickr API — Photos Geo. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: set-photo-geo-location
+          description: Set Photo Geo Location
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: flickr-photos-geo.photosGeoSetLocation
+          with:
+            api_key: tools.api_key
+            photo_id: tools.photo_id
+            lat: tools.lat
+            lon: tools.lon
+            accuracy: tools.accuracy
+          outputParameters:
+            - type: object
+              mapping: $.

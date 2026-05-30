@@ -1,0 +1,11 @@
+{
+  "id": "52345678901",
+  "first_name": "Jane",
+  "last_name": "Photographer",
+  "join_date": "2008-06-15",
+  "occupation": "Photographer",
+  "city": "San Francisco",
+  "country": "USA",
+  "hometown": "Portland",
+  "website": "https://janephotographer.example.com"
+}

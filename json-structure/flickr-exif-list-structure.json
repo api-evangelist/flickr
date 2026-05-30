@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-exif-list-structure.json",
+  "name": "ExifList",
+  "description": "ExifList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "photo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "52345678901"
+        },
+        "secret": {
+          "type": "string",
+          "example": "abc1234def"
+        },
+        "camera": {
+          "type": "string",
+          "example": "example"
+        },
+        "exif": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tagspace": {
+                "type": "string",
+                "example": "EXIF"
+              },
+              "tagspaceid": {
+                "type": "int32",
+                "example": 0
+              },
+              "tag": {
+                "type": "string",
+                "example": "ISO"
+              },
+              "label": {
+                "type": "string",
+                "example": "Original"
+              },
+              "raw": {
+                "type": "object",
+                "properties": {
+                  "_content": {
+                    "type": "string",
+                    "example": "100"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

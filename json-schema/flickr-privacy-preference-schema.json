@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-privacy-preference-schema.json",
+  "title": "PrivacyPreference",
+  "description": "PrivacyPreference schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "person": {
+      "type": "object",
+      "properties": {
+        "nsid": {
+          "type": "string",
+          "example": "12345678@N00"
+        },
+        "privacy": {
+          "type": "integer",
+          "example": 1
+        }
+      }
+    }
+  }
+}

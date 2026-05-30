@@ -1,0 +1,638 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "flickr": "https://www.flickr.com/services/api/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ActivityItem": "flickr:ActivityItem",
+    "ActivityList": "flickr:ActivityList",
+    "BlogList": "flickr:BlogList",
+    "Blog": "flickr:Blog",
+    "BrandList": "flickr:BrandList",
+    "Brand": "flickr:Brand",
+    "CameraList": "flickr:CameraList",
+    "Camera": "flickr:Camera",
+    "Collection": "flickr:Collection",
+    "CollectionTree": "flickr:CollectionTree",
+    "ContactList": "flickr:ContactList",
+    "Contact": "flickr:Contact",
+    "EchoResponse": "flickr:EchoResponse",
+    "ExifList": "flickr:ExifList",
+    "Exif": "flickr:Exif",
+    "GalleryList": "flickr:GalleryList",
+    "Gallery": "flickr:Gallery",
+    "GroupList": "flickr:GroupList",
+    "Group": "flickr:Group",
+    "InstitutionList": "flickr:InstitutionList",
+    "Institution": "flickr:Institution",
+    "LicenseList": "flickr:LicenseList",
+    "License": "flickr:License",
+    "LoginInfo": "flickr:LoginInfo",
+    "MachineTagNamespaceList": "flickr:MachineTagNamespaceList",
+    "MachineTagNamespace": "flickr:MachineTagNamespace",
+    "MethodInfo": "flickr:MethodInfo",
+    "MethodList": "flickr:MethodList",
+    "Note": "flickr:Note",
+    "OAuthCredentials": "flickr:OAuthCredentials",
+    "PandaList": "flickr:PandaList",
+    "Panda": "flickr:Panda",
+    "Person": "flickr:Person",
+    "PhotoList": "flickr:PhotoList",
+    "Photo": "flickr:Photo",
+    "PhotosetList": "flickr:PhotosetList",
+    "Photoset": "flickr:Photoset",
+    "PlaceList": "flickr:PlaceList",
+    "Place": "flickr:Place",
+    "PrivacyPreference": "flickr:PrivacyPreference",
+    "Profile": "flickr:Profile",
+    "PushTopicList": "flickr:PushTopicList",
+    "PushTopic": "flickr:PushTopic",
+    "SizeList": "flickr:SizeList",
+    "Size": "flickr:Size",
+    "StatList": "flickr:StatList",
+    "Stat": "flickr:Stat",
+    "TagClusterList": "flickr:TagClusterList",
+    "TagList": "flickr:TagList",
+    "Tag": "flickr:Tag",
+    "TicketList": "flickr:TicketList",
+    "Ticket": "flickr:Ticket",
+    "TopicList": "flickr:TopicList",
+    "TopicReplyList": "flickr:TopicReplyList",
+    "TopicReply": "flickr:TopicReply",
+    "Topic": "flickr:Topic",
+    "UploadResponse": "flickr:UploadResponse",
+    "UserUrlLookup": "flickr:UserUrlLookup",
+    "type": {
+      "@id": "flickr:type",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "dcterms:identifier",
+      "@type": "xsd:string"
+    },
+    "owner": {
+      "@id": "flickr:owner",
+      "@type": "xsd:string"
+    },
+    "secret": {
+      "@id": "flickr:secret",
+      "@type": "xsd:string"
+    },
+    "server": {
+      "@id": "flickr:server",
+      "@type": "xsd:string"
+    },
+    "farm": {
+      "@id": "flickr:farm",
+      "@type": "xsd:integer"
+    },
+    "title": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "page": {
+      "@id": "flickr:page",
+      "@type": "xsd:integer"
+    },
+    "pages": {
+      "@id": "flickr:pages",
+      "@type": "xsd:integer"
+    },
+    "total": {
+      "@id": "flickr:total",
+      "@type": "xsd:integer"
+    },
+    "item": {
+      "@id": "flickr:item",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "blog": {
+      "@id": "flickr:blog",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "service": {
+      "@id": "flickr:service",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "schema:url"
+    },
+    "brand": {
+      "@id": "flickr:brand",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "camera": {
+      "@id": "flickr:camera",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "details": {
+      "@id": "flickr:details",
+      "@type": "@id"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "iconlarge": {
+      "@id": "flickr:iconlarge",
+      "@type": "@id"
+    },
+    "set": {
+      "@id": "flickr:set",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "collection": {
+      "@id": "flickr:collection",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "contact": {
+      "@id": "flickr:contact",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "nsid": {
+      "@id": "flickr:nsid",
+      "@type": "xsd:string"
+    },
+    "username": {
+      "@id": "flickr:username",
+      "@type": "xsd:string"
+    },
+    "iconserver": {
+      "@id": "flickr:iconserver",
+      "@type": "xsd:string"
+    },
+    "realname": {
+      "@id": "flickr:realname",
+      "@type": "xsd:string"
+    },
+    "friend": {
+      "@id": "flickr:friend",
+      "@type": "xsd:integer"
+    },
+    "family": {
+      "@id": "flickr:family",
+      "@type": "xsd:integer"
+    },
+    "ignored": {
+      "@id": "flickr:ignored",
+      "@type": "xsd:integer"
+    },
+    "photo": {
+      "@id": "flickr:photo",
+      "@type": "@id"
+    },
+    "exif": {
+      "@id": "flickr:exif",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "tagspace": {
+      "@id": "flickr:tagspace",
+      "@type": "xsd:string"
+    },
+    "tagspaceid": {
+      "@id": "flickr:tagspaceid",
+      "@type": "xsd:integer"
+    },
+    "tag": {
+      "@id": "flickr:tag",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "flickr:label",
+      "@type": "xsd:string"
+    },
+    "raw": {
+      "@id": "flickr:raw",
+      "@type": "@id"
+    },
+    "_content": {
+      "@id": "flickr:_content",
+      "@type": "xsd:string"
+    },
+    "gallery": {
+      "@id": "flickr:gallery",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "date_create": {
+      "@id": "flickr:date_create",
+      "@type": "xsd:string"
+    },
+    "count_photos": {
+      "@id": "flickr:count_photos",
+      "@type": "xsd:integer"
+    },
+    "count_videos": {
+      "@id": "flickr:count_videos",
+      "@type": "xsd:integer"
+    },
+    "group": {
+      "@id": "flickr:group",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "members": {
+      "@id": "flickr:members",
+      "@type": "xsd:integer"
+    },
+    "pool_count": {
+      "@id": "flickr:pool_count",
+      "@type": "xsd:integer"
+    },
+    "topic_count": {
+      "@id": "flickr:topic_count",
+      "@type": "xsd:integer"
+    },
+    "institution": {
+      "@id": "flickr:institution",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "date_launch": {
+      "@id": "flickr:date_launch",
+      "@type": "xsd:string"
+    },
+    "license": {
+      "@id": "flickr:license",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "user": {
+      "@id": "flickr:user",
+      "@type": "@id"
+    },
+    "path_alias": {
+      "@id": "flickr:path_alias",
+      "@type": "xsd:string"
+    },
+    "namespace": {
+      "@id": "flickr:namespace",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "usage": {
+      "@id": "flickr:usage",
+      "@type": "xsd:integer"
+    },
+    "predicates": {
+      "@id": "flickr:predicates",
+      "@type": "xsd:integer"
+    },
+    "method": {
+      "@id": "flickr:method",
+      "@type": "@id"
+    },
+    "needslogin": {
+      "@id": "flickr:needslogin",
+      "@type": "xsd:integer"
+    },
+    "needssigning": {
+      "@id": "flickr:needssigning",
+      "@type": "xsd:integer"
+    },
+    "requiredperms": {
+      "@id": "flickr:requiredperms",
+      "@type": "xsd:integer"
+    },
+    "arguments": {
+      "@id": "flickr:arguments",
+      "@type": "@id"
+    },
+    "argument": {
+      "@id": "flickr:argument",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "optional": {
+      "@id": "flickr:optional",
+      "@type": "xsd:integer"
+    },
+    "errors": {
+      "@id": "flickr:errors",
+      "@type": "@id"
+    },
+    "error": {
+      "@id": "flickr:error",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "code": {
+      "@id": "flickr:code",
+      "@type": "xsd:integer"
+    },
+    "message": {
+      "@id": "flickr:message",
+      "@type": "xsd:string"
+    },
+    "methods": {
+      "@id": "flickr:methods",
+      "@type": "@id"
+    },
+    "author": {
+      "@id": "flickr:author",
+      "@type": "xsd:string"
+    },
+    "x": {
+      "@id": "flickr:x",
+      "@type": "xsd:integer"
+    },
+    "y": {
+      "@id": "flickr:y",
+      "@type": "xsd:integer"
+    },
+    "w": {
+      "@id": "flickr:w",
+      "@type": "xsd:integer"
+    },
+    "h": {
+      "@id": "flickr:h",
+      "@type": "xsd:integer"
+    },
+    "oauth": {
+      "@id": "flickr:oauth",
+      "@type": "@id"
+    },
+    "token": {
+      "@id": "flickr:token",
+      "@type": "@id"
+    },
+    "perms": {
+      "@id": "flickr:perms",
+      "@type": "@id"
+    },
+    "panda": {
+      "@id": "flickr:panda",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "location": {
+      "@id": "flickr:location",
+      "@type": "xsd:string"
+    },
+    "photosurl": {
+      "@id": "flickr:photosurl",
+      "@type": "@id"
+    },
+    "profileurl": {
+      "@id": "flickr:profileurl",
+      "@type": "@id"
+    },
+    "perpage": {
+      "@id": "flickr:perpage",
+      "@type": "xsd:integer"
+    },
+    "ispublic": {
+      "@id": "flickr:ispublic",
+      "@type": "xsd:integer"
+    },
+    "isfriend": {
+      "@id": "flickr:isfriend",
+      "@type": "xsd:integer"
+    },
+    "isfamily": {
+      "@id": "flickr:isfamily",
+      "@type": "xsd:integer"
+    },
+    "datetaken": {
+      "@id": "flickr:datetaken",
+      "@type": "xsd:string"
+    },
+    "url_o": {
+      "@id": "flickr:url_o",
+      "@type": "@id"
+    },
+    "height_o": {
+      "@id": "flickr:height_o",
+      "@type": "xsd:integer"
+    },
+    "width_o": {
+      "@id": "flickr:width_o",
+      "@type": "xsd:integer"
+    },
+    "photoset": {
+      "@id": "flickr:photoset",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "primary": {
+      "@id": "flickr:primary",
+      "@type": "xsd:string"
+    },
+    "photos": {
+      "@id": "flickr:photos",
+      "@type": "xsd:integer"
+    },
+    "videos": {
+      "@id": "flickr:videos",
+      "@type": "xsd:integer"
+    },
+    "place": {
+      "@id": "flickr:place",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "place_id": {
+      "@id": "flickr:place_id",
+      "@type": "xsd:string"
+    },
+    "woeid": {
+      "@id": "flickr:woeid",
+      "@type": "xsd:string"
+    },
+    "latitude": {
+      "@id": "schema:latitude",
+      "@type": "xsd:decimal"
+    },
+    "longitude": {
+      "@id": "schema:longitude",
+      "@type": "xsd:decimal"
+    },
+    "place_url": {
+      "@id": "flickr:place_url",
+      "@type": "xsd:string"
+    },
+    "place_type": {
+      "@id": "flickr:place_type",
+      "@type": "xsd:string"
+    },
+    "person": {
+      "@id": "flickr:person",
+      "@type": "@id"
+    },
+    "privacy": {
+      "@id": "flickr:privacy",
+      "@type": "xsd:integer"
+    },
+    "first_name": {
+      "@id": "schema:givenName",
+      "@type": "xsd:string"
+    },
+    "last_name": {
+      "@id": "schema:familyName",
+      "@type": "xsd:string"
+    },
+    "join_date": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:string"
+    },
+    "occupation": {
+      "@id": "flickr:occupation",
+      "@type": "xsd:string"
+    },
+    "city": {
+      "@id": "flickr:city",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "flickr:country",
+      "@type": "xsd:string"
+    },
+    "hometown": {
+      "@id": "flickr:hometown",
+      "@type": "xsd:string"
+    },
+    "website": {
+      "@id": "flickr:website",
+      "@type": "@id"
+    },
+    "topic": {
+      "@id": "flickr:topic",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "canblog": {
+      "@id": "flickr:canblog",
+      "@type": "xsd:integer"
+    },
+    "canprint": {
+      "@id": "flickr:canprint",
+      "@type": "xsd:integer"
+    },
+    "candownload": {
+      "@id": "flickr:candownload",
+      "@type": "xsd:integer"
+    },
+    "size": {
+      "@id": "flickr:size",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "width": {
+      "@id": "flickr:width",
+      "@type": "xsd:integer"
+    },
+    "height": {
+      "@id": "flickr:height",
+      "@type": "xsd:integer"
+    },
+    "source": {
+      "@id": "flickr:source",
+      "@type": "@id"
+    },
+    "media": {
+      "@id": "flickr:media",
+      "@type": "xsd:string"
+    },
+    "stats": {
+      "@id": "flickr:stats",
+      "@type": "@id"
+    },
+    "views": {
+      "@id": "flickr:views",
+      "@type": "xsd:integer"
+    },
+    "comments": {
+      "@id": "flickr:comments",
+      "@type": "xsd:integer"
+    },
+    "favorites": {
+      "@id": "flickr:favorites",
+      "@type": "xsd:integer"
+    },
+    "stat": {
+      "@id": "flickr:stat",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "date": {
+      "@id": "flickr:date",
+      "@type": "xsd:string"
+    },
+    "cluster": {
+      "@id": "flickr:cluster",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "period": {
+      "@id": "flickr:period",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "flickr:count",
+      "@type": "xsd:integer"
+    },
+    "score": {
+      "@id": "flickr:score",
+      "@type": "xsd:integer"
+    },
+    "thm_data": {
+      "@id": "flickr:thm_data",
+      "@type": "@id"
+    },
+    "ticket": {
+      "@id": "flickr:ticket",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "complete": {
+      "@id": "flickr:complete",
+      "@type": "xsd:integer"
+    },
+    "photoid": {
+      "@id": "flickr:photoid",
+      "@type": "xsd:string"
+    },
+    "invalid": {
+      "@id": "flickr:invalid",
+      "@type": "xsd:integer"
+    },
+    "reply": {
+      "@id": "flickr:reply",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "datecreate": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:string"
+    },
+    "subject": {
+      "@id": "flickr:subject",
+      "@type": "xsd:string"
+    },
+    "author_name": {
+      "@id": "flickr:author_name",
+      "@type": "xsd:string"
+    },
+    "count_replies": {
+      "@id": "flickr:count_replies",
+      "@type": "xsd:integer"
+    },
+    "ticketid": {
+      "@id": "flickr:ticketid",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-contact-list-structure.json",
+  "name": "ContactList",
+  "description": "ContactList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "int32",
+      "example": 1
+    },
+    "pages": {
+      "type": "int32",
+      "example": 12
+    },
+    "total": {
+      "type": "int32",
+      "example": 1183
+    },
+    "contact": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nsid": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "username": {
+            "type": "string",
+            "example": "shutterbug"
+          },
+          "iconserver": {
+            "type": "string",
+            "example": "7402"
+          },
+          "realname": {
+            "type": "string",
+            "example": "Jane Photographer"
+          },
+          "friend": {
+            "type": "int32",
+            "example": 1
+          },
+          "family": {
+            "type": "int32",
+            "example": 0
+          },
+          "ignored": {
+            "type": "int32",
+            "example": 0
+          }
+        }
+      }
+    }
+  }
+}

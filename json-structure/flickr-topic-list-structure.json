@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-topic-list-structure.json",
+  "name": "TopicList",
+  "description": "TopicList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "int32",
+      "example": 1
+    },
+    "pages": {
+      "type": "int32",
+      "example": 12
+    },
+    "total": {
+      "type": "int32",
+      "example": 1183
+    },
+    "topic": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "subject": {
+            "type": "string",
+            "example": "Tips for sunset photography"
+          },
+          "author": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "author_name": {
+            "type": "string",
+            "example": "shutterbug"
+          },
+          "datecreate": {
+            "type": "string",
+            "example": "1715000000"
+          },
+          "count_replies": {
+            "type": "int32",
+            "example": 7
+          }
+        }
+      }
+    }
+  }
+}

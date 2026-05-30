@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-gallery-schema.json",
+  "title": "Gallery",
+  "description": "Gallery schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://www.flickr.com/galleries/12345678@N00/72157712345/"
+    },
+    "owner": {
+      "type": "string",
+      "example": "12345678@N00"
+    },
+    "date_create": {
+      "type": "string",
+      "example": "1715000000"
+    },
+    "count_photos": {
+      "type": "integer",
+      "example": 18
+    },
+    "count_videos": {
+      "type": "integer",
+      "example": 0
+    }
+  }
+}

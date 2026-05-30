@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-photoset-structure.json",
+  "name": "Photoset",
+  "description": "Photoset schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "primary": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "owner": {
+      "type": "string",
+      "example": "12345678@N00"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "_content": {
+          "type": "string",
+          "example": "100"
+        }
+      }
+    },
+    "description": {
+      "type": "object",
+      "properties": {
+        "_content": {
+          "type": "string",
+          "example": "100"
+        }
+      }
+    },
+    "photos": {
+      "type": "int32",
+      "example": 248
+    },
+    "videos": {
+      "type": "int32",
+      "example": 3
+    }
+  }
+}

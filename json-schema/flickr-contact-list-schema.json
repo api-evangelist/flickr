@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-schema/flickr-contact-list-schema.json",
+  "title": "ContactList",
+  "description": "ContactList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "example": 1
+    },
+    "pages": {
+      "type": "integer",
+      "example": 12
+    },
+    "total": {
+      "type": "integer",
+      "example": 1183
+    },
+    "contact": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nsid": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "username": {
+            "type": "string",
+            "example": "shutterbug"
+          },
+          "iconserver": {
+            "type": "string",
+            "example": "7402"
+          },
+          "realname": {
+            "type": "string",
+            "example": "Jane Photographer"
+          },
+          "friend": {
+            "type": "integer",
+            "example": 1
+          },
+          "family": {
+            "type": "integer",
+            "example": 0
+          },
+          "ignored": {
+            "type": "integer",
+            "example": 0
+          }
+        }
+      }
+    }
+  }
+}

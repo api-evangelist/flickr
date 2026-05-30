@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-user-url-lookup-structure.json",
+  "name": "UserUrlLookup",
+  "description": "UserUrlLookup schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "52345678901"
+        },
+        "username": {
+          "type": "object",
+          "properties": {
+            "_content": {
+              "type": "string",
+              "example": "100"
+            }
+          }
+        }
+      }
+    }
+  }
+}

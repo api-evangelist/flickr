@@ -1,0 +1,29 @@
+{
+  "method": {
+    "name": "Bay Area Photographers",
+    "needslogin": 0,
+    "needssigning": 1,
+    "requiredperms": 0,
+    "description": {
+      "_content": "100"
+    }
+  },
+  "arguments": {
+    "argument": [
+      {
+        "name": "Bay Area Photographers",
+        "optional": 0,
+        "_content": "100"
+      }
+    ]
+  },
+  "errors": {
+    "error": [
+      {
+        "code": 100,
+        "message": "Invalid API Key",
+        "_content": "100"
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-photo-list-structure.json",
+  "name": "PhotoList",
+  "description": "PhotoList schema from Flickr API",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "int32",
+      "example": 1
+    },
+    "pages": {
+      "type": "int32",
+      "example": 12
+    },
+    "perpage": {
+      "type": "int32",
+      "example": 100
+    },
+    "total": {
+      "type": "int32",
+      "example": 1183
+    },
+    "photo": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "A photo.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "52345678901"
+          },
+          "owner": {
+            "type": "string",
+            "example": "12345678@N00"
+          },
+          "secret": {
+            "type": "string",
+            "example": "abc1234def"
+          },
+          "server": {
+            "type": "string",
+            "example": "65535"
+          },
+          "farm": {
+            "type": "int32",
+            "example": 66
+          },
+          "name": {
+            "type": "string",
+            "example": "Golden Gate Sunset"
+          },
+          "ispublic": {
+            "type": "int32",
+            "example": 1
+          },
+          "isfriend": {
+            "type": "int32",
+            "example": 0
+          },
+          "isfamily": {
+            "type": "int32",
+            "example": 0
+          },
+          "datetaken": {
+            "type": "string",
+            "example": "2026-04-12 18:24:11"
+          },
+          "url_o": {
+            "type": "uri",
+            "example": "https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg"
+          },
+          "height_o": {
+            "type": "int32",
+            "example": 4032
+          },
+          "width_o": {
+            "type": "int32",
+            "example": 6048
+          }
+        }
+      }
+    }
+  }
+}

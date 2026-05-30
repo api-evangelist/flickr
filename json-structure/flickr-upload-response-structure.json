@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flickr/refs/heads/main/json-structure/flickr-upload-response-structure.json",
+  "name": "UploadResponse",
+  "description": "XML upload response containing `<photoid>` or `<ticketid>`.",
+  "type": "object",
+  "properties": {
+    "stat": {
+      "type": "string",
+      "example": "ok"
+    },
+    "photoid": {
+      "type": "string",
+      "example": "52345678901"
+    },
+    "ticketid": {
+      "type": "string",
+      "example": "1234567"
+    }
+  }
+}

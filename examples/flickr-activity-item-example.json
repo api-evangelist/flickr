@@ -1,0 +1,9 @@
+{
+  "type": "photo",
+  "id": "52345678901",
+  "owner": "12345678@N00",
+  "secret": "abc1234def",
+  "server": "65535",
+  "farm": 66,
+  "title": "Golden Gate Sunset"
+}
