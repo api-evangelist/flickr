@@ -1,18 +1,13 @@
 aid: flickr
 name: Flickr
 description: >-
-  Flickr is the long-running photo, group, people, place, tag, gallery,
-  photoset, and Commons platform now owned by SmugMug. Its REST-like API
-  dispatches every operation through a single endpoint
-  (https://api.flickr.com/services/rest?method=flickr.{namespace}.{method}),
-  spanning ~250 methods across 30 namespaces — covering activity, auth,
-  blogs, cameras, collections, commons, contacts, favorites, galleries,
-  groups, group discussions, interestingness, machine tags, panda,
-  people, photos (plus photos.geo / photos.licenses / photos.notes /
-  photos.transform / photos.upload), photosets, places, prefs, profile,
-  push, reflection, stats, tags, test, and URLs. Authentication is
-  API key + OAuth 1.0a (HMAC-SHA1). Commercial use requires a
-  permission-granted commercial key.
+  Flickr is the long-running photo, group, people, place, tag, gallery, photoset, and Commons platform now owned by
+  SmugMug. Its REST-like API dispatches every operation through a single endpoint
+  (https://api.flickr.com/services/rest?method=flickr.{namespace}.{method}), spanning ~250 methods across 30 namespaces
+  — covering activity, auth, blogs, cameras, collections, commons, contacts, favorites, galleries, groups, group
+  discussions, interestingness, machine tags, panda, people, photos (plus photos.geo / photos.licenses / photos.notes /
+  photos.transform / photos.upload), photosets, places, prefs, profile, push, reflection, stats, tags, test, and URLs.
+  Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use requires a permission-granted commercial key.
 url: https://www.flickr.com/services/api/
 image: https://combine.swagger.io/flickr.png
 specificationVersion: '0.20'
@@ -30,16 +25,12 @@ tags:
 apis:
   - name: Flickr API
     description: >-
-      The full Flickr REST API. Method-dispatched single-endpoint API:
-      every call is `GET/POST https://api.flickr.com/services/rest?method=flickr.{namespace}.{method}`.
-      Uploads use a separate `https://up.flickr.com/services/upload` endpoint.
-      Coverage profiled here: ~30 most-important methods across all 30
-      method namespaces (activity, auth, blogs, cameras, collections,
-      commons, contacts, favorites, galleries, groups, groupsDiscuss,
-      interestingness, machinetags, panda, people, photos, photos.geo,
-      photos.licenses, photos.notes, photos.transform, photos.upload,
-      photosets, places, prefs, profile, push, reflection, stats, tags,
-      test, urls).
+      The full Flickr REST API. Method-dispatched single-endpoint API: every call is `GET/POST
+      https://api.flickr.com/services/rest?method=flickr.{namespace}.{method}`. Uploads use a separate
+      `https://up.flickr.com/services/upload` endpoint. Coverage profiled here: ~30 most-important methods across all 30
+      method namespaces (activity, auth, blogs, cameras, collections, commons, contacts, favorites, galleries, groups,
+      groupsDiscuss, interestingness, machinetags, panda, people, photos, photos.geo, photos.licenses, photos.notes,
+      photos.transform, photos.upload, photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
     humanURL: https://www.flickr.com/services/api/
     baseURL: https://api.flickr.com/services
     tags:
@@ -65,68 +56,6 @@ apis:
       - type: SDK
         title: Python SDK (python-flickr-api)
         url: https://pypi.org/project/flickr-api/
-      - type: NaftikoCapability
-        url: capabilities/flickr-activity.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-auth.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-blogs.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-cameras.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-collections.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-commons.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-contacts.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-favorites.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-galleries.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-groups.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-groups-discuss.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-interestingness.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-machine-tags.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-panda.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-people.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-photos.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-photos-geo.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-photos-licenses.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-photos-notes.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-photos-transform.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-photos-upload.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-photosets.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-places.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-prefs.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-profile.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-push.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-reflection.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-stats.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-tags.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-test.yaml
-      - type: NaftikoCapability
-        url: capabilities/flickr-urls.yaml
 common:
   - type: Website
     url: https://www.flickr.com/
