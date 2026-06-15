@@ -1,0 +1,1883 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reflection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Invoke Any Flickr Method",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest",
+            "params": [
+              {
+                "name": "method",
+                "value": "flickr.photos.search",
+                "type": "query",
+                "description": "Fully qualified flickr method, e.g. `flickr.photos.search`."
+              },
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "Response format (json/xml/php_serial/rest)."
+              },
+              {
+                "name": "nojsoncallback",
+                "value": "1",
+                "type": "query",
+                "description": "Set to 1 to receive raw JSON instead of JSONP."
+              }
+            ]
+          },
+          "docs": "Dispatches a call to any flickr.* method. The `method` query parameter\nselects which method to invoke and the remaining query parameters are\nthe arguments for that method. This single endpoint backs every\nper-method operation defined below.\n"
+        },
+        {
+          "info": {
+            "name": "List Available API Methods",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.reflection.getMethods",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns a list of available Flickr API methods."
+        },
+        {
+          "info": {
+            "name": "Get API Method Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.reflection.getMethodInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "method_name",
+                "value": "flickr.photos.search",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns information about a particular API method including its arguments and errors."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Activity On The User's Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.activity.userPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "timeframe",
+                "value": "12h",
+                "type": "query",
+                "description": "Time window such as \"1h\" or \"12h\"."
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns recent activity on photos belonging to the calling user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check OAuth Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.auth.oauth.checkToken",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "oauth_token",
+                "value": "72157712345-abcdef0123456789",
+                "type": "query",
+                "description": "The OAuth authentication token to check."
+              }
+            ]
+          },
+          "docs": "Returns the credentials attached to an OAuth authentication token."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Blogs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Configured Blogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.blogs.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "service",
+                "value": "blogger",
+                "type": "query",
+                "description": "Optional service ID filter."
+              }
+            ]
+          },
+          "docs": "Returns a list of Flickr-supported blogging services the calling user has configured."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cameras",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Camera Brands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.cameras.getBrands",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns all camera brands supported in the Flickr camera taxonomy."
+        },
+        {
+          "info": {
+            "name": "List Camera Models For A Brand",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.cameras.getBrandModels",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "brand",
+                "value": "nikon",
+                "type": "query",
+                "description": "The brand ID."
+              }
+            ]
+          },
+          "docs": "Returns all camera models for the given brand."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get The Collection Tree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.collections.getTree",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "collection_id",
+                "value": "12345678-72157712345",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a tree (or sub-tree) of collections belonging to a user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Commons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flickr Commons Institutions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.commons.getInstitutions",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns the list of institutions participating in The Commons."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Contacts For The Calling User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.contacts.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "filter",
+                "value": "friends",
+                "type": "query",
+                "description": "One of: friends, family, both, neither."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the contact list for the authenticated user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Favorites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get A User's Favorites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.favorites.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned."
+        },
+        {
+          "info": {
+            "name": "Mark Photo As Favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.favorites.add",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a photo to the calling user's favorites list."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Galleries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List A User's Galleries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.galleries.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of galleries created by a user."
+        },
+        {
+          "info": {
+            "name": "List Photos In A Gallery",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.galleries.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "gallery_id",
+                "value": "12345678-72157712345",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns the photos for a given gallery."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Group Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.groups.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "group_id",
+                "value": "12345678@N00",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns information about a group."
+        },
+        {
+          "info": {
+            "name": "Search Groups By Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.groups.search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "text",
+                "value": "golden gate",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Searches groups by text."
+        },
+        {
+          "info": {
+            "name": "List Photos In A Group Pool",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.groups.pools.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "group_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns photos in a group's pool."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups Discuss",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Group Discussion Topics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.groups.discuss.topics.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "group_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns discussion topics for a group."
+        },
+        {
+          "info": {
+            "name": "List Replies For A Discussion Topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.groups.discuss.replies.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "topic_id",
+                "value": "72157712345",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the replies for a discussion topic."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Interestingness",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Interesting Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.interestingness.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "date",
+                "value": "2026-04-30",
+                "type": "query",
+                "description": "YYYY-MM-DD date."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns the most interesting photos for the given date."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Machine Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Machine Tag Namespaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.machinetags.getNamespaces",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of machine tag namespaces."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Panda",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flickr Panda Feeds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.panda.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns a list of available Flickr Panda firehose feeds."
+        },
+        {
+          "info": {
+            "name": "Get Panda Firehose Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.panda.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "panda_name",
+                "value": "example",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns photos for the given Panda feed."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Person Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.people.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns information about a person."
+        },
+        {
+          "info": {
+            "name": "Get A User's Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.people.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns photos from the given user's photostream."
+        },
+        {
+          "info": {
+            "name": "Find User By Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.people.findByEmail",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "find_email",
+                "value": "jane@example.com",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up a Flickr user by email."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "text",
+                "value": "golden gate",
+                "type": "query"
+              },
+              {
+                "name": "tags",
+                "value": "sunset,bridge",
+                "type": "query"
+              },
+              {
+                "name": "tag_mode",
+                "value": "any",
+                "type": "query"
+              },
+              {
+                "name": "license",
+                "value": "1,2,3",
+                "type": "query"
+              },
+              {
+                "name": "media",
+                "value": "photos",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns a list of photos matching a search query. Combine text, tags,\nowner, geography, license, date, and content filters.\n"
+        },
+        {
+          "info": {
+            "name": "Get Photo Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "secret",
+                "value": "abc1234def",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns detailed information about a photo."
+        },
+        {
+          "info": {
+            "name": "Get Available Photo Sizes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getSizes",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the available sizes for a photo."
+        },
+        {
+          "info": {
+            "name": "Get Photo EXIF Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getExif",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "secret",
+                "value": "abc1234def",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns EXIF / TIFF / GPS tags for a photo."
+        },
+        {
+          "info": {
+            "name": "Get Recent Public Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getRecent",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the most recent public photos."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photos Geo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set Photo Geo Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.geo.setLocation",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "lat",
+                "value": "37.7749",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "-122.4194",
+                "type": "query"
+              },
+              {
+                "name": "accuracy",
+                "value": "16",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the geo data (latitude, longitude, accuracy) for a photo."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photos Licenses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Photo Licenses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.licenses.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns the list of available photo licenses."
+        },
+        {
+          "info": {
+            "name": "Set Photo License",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.licenses.setLicense",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "license_id",
+                "value": "4",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the license for a photo."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photos Notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add Photo Note",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.notes.add",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "note_x",
+                "value": "320",
+                "type": "query"
+              },
+              {
+                "name": "note_y",
+                "value": "240",
+                "type": "query"
+              },
+              {
+                "name": "note_w",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "note_h",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "note_text",
+                "value": "Look at this sunset.",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a note (annotation) to a photo."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photos Transform",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Rotate Photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.transform.rotate",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "degrees",
+                "value": "90",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Rotates a photo 90, 180, or 270 degrees."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photos Upload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check Async Upload Tickets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.upload.checkTickets",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "tickets",
+                "value": "1234567,1234568",
+                "type": "query",
+                "description": "Comma-delimited list of ticket IDs."
+              }
+            ]
+          },
+          "docs": "Returns the status of one or more asynchronous photo upload tickets."
+        },
+        {
+          "info": {
+            "name": "Upload A Photo Or Video",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/upload",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "photo",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "title",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "description",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "tags",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_public",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_friend",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_family",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "safety_level",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "content_type",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "hidden",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "async",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Uploads a photo or video. Uses `https://up.flickr.com/services/upload`\nwith a multipart/form-data POST. Returns the new photo ID (synchronous)\nor ticket ID (asynchronous).\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photosets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List A User's Photosets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photosets.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns photosets belonging to a user."
+        },
+        {
+          "info": {
+            "name": "List Photos In A Photoset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photosets.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photoset_id",
+                "value": "72157712345",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns the photos in a given photoset."
+        },
+        {
+          "info": {
+            "name": "Create A New Photoset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photosets.create",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "title",
+                "value": "Sunsets",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "Best sunsets I have shot.",
+                "type": "query"
+              },
+              {
+                "name": "primary_photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Creates a new photoset for the calling user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Places",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find Place By Query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.places.find",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "query",
+                "value": "San Francisco",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Searches places by text query."
+        },
+        {
+          "info": {
+            "name": "Find Place By Lat/Lon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.places.findByLatLon",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "lat",
+                "value": "37.7749",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "-122.4194",
+                "type": "query"
+              },
+              {
+                "name": "accuracy",
+                "value": "16",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Resolves a latitude/longitude pair to the smallest enclosing Place."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Prefs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Default Privacy Preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.prefs.getPrivacy",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns the default privacy level preference for the calling user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Profile",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get A User Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.profile.getProfile",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the public profile fields for a user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Push",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Push Subscription Topics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.push.getTopics",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns the list of available PubSubHubbub push subscription topics."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Photo View Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.stats.getPhotoStats",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "date",
+                "value": "2026-04-30",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns view counts for a photo on a given date."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Currently Hot Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.tags.getHotList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "period",
+                "value": "week",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "200",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the popular tags for a given period."
+        },
+        {
+          "info": {
+            "name": "Get Tag Clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.tags.getClusters",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "tag",
+                "value": "sunset",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the related \"clusters\" for a given tag."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Test",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Echo Test Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.test.echo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Echoes the parameters back to the caller as a test of connectivity and authentication."
+        },
+        {
+          "info": {
+            "name": "Test Authentication",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.test.login",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns information about the calling authenticated user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "URLs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look Up User By URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.urls.lookupUser",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "url",
+                "value": "https://www.flickr.com/photos/shutterbug/",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a user NSID given the URL to a user's photos or profile."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
