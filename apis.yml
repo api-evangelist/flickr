@@ -45,15 +45,15 @@ apis:
         url: openapi/flickr-openapi.yml
       - type: Authentication
         url: https://www.flickr.com/services/api/auth.oauth.html
-      - type: Quickstart
+      - type: GettingStarted
         url: https://www.flickr.com/services/developer/
-      - type: SDK
+      - type: SDKs
         title: Node.js SDK
         url: https://www.npmjs.com/package/flickr-sdk
-      - type: SDK
+      - type: SDKs
         title: Node.js SDK source
         url: https://github.com/flickr/flickr-sdk
-      - type: SDK
+      - type: SDKs
         title: Python SDK (python-flickr-api)
         url: https://pypi.org/project/flickr-api/
 common:
@@ -63,7 +63,7 @@ common:
     url: https://www.flickr.com/services/api/
   - type: GettingStarted
     url: https://www.flickr.com/services/developer/
-  - type: SignUp
+  - type: Signup
     url: https://www.flickr.com/services/apps/create/apply/
   - type: TermsOfService
     url: https://www.flickr.com/services/api/tos/
@@ -92,7 +92,7 @@ common:
     url: rules/flickr-rules.yml
   - type: Vocabulary
     url: vocabulary/flickr-vocabulary.yml
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/flickr-context.jsonld
   - type: Plans
     url: plans/flickr-plans-pricing.yml
