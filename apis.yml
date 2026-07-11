@@ -57,6 +57,12 @@ apis:
         title: Python SDK (python-flickr-api)
         url: https://pypi.org/project/flickr-api/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/flickr-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/flickr-domain-security.yml
+  - type: Authentication
+    url: authentication/flickr-authentication.yml
   - type: OAuthScopes
     url: scopes/flickr-scopes.yml
   - type: Website
