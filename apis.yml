@@ -57,6 +57,8 @@ apis:
         title: Python SDK (python-flickr-api)
         url: https://pypi.org/project/flickr-api/
 common:
+  - type: OAuthScopes
+    url: scopes/flickr-scopes.yml
   - type: Website
     url: https://www.flickr.com/
   - type: Portal

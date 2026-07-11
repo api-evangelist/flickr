@@ -1,0 +1,35 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/flickr-openapi.yml
+schemes:
+- name: OAuth1
+  source: openapi/flickr-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.flickr.com/services/oauth/authorize
+    tokenUrl: https://www.flickr.com/services/oauth/access_token
+  description: |-
+    Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+    OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+    - Request token: https://www.flickr.com/services/oauth/request_token
+    - Authorize:     https://www.flickr.com/services/oauth/authorize
+    - Access token:  https://www.flickr.com/services/oauth/access_token
+scopes:
+- scope: delete
+  description: Delete content owned by the user
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/flickr-openapi.yml
+- scope: read
+  description: Read access to private content owned by the user
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/flickr-openapi.yml
+- scope: write
+  description: Modify content owned by the user
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/flickr-openapi.yml
