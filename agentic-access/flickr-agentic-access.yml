@@ -1,0 +1,800 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/flickr-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 53
+  by_action_class:
+    connected: 46
+    acting: 7
+  by_consequence:
+    read: 46
+    write: 7
+  human_in_the_loop_required: 0
+operations:
+- path: /rest
+  method: get
+  operationId: invokeFlickrMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.activity.userPhotos
+  method: get
+  operationId: activityUserPhotos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.auth.oauth.checkToken
+  method: get
+  operationId: authOauthCheckToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.blogs.getList
+  method: get
+  operationId: blogsGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.cameras.getBrands
+  method: get
+  operationId: camerasGetBrands
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.cameras.getBrandModels
+  method: get
+  operationId: camerasGetBrandModels
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.collections.getTree
+  method: get
+  operationId: collectionsGetTree
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.commons.getInstitutions
+  method: get
+  operationId: commonsGetInstitutions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.contacts.getList
+  method: get
+  operationId: contactsGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.favorites.getList
+  method: get
+  operationId: favoritesGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.favorites.add
+  method: post
+  operationId: favoritesAdd
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.galleries.getList
+  method: get
+  operationId: galleriesGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.galleries.getPhotos
+  method: get
+  operationId: galleriesGetPhotos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.groups.getInfo
+  method: get
+  operationId: groupsGetInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.groups.search
+  method: get
+  operationId: groupsSearch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.groups.pools.getPhotos
+  method: get
+  operationId: groupsPoolsGetPhotos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.groups.discuss.topics.getList
+  method: get
+  operationId: groupsDiscussTopicsGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.groups.discuss.replies.getList
+  method: get
+  operationId: groupsDiscussRepliesGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.interestingness.getList
+  method: get
+  operationId: interestingnessGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.machinetags.getNamespaces
+  method: get
+  operationId: machinetagsGetNamespaces
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.panda.getList
+  method: get
+  operationId: pandaGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.panda.getPhotos
+  method: get
+  operationId: pandaGetPhotos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.people.getInfo
+  method: get
+  operationId: peopleGetInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.people.getPhotos
+  method: get
+  operationId: peopleGetPhotos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.people.findByEmail
+  method: get
+  operationId: peopleFindByEmail
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.search
+  method: get
+  operationId: photosSearch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.getInfo
+  method: get
+  operationId: photosGetInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.getSizes
+  method: get
+  operationId: photosGetSizes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.getExif
+  method: get
+  operationId: photosGetExif
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.getRecent
+  method: get
+  operationId: photosGetRecent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.geo.setLocation
+  method: post
+  operationId: photosGeoSetLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.licenses.getInfo
+  method: get
+  operationId: photosLicensesGetInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.licenses.setLicense
+  method: post
+  operationId: photosLicensesSetLicense
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.notes.add
+  method: post
+  operationId: photosNotesAdd
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.transform.rotate
+  method: post
+  operationId: photosTransformRotate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photos.upload.checkTickets
+  method: get
+  operationId: photosUploadCheckTickets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /upload
+  method: post
+  operationId: photosUpload
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photosets.getList
+  method: get
+  operationId: photosetsGetList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photosets.getPhotos
+  method: get
+  operationId: photosetsGetPhotos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.photosets.create
+  method: post
+  operationId: photosetsCreate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.places.find
+  method: get
+  operationId: placesFind
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.places.findByLatLon
+  method: get
+  operationId: placesFindByLatLon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.prefs.getPrivacy
+  method: get
+  operationId: prefsGetPrivacy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.profile.getProfile
+  method: get
+  operationId: profileGetProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.push.getTopics
+  method: get
+  operationId: pushGetTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.reflection.getMethods
+  method: get
+  operationId: reflectionGetMethods
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.reflection.getMethodInfo
+  method: get
+  operationId: reflectionGetMethodInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.stats.getPhotoStats
+  method: get
+  operationId: statsGetPhotoStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.tags.getHotList
+  method: get
+  operationId: tagsGetHotList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.tags.getClusters
+  method: get
+  operationId: tagsGetClusters
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.test.echo
+  method: get
+  operationId: testEcho
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.test.login
+  method: get
+  operationId: testLogin
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
+- path: /rest/flickr.urls.lookupUser
+  method: get
+  operationId: urlsLookupUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - delete
+    - read
+    - write
