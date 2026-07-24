@@ -1,0 +1,247 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Photos Upload API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Photos Upload
+  description: Asynchronous upload status polling
+paths:
+  /rest/flickr.photos.upload.checkTickets:
+    get:
+      operationId: photosUploadCheckTickets
+      summary: Check Async Upload Tickets
+      description: Returns the status of one or more asynchronous photo upload tickets.
+      tags:
+      - Photos Upload
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: tickets
+        in: query
+        required: true
+        description: Comma-delimited list of ticket IDs.
+        schema:
+          type: string
+        example: 1234567,1234568
+      responses:
+        '200':
+          description: Ticket statuses
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TicketList'
+              examples:
+                PhotosUploadCheckTickets200Example:
+                  summary: Default photosUploadCheckTickets 200 response
+                  x-microcks-default: true
+                  value:
+                    ticket:
+                    - id: '52345678901'
+                      complete: 1
+                      photoid: '52345678901'
+                      invalid: 0
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /upload:
+    post:
+      operationId: photosUpload
+      summary: Upload A Photo Or Video
+      description: 'Uploads a photo or video. Uses `https://up.flickr.com/services/upload`
+
+        with a multipart/form-data POST. Returns the new photo ID (synchronous)
+
+        or ticket ID (asynchronous).
+
+        '
+      tags:
+      - Photos Upload
+      servers:
+      - url: https://up.flickr.com/services
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - photo
+              properties:
+                photo:
+                  type: string
+                  format: binary
+                title:
+                  type: string
+                description:
+                  type: string
+                tags:
+                  type: string
+                is_public:
+                  type: integer
+                is_friend:
+                  type: integer
+                is_family:
+                  type: integer
+                safety_level:
+                  type: integer
+                content_type:
+                  type: integer
+                hidden:
+                  type: integer
+                async:
+                  type: integer
+            examples:
+              PhotosUploadRequestExample:
+                summary: Default photosUpload request body
+                x-microcks-default: true
+                value:
+                  photo: <binary>
+                  title: Golden Gate Sunset
+                  description: Detailed photo metadata.
+                  tags: example
+                  is_public: 1
+                  is_friend: 1
+                  is_family: 1
+                  safety_level: 1
+                  content_type: 1
+                  hidden: 1
+                  async: 1
+      responses:
+        '200':
+          description: Upload response
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UploadResponse'
+              examples:
+                PhotosUpload200Example:
+                  summary: Default photosUpload 200 response
+                  x-microcks-default: true
+                  value:
+                    stat: ok
+                    photoid: '52345678901'
+                    ticketid: '1234567'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    TicketList:
+      type: object
+      properties:
+        ticket:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ticket'
+    Ticket:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        complete:
+          type: integer
+          example: 1
+        photoid:
+          type: string
+          example: '52345678901'
+        invalid:
+          type: integer
+          example: 0
+    UploadResponse:
+      type: object
+      description: XML upload response containing `<photoid>` or `<ticketid>`.
+      properties:
+        stat:
+          type: string
+          example: ok
+        photoid:
+          type: string
+          example: '52345678901'
+        ticketid:
+          type: string
+          example: '1234567'
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

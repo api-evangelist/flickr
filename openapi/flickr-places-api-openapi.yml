@@ -1,0 +1,213 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Places API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Places
+  description: Place IDs, hierarchies, and resolution
+paths:
+  /rest/flickr.places.find:
+    get:
+      operationId: placesFind
+      summary: Find Place By Query
+      description: Searches places by text query.
+      tags:
+      - Places
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        example: San Francisco
+      responses:
+        '200':
+          description: Places
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaceList'
+              examples:
+                PlacesFind200Example:
+                  summary: Default placesFind 200 response
+                  x-microcks-default: true
+                  value:
+                    place:
+                    - place_id: kH8dLOBTUrHLjKxQqw
+                      woeid: '2487956'
+                      latitude: 37.7749
+                      longitude: -122.4194
+                      place_url: /United+States/California/San+Francisco
+                      place_type: locality
+                      _content: '100'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.places.findByLatLon:
+    get:
+      operationId: placesFindByLatLon
+      summary: Find Place By Lat/Lon
+      description: Resolves a latitude/longitude pair to the smallest enclosing Place.
+      tags:
+      - Places
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+        example: 37.7749
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+        example: -122.4194
+      - name: accuracy
+        in: query
+        schema:
+          type: integer
+        example: 16
+      responses:
+        '200':
+          description: Place
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaceList'
+              examples:
+                PlacesFindByLatLon200Example:
+                  summary: Default placesFindByLatLon 200 response
+                  x-microcks-default: true
+                  value:
+                    place:
+                    - place_id: kH8dLOBTUrHLjKxQqw
+                      woeid: '2487956'
+                      latitude: 37.7749
+                      longitude: -122.4194
+                      place_url: /United+States/California/San+Francisco
+                      place_type: locality
+                      _content: '100'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  schemas:
+    Place:
+      type: object
+      properties:
+        place_id:
+          type: string
+          example: kH8dLOBTUrHLjKxQqw
+        woeid:
+          type: string
+          example: '2487956'
+        latitude:
+          type: number
+          example: 37.7749
+        longitude:
+          type: number
+          example: -122.4194
+        place_url:
+          type: string
+          example: /United+States/California/San+Francisco
+        place_type:
+          type: string
+          example: locality
+        _content:
+          type: string
+          example: '100'
+    PlaceList:
+      type: object
+      properties:
+        place:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

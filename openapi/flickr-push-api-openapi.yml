@@ -1,0 +1,134 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Push API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Push
+  description: PubSubHubbub push subscriptions
+paths:
+  /rest/flickr.push.getTopics:
+    get:
+      operationId: pushGetTopics
+      summary: List Push Subscription Topics
+      description: Returns the list of available PubSubHubbub push subscription topics.
+      tags:
+      - Push
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Topics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushTopicList'
+              examples:
+                PushGetTopics200Example:
+                  summary: Default pushGetTopics 200 response
+                  x-microcks-default: true
+                  value:
+                    topic:
+                    - name: Bay Area Photographers
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    PushTopicList:
+      type: object
+      properties:
+        topic:
+          type: array
+          items:
+            $ref: '#/components/schemas/PushTopic'
+    PushTopic:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Bay Area Photographers
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

@@ -1,0 +1,188 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Photos Notes API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Photos Notes
+  description: Notes drawn on photos
+paths:
+  /rest/flickr.photos.notes.add:
+    post:
+      operationId: photosNotesAdd
+      summary: Add Photo Note
+      description: Adds a note (annotation) to a photo.
+      tags:
+      - Photos Notes
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PhotoId'
+      - name: note_x
+        in: query
+        required: true
+        schema:
+          type: integer
+        example: 320
+      - name: note_y
+        in: query
+        required: true
+        schema:
+          type: integer
+        example: 240
+      - name: note_w
+        in: query
+        required: true
+        schema:
+          type: integer
+        example: 100
+      - name: note_h
+        in: query
+        required: true
+        schema:
+          type: integer
+        example: 100
+      - name: note_text
+        in: query
+        required: true
+        schema:
+          type: string
+        example: Look at this sunset.
+      responses:
+        '200':
+          description: Note created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+              examples:
+                PhotosNotesAdd200Example:
+                  summary: Default photosNotesAdd 200 response
+                  x-microcks-default: true
+                  value:
+                    id: '52345678901'
+                    author: 12345678@N00
+                    x: 320
+                    y: 240
+                    w: 100
+                    h: 100
+                    _content: '100'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  schemas:
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        author:
+          type: string
+          example: 12345678@N00
+        x:
+          type: integer
+          example: 320
+        y:
+          type: integer
+          example: 240
+        w:
+          type: integer
+          example: 100
+        h:
+          type: integer
+          example: 100
+        _content:
+          type: string
+          example: '100'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

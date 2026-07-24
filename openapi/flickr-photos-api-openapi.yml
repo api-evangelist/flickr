@@ -1,0 +1,518 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Photos API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Photos
+  description: Core photo metadata, search, comments, and lifecycle
+paths:
+  /rest/flickr.photos.search:
+    get:
+      operationId: photosSearch
+      summary: Search Photos
+      description: 'Returns a list of photos matching a search query. Combine text, tags,
+
+        owner, geography, license, date, and content filters.
+
+        '
+      tags:
+      - Photos
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: text
+        in: query
+        schema:
+          type: string
+        example: golden gate
+      - name: tags
+        in: query
+        schema:
+          type: string
+        example: sunset,bridge
+      - name: tag_mode
+        in: query
+        schema:
+          type: string
+          enum:
+          - any
+          - all
+        example: any
+      - name: license
+        in: query
+        schema:
+          type: string
+        example: 1,2,3
+      - name: media
+        in: query
+        schema:
+          type: string
+          enum:
+          - all
+          - photos
+          - videos
+        example: photos
+      - $ref: '#/components/parameters/UserIdOptional'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/Extras'
+      responses:
+        '200':
+          description: Matching photos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhotoList'
+              examples:
+                PhotosSearch200Example:
+                  summary: Default photosSearch 200 response
+                  x-microcks-default: true
+                  value:
+                    page: 1
+                    pages: 12
+                    perpage: 100
+                    total: 1183
+                    photo:
+                    - id: '52345678901'
+                      owner: 12345678@N00
+                      secret: abc1234def
+                      server: '65535'
+                      farm: 66
+                      title: Golden Gate Sunset
+                      ispublic: 1
+                      isfriend: 0
+                      isfamily: 0
+                      datetaken: '2026-04-12 18:24:11'
+                      url_o: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+                      height_o: 4032
+                      width_o: 6048
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.photos.getInfo:
+    get:
+      operationId: photosGetInfo
+      summary: Get Photo Info
+      description: Returns detailed information about a photo.
+      tags:
+      - Photos
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PhotoId'
+      - name: secret
+        in: query
+        schema:
+          type: string
+        example: abc1234def
+      responses:
+        '200':
+          description: Photo info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Photo'
+              examples:
+                PhotosGetInfo200Example:
+                  summary: Default photosGetInfo 200 response
+                  x-microcks-default: true
+                  value:
+                    id: '52345678901'
+                    owner: 12345678@N00
+                    secret: abc1234def
+                    server: '65535'
+                    farm: 66
+                    title: Golden Gate Sunset
+                    ispublic: 1
+                    isfriend: 0
+                    isfamily: 0
+                    datetaken: '2026-04-12 18:24:11'
+                    url_o: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+                    height_o: 4032
+                    width_o: 6048
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.photos.getSizes:
+    get:
+      operationId: photosGetSizes
+      summary: Get Available Photo Sizes
+      description: Returns the available sizes for a photo.
+      tags:
+      - Photos
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PhotoId'
+      responses:
+        '200':
+          description: Sizes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SizeList'
+              examples:
+                PhotosGetSizes200Example:
+                  summary: Default photosGetSizes 200 response
+                  x-microcks-default: true
+                  value:
+                    canblog: 0
+                    canprint: 1
+                    candownload: 1
+                    size:
+                    - label: Original
+                      width: 6048
+                      height: 4032
+                      source: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+                      url: https://www.flickr.com/galleries/12345678@N00/72157712345/
+                      media: photo
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.photos.getExif:
+    get:
+      operationId: photosGetExif
+      summary: Get Photo EXIF Data
+      description: Returns EXIF / TIFF / GPS tags for a photo.
+      tags:
+      - Photos
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PhotoId'
+      - name: secret
+        in: query
+        schema:
+          type: string
+        example: abc1234def
+      responses:
+        '200':
+          description: EXIF data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExifList'
+              examples:
+                PhotosGetExif200Example:
+                  summary: Default photosGetExif 200 response
+                  x-microcks-default: true
+                  value:
+                    photo:
+                      id: '52345678901'
+                      secret: abc1234def
+                      camera: example
+                      exif:
+                      - tagspace: EXIF
+                        tagspaceid: 0
+                        tag: ISO
+                        label: Original
+                        raw:
+                          _content: '100'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.photos.getRecent:
+    get:
+      operationId: photosGetRecent
+      summary: Get Recent Public Photos
+      description: Returns the most recent public photos.
+      tags:
+      - Photos
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/Extras'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: Recent photos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhotoList'
+              examples:
+                PhotosGetRecent200Example:
+                  summary: Default photosGetRecent 200 response
+                  x-microcks-default: true
+                  value:
+                    page: 1
+                    pages: 12
+                    perpage: 100
+                    total: 1183
+                    photo:
+                    - id: '52345678901'
+                      owner: 12345678@N00
+                      secret: abc1234def
+                      server: '65535'
+                      farm: 66
+                      title: Golden Gate Sunset
+                      ispublic: 1
+                      isfriend: 0
+                      isfamily: 0
+                      datetaken: '2026-04-12 18:24:11'
+                      url_o: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+                      height_o: 4032
+                      width_o: 6048
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    UserIdOptional:
+      name: user_id
+      in: query
+      schema:
+        type: string
+      example: 12345678@N00
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  schemas:
+    Exif:
+      type: object
+      properties:
+        tagspace:
+          type: string
+          example: EXIF
+        tagspaceid:
+          type: integer
+          example: 0
+        tag:
+          type: string
+          example: ISO
+        label:
+          type: string
+          example: Original
+        raw:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
+    Size:
+      type: object
+      properties:
+        label:
+          type: string
+          example: Original
+        width:
+          type: integer
+          example: 6048
+        height:
+          type: integer
+          example: 4032
+        source:
+          type: string
+          format: uri
+          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+        url:
+          type: string
+          format: uri
+          example: https://www.flickr.com/galleries/12345678@N00/72157712345/
+        media:
+          type: string
+          example: photo
+    Photo:
+      type: object
+      description: A photo.
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        owner:
+          type: string
+          example: 12345678@N00
+        secret:
+          type: string
+          example: abc1234def
+        server:
+          type: string
+          example: '65535'
+        farm:
+          type: integer
+          example: 66
+        title:
+          type: string
+          example: Golden Gate Sunset
+        ispublic:
+          type: integer
+          example: 1
+        isfriend:
+          type: integer
+          example: 0
+        isfamily:
+          type: integer
+          example: 0
+        datetaken:
+          type: string
+          example: '2026-04-12 18:24:11'
+        url_o:
+          type: string
+          format: uri
+          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+        height_o:
+          type: integer
+          example: 4032
+        width_o:
+          type: integer
+          example: 6048
+    ExifList:
+      type: object
+      properties:
+        photo:
+          type: object
+          properties:
+            id:
+              type: string
+              example: '52345678901'
+            secret:
+              type: string
+              example: abc1234def
+            camera:
+              type: string
+              example: example
+            exif:
+              type: array
+              items:
+                $ref: '#/components/schemas/Exif'
+    SizeList:
+      type: object
+      properties:
+        canblog:
+          type: integer
+          example: 0
+        canprint:
+          type: integer
+          example: 1
+        candownload:
+          type: integer
+          example: 1
+        size:
+          type: array
+          items:
+            $ref: '#/components/schemas/Size'
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

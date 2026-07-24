@@ -1,0 +1,153 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Blogs API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Blogs
+  description: Configured blogs and posting to them
+paths:
+  /rest/flickr.blogs.getList:
+    get:
+      operationId: blogsGetList
+      summary: Get Configured Blogs
+      description: Returns a list of Flickr-supported blogging services the calling user has configured.
+      tags:
+      - Blogs
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: service
+        in: query
+        description: Optional service ID filter.
+        schema:
+          type: string
+        example: blogger
+      responses:
+        '200':
+          description: Configured blogs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlogList'
+              examples:
+                BlogsGetList200Example:
+                  summary: Default blogsGetList 200 response
+                  x-microcks-default: true
+                  value:
+                    blog:
+                    - id: '52345678901'
+                      name: Bay Area Photographers
+                      service: blogger
+                      url: https://www.flickr.com/galleries/12345678@N00/72157712345/
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    BlogList:
+      type: object
+      properties:
+        blog:
+          type: array
+          items:
+            $ref: '#/components/schemas/Blog'
+    Blog:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        name:
+          type: string
+          example: Bay Area Photographers
+        service:
+          type: string
+          example: blogger
+        url:
+          type: string
+          format: uri
+          example: https://www.flickr.com/galleries/12345678@N00/72157712345/
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

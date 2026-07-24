@@ -1,0 +1,325 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Reflection API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Reflection
+  description: Programmatic discovery of available API methods
+paths:
+  /rest:
+    get:
+      operationId: invokeFlickrMethod
+      summary: Invoke Any Flickr Method
+      description: 'Dispatches a call to any flickr.* method. The `method` query parameter
+
+        selects which method to invoke and the remaining query parameters are
+
+        the arguments for that method. This single endpoint backs every
+
+        per-method operation defined below.
+
+        '
+      tags:
+      - Reflection
+      parameters:
+      - $ref: '#/components/parameters/Method'
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/Format'
+      - $ref: '#/components/parameters/NoJsonCallback'
+      responses:
+        '200':
+          description: Method response (shape depends on method)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MethodResponse'
+              examples:
+                InvokeFlickrMethod200Example:
+                  summary: Default invokeFlickrMethod 200 response
+                  x-microcks-default: true
+                  value: {}
+        '400':
+          $ref: '#/components/responses/FlickrError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.reflection.getMethods:
+    get:
+      operationId: reflectionGetMethods
+      summary: List Available API Methods
+      description: Returns a list of available Flickr API methods.
+      tags:
+      - Reflection
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Methods
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MethodList'
+              examples:
+                ReflectionGetMethods200Example:
+                  summary: Default reflectionGetMethods 200 response
+                  x-microcks-default: true
+                  value:
+                    methods:
+                      method:
+                      - _content: '100'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.reflection.getMethodInfo:
+    get:
+      operationId: reflectionGetMethodInfo
+      summary: Get API Method Info
+      description: Returns information about a particular API method including its arguments and errors.
+      tags:
+      - Reflection
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: method_name
+        in: query
+        required: true
+        schema:
+          type: string
+        example: flickr.photos.search
+      responses:
+        '200':
+          description: Method info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MethodInfo'
+              examples:
+                ReflectionGetMethodInfo200Example:
+                  summary: Default reflectionGetMethodInfo 200 response
+                  x-microcks-default: true
+                  value:
+                    method:
+                      name: Bay Area Photographers
+                      needslogin: 0
+                      needssigning: 1
+                      requiredperms: 0
+                      description:
+                        _content: '100'
+                    arguments:
+                      argument:
+                      - name: Bay Area Photographers
+                        optional: 0
+                        _content: '100'
+                    errors:
+                      error:
+                      - code: 100
+                        message: Invalid API Key
+                        _content: '100'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    MethodInfo:
+      type: object
+      properties:
+        method:
+          type: object
+          properties:
+            name:
+              type: string
+              example: Bay Area Photographers
+            needslogin:
+              type: integer
+              example: 0
+            needssigning:
+              type: integer
+              example: 1
+            requiredperms:
+              type: integer
+              example: 0
+            description:
+              type: object
+              properties:
+                _content:
+                  type: string
+                  example: '100'
+        arguments:
+          type: object
+          properties:
+            argument:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Bay Area Photographers
+                  optional:
+                    type: integer
+                    example: 0
+                  _content:
+                    type: string
+                    example: '100'
+        errors:
+          type: object
+          properties:
+            error:
+              type: array
+              items:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 100
+                  message:
+                    type: string
+                    example: Invalid API Key
+                  _content:
+                    type: string
+                    example: '100'
+    MethodList:
+      type: object
+      properties:
+        methods:
+          type: object
+          properties:
+            method:
+              type: array
+              items:
+                type: object
+                properties:
+                  _content:
+                    type: string
+                    example: '100'
+    MethodResponse:
+      type: object
+      description: Generic method response (varies by method).
+      additionalProperties: true
+    FlickrError:
+      type: object
+      properties:
+        stat:
+          type: string
+          example: fail
+        code:
+          type: integer
+          example: 100
+        message:
+          type: string
+          example: Invalid API Key
+  parameters:
+    Format:
+      name: format
+      in: query
+      description: Response format (json/xml/php_serial/rest).
+      schema:
+        type: string
+        default: json
+      example: json
+    Method:
+      name: method
+      in: query
+      required: true
+      description: Fully qualified flickr method, e.g. `flickr.photos.search`.
+      schema:
+        type: string
+      example: flickr.photos.search
+    NoJsonCallback:
+      name: nojsoncallback
+      in: query
+      description: Set to 1 to receive raw JSON instead of JSONP.
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  responses:
+    FlickrError:
+      description: Flickr error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FlickrError'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

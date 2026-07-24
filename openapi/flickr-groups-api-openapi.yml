@@ -1,0 +1,346 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Groups API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Groups
+  description: Group metadata, membership, and pool management
+paths:
+  /rest/flickr.groups.getInfo:
+    get:
+      operationId: groupsGetInfo
+      summary: Get Group Info
+      description: Returns information about a group.
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: group_id
+        in: query
+        required: true
+        schema:
+          type: string
+        example: 12345678@N00
+      responses:
+        '200':
+          description: Group info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+              examples:
+                GroupsGetInfo200Example:
+                  summary: Default groupsGetInfo 200 response
+                  x-microcks-default: true
+                  value:
+                    id: '52345678901'
+                    nsid: 12345678@N00
+                    name: Bay Area Photographers
+                    members: 18324
+                    pool_count: 942113
+                    topic_count: 8421
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.groups.search:
+    get:
+      operationId: groupsSearch
+      summary: Search Groups By Text
+      description: Searches groups by text.
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: text
+        in: query
+        required: true
+        schema:
+          type: string
+        example: golden gate
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: Matching groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupList'
+              examples:
+                GroupsSearch200Example:
+                  summary: Default groupsSearch 200 response
+                  x-microcks-default: true
+                  value:
+                    page: 1
+                    pages: 12
+                    total: 1183
+                    group:
+                    - id: '52345678901'
+                      nsid: 12345678@N00
+                      name: Bay Area Photographers
+                      members: 18324
+                      pool_count: 942113
+                      topic_count: 8421
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.groups.pools.getPhotos:
+    get:
+      operationId: groupsPoolsGetPhotos
+      summary: List Photos In A Group Pool
+      description: Returns photos in a group's pool.
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: group_id
+        in: query
+        required: true
+        schema:
+          type: string
+        example: 12345678@N00
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/Extras'
+      responses:
+        '200':
+          description: Pool photos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhotoList'
+              examples:
+                GroupsPoolsGetPhotos200Example:
+                  summary: Default groupsPoolsGetPhotos 200 response
+                  x-microcks-default: true
+                  value:
+                    page: 1
+                    pages: 12
+                    perpage: 100
+                    total: 1183
+                    photo:
+                    - id: '52345678901'
+                      owner: 12345678@N00
+                      secret: abc1234def
+                      server: '65535'
+                      farm: 66
+                      title: Golden Gate Sunset
+                      ispublic: 1
+                      isfriend: 0
+                      isfamily: 0
+                      datetaken: '2026-04-12 18:24:11'
+                      url_o: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+                      height_o: 4032
+                      width_o: 6048
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  schemas:
+    Photo:
+      type: object
+      description: A photo.
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        owner:
+          type: string
+          example: 12345678@N00
+        secret:
+          type: string
+          example: abc1234def
+        server:
+          type: string
+          example: '65535'
+        farm:
+          type: integer
+          example: 66
+        title:
+          type: string
+          example: Golden Gate Sunset
+        ispublic:
+          type: integer
+          example: 1
+        isfriend:
+          type: integer
+          example: 0
+        isfamily:
+          type: integer
+          example: 0
+        datetaken:
+          type: string
+          example: '2026-04-12 18:24:11'
+        url_o:
+          type: string
+          format: uri
+          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+        height_o:
+          type: integer
+          example: 4032
+        width_o:
+          type: integer
+          example: 6048
+    GroupList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        group:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        nsid:
+          type: string
+          example: 12345678@N00
+        name:
+          type: string
+          example: Bay Area Photographers
+        members:
+          type: integer
+          example: 18324
+        pool_count:
+          type: integer
+          example: 942113
+        topic_count:
+          type: integer
+          example: 8421
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

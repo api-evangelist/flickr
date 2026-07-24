@@ -1,0 +1,169 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Test API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Test
+  description: Echo, login, and null test methods
+paths:
+  /rest/flickr.test.echo:
+    get:
+      operationId: testEcho
+      summary: Echo Test Parameters
+      description: Echoes the parameters back to the caller as a test of connectivity and authentication.
+      tags:
+      - Test
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Echo response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EchoResponse'
+              examples:
+                TestEcho200Example:
+                  summary: Default testEcho 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.test.login:
+    get:
+      operationId: testLogin
+      summary: Test Authentication
+      description: Returns information about the calling authenticated user.
+      tags:
+      - Test
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Logged-in user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginInfo'
+              examples:
+                TestLogin200Example:
+                  summary: Default testLogin 200 response
+                  x-microcks-default: true
+                  value:
+                    user:
+                      id: '52345678901'
+                      username:
+                        _content: '100'
+                      path_alias: shutterbug
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    EchoResponse:
+      type: object
+      additionalProperties: true
+    LoginInfo:
+      type: object
+      properties:
+        user:
+          type: object
+          properties:
+            id:
+              type: string
+              example: '52345678901'
+            username:
+              type: object
+              properties:
+                _content:
+                  type: string
+                  example: '100'
+            path_alias:
+              type: string
+              example: shutterbug
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user

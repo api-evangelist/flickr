@@ -1,0 +1,264 @@
+openapi: 3.0.3
+info:
+  title: Flickr Activity Favorites API
+  description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
+
+    photoset capabilities that power flickr.com. Almost all flickr.com
+
+    functionality is reachable through a single REST-like endpoint
+
+    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
+
+    query parameter and `format=json&nojsoncallback=1` for JSON output.
+
+
+    This OpenAPI specification models a curated set of the most widely used
+
+    methods across the Flickr API''s 250+ method namespaces (activity, auth,
+
+    blogs, cameras, collections, commons, contacts, favorites, galleries,
+
+    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
+
+    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
+
+    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
+
+
+    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
+
+    API requires prior permission from Flickr.
+
+    '
+  version: 1.0.0
+  termsOfService: https://www.flickr.com/services/api/tos/
+  contact:
+    name: Flickr API Support
+    url: https://www.flickr.com/help/api/
+  license:
+    name: Flickr API Terms of Use
+    url: https://www.flickr.com/services/api/tos/
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://api.flickr.com/services
+  description: Flickr REST API
+- url: https://up.flickr.com/services
+  description: Flickr Upload endpoint
+security:
+- ApiKeyAuth: []
+- OAuth1:
+  - read
+  - write
+  - delete
+tags:
+- name: Favorites
+  description: Photos a user has marked as favorites
+paths:
+  /rest/flickr.favorites.getList:
+    get:
+      operationId: favoritesGetList
+      summary: Get A User's Favorites
+      description: Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned.
+      tags:
+      - Favorites
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: Favorites
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhotoList'
+              examples:
+                FavoritesGetList200Example:
+                  summary: Default favoritesGetList 200 response
+                  x-microcks-default: true
+                  value:
+                    page: 1
+                    pages: 12
+                    perpage: 100
+                    total: 1183
+                    photo:
+                    - id: '52345678901'
+                      owner: 12345678@N00
+                      secret: abc1234def
+                      server: '65535'
+                      farm: 66
+                      title: Golden Gate Sunset
+                      ispublic: 1
+                      isfriend: 0
+                      isfamily: 0
+                      datetaken: '2026-04-12 18:24:11'
+                      url_o: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+                      height_o: 4032
+                      width_o: 6048
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /rest/flickr.favorites.add:
+    post:
+      operationId: favoritesAdd
+      summary: Mark Photo As Favorite
+      description: Adds a photo to the calling user's favorites list.
+      tags:
+      - Favorites
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PhotoId'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+              examples:
+                FavoritesAdd200Example:
+                  summary: Default favoritesAdd 200 response
+                  x-microcks-default: true
+                  value:
+                    stat: ok
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+  schemas:
+    Photo:
+      type: object
+      description: A photo.
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        owner:
+          type: string
+          example: 12345678@N00
+        secret:
+          type: string
+          example: abc1234def
+        server:
+          type: string
+          example: '65535'
+        farm:
+          type: integer
+          example: 66
+        title:
+          type: string
+          example: Golden Gate Sunset
+        ispublic:
+          type: integer
+          example: 1
+        isfriend:
+          type: integer
+          example: 0
+        isfamily:
+          type: integer
+          example: 0
+        datetaken:
+          type: string
+          example: '2026-04-12 18:24:11'
+        url_o:
+          type: string
+          format: uri
+          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+        height_o:
+          type: integer
+          example: 4032
+        width_o:
+          type: integer
+          example: 6048
+    SuccessResponse:
+      type: object
+      properties:
+        stat:
+          type: string
+          example: ok
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Application API key for non-authenticated and read-only public requests.
+    OAuth1:
+      type: oauth2
+      description: 'Flickr uses OAuth 1.0a (HMAC-SHA1). The OpenAPI 3 schema cannot model
+
+        OAuth 1.0a directly, so this entry approximates the flow. Token URLs:
+
+        - Request token: https://www.flickr.com/services/oauth/request_token
+
+        - Authorize:     https://www.flickr.com/services/oauth/authorize
+
+        - Access token:  https://www.flickr.com/services/oauth/access_token
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.flickr.com/services/oauth/authorize
+          tokenUrl: https://www.flickr.com/services/oauth/access_token
+          scopes:
+            read: Read access to private content owned by the user
+            write: Modify content owned by the user
+            delete: Delete content owned by the user
