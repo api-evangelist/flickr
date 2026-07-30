@@ -9,6 +9,19 @@ description: >-
   photos.transform / photos.upload), photosets, places, prefs, profile, push, reflection, stats, tags, test, and URLs.
   Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use requires a permission-granted commercial key.
 url: https://www.flickr.com/services/api/
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://combine.swagger.io/flickr.png
 specificationVersion: '0.20'
 created: '2026-05-28'
@@ -23,40 +36,777 @@ tags:
   - Social Media
   - Public APIs
 apis:
-  - name: Flickr API
-    description: >-
-      The full Flickr REST API. Method-dispatched single-endpoint API: every call is `GET/POST
-      https://api.flickr.com/services/rest?method=flickr.{namespace}.{method}`. Uploads use a separate
-      `https://up.flickr.com/services/upload` endpoint. Coverage profiled here: ~30 most-important methods across all 30
-      method namespaces (activity, auth, blogs, cameras, collections, commons, contacts, favorites, galleries, groups,
-      groupsDiscuss, interestingness, machinetags, panda, people, photos, photos.geo, photos.licenses, photos.notes,
-      photos.transform, photos.upload, photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
-    humanURL: https://www.flickr.com/services/api/
-    baseURL: https://api.flickr.com/services
-    tags:
-      - Photography
-      - Photos
-    properties:
-      - type: Documentation
-        url: https://www.flickr.com/services/api/
-      - type: APIReference
-        url: https://www.flickr.com/services/api/
-      - type: OpenAPI
-        url: openapi/flickr-openapi.yml
-      - type: Authentication
-        url: https://www.flickr.com/services/api/auth.oauth.html
-      - type: GettingStarted
-        url: https://www.flickr.com/services/developer/
-      - type: SDKs
-        title: Node.js SDK
-        url: https://www.npmjs.com/package/flickr-sdk
-      - type: SDKs
-        title: Node.js SDK source
-        url: https://github.com/flickr/flickr-sdk
-      - type: SDKs
-        title: Python SDK (python-flickr-api)
-        url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-activity-api
+  name: Flickr Activity API
+  description: Recent activity on the calling user's photos and contacts
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Activity
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-activity-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-auth-api
+  name: Flickr Auth API
+  description: OAuth 1.0a token exchange
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-auth-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-blogs-api
+  name: Flickr Blogs API
+  description: Configured blogs and posting to them
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Blogs
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-blogs-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-cameras-api
+  name: Flickr Cameras API
+  description: Camera brand and model metadata
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Cameras
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-cameras-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-collections-api
+  name: Flickr Collections API
+  description: Hierarchical collections of photosets
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-collections-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-commons-api
+  name: Flickr Commons API
+  description: Flickr Commons institutions
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Commons
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-commons-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-contacts-api
+  name: Flickr Contacts API
+  description: Calling user's contacts and recent contact activity
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-favorites-api
+  name: Flickr Favorites API
+  description: Photos a user has marked as favorites
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Favorites
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-favorites-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-galleries-api
+  name: Flickr Galleries API
+  description: Curated, themed galleries of photos
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Galleries
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-galleries-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-groups-api
+  name: Flickr Groups API
+  description: Group metadata, membership, and pool management
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-groups-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-groups-discuss-api
+  name: Flickr Groups Discuss API
+  description: Group discussion topics and replies
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Groups Discuss
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-groups-discuss-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-interestingness-api
+  name: Flickr Interestingness API
+  description: The day's most interesting photos
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Interestingness
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-interestingness-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-machine-tags-api
+  name: Flickr Machine Tags API
+  description: Namespace, predicate, and value lookups for machine tags
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Machine Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-machine-tags-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-panda-api
+  name: Flickr Panda API
+  description: The Flickr Panda firehose of "interesting" photos
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Panda
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-panda-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-people-api
+  name: Flickr People API
+  description: People (users), their info, public photos, and groups
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-people-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-photos-api
+  name: Flickr Photos API
+  description: Core photo metadata, search, comments, and lifecycle
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Photos
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-photos-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-photos-geo-api
+  name: Flickr Photos Geo API
+  description: Geotagging photos with latitude/longitude
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Photos Geo
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-photos-geo-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-photos-licenses-api
+  name: Flickr Photos Licenses API
+  description: License catalog and per-photo license assignment
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Photos Licenses
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-photos-licenses-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-photos-notes-api
+  name: Flickr Photos Notes API
+  description: Notes drawn on photos
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Photos Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-photos-notes-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-photos-transform-api
+  name: Flickr Photos Transform API
+  description: Rotate photos server-side
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Photos Transform
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-photos-transform-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-photos-upload-api
+  name: Flickr Photos Upload API
+  description: Asynchronous upload status polling
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Photos Upload
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-photos-upload-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-photosets-api
+  name: Flickr Photosets API
+  description: Photo albums (photosets)
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Photosets
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-photosets-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-places-api
+  name: Flickr Places API
+  description: Place IDs, hierarchies, and resolution
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Places
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-places-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-prefs-api
+  name: Flickr Prefs API
+  description: Calling user's posting preferences
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Prefs
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-prefs-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-profile-api
+  name: Flickr Profile API
+  description: User profile fields
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-profile-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-public-api
+  name: Flickr Public API
+  description: The Public API from Flickr — 25 operation(s) for public.
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Public
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-public-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-push-api
+  name: Flickr Push API
+  description: PubSubHubbub push subscriptions
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Push
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-push-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-reflection-api
+  name: Flickr Reflection API
+  description: Programmatic discovery of available API methods
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Reflection
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-reflection-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-stats-api
+  name: Flickr Stats API
+  description: View counts and referrers for photos/photosets/collections
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Stats
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-stats-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-tags-api
+  name: Flickr Tags API
+  description: Tag clusters, hot lists, and tag-based lookups
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-tags-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-test-api
+  name: Flickr Test API
+  description: Echo, login, and null test methods
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - Test
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-test-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
+- aid: flickr:flickr-urls-api
+  name: Flickr URLs API
+  description: Look up Flickr URLs by user, group, gallery
+  humanURL: https://www.flickr.com/services/api/
+  baseURL: https://api.flickr.com/services
+  tags:
+  - URLs
+  properties:
+  - type: OpenAPI
+    url: openapi/flickr-urls-api-openapi.yml
+  - type: Documentation
+    url: https://www.flickr.com/services/api/
+  - type: APIReference
+    url: https://www.flickr.com/services/api/
+  - type: Authentication
+    url: https://www.flickr.com/services/api/auth.oauth.html
+  - type: GettingStarted
+    url: https://www.flickr.com/services/developer/
+  - type: SDKs
+    url: https://www.npmjs.com/package/flickr-sdk
+  - type: SDKs
+    url: https://github.com/flickr/flickr-sdk
+  - type: SDKs
+    url: https://pypi.org/project/flickr-api/
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/flickr/overview
   - type: AgenticAccess
     url: agentic-access/flickr-agentic-access.yml
   - type: VulnerabilityDisclosure
