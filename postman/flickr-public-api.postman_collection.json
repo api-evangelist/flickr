@@ -1,0 +1,2904 @@
+{
+  "info": {
+    "_postman_id": "4e25b9a1-9889-4066-9a1c-93415428492b",
+    "name": "Flickr Activity Public API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:41:02.000Z",
+    "updatedAt": "2026-07-28T01:41:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4e25b9a1-9889-4066-9a1c-93415428492b"
+  },
+  "item": [
+    {
+      "name": "rest?method=flickr.favorites.getList",
+      "item": [
+        {
+          "name": "get Favorites By Person ID",
+          "id": "f01a0224-8097-422e-b0c7-584aa211f4c9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.favorites.getList&api_key=&user_id=&min_fave_date=&max_fave_date=&page=&per_page=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.favorites.getList"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "key": "min_fave_date",
+                  "value": ""
+                },
+                {
+                  "key": "max_fave_date",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "key": "per_page",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned."
+          },
+          "response": [
+            {
+              "id": "065ee2e3-341a-4e42-b303-9f7a0f710505",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&user_id=&min_fave_date=&max_fave_date=&page=&per_page=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_fave_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_fave_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-065ee2e3-341a-4e42-b303-9f7a0f710505"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-f01a0224-8097-422e-b0c7-584aa211f4c9"
+        }
+      ],
+      "id": "bee9516b-07c6-4e25-b1ef-ce6a7c6b5975",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-bee9516b-07c6-4e25-b1ef-ce6a7c6b5975"
+    },
+    {
+      "name": "rest?method=flickr.people.getPhotos",
+      "item": [
+        {
+          "name": "get Media By Person ID",
+          "id": "fdfbccc2-a0ac-4ac6-9af0-68add50654c5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.people.getPhotos&api_key=&user_id=&safe_search=&min_upload_date=&max_upload_date=&min_taken_date=&max_taken_date=&content_type=&privacy_filter=&page=&per_page=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.people.getPhotos"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "key": "safe_search",
+                  "value": ""
+                },
+                {
+                  "key": "min_upload_date",
+                  "value": ""
+                },
+                {
+                  "key": "max_upload_date",
+                  "value": ""
+                },
+                {
+                  "key": "min_taken_date",
+                  "value": ""
+                },
+                {
+                  "key": "max_taken_date",
+                  "value": ""
+                },
+                {
+                  "key": "content_type",
+                  "value": ""
+                },
+                {
+                  "key": "privacy_filter",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "key": "per_page",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Return photos from the given user's photostream"
+          },
+          "response": [
+            {
+              "id": "f787c8f0-29a9-4022-93ec-329ba7839cef",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&user_id=&safe_search=&min_upload_date=&max_upload_date=&min_taken_date=&max_taken_date=&content_type=&privacy_filter=&page=&per_page=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "safe_search",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "content_type",
+                      "value": ""
+                    },
+                    {
+                      "key": "privacy_filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-f787c8f0-29a9-4022-93ec-329ba7839cef"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-fdfbccc2-a0ac-4ac6-9af0-68add50654c5"
+        }
+      ],
+      "id": "c126ce9a-0e61-4e97-b892-f5484ccdcc53",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-c126ce9a-0e61-4e97-b892-f5484ccdcc53"
+    },
+    {
+      "name": "rest?method=flickr.photosets.getList",
+      "item": [
+        {
+          "name": "get Albums By Person ID",
+          "id": "1d208f96-842d-4162-953e-f78f19d3fb92",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photosets.getList&api_key=&user_id=&page=&per_page=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photosets.getList"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "key": "per_page",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns the albums belonging to the specified user"
+          },
+          "response": [
+            {
+              "id": "51aea482-6757-4665-ac39-04cbb7a0ea5c",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&user_id=&page=&per_page=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-51aea482-6757-4665-ac39-04cbb7a0ea5c"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-1d208f96-842d-4162-953e-f78f19d3fb92"
+        }
+      ],
+      "id": "59edfd53-2ea9-4d97-b6f1-3c9caf9d6796",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-59edfd53-2ea9-4d97-b6f1-3c9caf9d6796"
+    },
+    {
+      "name": "rest?method=flickr.favorites.getContext",
+      "item": [
+        {
+          "name": "get Favorites Context By ID",
+          "id": "690b9323-0bd2-4209-aa26-bd69a555aad8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.favorites.getContext&api_key=&photo_id=&user_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.favorites.getContext"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns next and previous favorites for a photo in a user's favorites"
+          },
+          "response": [
+            {
+              "id": "af79084e-1d0b-419c-8cec-54f1a6ce2f7b",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=&user_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-af79084e-1d0b-419c-8cec-54f1a6ce2f7b"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-690b9323-0bd2-4209-aa26-bd69a555aad8"
+        }
+      ],
+      "id": "7df31fad-f471-4887-99a6-cd7324842bb5",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-7df31fad-f471-4887-99a6-cd7324842bb5"
+    },
+    {
+      "name": "rest?method=flickr.groups.getInfo",
+      "item": [
+        {
+          "name": "get Group By ID",
+          "id": "004484e8-65b6-40fc-b806-6300dd06e30a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.groups.getInfo&api_key=&group_id=&group_path_alias=&lang=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.getInfo"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "key": "group_path_alias",
+                  "value": ""
+                },
+                {
+                  "key": "lang",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Get information about a group"
+          },
+          "response": [
+            {
+              "id": "b1ffadfd-f553-4393-9150-6bf4d1e3212d",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&group_id=&group_path_alias=&lang=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_path_alias",
+                      "value": ""
+                    },
+                    {
+                      "key": "lang",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-b1ffadfd-f553-4393-9150-6bf4d1e3212d"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-004484e8-65b6-40fc-b806-6300dd06e30a"
+        }
+      ],
+      "id": "bb698ff1-8ebe-4306-bd23-172ff8d15ae9",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-bb698ff1-8ebe-4306-bd23-172ff8d15ae9"
+    },
+    {
+      "name": "rest?method=flickr.groups.pools.getPhotos",
+      "item": [
+        {
+          "name": "get Group Photos By ID",
+          "id": "8fee99dc-38e0-4ce8-811e-171b54d5088a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.groups.pools.getPhotos&api_key=&group_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.pools.getPhotos"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "key": "group_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns a list of pool photos for a given group"
+          },
+          "response": [
+            {
+              "id": "2a11a9c4-3fb3-4a64-970c-72fbe48e1695",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&group_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-2a11a9c4-3fb3-4a64-970c-72fbe48e1695"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-8fee99dc-38e0-4ce8-811e-171b54d5088a"
+        }
+      ],
+      "id": "603a3af8-0f1d-4d5d-b2c2-74d3dbba53d3",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-603a3af8-0f1d-4d5d-b2c2-74d3dbba53d3"
+    },
+    {
+      "name": "rest?method=flickr.groups.discuss.topics.getList",
+      "item": [
+        {
+          "name": "get Group Discussions By ID",
+          "id": "04ce0aa4-0f5e-404e-b47a-049a88e41b95",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.groups.discuss.topics.getList&api_key=&group_id=&page=&per_page=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.discuss.topics.getList"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "key": "per_page",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Get a list of discussion topics in a group."
+          },
+          "response": [
+            {
+              "id": "e530fb26-3d96-439d-8966-a83679d25982",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&group_id=&page=&per_page=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-e530fb26-3d96-439d-8966-a83679d25982"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-04ce0aa4-0f5e-404e-b47a-049a88e41b95"
+        }
+      ],
+      "id": "2600bbaf-29f4-4a08-8802-97885283b177",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-2600bbaf-29f4-4a08-8802-97885283b177"
+    },
+    {
+      "name": "rest?method=flickr.groups.discuss.replies.getInfo",
+      "item": [
+        {
+          "name": "get Group Topic Replies By ID",
+          "id": "4e628bc6-5a23-4bcd-8e2e-37b417407b7a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.groups.discuss.replies.getInfo&api_key=&group_id=&topic_id=&reply_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.discuss.replies.getInfo"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "topic_id",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "reply_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Get information on a group topic reply"
+          },
+          "response": [
+            {
+              "id": "2c10e841-c4bd-4238-a5e4-b0a0a9a67cd4",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&group_id=&topic_id=&reply_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "topic_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "reply_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-2c10e841-c4bd-4238-a5e4-b0a0a9a67cd4"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-4e628bc6-5a23-4bcd-8e2e-37b417407b7a"
+        }
+      ],
+      "id": "f03cd5c2-147c-47a3-ad5f-575d8143b61f",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-f03cd5c2-147c-47a3-ad5f-575d8143b61f"
+    },
+    {
+      "name": "rest?method=flickr.groups.discuss.topics.getInfo",
+      "item": [
+        {
+          "name": "get Group Topic By ID",
+          "id": "4b348dc0-41be-4ee9-9c20-074f5d8070d0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.groups.discuss.topics.getInfo&api_key=&group_id=&topic_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.discuss.topics.getInfo"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "topic_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Get information about a group discussion topic"
+          },
+          "response": [
+            {
+              "id": "90eed082-ad36-4adc-b53d-507c078025ea",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&group_id=&topic_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "topic_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-90eed082-ad36-4adc-b53d-507c078025ea"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-4b348dc0-41be-4ee9-9c20-074f5d8070d0"
+        }
+      ],
+      "id": "ce26f682-9975-4dab-b51d-a09cf03d6b7c",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-ce26f682-9975-4dab-b51d-a09cf03d6b7c"
+    },
+    {
+      "name": "rest?method=flickr.groups.pools.getContext",
+      "item": [
+        {
+          "name": "get Group Photos By ID",
+          "id": "defa9882-6a93-489f-a3ab-3d49df1a658f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.groups.pools.getContext&api_key=&photo_id=&group_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.pools.getContext"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "key": "group_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns next and previous photos for a photo in a group pool"
+          },
+          "response": [
+            {
+              "id": "e5e94f60-d450-412d-9aa8-1d4a9a37bff1",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=&group_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-e5e94f60-d450-412d-9aa8-1d4a9a37bff1"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-defa9882-6a93-489f-a3ab-3d49df1a658f"
+        }
+      ],
+      "id": "a0adadcb-96b7-4ce0-aca9-390a82dc90e1",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-a0adadcb-96b7-4ce0-aca9-390a82dc90e1"
+    },
+    {
+      "name": "rest?method=flickr.photolist.getContext",
+      "item": [
+        {
+          "name": "get Photolist Context By ID",
+          "id": "83363c63-b183-427c-b216-dae1f7dedf75",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photolist.getContext&api_key=&photo_id=&photolist_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photolist.getContext"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photolist_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns next and previous photos in a photo list"
+          },
+          "response": [
+            {
+              "id": "a0105885-7d59-4be8-86cf-7d16025055ee",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=&photolist_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photolist_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-a0105885-7d59-4be8-86cf-7d16025055ee"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-83363c63-b183-427c-b216-dae1f7dedf75"
+        }
+      ],
+      "id": "24ad225a-70dc-44b1-b83d-9a1ea1227801",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-24ad225a-70dc-44b1-b83d-9a1ea1227801"
+    },
+    {
+      "name": "rest?method=flickr.photos.getContext",
+      "item": [
+        {
+          "name": "get Photostream Context By ID",
+          "id": "5225673a-5644-4eb5-b030-593d0249c3f8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photos.getContext&api_key=&photo_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getContext"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns next and previous photos for a photo in a photostream"
+          },
+          "response": [
+            {
+              "id": "25f930e9-700b-408a-b9dd-e34cd0ffc929",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-25f930e9-700b-408a-b9dd-e34cd0ffc929"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-5225673a-5644-4eb5-b030-593d0249c3f8"
+        }
+      ],
+      "id": "2a8702c4-78f8-458d-9b19-a46224d2152e",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-2a8702c4-78f8-458d-9b19-a46224d2152e"
+    },
+    {
+      "name": "rest?method=flickr.photos.licenses.getInfo",
+      "item": [
+        {
+          "name": "get License By ID",
+          "id": "d9e0eb28-73c5-4a58-8c50-10a963cd2669",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photos.licenses.getInfo&api_key=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.licenses.getInfo"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Fetches a list of available photo licenses for Flickr"
+          },
+          "response": [
+            {
+              "id": "d369f6ac-6164-4c58-a600-da0deab159e1",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-d369f6ac-6164-4c58-a600-da0deab159e1"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-d9e0eb28-73c5-4a58-8c50-10a963cd2669"
+        }
+      ],
+      "id": "319b7b5e-0613-422f-9c78-a62b536c1359",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-319b7b5e-0613-422f-9c78-a62b536c1359"
+    },
+    {
+      "name": "rest?method=flickr.people.getInfo",
+      "item": [
+        {
+          "name": "get Person By ID",
+          "id": "095b1f6a-fa92-4435-9a1f-35784e119227",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.people.getInfo&api_key=&user_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.people.getInfo"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns a person"
+          },
+          "response": [
+            {
+              "id": "08962110-bb99-4ff5-94f2-723cbf27fed6",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&user_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-08962110-bb99-4ff5-94f2-723cbf27fed6"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-095b1f6a-fa92-4435-9a1f-35784e119227"
+        }
+      ],
+      "id": "e087faeb-a049-492a-a0ee-42afa2693afe",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-e087faeb-a049-492a-a0ee-42afa2693afe"
+    },
+    {
+      "name": "rest?method=flickr.photos.getExif",
+      "item": [
+        {
+          "name": "get Photo Exif By ID",
+          "id": "9beeeb16-35ab-4d3b-a501-b48fccd2a12e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photos.getExif&api_key=&photo_id=&secret=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getExif"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "key": "secret",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Retrieves a list of EXIF/TIFF/GPS tags for a given photo. The calling user must have permission to view the photo."
+          },
+          "response": [
+            {
+              "id": "7a5c752a-9414-4ed9-aac8-8a7eeffbee86",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=&secret=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "secret",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-7a5c752a-9414-4ed9-aac8-8a7eeffbee86"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-9beeeb16-35ab-4d3b-a501-b48fccd2a12e"
+        }
+      ],
+      "id": "1f171b85-634e-407c-aac2-1192147b14ce",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-1f171b85-634e-407c-aac2-1192147b14ce"
+    },
+    {
+      "name": "rest?method=flickr.photos.getInfo",
+      "item": [
+        {
+          "name": "get Photo By ID",
+          "id": "b04b16d0-7bc6-4dfc-8da3-e9fe6a083ebb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photos.getInfo&api_key=&photo_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getInfo"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns a photo"
+          },
+          "response": [
+            {
+              "id": "808e6559-07d0-4bb6-adbf-8e4ea1bdfc2f",
+              "name": "a photo",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-808e6559-07d0-4bb6-adbf-8e4ea1bdfc2f"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-b04b16d0-7bc6-4dfc-8da3-e9fe6a083ebb"
+        }
+      ],
+      "id": "e38d7393-b523-4ae1-bbc5-b1a4c65ba422",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-e38d7393-b523-4ae1-bbc5-b1a4c65ba422"
+    },
+    {
+      "name": "rest?method=flickr.photos.getSizes",
+      "item": [
+        {
+          "name": "get Photo Sizes By ID",
+          "id": "f1ff8fed-534b-4d31-8372-a4cc5e9c182c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photos.getSizes&api_key=&photo_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getSizes"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns photo sizes"
+          },
+          "response": [
+            {
+              "id": "d22351d5-c420-4b54-bff0-b577f417c36a",
+              "name": "Photo sizes",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-d22351d5-c420-4b54-bff0-b577f417c36a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-f1ff8fed-534b-4d31-8372-a4cc5e9c182c"
+        }
+      ],
+      "id": "3fcb4c39-b399-4ce2-8868-aa93460fa510",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-3fcb4c39-b399-4ce2-8868-aa93460fa510"
+    },
+    {
+      "name": "rest?method=flickr.photosets.getContext",
+      "item": [
+        {
+          "name": "get Album Context By ID",
+          "id": "80511987-4d5e-4ba6-8a7b-59a5b2a1f54a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photosets.getContext&api_key=&photo_id=&photoset_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photosets.getContext"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "key": "photoset_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns next and previous photos for a photo in a set"
+          },
+          "response": [
+            {
+              "id": "d2db623b-daae-4e31-a3fc-ba50ae4d0c11",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photo_id=&photoset_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "photoset_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-d2db623b-daae-4e31-a3fc-ba50ae4d0c11"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-80511987-4d5e-4ba6-8a7b-59a5b2a1f54a"
+        }
+      ],
+      "id": "d249e3da-6ecb-4d01-8a6f-82601c2e1f1f",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-d249e3da-6ecb-4d01-8a6f-82601c2e1f1f"
+    },
+    {
+      "name": "rest?method=flickr.photosets.getPhotos",
+      "item": [
+        {
+          "name": "get Album By ID",
+          "id": "8427e0d5-d942-479d-b055-fd8c81b4b422",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photosets.getPhotos&api_key=&photoset_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photosets.getPhotos"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "photoset_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns a list of photos in an album."
+          },
+          "response": [
+            {
+              "id": "3f15cb0e-4a18-492e-a91d-b6a33a146aba",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&photoset_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photoset_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-3f15cb0e-4a18-492e-a91d-b6a33a146aba"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-8427e0d5-d942-479d-b055-fd8c81b4b422"
+        }
+      ],
+      "id": "94993647-8196-4715-b194-cb625ed41169",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-94993647-8196-4715-b194-cb625ed41169"
+    },
+    {
+      "name": "rest?method=flickr.galleries.getPhotos",
+      "item": [
+        {
+          "name": "get Gallery Photos By ID",
+          "id": "a06f1cba-5a57-42df-aff8-d559c258dc82",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.galleries.getPhotos&api_key=&gallery_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.galleries.getPhotos"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "gallery_id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Returns a list of photos in a gallery."
+          },
+          "response": [
+            {
+              "id": "4d163151-f657-429e-a65e-06374afc49f8",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&gallery_id=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "gallery_id",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-4d163151-f657-429e-a65e-06374afc49f8"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-a06f1cba-5a57-42df-aff8-d559c258dc82"
+        }
+      ],
+      "id": "971fcddd-075b-4c8d-9127-106b0356eab8",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-971fcddd-075b-4c8d-9127-106b0356eab8"
+    },
+    {
+      "name": "rest?method=flickr.photos.search",
+      "item": [
+        {
+          "name": "get Media By Search",
+          "id": "8c98ffe8-ea5e-4e6a-9e93-0b705d337a99",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.photos.search&api_key=&text=&tags=&user_id=&min_upload_date=&max_upload_date=&min_taken_date=&max_taken_date=&license=&sort=&privacy_filter=&bbox=&accuracy=&safe_search=&content_type=&machine_tags=&machine_tag_mode=&group_id=&contacts=&woe_id=&place_id=&media=&has_geo=&geo_context=&lat=&lon=&radius=&radius_units=&is_commons=&in_gallery=&is_getty=&per_page=&page=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.search"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": "A free text search. Photos who's title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character.",
+                  "key": "text",
+                  "value": ""
+                },
+                {
+                  "description": "A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character.",
+                  "key": "tags",
+                  "value": ""
+                },
+                {
+                  "description": "The NSID of the user who's photo to search. If this parameter isn't passed then everybody's public photos will be searched. A value of \"me\" will search against the calling user's photos for authenticated calls.",
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "description": "Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime.",
+                  "key": "min_upload_date",
+                  "value": ""
+                },
+                {
+                  "description": "Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime.",
+                  "key": "max_upload_date",
+                  "value": ""
+                },
+                {
+                  "description": "Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp.",
+                  "key": "min_taken_date",
+                  "value": ""
+                },
+                {
+                  "description": "Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp.",
+                  "key": "max_taken_date",
+                  "value": ""
+                },
+                {
+                  "description": "The license id for photos (for possible values see the flickr.photos.licenses.getInfo method). Multiple licenses may be comma-separated.",
+                  "key": "license",
+                  "value": ""
+                },
+                {
+                  "description": "The order in which to sort returned photos. Deafults to date-posted-desc (unless you are doing a radial geo query, in which case the default sorting is by ascending distance from the point specified). The possible values are:\n  date-posted-asc,\n  date-posted-desc,\n  date-taken-asc,\n  date-taken-desc,\n  interestingness-desc,\n  interestingness-asc, and\n  relevance.\n",
+                  "key": "sort",
+                  "value": ""
+                },
+                {
+                  "description": "Return photos only matching a certain privacy level. This only applies when making an authenticated call to view photos you own. Valid values are:,\n  1: public photos,\n  2: private photos visible to friends,\n  3: private photos visible to family,\n  4: private photos visible to friends & family,\n  5: completely private photos\n",
+                  "key": "privacy_filter",
+                  "value": ""
+                },
+                {
+                  "description": "A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched.",
+                  "key": "bbox",
+                  "value": ""
+                },
+                {
+                  "description": "Recorded accuracy level of the location information. Current range is 1-16:\n  World level is 1\n  Country is ~3\n  Region is ~6\n  City is ~11\n  Street is ~16\n",
+                  "key": "accuracy",
+                  "value": ""
+                },
+                {
+                  "description": "Safe search setting:\n  1: for safe,\n  2: for moderate,\n  3: for restricted\n",
+                  "key": "safe_search",
+                  "value": ""
+                },
+                {
+                  "description": "Content Type setting:\n  1: photos only.\n  2: screenshots only.\n  3: 'other' only.\n  4: photos and screenshots.\n  5: screenshots and 'other'.\n  6: photos and 'other'.\n  7: photos, screenshots, and 'other' (all).\n",
+                  "key": "content_type",
+                  "value": ""
+                },
+                {
+                  "description": "Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : \"machine_tags\" => \"dc:\" Find photos with a title in the 'dc' namespace : \"machine_tags\" => \"dc:title=\" Find photos titled \"mr. camera\" in the 'dc' namespace : \"machine_tags\" => \"dc:title=\\\"mr. camera\\\" Find photos whose value is \"mr. camera\" : \"machine_tags\" => \"*:*=\\\"mr. camera\\\"\" Find photos that have a title, in any namespace : \"machine_tags\" => \"*:title=\" Find photos that have a title, in any namespace, whose value is \"mr. camera\" : \"machine_tags\" => \"*:title=\\\"mr. camera\\\"\" Find photos, in the 'dc' namespace whose value is \"mr. camera\" : \"machine_tags\" => \"dc:*=\\\"mr. camera\\\"\" Multiple machine tags may be queried by passing a comma-separated list. The number of machine tags you can pass in a single query depends on the tag mode (AND or OR) that you are querying with. \"AND\" queries are limited to (16) machine tags. \"OR\" queries are limited to (8).\n",
+                  "key": "machine_tags",
+                  "value": ""
+                },
+                {
+                  "description": "Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified.",
+                  "key": "machine_tag_mode",
+                  "value": ""
+                },
+                {
+                  "description": "The id of a group who's pool to search. If specified, only matching photos posted to the group's pool will be returned.",
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": "Search your contacts. Either 'all' or 'ff' for just friends and family. (Experimental)",
+                  "key": "contacts",
+                  "value": ""
+                },
+                {
+                  "description": "A 32-bit identifier that uniquely represents spatial entities. (not used if bbox argument is present).",
+                  "key": "woe_id",
+                  "value": ""
+                },
+                {
+                  "description": "A Flickr place id. (not used if bbox argument is present). Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                  "key": "place_id",
+                  "value": ""
+                },
+                {
+                  "description": "Filter results by media type. Possible values are all (default), photos or videos",
+                  "key": "media",
+                  "value": ""
+                },
+                {
+                  "description": "Any photo that has been geotagged, or if the value is \"0\" any photo that has not been geotagged. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                  "key": "has_geo",
+                  "value": ""
+                },
+                {
+                  "description": "Geo context is a numeric value representing the photo's geotagginess beyond latitude and longitude. For example, you may wish to search for photos that were taken \"indoors\" or \"outdoors\". The current list of context IDs is: 0, not defined. 1, indoors. 2, outdoors. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                  "key": "geo_context",
+                  "value": ""
+                },
+                {
+                  "description": "A valid latitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                  "key": "lat",
+                  "value": ""
+                },
+                {
+                  "description": "A valid longitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                  "key": "lon",
+                  "value": ""
+                },
+                {
+                  "description": "A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries. The default value is 5 (km).",
+                  "key": "radius",
+                  "value": ""
+                },
+                {
+                  "description": "The unit of measure when doing radial geo queries. Valid options are \"mi\" (miles) and \"km\" (kilometers). The default is \"km\".",
+                  "key": "radius_units",
+                  "value": ""
+                },
+                {
+                  "description": "Limit the scope of the search to only photos that are part of the Flickr Commons project. Default is false.",
+                  "key": "is_commons",
+                  "value": ""
+                },
+                {
+                  "description": "Limit the scope of the search to only photos that are in a gallery? Default is false, search all photos.",
+                  "key": "in_gallery",
+                  "value": ""
+                },
+                {
+                  "description": "Limit the scope of the search to only photos that are for sale on Getty. Default is false.",
+                  "key": "is_getty",
+                  "value": ""
+                },
+                {
+                  "description": "Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.",
+                  "key": "per_page",
+                  "value": ""
+                },
+                {
+                  "description": "The page of results to return. If this argument is omitted, it defaults to 1.",
+                  "key": "page",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Return a list of photos matching some criteria."
+          },
+          "response": [
+            {
+              "id": "d0e3962d-d8c2-47b9-a47a-1ed7b26a6637",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&text=&tags=&user_id=&min_upload_date=&max_upload_date=&min_taken_date=&max_taken_date=&license=&sort=&privacy_filter=&bbox=&accuracy=&safe_search=&content_type=&machine_tags=&machine_tag_mode=&group_id=&contacts=&woe_id=&place_id=&media=&has_geo=&geo_context=&lat=&lon=&radius=&radius_units=&is_commons=&in_gallery=&is_getty=&per_page=&page=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "A free text search. Photos who's title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character.",
+                      "key": "text",
+                      "value": ""
+                    },
+                    {
+                      "description": "A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character.",
+                      "key": "tags",
+                      "value": ""
+                    },
+                    {
+                      "description": "The NSID of the user who's photo to search. If this parameter isn't passed then everybody's public photos will be searched. A value of \"me\" will search against the calling user's photos for authenticated calls.",
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime.",
+                      "key": "min_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "description": "Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime.",
+                      "key": "max_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "description": "Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp.",
+                      "key": "min_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "description": "Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp.",
+                      "key": "max_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "description": "The license id for photos (for possible values see the flickr.photos.licenses.getInfo method). Multiple licenses may be comma-separated.",
+                      "key": "license",
+                      "value": ""
+                    },
+                    {
+                      "description": "The order in which to sort returned photos. Deafults to date-posted-desc (unless you are doing a radial geo query, in which case the default sorting is by ascending distance from the point specified). The possible values are:\n  date-posted-asc,\n  date-posted-desc,\n  date-taken-asc,\n  date-taken-desc,\n  interestingness-desc,\n  interestingness-asc, and\n  relevance.\n",
+                      "key": "sort",
+                      "value": ""
+                    },
+                    {
+                      "description": "Return photos only matching a certain privacy level. This only applies when making an authenticated call to view photos you own. Valid values are:,\n  1: public photos,\n  2: private photos visible to friends,\n  3: private photos visible to family,\n  4: private photos visible to friends & family,\n  5: completely private photos\n",
+                      "key": "privacy_filter",
+                      "value": ""
+                    },
+                    {
+                      "description": "A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched.",
+                      "key": "bbox",
+                      "value": ""
+                    },
+                    {
+                      "description": "Recorded accuracy level of the location information. Current range is 1-16:\n  World level is 1\n  Country is ~3\n  Region is ~6\n  City is ~11\n  Street is ~16\n",
+                      "key": "accuracy",
+                      "value": ""
+                    },
+                    {
+                      "description": "Safe search setting:\n  1: for safe,\n  2: for moderate,\n  3: for restricted\n",
+                      "key": "safe_search",
+                      "value": ""
+                    },
+                    {
+                      "description": "Content Type setting:\n  1: photos only.\n  2: screenshots only.\n  3: 'other' only.\n  4: photos and screenshots.\n  5: screenshots and 'other'.\n  6: photos and 'other'.\n  7: photos, screenshots, and 'other' (all).\n",
+                      "key": "content_type",
+                      "value": ""
+                    },
+                    {
+                      "description": "Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : \"machine_tags\" => \"dc:\" Find photos with a title in the 'dc' namespace : \"machine_tags\" => \"dc:title=\" Find photos titled \"mr. camera\" in the 'dc' namespace : \"machine_tags\" => \"dc:title=\\\"mr. camera\\\" Find photos whose value is \"mr. camera\" : \"machine_tags\" => \"*:*=\\\"mr. camera\\\"\" Find photos that have a title, in any namespace : \"machine_tags\" => \"*:title=\" Find photos that have a title, in any namespace, whose value is \"mr. camera\" : \"machine_tags\" => \"*:title=\\\"mr. camera\\\"\" Find photos, in the 'dc' namespace whose value is \"mr. camera\" : \"machine_tags\" => \"dc:*=\\\"mr. camera\\\"\" Multiple machine tags may be queried by passing a comma-separated list. The number of machine tags you can pass in a single query depends on the tag mode (AND or OR) that you are querying with. \"AND\" queries are limited to (16) machine tags. \"OR\" queries are limited to (8).\n",
+                      "key": "machine_tags",
+                      "value": ""
+                    },
+                    {
+                      "description": "Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified.",
+                      "key": "machine_tag_mode",
+                      "value": ""
+                    },
+                    {
+                      "description": "The id of a group who's pool to search. If specified, only matching photos posted to the group's pool will be returned.",
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "Search your contacts. Either 'all' or 'ff' for just friends and family. (Experimental)",
+                      "key": "contacts",
+                      "value": ""
+                    },
+                    {
+                      "description": "A 32-bit identifier that uniquely represents spatial entities. (not used if bbox argument is present).",
+                      "key": "woe_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "A Flickr place id. (not used if bbox argument is present). Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                      "key": "place_id",
+                      "value": ""
+                    },
+                    {
+                      "description": "Filter results by media type. Possible values are all (default), photos or videos",
+                      "key": "media",
+                      "value": ""
+                    },
+                    {
+                      "description": "Any photo that has been geotagged, or if the value is \"0\" any photo that has not been geotagged. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                      "key": "has_geo",
+                      "value": ""
+                    },
+                    {
+                      "description": "Geo context is a numeric value representing the photo's geotagginess beyond latitude and longitude. For example, you may wish to search for photos that were taken \"indoors\" or \"outdoors\". The current list of context IDs is: 0, not defined. 1, indoors. 2, outdoors. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                      "key": "geo_context",
+                      "value": ""
+                    },
+                    {
+                      "description": "A valid latitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                      "key": "lat",
+                      "value": ""
+                    },
+                    {
+                      "description": "A valid longitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters \u2014 If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                      "key": "lon",
+                      "value": ""
+                    },
+                    {
+                      "description": "A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries. The default value is 5 (km).",
+                      "key": "radius",
+                      "value": ""
+                    },
+                    {
+                      "description": "The unit of measure when doing radial geo queries. Valid options are \"mi\" (miles) and \"km\" (kilometers). The default is \"km\".",
+                      "key": "radius_units",
+                      "value": ""
+                    },
+                    {
+                      "description": "Limit the scope of the search to only photos that are part of the Flickr Commons project. Default is false.",
+                      "key": "is_commons",
+                      "value": ""
+                    },
+                    {
+                      "description": "Limit the scope of the search to only photos that are in a gallery? Default is false, search all photos.",
+                      "key": "in_gallery",
+                      "value": ""
+                    },
+                    {
+                      "description": "Limit the scope of the search to only photos that are for sale on Getty. Default is false.",
+                      "key": "is_getty",
+                      "value": ""
+                    },
+                    {
+                      "description": "Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.",
+                      "key": "per_page",
+                      "value": ""
+                    },
+                    {
+                      "description": "The page of results to return. If this argument is omitted, it defaults to 1.",
+                      "key": "page",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-d0e3962d-d8c2-47b9-a47a-1ed7b26a6637"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-8c98ffe8-ea5e-4e6a-9e93-0b705d337a99"
+        }
+      ],
+      "id": "de208287-7f29-41c6-9c4b-129633fdf4af",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-de208287-7f29-41c6-9c4b-129633fdf4af"
+    },
+    {
+      "name": "upload",
+      "item": [
+        {
+          "name": "upload Photo",
+          "id": "50343dfb-74e3-4486-93eb-9848bfcac6d7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/upload",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "upload"
+              ]
+            },
+            "description": "Uploads a new photo to Flickr"
+          },
+          "response": [
+            {
+              "id": "72c2c562-206f-414f-941e-4d16402225c7",
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/upload?api_key=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "upload"
+                  ],
+                  "query": [
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-72c2c562-206f-414f-941e-4d16402225c7"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-50343dfb-74e3-4486-93eb-9848bfcac6d7"
+        }
+      ],
+      "id": "b88e8ded-b5cf-41c4-b945-b06f074e0438",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-b88e8ded-b5cf-41c4-b945-b06f074e0438"
+    },
+    {
+      "name": "rest?method=flickr.test.echo",
+      "item": [
+        {
+          "name": "echo",
+          "id": "6c72ad2e-436c-42c1-92a3-34ad47bc55e2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=flickr.test.echo&api_key=&echo=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.test.echo"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "key": "echo",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Echos the input parameters back in the response"
+          },
+          "response": [
+            {
+              "id": "35ee59f0-28c7-41de-85e5-606c6502e776",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?api_key=<API Key>&echo=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "key": "echo",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-35ee59f0-28c7-41de-85e5-606c6502e776"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-6c72ad2e-436c-42c1-92a3-34ad47bc55e2"
+        }
+      ],
+      "id": "8efb18aa-f362-4c9b-b532-85215f6764d9",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-8efb18aa-f362-4c9b-b532-85215f6764d9"
+    },
+    {
+      "name": "oauth",
+      "item": [
+        {
+          "name": "request_token",
+          "item": [
+            {
+              "name": "get Request Token",
+              "id": "97397b13-60ff-4058-837b-90c4c4370cc1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/oauth/request_token?oauth_consumer_key=&oauth_nonce=&oauth_timestamp=&oauth_signature_method=&oauth_version=&oauth_signature=&oauth_callback=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oauth",
+                    "request_token"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_consumer_key",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_nonce",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_timestamp",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_signature_method",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_version",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_signature",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_callback",
+                      "value": ""
+                    }
+                  ]
+                },
+                "description": "Returns an oauth token and oauth token secret"
+              },
+              "response": [
+                {
+                  "id": "d8f44190-5893-49eb-8e23-6b746ae67088",
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/oauth/request_token?oauth_consumer_key=&oauth_nonce=&oauth_timestamp=&oauth_signature_method=&oauth_version=&oauth_signature=&oauth_callback=&api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "oauth",
+                        "request_token"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_consumer_key",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_nonce",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_timestamp",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_signature_method",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_version",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_signature",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_callback",
+                          "value": ""
+                        },
+                        {
+                          "description": "Added as a part of security scheme: apikey",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:41:03.000Z",
+                  "updatedAt": "2026-07-28T01:41:03.000Z",
+                  "uid": "35240-d8f44190-5893-49eb-8e23-6b746ae67088"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-97397b13-60ff-4058-837b-90c4c4370cc1"
+            }
+          ],
+          "id": "49ecbecb-5f26-4126-ae2c-7a8f7345223f",
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-49ecbecb-5f26-4126-ae2c-7a8f7345223f"
+        },
+        {
+          "name": "access_token",
+          "item": [
+            {
+              "name": "get Access Token",
+              "id": "15b4167f-8ed7-4677-acf3-e3d20bd8ba9d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/oauth/access_token?oauth_consumer_key=&oauth_nonce=&oauth_timestamp=&oauth_signature_method=&oauth_version=&oauth_signature=&oauth_verifier=&oauth_token=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oauth",
+                    "access_token"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_consumer_key",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_nonce",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_timestamp",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_signature_method",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_version",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_signature",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_verifier",
+                      "value": ""
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "oauth_token",
+                      "value": ""
+                    }
+                  ]
+                },
+                "description": "Returns an access token"
+              },
+              "response": [
+                {
+                  "id": "175fd8db-d1a4-4ee3-8f47-7c2250eb3309",
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/oauth/access_token?oauth_consumer_key=&oauth_nonce=&oauth_timestamp=&oauth_signature_method=&oauth_version=&oauth_signature=&oauth_verifier=&oauth_token=&api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "oauth",
+                        "access_token"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_consumer_key",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_nonce",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_timestamp",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_signature_method",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_version",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_signature",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_verifier",
+                          "value": ""
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "oauth_token",
+                          "value": ""
+                        },
+                        {
+                          "description": "Added as a part of security scheme: apikey",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:41:03.000Z",
+                  "updatedAt": "2026-07-28T01:41:03.000Z",
+                  "uid": "35240-175fd8db-d1a4-4ee3-8f47-7c2250eb3309"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:03.000Z",
+              "updatedAt": "2026-07-28T01:41:03.000Z",
+              "uid": "35240-15b4167f-8ed7-4677-acf3-e3d20bd8ba9d"
+            }
+          ],
+          "id": "5f988c01-219f-4f0d-b0a7-21b7b6fb7ae1",
+          "createdAt": "2026-07-28T01:41:03.000Z",
+          "updatedAt": "2026-07-28T01:41:03.000Z",
+          "uid": "35240-5f988c01-219f-4f0d-b0a7-21b7b6fb7ae1"
+        }
+      ],
+      "id": "33828caf-d99b-483b-a72e-952f19291fdc",
+      "createdAt": "2026-07-28T01:41:03.000Z",
+      "updatedAt": "2026-07-28T01:41:03.000Z",
+      "uid": "35240-33828caf-d99b-483b-a72e-952f19291fdc"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

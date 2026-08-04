@@ -1,0 +1,416 @@
+{
+  "info": {
+    "_postman_id": "4ed9e2e0-fe29-4ef8-a0f0-cbf54421ed91",
+    "name": "Flickr Activity Reflection API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:41:07.000Z",
+    "updatedAt": "2026-07-28T01:41:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4ed9e2e0-fe29-4ef8-a0f0-cbf54421ed91"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.reflection.getMethods",
+          "item": [
+            {
+              "name": "List Available API Methods",
+              "id": "fe1bf1a9-519f-4e11-81c3-3061a4095175",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.reflection.getMethods?api_key=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.reflection.getMethods"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns a list of available Flickr API methods."
+              },
+              "response": [
+                {
+                  "id": "3af34453-da59-471f-9580-2f55121f48ae",
+                  "name": "Methods",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.reflection.getMethods?api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.reflection.getMethods"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"methods\": {\n    \"method\": [\n      {\n        \"_content\": \"<string>\"\n      },\n      {\n        \"_content\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-07-28T01:41:08.000Z",
+                  "updatedAt": "2026-07-28T01:41:08.000Z",
+                  "uid": "35240-3af34453-da59-471f-9580-2f55121f48ae"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:08.000Z",
+              "updatedAt": "2026-07-28T01:41:08.000Z",
+              "uid": "35240-fe1bf1a9-519f-4e11-81c3-3061a4095175"
+            }
+          ],
+          "id": "9fb0abd9-b091-4c05-ac22-1576ec801d47",
+          "createdAt": "2026-07-28T01:41:08.000Z",
+          "updatedAt": "2026-07-28T01:41:08.000Z",
+          "uid": "35240-9fb0abd9-b091-4c05-ac22-1576ec801d47"
+        },
+        {
+          "name": "flickr.reflection.getMethodInfo",
+          "item": [
+            {
+              "name": "Get API Method Info",
+              "id": "34c78297-fda7-42fb-a25d-5e8d088bf804",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.reflection.getMethodInfo?api_key=<string>&method_name=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.reflection.getMethodInfo"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "method_name",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns information about a particular API method including its arguments and errors."
+              },
+              "response": [
+                {
+                  "id": "63529ece-4443-483e-8dc0-d4c82a11889b",
+                  "name": "Method info",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.reflection.getMethodInfo?api_key=<API Key>&method_name=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.reflection.getMethodInfo"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "method_name",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"method\": {\n    \"name\": \"<string>\",\n    \"needslogin\": \"<integer>\",\n    \"needssigning\": \"<integer>\",\n    \"requiredperms\": \"<integer>\",\n    \"description\": {\n      \"_content\": \"<string>\"\n    }\n  },\n  \"arguments\": {\n    \"argument\": [\n      {\n        \"name\": \"<string>\",\n        \"optional\": \"<integer>\",\n        \"_content\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"optional\": \"<integer>\",\n        \"_content\": \"<string>\"\n      }\n    ]\n  },\n  \"errors\": {\n    \"error\": [\n      {\n        \"code\": \"<integer>\",\n        \"message\": \"<string>\",\n        \"_content\": \"<string>\"\n      },\n      {\n        \"code\": \"<integer>\",\n        \"message\": \"<string>\",\n        \"_content\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-07-28T01:41:08.000Z",
+                  "updatedAt": "2026-07-28T01:41:08.000Z",
+                  "uid": "35240-63529ece-4443-483e-8dc0-d4c82a11889b"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:08.000Z",
+              "updatedAt": "2026-07-28T01:41:08.000Z",
+              "uid": "35240-34c78297-fda7-42fb-a25d-5e8d088bf804"
+            }
+          ],
+          "id": "1c101f59-c798-4009-bb2d-a24a089d93f8",
+          "createdAt": "2026-07-28T01:41:08.000Z",
+          "updatedAt": "2026-07-28T01:41:08.000Z",
+          "uid": "35240-1c101f59-c798-4009-bb2d-a24a089d93f8"
+        },
+        {
+          "name": "Invoke Any Flickr Method",
+          "id": "ffaa7bbe-da3a-4a44-855b-ae2cd89c6660",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/rest?method=<string>&api_key=<string>&format=json&nojsoncallback=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rest"
+              ],
+              "query": [
+                {
+                  "description": "(Required) Fully qualified flickr method, e.g. `flickr.photos.search`.",
+                  "key": "method",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) Application API key.",
+                  "key": "api_key",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Response format (json/xml/php_serial/rest).",
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "description": "Set to 1 to receive raw JSON instead of JSONP.",
+                  "key": "nojsoncallback",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Dispatches a call to any flickr.* method. The `method` query parameter\nselects which method to invoke and the remaining query parameters are\nthe arguments for that method. This single endpoint backs every\nper-method operation defined below.\n"
+          },
+          "response": [
+            {
+              "id": "a75188c1-01c5-4d2d-ad6d-a4b6a5d498e9",
+              "name": "Method response (shape depends on method)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?method=<string>&api_key=<API Key>&format=json&nojsoncallback=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Fully qualified flickr method, e.g. `flickr.photos.search`.",
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "Response format (json/xml/php_serial/rest).",
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "description": "Set to 1 to receive raw JSON instead of JSONP.",
+                      "key": "nojsoncallback",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"in_a8\": 1213548,\n  \"dolor_016\": 78734979.71166152\n}",
+              "createdAt": "2026-07-28T01:41:08.000Z",
+              "updatedAt": "2026-07-28T01:41:08.000Z",
+              "uid": "35240-a75188c1-01c5-4d2d-ad6d-a4b6a5d498e9"
+            },
+            {
+              "id": "15faf830-9d1b-4850-bac4-59136e8f2a3e",
+              "name": "Flickr error response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest?method=<string>&api_key=<API Key>&format=json&nojsoncallback=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Fully qualified flickr method, e.g. `flickr.photos.search`.",
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "Response format (json/xml/php_serial/rest).",
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "description": "Set to 1 to receive raw JSON instead of JSONP.",
+                      "key": "nojsoncallback",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"stat\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:41:08.000Z",
+              "updatedAt": "2026-07-28T01:41:08.000Z",
+              "uid": "35240-15faf830-9d1b-4850-bac4-59136e8f2a3e"
+            }
+          ],
+          "createdAt": "2026-07-28T01:41:08.000Z",
+          "updatedAt": "2026-07-28T01:41:08.000Z",
+          "uid": "35240-ffaa7bbe-da3a-4a44-855b-ae2cd89c6660"
+        }
+      ],
+      "id": "a16115dc-cccc-4160-a2a1-602a7572d00a",
+      "createdAt": "2026-07-28T01:41:08.000Z",
+      "updatedAt": "2026-07-28T01:41:08.000Z",
+      "uid": "35240-a16115dc-cccc-4160-a2a1-602a7572d00a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

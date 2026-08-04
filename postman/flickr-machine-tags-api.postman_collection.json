@@ -1,0 +1,158 @@
+{
+  "info": {
+    "_postman_id": "dd805763-5df8-4a9c-a6c5-831d9d64224b",
+    "name": "Flickr Activity Machine Tags API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:44.000Z",
+    "updatedAt": "2026-07-28T01:40:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dd805763-5df8-4a9c-a6c5-831d9d64224b"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.machinetags.getNamespaces",
+          "item": [
+            {
+              "name": "List Machine Tag Namespaces",
+              "id": "6a4e62af-0897-46b2-a28f-8d232ca8329a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.machinetags.getNamespaces?api_key=<string>&page=1&per_page=100",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.machinetags.getNamespaces"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ]
+                },
+                "description": "Returns a list of machine tag namespaces."
+              },
+              "response": [
+                {
+                  "id": "e1b054bd-e761-4018-b8aa-baf269a20b56",
+                  "name": "Namespaces",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.machinetags.getNamespaces?api_key=<API Key>&page=1&per_page=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.machinetags.getNamespaces"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"namespace\": [\n    {\n      \"usage\": \"<integer>\",\n      \"predicates\": \"<integer>\",\n      \"_content\": \"<string>\"\n    },\n    {\n      \"usage\": \"<integer>\",\n      \"predicates\": \"<integer>\",\n      \"_content\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:44.000Z",
+                  "updatedAt": "2026-07-28T01:40:44.000Z",
+                  "uid": "35240-e1b054bd-e761-4018-b8aa-baf269a20b56"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:44.000Z",
+              "updatedAt": "2026-07-28T01:40:44.000Z",
+              "uid": "35240-6a4e62af-0897-46b2-a28f-8d232ca8329a"
+            }
+          ],
+          "id": "d1b3d306-6420-49f9-b6da-b1844de6cd5d",
+          "createdAt": "2026-07-28T01:40:44.000Z",
+          "updatedAt": "2026-07-28T01:40:44.000Z",
+          "uid": "35240-d1b3d306-6420-49f9-b6da-b1844de6cd5d"
+        }
+      ],
+      "id": "08c1bc1b-ac27-4cd6-9117-64cb2797341a",
+      "createdAt": "2026-07-28T01:40:44.000Z",
+      "updatedAt": "2026-07-28T01:40:44.000Z",
+      "uid": "35240-08c1bc1b-ac27-4cd6-9117-64cb2797341a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "info": {
+    "_postman_id": "3f453ee7-1fa4-490c-a0e6-c848c86cc03f",
+    "name": "Flickr Activity Favorites API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:33.000Z",
+    "updatedAt": "2026-07-28T01:40:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3f453ee7-1fa4-490c-a0e6-c848c86cc03f"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.favorites.getList",
+          "item": [
+            {
+              "name": "Get A User's Favorites",
+              "id": "117ee8f4-d553-48f3-a8d0-a114ee35849c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.favorites.getList?api_key=<string>&user_id=<string>&page=1&per_page=100",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.favorites.getList"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "user_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ]
+                },
+                "description": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned."
+              },
+              "response": [
+                {
+                  "id": "5b3f713b-1c6e-4c97-ae51-e4d021918c57",
+                  "name": "Favorites",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.favorites.getList?api_key=<API Key>&user_id=<string>&page=1&per_page=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.favorites.getList"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "user_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"perpage\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"photo\": [\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:34.000Z",
+                  "updatedAt": "2026-07-28T01:40:34.000Z",
+                  "uid": "35240-5b3f713b-1c6e-4c97-ae51-e4d021918c57"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:34.000Z",
+              "updatedAt": "2026-07-28T01:40:34.000Z",
+              "uid": "35240-117ee8f4-d553-48f3-a8d0-a114ee35849c"
+            }
+          ],
+          "id": "5a753065-f038-48ef-937b-3b4b642b237a",
+          "createdAt": "2026-07-28T01:40:34.000Z",
+          "updatedAt": "2026-07-28T01:40:34.000Z",
+          "uid": "35240-5a753065-f038-48ef-937b-3b4b642b237a"
+        },
+        {
+          "name": "flickr.favorites.add",
+          "item": [
+            {
+              "name": "Mark Photo As Favorite",
+              "id": "66ace218-9e20-46e8-862f-9c9794a35f8f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.favorites.add?api_key=<string>&photo_id=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.favorites.add"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Adds a photo to the calling user's favorites list."
+              },
+              "response": [
+                {
+                  "id": "e9a5d98f-dabf-4b38-a827-a6a3763e46a9",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.favorites.add?api_key=<API Key>&photo_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.favorites.add"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"stat\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:40:34.000Z",
+                  "updatedAt": "2026-07-28T01:40:34.000Z",
+                  "uid": "35240-e9a5d98f-dabf-4b38-a827-a6a3763e46a9"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:34.000Z",
+              "updatedAt": "2026-07-28T01:40:34.000Z",
+              "uid": "35240-66ace218-9e20-46e8-862f-9c9794a35f8f"
+            }
+          ],
+          "id": "15768e5d-b1ad-4844-bf8f-bb3f326e9a42",
+          "createdAt": "2026-07-28T01:40:34.000Z",
+          "updatedAt": "2026-07-28T01:40:34.000Z",
+          "uid": "35240-15768e5d-b1ad-4844-bf8f-bb3f326e9a42"
+        }
+      ],
+      "id": "a819d078-7c0d-46fc-8b0e-f75f1a439393",
+      "createdAt": "2026-07-28T01:40:34.000Z",
+      "updatedAt": "2026-07-28T01:40:34.000Z",
+      "uid": "35240-a819d078-7c0d-46fc-8b0e-f75f1a439393"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "info": {
+    "_postman_id": "789e9129-f4a1-4335-a0b7-c9423394b7e4",
+    "name": "Flickr Activity Auth API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:13.000Z",
+    "updatedAt": "2026-07-28T01:40:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-789e9129-f4a1-4335-a0b7-c9423394b7e4"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.auth.oauth.checkToken",
+          "item": [
+            {
+              "name": "Check OAuth Token",
+              "id": "f47bdcf0-2b82-4d91-8f5d-76159143c789",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.auth.oauth.checkToken?api_key=<string>&oauth_token=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.auth.oauth.checkToken"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The OAuth authentication token to check.",
+                      "key": "oauth_token",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the credentials attached to an OAuth authentication token."
+              },
+              "response": [
+                {
+                  "id": "61e35c21-a7e0-45b6-81dd-31e31236c52e",
+                  "name": "OAuth credentials",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.auth.oauth.checkToken?api_key=<API Key>&oauth_token=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.auth.oauth.checkToken"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) The OAuth authentication token to check.",
+                          "key": "oauth_token",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"oauth\": {\n    \"token\": {\n      \"_content\": \"<string>\"\n    },\n    \"perms\": {\n      \"_content\": \"<string>\"\n    },\n    \"user\": {\n      \"nsid\": \"<string>\",\n      \"username\": \"<string>\",\n      \"fullname\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T01:40:14.000Z",
+                  "updatedAt": "2026-07-28T01:40:14.000Z",
+                  "uid": "35240-61e35c21-a7e0-45b6-81dd-31e31236c52e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:14.000Z",
+              "updatedAt": "2026-07-28T01:40:14.000Z",
+              "uid": "35240-f47bdcf0-2b82-4d91-8f5d-76159143c789"
+            }
+          ],
+          "id": "c578caba-14b1-4f45-8ddc-4cb077714621",
+          "createdAt": "2026-07-28T01:40:14.000Z",
+          "updatedAt": "2026-07-28T01:40:14.000Z",
+          "uid": "35240-c578caba-14b1-4f45-8ddc-4cb077714621"
+        }
+      ],
+      "id": "7b3b2292-0ae3-41cb-b392-1b20b7f86086",
+      "createdAt": "2026-07-28T01:40:14.000Z",
+      "updatedAt": "2026-07-28T01:40:14.000Z",
+      "uid": "35240-7b3b2292-0ae3-41cb-b392-1b20b7f86086"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

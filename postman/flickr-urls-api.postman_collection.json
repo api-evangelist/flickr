@@ -1,0 +1,152 @@
+{
+  "info": {
+    "_postman_id": "330ea405-4e6f-49a3-a8d8-284ac9cbc87b",
+    "name": "Flickr Activity URLs API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:41:15.000Z",
+    "updatedAt": "2026-07-28T01:41:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-330ea405-4e6f-49a3-a8d8-284ac9cbc87b"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.urls.lookupUser",
+          "item": [
+            {
+              "name": "Look Up User By URL",
+              "id": "3d9654d6-0f76-4f57-b0d8-c19a411b9845",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.urls.lookupUser?api_key=<string>&url=<uri>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.urls.lookupUser"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ]
+                },
+                "description": "Returns a user NSID given the URL to a user's photos or profile."
+              },
+              "response": [
+                {
+                  "id": "8b93c75c-1f35-4c6e-b76b-27d22621c0a3",
+                  "name": "User",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.urls.lookupUser?api_key=<API Key>&url=<uri>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.urls.lookupUser"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "url",
+                          "value": "<uri>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"user\": {\n    \"id\": \"<string>\",\n    \"username\": {\n      \"_content\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T01:41:15.000Z",
+                  "updatedAt": "2026-07-28T01:41:15.000Z",
+                  "uid": "35240-8b93c75c-1f35-4c6e-b76b-27d22621c0a3"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:15.000Z",
+              "updatedAt": "2026-07-28T01:41:15.000Z",
+              "uid": "35240-3d9654d6-0f76-4f57-b0d8-c19a411b9845"
+            }
+          ],
+          "id": "6020c9ba-b91f-40a3-9f48-a809174dc7a1",
+          "createdAt": "2026-07-28T01:41:15.000Z",
+          "updatedAt": "2026-07-28T01:41:15.000Z",
+          "uid": "35240-6020c9ba-b91f-40a3-9f48-a809174dc7a1"
+        }
+      ],
+      "id": "fc753b95-8c94-43ab-87db-6f3f0067ecd3",
+      "createdAt": "2026-07-28T01:41:15.000Z",
+      "updatedAt": "2026-07-28T01:41:15.000Z",
+      "uid": "35240-fc753b95-8c94-43ab-87db-6f3f0067ecd3"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

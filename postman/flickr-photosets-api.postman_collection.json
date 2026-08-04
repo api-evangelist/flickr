@@ -1,0 +1,424 @@
+{
+  "info": {
+    "_postman_id": "c0a92885-535a-4075-a302-76e8f522bbaa",
+    "name": "Flickr Activity Photosets API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:58.000Z",
+    "updatedAt": "2026-07-28T01:40:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c0a92885-535a-4075-a302-76e8f522bbaa"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.photosets.getList",
+          "item": [
+            {
+              "name": "List A User's Photosets",
+              "id": "dae219c8-d0a4-4c9b-91fb-605359333325",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photosets.getList?api_key=<string>&user_id=<string>&page=1&per_page=100",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photosets.getList"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ]
+                },
+                "description": "Returns photosets belonging to a user."
+              },
+              "response": [
+                {
+                  "id": "967214b8-621e-4a39-851b-3dfa4dc13d61",
+                  "name": "Photosets",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photosets.getList?api_key=<API Key>&user_id=<string>&page=1&per_page=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photosets.getList"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "key": "user_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"perpage\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"photoset\": [\n    {\n      \"id\": \"<string>\",\n      \"primary\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"title\": {\n        \"_content\": \"<string>\"\n      },\n      \"description\": {\n        \"_content\": \"<string>\"\n      },\n      \"photos\": \"<integer>\",\n      \"videos\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"primary\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"title\": {\n        \"_content\": \"<string>\"\n      },\n      \"description\": {\n        \"_content\": \"<string>\"\n      },\n      \"photos\": \"<integer>\",\n      \"videos\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:59.000Z",
+                  "updatedAt": "2026-07-28T01:40:59.000Z",
+                  "uid": "35240-967214b8-621e-4a39-851b-3dfa4dc13d61"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:59.000Z",
+              "updatedAt": "2026-07-28T01:40:59.000Z",
+              "uid": "35240-dae219c8-d0a4-4c9b-91fb-605359333325"
+            }
+          ],
+          "id": "46551780-ccce-4de4-a887-e73067d87c4f",
+          "createdAt": "2026-07-28T01:40:59.000Z",
+          "updatedAt": "2026-07-28T01:40:59.000Z",
+          "uid": "35240-46551780-ccce-4de4-a887-e73067d87c4f"
+        },
+        {
+          "name": "flickr.photosets.getPhotos",
+          "item": [
+            {
+              "name": "List Photos In A Photoset",
+              "id": "5ba45f79-0ac0-4933-bb56-0662ffa211e8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photosets.getPhotos?api_key=<string>&photoset_id=<string>&user_id=<string>&page=1&per_page=100&extras=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photosets.getPhotos"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photoset_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                      "key": "extras",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the photos in a given photoset."
+              },
+              "response": [
+                {
+                  "id": "df59ff6d-6b69-4ce4-8ff8-202997fc39b4",
+                  "name": "Photoset photos",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photosets.getPhotos?api_key=<API Key>&photoset_id=<string>&user_id=<string>&page=1&per_page=100&extras=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photosets.getPhotos"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photoset_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "user_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        },
+                        {
+                          "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                          "key": "extras",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"perpage\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"photo\": [\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:59.000Z",
+                  "updatedAt": "2026-07-28T01:40:59.000Z",
+                  "uid": "35240-df59ff6d-6b69-4ce4-8ff8-202997fc39b4"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:59.000Z",
+              "updatedAt": "2026-07-28T01:40:59.000Z",
+              "uid": "35240-5ba45f79-0ac0-4933-bb56-0662ffa211e8"
+            }
+          ],
+          "id": "5e4031d9-eedc-44b6-89ff-b65ef23b3760",
+          "createdAt": "2026-07-28T01:40:59.000Z",
+          "updatedAt": "2026-07-28T01:40:59.000Z",
+          "uid": "35240-5e4031d9-eedc-44b6-89ff-b65ef23b3760"
+        },
+        {
+          "name": "flickr.photosets.create",
+          "item": [
+            {
+              "name": "Create A New Photoset",
+              "id": "c0f6d431-b98e-46f3-8476-b09f6ab1e3ce",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photosets.create?api_key=<string>&title=<string>&description=<string>&primary_photo_id=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photosets.create"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "primary_photo_id",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Creates a new photoset for the calling user."
+              },
+              "response": [
+                {
+                  "id": "afad1265-5096-4430-b36f-3f9735eb9a6e",
+                  "name": "Photoset created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photosets.create?api_key=<API Key>&title=<string>&description=<string>&primary_photo_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photosets.create"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "title",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "description",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "primary_photo_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"primary\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"title\": {\n    \"_content\": \"<string>\"\n  },\n  \"description\": {\n    \"_content\": \"<string>\"\n  },\n  \"photos\": \"<integer>\",\n  \"videos\": \"<integer>\"\n}",
+                  "createdAt": "2026-07-28T01:40:59.000Z",
+                  "updatedAt": "2026-07-28T01:40:59.000Z",
+                  "uid": "35240-afad1265-5096-4430-b36f-3f9735eb9a6e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:59.000Z",
+              "updatedAt": "2026-07-28T01:40:59.000Z",
+              "uid": "35240-c0f6d431-b98e-46f3-8476-b09f6ab1e3ce"
+            }
+          ],
+          "id": "e79491ff-3319-4bd1-9853-86daf2098daf",
+          "createdAt": "2026-07-28T01:40:59.000Z",
+          "updatedAt": "2026-07-28T01:40:59.000Z",
+          "uid": "35240-e79491ff-3319-4bd1-9853-86daf2098daf"
+        }
+      ],
+      "id": "6d0b4776-4854-4d26-9baf-6967246090a9",
+      "createdAt": "2026-07-28T01:40:59.000Z",
+      "updatedAt": "2026-07-28T01:40:59.000Z",
+      "uid": "35240-6d0b4776-4854-4d26-9baf-6967246090a9"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

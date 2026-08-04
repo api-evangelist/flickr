@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "35f42e42-a4ad-4e90-9a7b-adfa9e155db3",
+    "name": "Flickr Activity Photos Licenses API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:54.000Z",
+    "updatedAt": "2026-07-28T01:40:54.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-35f42e42-a4ad-4e90-9a7b-adfa9e155db3"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.photos.licenses.getInfo",
+          "item": [
+            {
+              "name": "List Photo Licenses",
+              "id": "4693a225-1ecb-4afe-be25-57be1b00e4db",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.licenses.getInfo?api_key=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.licenses.getInfo"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the list of available photo licenses."
+              },
+              "response": [
+                {
+                  "id": "b1dff732-eaf7-4aaf-98e9-afaa893e1b59",
+                  "name": "License catalog",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.licenses.getInfo?api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.licenses.getInfo"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"license\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"url\": \"<uri>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"url\": \"<uri>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:54.000Z",
+                  "updatedAt": "2026-07-28T01:40:54.000Z",
+                  "uid": "35240-b1dff732-eaf7-4aaf-98e9-afaa893e1b59"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:54.000Z",
+              "updatedAt": "2026-07-28T01:40:54.000Z",
+              "uid": "35240-4693a225-1ecb-4afe-be25-57be1b00e4db"
+            }
+          ],
+          "id": "0eb07334-3da1-4b26-8401-717ac632840b",
+          "createdAt": "2026-07-28T01:40:54.000Z",
+          "updatedAt": "2026-07-28T01:40:54.000Z",
+          "uid": "35240-0eb07334-3da1-4b26-8401-717ac632840b"
+        },
+        {
+          "name": "flickr.photos.licenses.setLicense",
+          "item": [
+            {
+              "name": "Set Photo License",
+              "id": "51c406a4-74fa-459f-989c-4fcf97845372",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.licenses.setLicense?api_key=<string>&photo_id=<string>&license_id=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.licenses.setLicense"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "license_id",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Sets the license for a photo."
+              },
+              "response": [
+                {
+                  "id": "5213d95e-4a25-4f7d-8d25-1db5a7bb3161",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.licenses.setLicense?api_key=<API Key>&photo_id=<string>&license_id=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.licenses.setLicense"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "license_id",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"stat\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:40:54.000Z",
+                  "updatedAt": "2026-07-28T01:40:54.000Z",
+                  "uid": "35240-5213d95e-4a25-4f7d-8d25-1db5a7bb3161"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:54.000Z",
+              "updatedAt": "2026-07-28T01:40:54.000Z",
+              "uid": "35240-51c406a4-74fa-459f-989c-4fcf97845372"
+            }
+          ],
+          "id": "6cedfaf9-8907-4fec-83c2-78bc8aeea190",
+          "createdAt": "2026-07-28T01:40:54.000Z",
+          "updatedAt": "2026-07-28T01:40:54.000Z",
+          "uid": "35240-6cedfaf9-8907-4fec-83c2-78bc8aeea190"
+        }
+      ],
+      "id": "17d24ab9-ec3a-45a8-85db-a739c7a7fd40",
+      "createdAt": "2026-07-28T01:40:54.000Z",
+      "updatedAt": "2026-07-28T01:40:54.000Z",
+      "uid": "35240-17d24ab9-ec3a-45a8-85db-a739c7a7fd40"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

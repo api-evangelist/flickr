@@ -1,0 +1,373 @@
+{
+  "info": {
+    "_postman_id": "1bce5fe1-d812-4d3d-859d-744b0ec8686b",
+    "name": "Flickr Activity Photos Upload API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:57.000Z",
+    "updatedAt": "2026-07-28T01:40:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1bce5fe1-d812-4d3d-859d-744b0ec8686b"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.photos.upload.checkTickets",
+          "item": [
+            {
+              "name": "Check Async Upload Tickets",
+              "id": "42bd7fc5-2928-4735-be31-69a263d156da",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.upload.checkTickets?api_key=<string>&tickets=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.upload.checkTickets"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Comma-delimited list of ticket IDs.",
+                      "key": "tickets",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the status of one or more asynchronous photo upload tickets."
+              },
+              "response": [
+                {
+                  "id": "17dd264c-4a4a-419d-a9c6-a30a88ae92dc",
+                  "name": "Ticket statuses",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.upload.checkTickets?api_key=<API Key>&tickets=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.upload.checkTickets"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) Comma-delimited list of ticket IDs.",
+                          "key": "tickets",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"ticket\": [\n    {\n      \"id\": \"<string>\",\n      \"complete\": \"<integer>\",\n      \"photoid\": \"<string>\",\n      \"invalid\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"complete\": \"<integer>\",\n      \"photoid\": \"<string>\",\n      \"invalid\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:58.000Z",
+                  "updatedAt": "2026-07-28T01:40:58.000Z",
+                  "uid": "35240-17dd264c-4a4a-419d-a9c6-a30a88ae92dc"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:58.000Z",
+              "updatedAt": "2026-07-28T01:40:58.000Z",
+              "uid": "35240-42bd7fc5-2928-4735-be31-69a263d156da"
+            }
+          ],
+          "id": "db144721-7a4a-4679-95a4-ff69cdc84be3",
+          "createdAt": "2026-07-28T01:40:58.000Z",
+          "updatedAt": "2026-07-28T01:40:58.000Z",
+          "uid": "35240-db144721-7a4a-4679-95a4-ff69cdc84be3"
+        }
+      ],
+      "id": "6b8a9451-dad7-40e5-8fb7-839eefba9762",
+      "createdAt": "2026-07-28T01:40:58.000Z",
+      "updatedAt": "2026-07-28T01:40:58.000Z",
+      "uid": "35240-6b8a9451-dad7-40e5-8fb7-839eefba9762"
+    },
+    {
+      "name": "upload",
+      "item": [
+        {
+          "name": "Upload A Photo Or Video",
+          "id": "cbb3272b-3ad3-4843-bb3f-fb744a234cba",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "description": "(Required) ",
+                  "key": "photo",
+                  "type": "file",
+                  "value": null
+                },
+                {
+                  "key": "title",
+                  "value": "<string>",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "<string>",
+                  "type": "text"
+                },
+                {
+                  "key": "tags",
+                  "value": "<string>",
+                  "type": "text"
+                },
+                {
+                  "key": "is_public",
+                  "value": "<integer>",
+                  "type": "text"
+                },
+                {
+                  "key": "is_friend",
+                  "value": "<integer>",
+                  "type": "text"
+                },
+                {
+                  "key": "is_family",
+                  "value": "<integer>",
+                  "type": "text"
+                },
+                {
+                  "key": "safety_level",
+                  "value": "<integer>",
+                  "type": "text"
+                },
+                {
+                  "key": "content_type",
+                  "value": "<integer>",
+                  "type": "text"
+                },
+                {
+                  "key": "hidden",
+                  "value": "<integer>",
+                  "type": "text"
+                },
+                {
+                  "key": "async",
+                  "value": "<integer>",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://up.flickr.com/services/upload",
+              "protocol": "https",
+              "host": [
+                "up",
+                "flickr",
+                "com"
+              ],
+              "path": [
+                "services",
+                "upload"
+              ]
+            },
+            "description": "Uploads a photo or video. Uses `https://up.flickr.com/services/upload`\nwith a multipart/form-data POST. Returns the new photo ID (synchronous)\nor ticket ID (asynchronous).\n"
+          },
+          "response": [
+            {
+              "id": "87df1c55-5cda-4368-83a7-51c9d3119a80",
+              "name": "Upload response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "multipart/form-data"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": "(Required) ",
+                      "key": "photo",
+                      "type": "file"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "is_public",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "is_friend",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "is_family",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "safety_level",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "content_type",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "hidden",
+                      "value": "<integer>",
+                      "type": "text"
+                    },
+                    {
+                      "key": "async",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://up.flickr.com/services/upload?api_key=<API Key>",
+                  "protocol": "https",
+                  "host": [
+                    "up",
+                    "flickr",
+                    "com"
+                  ],
+                  "path": [
+                    "services",
+                    "upload"
+                  ],
+                  "query": [
+                    {
+                      "description": "Added as a part of security scheme: apikey",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <stat>(string)</stat>\n  <photoid>(string)</photoid>\n  <ticketid>(string)</ticketid>\n</element>",
+              "createdAt": "2026-07-28T01:40:58.000Z",
+              "updatedAt": "2026-07-28T01:40:58.000Z",
+              "uid": "35240-87df1c55-5cda-4368-83a7-51c9d3119a80"
+            }
+          ],
+          "createdAt": "2026-07-28T01:40:58.000Z",
+          "updatedAt": "2026-07-28T01:40:58.000Z",
+          "uid": "35240-cbb3272b-3ad3-4843-bb3f-fb744a234cba"
+        }
+      ],
+      "id": "e195bd4b-3c08-4362-9275-adf9acf21646",
+      "createdAt": "2026-07-28T01:40:58.000Z",
+      "updatedAt": "2026-07-28T01:40:58.000Z",
+      "uid": "35240-e195bd4b-3c08-4362-9275-adf9acf21646"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

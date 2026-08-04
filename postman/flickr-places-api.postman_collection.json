@@ -1,0 +1,273 @@
+{
+  "info": {
+    "_postman_id": "35daec89-7e67-48c9-9aa5-bf9eecc88222",
+    "name": "Flickr Activity Places API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:59.000Z",
+    "updatedAt": "2026-07-28T01:40:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-35daec89-7e67-48c9-9aa5-bf9eecc88222"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.places.find",
+          "item": [
+            {
+              "name": "Find Place By Query",
+              "id": "f119d706-1f81-4355-9367-d26e8ba4a4b0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.places.find?api_key=<string>&query=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.places.find"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "query",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Searches places by text query."
+              },
+              "response": [
+                {
+                  "id": "eb790991-2d1a-4a01-a78b-8553693b847f",
+                  "name": "Places",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.places.find?api_key=<API Key>&query=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.places.find"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "query",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"place\": [\n    {\n      \"place_id\": \"<string>\",\n      \"woeid\": \"<string>\",\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"place_url\": \"<string>\",\n      \"place_type\": \"<string>\",\n      \"_content\": \"<string>\"\n    },\n    {\n      \"place_id\": \"<string>\",\n      \"woeid\": \"<string>\",\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"place_url\": \"<string>\",\n      \"place_type\": \"<string>\",\n      \"_content\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:41:00.000Z",
+                  "updatedAt": "2026-07-28T01:41:00.000Z",
+                  "uid": "35240-eb790991-2d1a-4a01-a78b-8553693b847f"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:00.000Z",
+              "updatedAt": "2026-07-28T01:41:00.000Z",
+              "uid": "35240-f119d706-1f81-4355-9367-d26e8ba4a4b0"
+            }
+          ],
+          "id": "e510b7f4-d2cf-4399-8e8e-c8d199183b02",
+          "createdAt": "2026-07-28T01:41:00.000Z",
+          "updatedAt": "2026-07-28T01:41:00.000Z",
+          "uid": "35240-e510b7f4-d2cf-4399-8e8e-c8d199183b02"
+        },
+        {
+          "name": "flickr.places.findByLatLon",
+          "item": [
+            {
+              "name": "Find Place By Lat/Lon",
+              "id": "9847b139-1315-45c9-b51a-34bc0eaa48ec",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.places.findByLatLon?api_key=<string>&lat=<number>&lon=<number>&accuracy=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.places.findByLatLon"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "lat",
+                      "value": "<number>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "lon",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "accuracy",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Resolves a latitude/longitude pair to the smallest enclosing Place."
+              },
+              "response": [
+                {
+                  "id": "77c009e2-9c58-4538-bf80-894a7a2edcc3",
+                  "name": "Place",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.places.findByLatLon?api_key=<API Key>&lat=<number>&lon=<number>&accuracy=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.places.findByLatLon"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "lat",
+                          "value": "<number>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "lon",
+                          "value": "<number>"
+                        },
+                        {
+                          "key": "accuracy",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"place\": [\n    {\n      \"place_id\": \"<string>\",\n      \"woeid\": \"<string>\",\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"place_url\": \"<string>\",\n      \"place_type\": \"<string>\",\n      \"_content\": \"<string>\"\n    },\n    {\n      \"place_id\": \"<string>\",\n      \"woeid\": \"<string>\",\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"place_url\": \"<string>\",\n      \"place_type\": \"<string>\",\n      \"_content\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:41:00.000Z",
+                  "updatedAt": "2026-07-28T01:41:00.000Z",
+                  "uid": "35240-77c009e2-9c58-4538-bf80-894a7a2edcc3"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:00.000Z",
+              "updatedAt": "2026-07-28T01:41:00.000Z",
+              "uid": "35240-9847b139-1315-45c9-b51a-34bc0eaa48ec"
+            }
+          ],
+          "id": "415a941c-ec9a-4563-83f4-25936f6d48e2",
+          "createdAt": "2026-07-28T01:41:00.000Z",
+          "updatedAt": "2026-07-28T01:41:00.000Z",
+          "uid": "35240-415a941c-ec9a-4563-83f4-25936f6d48e2"
+        }
+      ],
+      "id": "b3873733-7494-46a8-a0ca-a084f0be50a6",
+      "createdAt": "2026-07-28T01:41:00.000Z",
+      "updatedAt": "2026-07-28T01:41:00.000Z",
+      "uid": "35240-b3873733-7494-46a8-a0ca-a084f0be50a6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

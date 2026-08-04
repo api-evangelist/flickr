@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "0ece768c-67a7-4780-9c92-5f9793cd8b22",
+    "name": "Flickr Activity Photos Transform API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:56.000Z",
+    "updatedAt": "2026-07-28T01:40:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0ece768c-67a7-4780-9c92-5f9793cd8b22"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.photos.transform.rotate",
+          "item": [
+            {
+              "name": "Rotate Photo",
+              "id": "1bd2f53d-182d-486d-8db2-62a635ae4b4f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.transform.rotate?api_key=<string>&photo_id=<string>&degrees=270",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.transform.rotate"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "degrees",
+                      "value": "270"
+                    }
+                  ]
+                },
+                "description": "Rotates a photo 90, 180, or 270 degrees."
+              },
+              "response": [
+                {
+                  "id": "918e4113-1ee7-481d-9858-e3b8ac609f63",
+                  "name": "Rotated",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.transform.rotate?api_key=<API Key>&photo_id=<string>&degrees=270",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.transform.rotate"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "degrees",
+                          "value": "270"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"stat\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:40:57.000Z",
+                  "updatedAt": "2026-07-28T01:40:57.000Z",
+                  "uid": "35240-918e4113-1ee7-481d-9858-e3b8ac609f63"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:57.000Z",
+              "updatedAt": "2026-07-28T01:40:57.000Z",
+              "uid": "35240-1bd2f53d-182d-486d-8db2-62a635ae4b4f"
+            }
+          ],
+          "id": "d186ad8e-3543-4e1c-9ea8-459877597b10",
+          "createdAt": "2026-07-28T01:40:57.000Z",
+          "updatedAt": "2026-07-28T01:40:57.000Z",
+          "uid": "35240-d186ad8e-3543-4e1c-9ea8-459877597b10"
+        }
+      ],
+      "id": "9b4d949e-dbf0-4022-9953-04c515bd9b49",
+      "createdAt": "2026-07-28T01:40:57.000Z",
+      "updatedAt": "2026-07-28T01:40:57.000Z",
+      "uid": "35240-9b4d949e-dbf0-4022-9953-04c515bd9b49"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

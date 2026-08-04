@@ -1,0 +1,152 @@
+{
+  "info": {
+    "_postman_id": "28f5f03a-4b84-487c-b846-b2bc4f62fa57",
+    "name": "Flickr Activity Profile API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:41:01.000Z",
+    "updatedAt": "2026-07-28T01:41:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-28f5f03a-4b84-487c-b846-b2bc4f62fa57"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.profile.getProfile",
+          "item": [
+            {
+              "name": "Get A User Profile",
+              "id": "fba53b8d-e442-49a9-9ef6-b03429fa4db0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.profile.getProfile?api_key=<string>&user_id=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.profile.getProfile"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "user_id",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the public profile fields for a user."
+              },
+              "response": [
+                {
+                  "id": "472160f1-a10a-4c48-b69b-f3c90b762bc5",
+                  "name": "Profile",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.profile.getProfile?api_key=<API Key>&user_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.profile.getProfile"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "user_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"join_date\": \"<string>\",\n  \"occupation\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"hometown\": \"<string>\",\n  \"website\": \"<uri>\"\n}",
+                  "createdAt": "2026-07-28T01:41:01.000Z",
+                  "updatedAt": "2026-07-28T01:41:01.000Z",
+                  "uid": "35240-472160f1-a10a-4c48-b69b-f3c90b762bc5"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:01.000Z",
+              "updatedAt": "2026-07-28T01:41:01.000Z",
+              "uid": "35240-fba53b8d-e442-49a9-9ef6-b03429fa4db0"
+            }
+          ],
+          "id": "ed8095a8-998b-4e56-834a-84df611368c4",
+          "createdAt": "2026-07-28T01:41:01.000Z",
+          "updatedAt": "2026-07-28T01:41:01.000Z",
+          "uid": "35240-ed8095a8-998b-4e56-834a-84df611368c4"
+        }
+      ],
+      "id": "5227f864-c5ea-4eaa-b0e1-d3921ed45b4d",
+      "createdAt": "2026-07-28T01:41:01.000Z",
+      "updatedAt": "2026-07-28T01:41:01.000Z",
+      "uid": "35240-5227f864-c5ea-4eaa-b0e1-d3921ed45b4d"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

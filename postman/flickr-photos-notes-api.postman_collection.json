@@ -1,0 +1,202 @@
+{
+  "info": {
+    "_postman_id": "dbfda2b8-1922-4721-a28a-b714493ad499",
+    "name": "Flickr Activity Photos Notes API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:56.000Z",
+    "updatedAt": "2026-07-28T01:40:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dbfda2b8-1922-4721-a28a-b714493ad499"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.photos.notes.add",
+          "item": [
+            {
+              "name": "Add Photo Note",
+              "id": "2e028f4c-46c5-41e1-8166-06d6eb9bc6e4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.notes.add?api_key=<string>&photo_id=<string>&note_x=<integer>&note_y=<integer>&note_w=<integer>&note_h=<integer>&note_text=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.notes.add"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "note_x",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "note_y",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "note_w",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "note_h",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "note_text",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Adds a note (annotation) to a photo."
+              },
+              "response": [
+                {
+                  "id": "1242ea38-aa5d-46f6-bb16-dbb1b1841aa3",
+                  "name": "Note created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.notes.add?api_key=<API Key>&photo_id=<string>&note_x=<integer>&note_y=<integer>&note_w=<integer>&note_h=<integer>&note_text=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.notes.add"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "note_x",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "note_y",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "note_w",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "note_h",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "note_text",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"author\": \"<string>\",\n  \"x\": \"<integer>\",\n  \"y\": \"<integer>\",\n  \"w\": \"<integer>\",\n  \"h\": \"<integer>\",\n  \"_content\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:40:56.000Z",
+                  "updatedAt": "2026-07-28T01:40:56.000Z",
+                  "uid": "35240-1242ea38-aa5d-46f6-bb16-dbb1b1841aa3"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:56.000Z",
+              "updatedAt": "2026-07-28T01:40:56.000Z",
+              "uid": "35240-2e028f4c-46c5-41e1-8166-06d6eb9bc6e4"
+            }
+          ],
+          "id": "42d27bbd-06a6-4f1d-bba8-455173a3adce",
+          "createdAt": "2026-07-28T01:40:56.000Z",
+          "updatedAt": "2026-07-28T01:40:56.000Z",
+          "uid": "35240-42d27bbd-06a6-4f1d-bba8-455173a3adce"
+        }
+      ],
+      "id": "3ffb2d56-1a77-48b2-9d7c-8417280e95bb",
+      "createdAt": "2026-07-28T01:40:56.000Z",
+      "updatedAt": "2026-07-28T01:40:56.000Z",
+      "uid": "35240-3ffb2d56-1a77-48b2-9d7c-8417280e95bb"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "info": {
+    "_postman_id": "35c45178-3dca-41b7-b6ae-36813b94647a",
+    "name": "Flickr Activity Cameras API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:16.000Z",
+    "updatedAt": "2026-07-28T01:40:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-35c45178-3dca-41b7-b6ae-36813b94647a"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.cameras.getBrands",
+          "item": [
+            {
+              "name": "List Camera Brands",
+              "id": "0ef45ade-ef9b-4600-beec-91d127fd0e80",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.cameras.getBrands?api_key=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.cameras.getBrands"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns all camera brands supported in the Flickr camera taxonomy."
+              },
+              "response": [
+                {
+                  "id": "d9ef4cce-8ec7-4728-b0fe-513c2e1e0ae1",
+                  "name": "Brand list",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.cameras.getBrands?api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.cameras.getBrands"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"brand\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:16.000Z",
+                  "updatedAt": "2026-07-28T01:40:16.000Z",
+                  "uid": "35240-d9ef4cce-8ec7-4728-b0fe-513c2e1e0ae1"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:16.000Z",
+              "updatedAt": "2026-07-28T01:40:16.000Z",
+              "uid": "35240-0ef45ade-ef9b-4600-beec-91d127fd0e80"
+            }
+          ],
+          "id": "3dd4d25e-0333-4b06-9e9d-1aaeea89c83d",
+          "createdAt": "2026-07-28T01:40:16.000Z",
+          "updatedAt": "2026-07-28T01:40:16.000Z",
+          "uid": "35240-3dd4d25e-0333-4b06-9e9d-1aaeea89c83d"
+        },
+        {
+          "name": "flickr.cameras.getBrandModels",
+          "item": [
+            {
+              "name": "List Camera Models For A Brand",
+              "id": "e42f00ac-3a07-4dba-b403-8ded477046a6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.cameras.getBrandModels?api_key=<string>&brand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.cameras.getBrandModels"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The brand ID.",
+                      "key": "brand",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns all camera models for the given brand."
+              },
+              "response": [
+                {
+                  "id": "ae630332-eef1-439b-97c1-077df612dfaf",
+                  "name": "Model list",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.cameras.getBrandModels?api_key=<API Key>&brand=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.cameras.getBrandModels"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) The brand ID.",
+                          "key": "brand",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"camera\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"details\": {\n        \"estb3\": 92938190,\n        \"Excepteur_1_a\": -47775179\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"details\": {\n        \"consequat77_\": \"consequat anim reprehenderit fugiat\",\n        \"aliqua__8\": -24499982\n      }\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:16.000Z",
+                  "updatedAt": "2026-07-28T01:40:16.000Z",
+                  "uid": "35240-ae630332-eef1-439b-97c1-077df612dfaf"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:16.000Z",
+              "updatedAt": "2026-07-28T01:40:16.000Z",
+              "uid": "35240-e42f00ac-3a07-4dba-b403-8ded477046a6"
+            }
+          ],
+          "id": "aead808d-1c7b-42ad-a098-7012e79fbb26",
+          "createdAt": "2026-07-28T01:40:16.000Z",
+          "updatedAt": "2026-07-28T01:40:16.000Z",
+          "uid": "35240-aead808d-1c7b-42ad-a098-7012e79fbb26"
+        }
+      ],
+      "id": "a009f360-6973-48e5-9e26-bb5bddb06721",
+      "createdAt": "2026-07-28T01:40:16.000Z",
+      "updatedAt": "2026-07-28T01:40:16.000Z",
+      "uid": "35240-a009f360-6973-48e5-9e26-bb5bddb06721"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

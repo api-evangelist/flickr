@@ -1,0 +1,160 @@
+{
+  "info": {
+    "_postman_id": "c1e59369-3755-4f26-8d4e-089c5e2902e8",
+    "name": "Flickr Activity Collections API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:31.000Z",
+    "updatedAt": "2026-07-28T01:40:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c1e59369-3755-4f26-8d4e-089c5e2902e8"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.collections.getTree",
+          "item": [
+            {
+              "name": "Get The Collection Tree",
+              "id": "eda8656b-19fb-4019-ae39-2db607e5ff57",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.collections.getTree?api_key=<string>&collection_id=<string>&user_id=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.collections.getTree"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "user_id",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns a tree (or sub-tree) of collections belonging to a user."
+              },
+              "response": [
+                {
+                  "id": "4f267ab8-a95b-48e0-acc8-89d117c491f1",
+                  "name": "Collection tree",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.collections.getTree?api_key=<API Key>&collection_id=<string>&user_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.collections.getTree"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "key": "collection_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "user_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"collection\": [\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"iconlarge\": \"<uri>\",\n      \"set\": [\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"iconlarge\": \"<uri>\",\n      \"set\": [\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:31.000Z",
+                  "updatedAt": "2026-07-28T01:40:31.000Z",
+                  "uid": "35240-4f267ab8-a95b-48e0-acc8-89d117c491f1"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:31.000Z",
+              "updatedAt": "2026-07-28T01:40:31.000Z",
+              "uid": "35240-eda8656b-19fb-4019-ae39-2db607e5ff57"
+            }
+          ],
+          "id": "08436830-a068-4bfa-931d-7e79f1726fa5",
+          "createdAt": "2026-07-28T01:40:31.000Z",
+          "updatedAt": "2026-07-28T01:40:31.000Z",
+          "uid": "35240-08436830-a068-4bfa-931d-7e79f1726fa5"
+        }
+      ],
+      "id": "30816ecb-728a-43ac-b432-3b3b8f9b4532",
+      "createdAt": "2026-07-28T01:40:31.000Z",
+      "updatedAt": "2026-07-28T01:40:31.000Z",
+      "uid": "35240-30816ecb-728a-43ac-b432-3b3b8f9b4532"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

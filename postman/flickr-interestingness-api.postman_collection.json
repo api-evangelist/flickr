@@ -1,0 +1,178 @@
+{
+  "info": {
+    "_postman_id": "755a0e86-fe83-4baa-b65b-7c1c7519fe2c",
+    "name": "Flickr Activity Interestingness API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:43.000Z",
+    "updatedAt": "2026-07-28T01:40:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-755a0e86-fe83-4baa-b65b-7c1c7519fe2c"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.interestingness.getList",
+          "item": [
+            {
+              "name": "List Interesting Photos",
+              "id": "805f473a-1d70-499b-8f5f-dfde3b054c11",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.interestingness.getList?api_key=<string>&date=<date>&page=1&per_page=100&extras=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.interestingness.getList"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "YYYY-MM-DD date.",
+                      "key": "date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                      "key": "extras",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the most interesting photos for the given date."
+              },
+              "response": [
+                {
+                  "id": "7f7d9453-5349-4ef3-92e4-74fc1f8e5cff",
+                  "name": "Interesting photos",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.interestingness.getList?api_key=<API Key>&date=<date>&page=1&per_page=100&extras=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.interestingness.getList"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "YYYY-MM-DD date.",
+                          "key": "date",
+                          "value": "<date>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        },
+                        {
+                          "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                          "key": "extras",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"perpage\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"photo\": [\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:43.000Z",
+                  "updatedAt": "2026-07-28T01:40:43.000Z",
+                  "uid": "35240-7f7d9453-5349-4ef3-92e4-74fc1f8e5cff"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:43.000Z",
+              "updatedAt": "2026-07-28T01:40:43.000Z",
+              "uid": "35240-805f473a-1d70-499b-8f5f-dfde3b054c11"
+            }
+          ],
+          "id": "f66e3a33-aaac-4018-9a47-e207850e3b73",
+          "createdAt": "2026-07-28T01:40:43.000Z",
+          "updatedAt": "2026-07-28T01:40:43.000Z",
+          "uid": "35240-f66e3a33-aaac-4018-9a47-e207850e3b73"
+        }
+      ],
+      "id": "dc9290c5-811f-4d18-9b77-941544df4aca",
+      "createdAt": "2026-07-28T01:40:43.000Z",
+      "updatedAt": "2026-07-28T01:40:43.000Z",
+      "uid": "35240-dc9290c5-811f-4d18-9b77-941544df4aca"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

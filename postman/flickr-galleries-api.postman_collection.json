@@ -1,0 +1,297 @@
+{
+  "info": {
+    "_postman_id": "9fec3a29-a71f-4a22-b266-e8e5a679b494",
+    "name": "Flickr Activity Galleries API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:40.000Z",
+    "updatedAt": "2026-07-28T01:40:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9fec3a29-a71f-4a22-b266-e8e5a679b494"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.galleries.getList",
+          "item": [
+            {
+              "name": "List A User's Galleries",
+              "id": "319c33a1-7d7e-410e-804a-5d21789ca2ef",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.galleries.getList?api_key=<string>&user_id=<string>&page=1&per_page=100",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.galleries.getList"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "user_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ]
+                },
+                "description": "Returns a list of galleries created by a user."
+              },
+              "response": [
+                {
+                  "id": "51f02318-d817-4f3f-bc03-5da7e402f4ec",
+                  "name": "Galleries",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.galleries.getList?api_key=<API Key>&user_id=<string>&page=1&per_page=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.galleries.getList"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "user_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"gallery\": [\n    {\n      \"id\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"owner\": \"<string>\",\n      \"date_create\": \"<string>\",\n      \"count_photos\": \"<integer>\",\n      \"count_videos\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"owner\": \"<string>\",\n      \"date_create\": \"<string>\",\n      \"count_photos\": \"<integer>\",\n      \"count_videos\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:41.000Z",
+                  "updatedAt": "2026-07-28T01:40:41.000Z",
+                  "uid": "35240-51f02318-d817-4f3f-bc03-5da7e402f4ec"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:41.000Z",
+              "updatedAt": "2026-07-28T01:40:41.000Z",
+              "uid": "35240-319c33a1-7d7e-410e-804a-5d21789ca2ef"
+            }
+          ],
+          "id": "42191492-c84a-48bb-9308-b5b8d3479cfe",
+          "createdAt": "2026-07-28T01:40:41.000Z",
+          "updatedAt": "2026-07-28T01:40:41.000Z",
+          "uid": "35240-42191492-c84a-48bb-9308-b5b8d3479cfe"
+        },
+        {
+          "name": "flickr.galleries.getPhotos",
+          "item": [
+            {
+              "name": "List Photos In A Gallery",
+              "id": "c8858e3d-08c4-4cce-b876-9ee1e380dd4d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.galleries.getPhotos?api_key=<string>&gallery_id=<string>&page=1&per_page=100&extras=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.galleries.getPhotos"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "gallery_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                      "key": "extras",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the photos for a given gallery."
+              },
+              "response": [
+                {
+                  "id": "2e451aed-87a7-470f-92c3-77c305d7a7ad",
+                  "name": "Gallery photos",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.galleries.getPhotos?api_key=<API Key>&gallery_id=<string>&page=1&per_page=100&extras=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.galleries.getPhotos"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "gallery_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        },
+                        {
+                          "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                          "key": "extras",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"perpage\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"photo\": [\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:41.000Z",
+                  "updatedAt": "2026-07-28T01:40:41.000Z",
+                  "uid": "35240-2e451aed-87a7-470f-92c3-77c305d7a7ad"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:41.000Z",
+              "updatedAt": "2026-07-28T01:40:41.000Z",
+              "uid": "35240-c8858e3d-08c4-4cce-b876-9ee1e380dd4d"
+            }
+          ],
+          "id": "414907d4-65d1-4963-8ec9-5c3689fae68e",
+          "createdAt": "2026-07-28T01:40:41.000Z",
+          "updatedAt": "2026-07-28T01:40:41.000Z",
+          "uid": "35240-414907d4-65d1-4963-8ec9-5c3689fae68e"
+        }
+      ],
+      "id": "3f715fdf-eedf-41a2-b46f-e2eeb5399312",
+      "createdAt": "2026-07-28T01:40:41.000Z",
+      "updatedAt": "2026-07-28T01:40:41.000Z",
+      "uid": "35240-3f715fdf-eedf-41a2-b46f-e2eeb5399312"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

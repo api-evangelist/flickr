@@ -1,0 +1,235 @@
+{
+  "info": {
+    "_postman_id": "11cd8e31-dc94-436f-b0c2-29e9013bc864",
+    "name": "Flickr Activity Test API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:41:12.000Z",
+    "updatedAt": "2026-07-28T01:41:12.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-11cd8e31-dc94-436f-b0c2-29e9013bc864"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.test.echo",
+          "item": [
+            {
+              "name": "Echo Test Parameters",
+              "id": "6832d12a-6024-437e-b56a-cbec90df43eb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.test.echo?api_key=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.test.echo"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Echoes the parameters back to the caller as a test of connectivity and authentication."
+              },
+              "response": [
+                {
+                  "id": "02e042e5-47a7-46c0-a41a-df236d2a5a42",
+                  "name": "Echo response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.test.echo?api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.test.echo"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"velitf1_\": \"ipsum tempor est Ut in\"\n}",
+                  "createdAt": "2026-07-28T01:41:13.000Z",
+                  "updatedAt": "2026-07-28T01:41:13.000Z",
+                  "uid": "35240-02e042e5-47a7-46c0-a41a-df236d2a5a42"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:13.000Z",
+              "updatedAt": "2026-07-28T01:41:13.000Z",
+              "uid": "35240-6832d12a-6024-437e-b56a-cbec90df43eb"
+            }
+          ],
+          "id": "dddb01cc-ff31-441b-bb59-8778571c9232",
+          "createdAt": "2026-07-28T01:41:13.000Z",
+          "updatedAt": "2026-07-28T01:41:13.000Z",
+          "uid": "35240-dddb01cc-ff31-441b-bb59-8778571c9232"
+        },
+        {
+          "name": "flickr.test.login",
+          "item": [
+            {
+              "name": "Test Authentication",
+              "id": "aac7f24b-a21a-4a4a-abb6-e034c391d224",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.test.login?api_key=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.test.login"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns information about the calling authenticated user."
+              },
+              "response": [
+                {
+                  "id": "6765973d-0de8-4163-ba04-17e26c44e85a",
+                  "name": "Logged-in user",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.test.login?api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.test.login"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"user\": {\n    \"id\": \"<string>\",\n    \"username\": {\n      \"_content\": \"<string>\"\n    },\n    \"path_alias\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:41:13.000Z",
+                  "updatedAt": "2026-07-28T01:41:13.000Z",
+                  "uid": "35240-6765973d-0de8-4163-ba04-17e26c44e85a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:13.000Z",
+              "updatedAt": "2026-07-28T01:41:13.000Z",
+              "uid": "35240-aac7f24b-a21a-4a4a-abb6-e034c391d224"
+            }
+          ],
+          "id": "62b49de3-e890-4e82-8d07-0a0df3a5934f",
+          "createdAt": "2026-07-28T01:41:13.000Z",
+          "updatedAt": "2026-07-28T01:41:13.000Z",
+          "uid": "35240-62b49de3-e890-4e82-8d07-0a0df3a5934f"
+        }
+      ],
+      "id": "f7034812-0dba-416a-9a88-0264acb5c32c",
+      "createdAt": "2026-07-28T01:41:13.000Z",
+      "updatedAt": "2026-07-28T01:41:13.000Z",
+      "uid": "35240-f7034812-0dba-416a-9a88-0264acb5c32c"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

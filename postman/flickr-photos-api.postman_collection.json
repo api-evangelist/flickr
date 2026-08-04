@@ -1,0 +1,660 @@
+{
+  "info": {
+    "_postman_id": "5a8fc4a9-b572-44a3-81db-be604a199e0b",
+    "name": "Flickr Activity Photos API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:52.000Z",
+    "updatedAt": "2026-07-28T01:40:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5a8fc4a9-b572-44a3-81db-be604a199e0b"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.photos.search",
+          "item": [
+            {
+              "name": "Search Photos",
+              "id": "dac6bc0f-d279-4b3a-ab1e-916ab12ff963",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.search?api_key=<string>&text=<string>&tags=<string>&tag_mode=all&license=<string>&media=all&user_id=<string>&page=1&per_page=100&extras=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.search"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tag_mode",
+                      "value": "all"
+                    },
+                    {
+                      "key": "license",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "media",
+                      "value": "all"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                      "key": "extras",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns a list of photos matching a search query. Combine text, tags,\nowner, geography, license, date, and content filters.\n"
+              },
+              "response": [
+                {
+                  "id": "1b219607-f8ca-44e2-863e-790228c7099d",
+                  "name": "Matching photos",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.search?api_key=<API Key>&text=<string>&tags=<string>&tag_mode=all&license=<string>&media=all&user_id=<string>&page=1&per_page=100&extras=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.search"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "tags",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "tag_mode",
+                          "value": "all"
+                        },
+                        {
+                          "key": "license",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "media",
+                          "value": "all"
+                        },
+                        {
+                          "key": "user_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        },
+                        {
+                          "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                          "key": "extras",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"perpage\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"photo\": [\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:53.000Z",
+                  "updatedAt": "2026-07-28T01:40:53.000Z",
+                  "uid": "35240-1b219607-f8ca-44e2-863e-790228c7099d"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:53.000Z",
+              "updatedAt": "2026-07-28T01:40:53.000Z",
+              "uid": "35240-dac6bc0f-d279-4b3a-ab1e-916ab12ff963"
+            }
+          ],
+          "id": "17912a6b-51b3-4b1e-b934-a716ab5dd4b9",
+          "createdAt": "2026-07-28T01:40:53.000Z",
+          "updatedAt": "2026-07-28T01:40:53.000Z",
+          "uid": "35240-17912a6b-51b3-4b1e-b934-a716ab5dd4b9"
+        },
+        {
+          "name": "flickr.photos.getInfo",
+          "item": [
+            {
+              "name": "Get Photo Info",
+              "id": "64b3e3a2-2b53-4746-b555-01e662f0ac29",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.getInfo?api_key=<string>&photo_id=<string>&secret=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.getInfo"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns detailed information about a photo."
+              },
+              "response": [
+                {
+                  "id": "d92de896-467f-4894-b66e-a81e0cd1ca8b",
+                  "name": "Photo info",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.getInfo?api_key=<API Key>&photo_id=<string>&secret=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.getInfo"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "secret",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"server\": \"<string>\",\n  \"farm\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"ispublic\": \"<integer>\",\n  \"isfriend\": \"<integer>\",\n  \"isfamily\": \"<integer>\",\n  \"datetaken\": \"<string>\",\n  \"url_o\": \"<uri>\",\n  \"height_o\": \"<integer>\",\n  \"width_o\": \"<integer>\"\n}",
+                  "createdAt": "2026-07-28T01:40:53.000Z",
+                  "updatedAt": "2026-07-28T01:40:53.000Z",
+                  "uid": "35240-d92de896-467f-4894-b66e-a81e0cd1ca8b"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:53.000Z",
+              "updatedAt": "2026-07-28T01:40:53.000Z",
+              "uid": "35240-64b3e3a2-2b53-4746-b555-01e662f0ac29"
+            }
+          ],
+          "id": "885f26e2-55a4-4a1b-8b9c-375dbcd62e76",
+          "createdAt": "2026-07-28T01:40:53.000Z",
+          "updatedAt": "2026-07-28T01:40:53.000Z",
+          "uid": "35240-885f26e2-55a4-4a1b-8b9c-375dbcd62e76"
+        },
+        {
+          "name": "flickr.photos.getSizes",
+          "item": [
+            {
+              "name": "Get Available Photo Sizes",
+              "id": "1788a0fb-7cfe-4fc6-b9a5-6d013379a289",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.getSizes?api_key=<string>&photo_id=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.getSizes"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the available sizes for a photo."
+              },
+              "response": [
+                {
+                  "id": "e6150008-8f04-44f8-bbbf-3475b8e3380e",
+                  "name": "Sizes",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.getSizes?api_key=<API Key>&photo_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.getSizes"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"canblog\": \"<integer>\",\n  \"canprint\": \"<integer>\",\n  \"candownload\": \"<integer>\",\n  \"size\": [\n    {\n      \"label\": \"<string>\",\n      \"width\": \"<integer>\",\n      \"height\": \"<integer>\",\n      \"source\": \"<uri>\",\n      \"url\": \"<uri>\",\n      \"media\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"width\": \"<integer>\",\n      \"height\": \"<integer>\",\n      \"source\": \"<uri>\",\n      \"url\": \"<uri>\",\n      \"media\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:53.000Z",
+                  "updatedAt": "2026-07-28T01:40:53.000Z",
+                  "uid": "35240-e6150008-8f04-44f8-bbbf-3475b8e3380e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:53.000Z",
+              "updatedAt": "2026-07-28T01:40:53.000Z",
+              "uid": "35240-1788a0fb-7cfe-4fc6-b9a5-6d013379a289"
+            }
+          ],
+          "id": "489c087d-7f82-42cd-8c35-a4e60c4a8fe4",
+          "createdAt": "2026-07-28T01:40:53.000Z",
+          "updatedAt": "2026-07-28T01:40:53.000Z",
+          "uid": "35240-489c087d-7f82-42cd-8c35-a4e60c4a8fe4"
+        },
+        {
+          "name": "flickr.photos.getExif",
+          "item": [
+            {
+              "name": "Get Photo EXIF Data",
+              "id": "94752ebd-52c9-4a27-9d64-07bd4f627f4d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.getExif?api_key=<string>&photo_id=<string>&secret=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.getExif"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns EXIF / TIFF / GPS tags for a photo."
+              },
+              "response": [
+                {
+                  "id": "b1a1892b-801f-4cb2-8b1b-10443a2e0efc",
+                  "name": "EXIF data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.getExif?api_key=<API Key>&photo_id=<string>&secret=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.getExif"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "secret",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"photo\": {\n    \"id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"camera\": \"<string>\",\n    \"exif\": [\n      {\n        \"tagspace\": \"<string>\",\n        \"tagspaceid\": \"<integer>\",\n        \"tag\": \"<string>\",\n        \"label\": \"<string>\",\n        \"raw\": {\n          \"_content\": \"<string>\"\n        }\n      },\n      {\n        \"tagspace\": \"<string>\",\n        \"tagspaceid\": \"<integer>\",\n        \"tag\": \"<string>\",\n        \"label\": \"<string>\",\n        \"raw\": {\n          \"_content\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-07-28T01:40:53.000Z",
+                  "updatedAt": "2026-07-28T01:40:53.000Z",
+                  "uid": "35240-b1a1892b-801f-4cb2-8b1b-10443a2e0efc"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:53.000Z",
+              "updatedAt": "2026-07-28T01:40:53.000Z",
+              "uid": "35240-94752ebd-52c9-4a27-9d64-07bd4f627f4d"
+            }
+          ],
+          "id": "f65d2bf6-57af-4abf-a4f5-941e68d9f9f6",
+          "createdAt": "2026-07-28T01:40:53.000Z",
+          "updatedAt": "2026-07-28T01:40:53.000Z",
+          "uid": "35240-f65d2bf6-57af-4abf-a4f5-941e68d9f9f6"
+        },
+        {
+          "name": "flickr.photos.getRecent",
+          "item": [
+            {
+              "name": "Get Recent Public Photos",
+              "id": "a6b24dfd-41fc-4777-8604-90e35ff27f10",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.getRecent?api_key=<string>&extras=<string>&page=1&per_page=100",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.getRecent"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                      "key": "extras",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ]
+                },
+                "description": "Returns the most recent public photos."
+              },
+              "response": [
+                {
+                  "id": "fb2cc64a-b01d-4437-9fbc-1fa3b17ef1a7",
+                  "name": "Recent photos",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.getRecent?api_key=<API Key>&extras=<string>&page=1&per_page=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.getRecent"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).",
+                          "key": "extras",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "per_page",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"page\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"perpage\": \"<integer>\",\n  \"total\": \"<integer>\",\n  \"photo\": [\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"server\": \"<string>\",\n      \"farm\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"ispublic\": \"<integer>\",\n      \"isfriend\": \"<integer>\",\n      \"isfamily\": \"<integer>\",\n      \"datetaken\": \"<string>\",\n      \"url_o\": \"<uri>\",\n      \"height_o\": \"<integer>\",\n      \"width_o\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:53.000Z",
+                  "updatedAt": "2026-07-28T01:40:53.000Z",
+                  "uid": "35240-fb2cc64a-b01d-4437-9fbc-1fa3b17ef1a7"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:53.000Z",
+              "updatedAt": "2026-07-28T01:40:53.000Z",
+              "uid": "35240-a6b24dfd-41fc-4777-8604-90e35ff27f10"
+            }
+          ],
+          "id": "e430686a-276f-4463-a6f4-4dbd81d1a947",
+          "createdAt": "2026-07-28T01:40:53.000Z",
+          "updatedAt": "2026-07-28T01:40:53.000Z",
+          "uid": "35240-e430686a-276f-4463-a6f4-4dbd81d1a947"
+        }
+      ],
+      "id": "dcfd4de1-b241-4f28-9dca-900ce5357c9a",
+      "createdAt": "2026-07-28T01:40:53.000Z",
+      "updatedAt": "2026-07-28T01:40:53.000Z",
+      "uid": "35240-dcfd4de1-b241-4f28-9dca-900ce5357c9a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "1b92cfb3-c998-4c5a-8177-62dc36191d7d",
+    "name": "Flickr Activity Tags API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:41:11.000Z",
+    "updatedAt": "2026-07-28T01:41:12.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1b92cfb3-c998-4c5a-8177-62dc36191d7d"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.tags.getHotList",
+          "item": [
+            {
+              "name": "List Currently Hot Tags",
+              "id": "2f4431f4-4755-478a-b0d3-76e42678ce40",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.tags.getHotList?api_key=<string>&period=day&count=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.tags.getHotList"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "day"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Returns the popular tags for a given period."
+              },
+              "response": [
+                {
+                  "id": "9c517d55-4e7a-44ff-811b-4d37aedb3f3c",
+                  "name": "Hot tags",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.tags.getHotList?api_key=<API Key>&period=day&count=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.tags.getHotList"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "key": "period",
+                          "value": "day"
+                        },
+                        {
+                          "key": "count",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"period\": \"<string>\",\n  \"count\": \"<integer>\",\n  \"tag\": [\n    {\n      \"_content\": \"<string>\",\n      \"score\": \"<integer>\",\n      \"thm_data\": {\n        \"in989\": 31038468.259957686,\n        \"Ut_a_\": \"pariatur cupidatat deserunt magna\",\n        \"eiusmod_e\": -86637036\n      }\n    },\n    {\n      \"_content\": \"<string>\",\n      \"score\": \"<integer>\",\n      \"thm_data\": {\n        \"aliqua__c\": -35554542\n      }\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:41:12.000Z",
+                  "updatedAt": "2026-07-28T01:41:12.000Z",
+                  "uid": "35240-9c517d55-4e7a-44ff-811b-4d37aedb3f3c"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:12.000Z",
+              "updatedAt": "2026-07-28T01:41:12.000Z",
+              "uid": "35240-2f4431f4-4755-478a-b0d3-76e42678ce40"
+            }
+          ],
+          "id": "0a169ae3-8af5-402e-a251-a22e17f27d28",
+          "createdAt": "2026-07-28T01:41:12.000Z",
+          "updatedAt": "2026-07-28T01:41:12.000Z",
+          "uid": "35240-0a169ae3-8af5-402e-a251-a22e17f27d28"
+        },
+        {
+          "name": "flickr.tags.getClusters",
+          "item": [
+            {
+              "name": "Get Tag Clusters",
+              "id": "2113573c-bc85-4722-99e2-4b0ab5979ede",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.tags.getClusters?api_key=<string>&tag=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.tags.getClusters"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "tag",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the related \"clusters\" for a given tag."
+              },
+              "response": [
+                {
+                  "id": "7438d1f0-f616-460b-a0bf-265af42bf7fd",
+                  "name": "Clusters",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.tags.getClusters?api_key=<API Key>&tag=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.tags.getClusters"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "tag",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"source\": \"<string>\",\n  \"total\": \"<integer>\",\n  \"cluster\": [\n    {\n      \"total\": \"<integer>\",\n      \"tag\": [\n        {\n          \"_content\": \"<string>\",\n          \"score\": \"<integer>\",\n          \"thm_data\": {\n            \"sed82b\": true\n          }\n        },\n        {\n          \"_content\": \"<string>\",\n          \"score\": \"<integer>\",\n          \"thm_data\": {\n            \"eu36\": \"pariatur et \"\n          }\n        }\n      ]\n    },\n    {\n      \"total\": \"<integer>\",\n      \"tag\": [\n        {\n          \"_content\": \"<string>\",\n          \"score\": \"<integer>\",\n          \"thm_data\": {\n            \"quisb\": 49724889.09705922\n          }\n        },\n        {\n          \"_content\": \"<string>\",\n          \"score\": \"<integer>\",\n          \"thm_data\": {\n            \"consectetur_a2\": 42331781,\n            \"fugiat_4\": 13986720.458646312\n          }\n        }\n      ]\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:41:12.000Z",
+                  "updatedAt": "2026-07-28T01:41:12.000Z",
+                  "uid": "35240-7438d1f0-f616-460b-a0bf-265af42bf7fd"
+                }
+              ],
+              "createdAt": "2026-07-28T01:41:12.000Z",
+              "updatedAt": "2026-07-28T01:41:12.000Z",
+              "uid": "35240-2113573c-bc85-4722-99e2-4b0ab5979ede"
+            }
+          ],
+          "id": "31c67d74-38d7-4a01-a5e3-c4163379a5ec",
+          "createdAt": "2026-07-28T01:41:12.000Z",
+          "updatedAt": "2026-07-28T01:41:12.000Z",
+          "uid": "35240-31c67d74-38d7-4a01-a5e3-c4163379a5ec"
+        }
+      ],
+      "id": "3e1d3737-08f5-495e-925a-85edd6d19200",
+      "createdAt": "2026-07-28T01:41:12.000Z",
+      "updatedAt": "2026-07-28T01:41:12.000Z",
+      "uid": "35240-3e1d3737-08f5-495e-925a-85edd6d19200"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

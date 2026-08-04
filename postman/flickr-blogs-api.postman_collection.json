@@ -1,0 +1,152 @@
+{
+  "info": {
+    "_postman_id": "df4e902b-f599-4b39-9d13-dba4d7c2de63",
+    "name": "Flickr Activity Blogs API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:14.000Z",
+    "updatedAt": "2026-07-28T01:40:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-df4e902b-f599-4b39-9d13-dba4d7c2de63"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.blogs.getList",
+          "item": [
+            {
+              "name": "Get Configured Blogs",
+              "id": "19f298cd-33b3-4725-aa1f-0651e99bd561",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.blogs.getList?api_key=<string>&service=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.blogs.getList"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Optional service ID filter.",
+                      "key": "service",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns a list of Flickr-supported blogging services the calling user has configured."
+              },
+              "response": [
+                {
+                  "id": "034bf997-6c21-42ef-8ac3-17f725311f1f",
+                  "name": "Configured blogs",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.blogs.getList?api_key=<API Key>&service=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.blogs.getList"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "Optional service ID filter.",
+                          "key": "service",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"blog\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"service\": \"<string>\",\n      \"url\": \"<uri>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"service\": \"<string>\",\n      \"url\": \"<uri>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:15.000Z",
+                  "updatedAt": "2026-07-28T01:40:15.000Z",
+                  "uid": "35240-034bf997-6c21-42ef-8ac3-17f725311f1f"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:15.000Z",
+              "updatedAt": "2026-07-28T01:40:15.000Z",
+              "uid": "35240-19f298cd-33b3-4725-aa1f-0651e99bd561"
+            }
+          ],
+          "id": "641855ad-8895-4cb8-8bc8-659f63c215ca",
+          "createdAt": "2026-07-28T01:40:15.000Z",
+          "updatedAt": "2026-07-28T01:40:15.000Z",
+          "uid": "35240-641855ad-8895-4cb8-8bc8-659f63c215ca"
+        }
+      ],
+      "id": "f91fecb0-8ea3-4bd1-ade6-c361d9ab1435",
+      "createdAt": "2026-07-28T01:40:15.000Z",
+      "updatedAt": "2026-07-28T01:40:15.000Z",
+      "uid": "35240-f91fecb0-8ea3-4bd1-ade6-c361d9ab1435"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "info": {
+    "_postman_id": "dbc497ca-c7f6-4c73-a8d0-58b80b549647",
+    "name": "Flickr Activity Commons API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:31.000Z",
+    "updatedAt": "2026-07-28T01:40:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dbc497ca-c7f6-4c73-a8d0-58b80b549647"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.commons.getInstitutions",
+          "item": [
+            {
+              "name": "List Flickr Commons Institutions",
+              "id": "e4af0dc0-5d81-48ea-9fe1-3353554e3759",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.commons.getInstitutions?api_key=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.commons.getInstitutions"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Returns the list of institutions participating in The Commons."
+              },
+              "response": [
+                {
+                  "id": "cfae92af-9606-4c2f-ad84-78a2a9bc5c2f",
+                  "name": "Institutions",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.commons.getInstitutions?api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.commons.getInstitutions"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"institution\": [\n    {\n      \"nsid\": \"<string>\",\n      \"name\": \"<string>\",\n      \"date_launch\": \"<string>\"\n    },\n    {\n      \"nsid\": \"<string>\",\n      \"name\": \"<string>\",\n      \"date_launch\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:40:32.000Z",
+                  "updatedAt": "2026-07-28T01:40:32.000Z",
+                  "uid": "35240-cfae92af-9606-4c2f-ad84-78a2a9bc5c2f"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:32.000Z",
+              "updatedAt": "2026-07-28T01:40:32.000Z",
+              "uid": "35240-e4af0dc0-5d81-48ea-9fe1-3353554e3759"
+            }
+          ],
+          "id": "9ffb8c2f-69b1-4bd8-9c80-3c60779a7cf1",
+          "createdAt": "2026-07-28T01:40:32.000Z",
+          "updatedAt": "2026-07-28T01:40:32.000Z",
+          "uid": "35240-9ffb8c2f-69b1-4bd8-9c80-3c60779a7cf1"
+        }
+      ],
+      "id": "3ddc8ce3-a29d-4a6c-9421-34545782c9e5",
+      "createdAt": "2026-07-28T01:40:32.000Z",
+      "updatedAt": "2026-07-28T01:40:32.000Z",
+      "uid": "35240-3ddc8ce3-a29d-4a6c-9421-34545782c9e5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}

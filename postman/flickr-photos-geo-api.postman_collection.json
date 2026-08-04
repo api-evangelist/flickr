@@ -1,0 +1,180 @@
+{
+  "info": {
+    "_postman_id": "b33934fa-34a5-4a16-846f-3ea6106724f9",
+    "name": "Flickr Activity Photos Geo API",
+    "description": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:40:53.000Z",
+    "updatedAt": "2026-07-28T01:40:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b33934fa-34a5-4a16-846f-3ea6106724f9"
+  },
+  "item": [
+    {
+      "name": "rest",
+      "item": [
+        {
+          "name": "flickr.photos.geo.setLocation",
+          "item": [
+            {
+              "name": "Set Photo Geo Location",
+              "id": "a55928b6-246f-4131-8230-aba5def51d1b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rest/flickr.photos.geo.setLocation?api_key=<string>&photo_id=<string>&lat=<double>&lon=<double>&accuracy=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rest",
+                    "flickr.photos.geo.setLocation"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Application API key.",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "photo_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "lat",
+                      "value": "<double>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "lon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "accuracy",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Sets the geo data (latitude, longitude, accuracy) for a photo."
+              },
+              "response": [
+                {
+                  "id": "90bac06e-e613-42bf-931e-0fb9dc81f6b4",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rest/flickr.photos.geo.setLocation?api_key=<API Key>&photo_id=<string>&lat=<double>&lon=<double>&accuracy=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rest",
+                        "flickr.photos.geo.setLocation"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Application API key.",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "photo_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "lat",
+                          "value": "<double>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "lon",
+                          "value": "<double>"
+                        },
+                        {
+                          "key": "accuracy",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"stat\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:40:54.000Z",
+                  "updatedAt": "2026-07-28T01:40:54.000Z",
+                  "uid": "35240-90bac06e-e613-42bf-931e-0fb9dc81f6b4"
+                }
+              ],
+              "createdAt": "2026-07-28T01:40:54.000Z",
+              "updatedAt": "2026-07-28T01:40:54.000Z",
+              "uid": "35240-a55928b6-246f-4131-8230-aba5def51d1b"
+            }
+          ],
+          "id": "0ebb0cda-495c-4e81-8295-031d0978e856",
+          "createdAt": "2026-07-28T01:40:53.000Z",
+          "updatedAt": "2026-07-28T01:40:53.000Z",
+          "uid": "35240-0ebb0cda-495c-4e81-8295-031d0978e856"
+        }
+      ],
+      "id": "a9afc11b-4d93-4e94-b95d-2b1cb93460d5",
+      "createdAt": "2026-07-28T01:40:53.000Z",
+      "updatedAt": "2026-07-28T01:40:53.000Z",
+      "uid": "35240-a9afc11b-4d93-4e94-b95d-2b1cb93460d5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.flickr.com/services"
+    }
+  ]
+}
