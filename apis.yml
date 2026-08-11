@@ -805,6 +805,11 @@ apis:
   - type: SDKs
     url: https://pypi.org/project/flickr-api/
 common:
+  - type: IssueTracker
+    url: https://github.com/flickr/flickr-api-swagger/issues
+  - type: License
+    name: MIT
+    url: https://github.com/flickr/flickr-api-swagger/blob/master/LICENSE
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/flickr/overview
   - type: AgenticAccess
