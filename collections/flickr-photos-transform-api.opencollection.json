@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Photos Transform API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photos Transform",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Rotate Photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.transform.rotate",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "degrees",
+                "value": "90",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Rotates a photo 90, 180, or 270 degrees."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

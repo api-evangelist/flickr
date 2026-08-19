@@ -1,0 +1,165 @@
+{
+  "item": [
+    {
+      "id": "a24591e2-2938-414a-9424-8446ffe08e1f",
+      "name": "Contacts",
+      "description": {
+        "content": "Calling user's contacts and recent contact activity",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1e6a9698-4ed9-4bf6-9a38-e1487d53d1fe",
+          "name": "Get Contacts For The Calling User",
+          "request": {
+            "name": "Get Contacts For The Calling User",
+            "description": {
+              "content": "Returns the contact list for the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.contacts.getList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "One of: friends, family, both, neither."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f78377b1-fd3e-4394-845b-8696ab8e43ab",
+              "name": "Contact list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.contacts.getList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "friends"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"total\": 1183,\n  \"contact\": [\n    {\n      \"nsid\": \"12345678@N00\",\n      \"username\": \"shutterbug\",\n      \"iconserver\": \"7402\",\n      \"realname\": \"Jane Photographer\",\n      \"friend\": 1,\n      \"family\": 0,\n      \"ignored\": 0\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a28ce7fa-85ae-4b1a-bf4c-e8f6aa2db486",
+    "name": "Flickr Activity Contacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

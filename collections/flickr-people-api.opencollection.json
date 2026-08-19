@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity People API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Person Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.people.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns information about a person."
+        },
+        {
+          "info": {
+            "name": "Get A User's Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.people.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns photos from the given user's photostream."
+        },
+        {
+          "info": {
+            "name": "Find User By Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.people.findByEmail",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "find_email",
+                "value": "jane@example.com",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up a Flickr user by email."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

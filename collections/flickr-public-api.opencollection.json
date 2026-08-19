@@ -1,0 +1,961 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Public API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Public",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getFavoritesByPersonID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.favorites.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "min_fave_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_fave_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned."
+        },
+        {
+          "info": {
+            "name": "getMediaByPersonID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.people.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "safe_search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "min_upload_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_upload_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "min_taken_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_taken_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "content_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "privacy_filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return photos from the given user's photostream"
+        },
+        {
+          "info": {
+            "name": "getAlbumsByPersonID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photosets.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the albums belonging to the specified user"
+        },
+        {
+          "info": {
+            "name": "getFavoritesContextByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.favorites.getContext",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns next and previous favorites for a photo in a user's favorites"
+        },
+        {
+          "info": {
+            "name": "getGroupByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.groups.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group_path_alias",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get information about a group"
+        },
+        {
+          "info": {
+            "name": "getGroupPhotosByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.groups.pools.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of pool photos for a given group"
+        },
+        {
+          "info": {
+            "name": "getGroupDiscussionsByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.groups.discuss.topics.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a list of discussion topics in a group."
+        },
+        {
+          "info": {
+            "name": "getGroupTopicRepliesByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.groups.discuss.replies.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "topic_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reply_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get information on a group topic reply"
+        },
+        {
+          "info": {
+            "name": "getGroupTopicByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.groups.discuss.topics.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "topic_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get information about a group discussion topic"
+        },
+        {
+          "info": {
+            "name": "getGroupPhotosByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.groups.pools.getContext",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns next and previous photos for a photo in a group pool"
+        },
+        {
+          "info": {
+            "name": "getPhotolistContextByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photolist.getContext",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photolist_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns next and previous photos in a photo list"
+        },
+        {
+          "info": {
+            "name": "getPhotostreamContextByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photos.getContext",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns next and previous photos for a photo in a photostream"
+        },
+        {
+          "info": {
+            "name": "getLicenseByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photos.licenses.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Fetches a list of available photo licenses for Flickr"
+        },
+        {
+          "info": {
+            "name": "getPersonByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.people.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a person"
+        },
+        {
+          "info": {
+            "name": "getPhotoExifByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photos.getExif",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "secret",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves a list of EXIF/TIFF/GPS tags for a given photo. The calling user must have permission to view the photo."
+        },
+        {
+          "info": {
+            "name": "getPhotoByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photos.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a photo"
+        },
+        {
+          "info": {
+            "name": "getPhotoSizesByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photos.getSizes",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns photo sizes"
+        },
+        {
+          "info": {
+            "name": "getAlbumContextByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photosets.getContext",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photoset_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns next and previous photos for a photo in a set"
+        },
+        {
+          "info": {
+            "name": "getAlbumByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photosets.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "photoset_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of photos in an album."
+        },
+        {
+          "info": {
+            "name": "getGalleryPhotosByID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.galleries.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "gallery_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of photos in a gallery."
+        },
+        {
+          "info": {
+            "name": "getMediaBySearch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.photos.search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "text",
+                "value": "",
+                "type": "query",
+                "description": "A free text search. Photos who's title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character."
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query",
+                "description": "A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character."
+              },
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "query",
+                "description": "The NSID of the user who's photo to search. If this parameter isn't passed then everybody's public photos will be searched. A value of \"me\" will search against the calling user's photos for authenticated calls."
+              },
+              {
+                "name": "min_upload_date",
+                "value": "",
+                "type": "query",
+                "description": "Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime."
+              },
+              {
+                "name": "max_upload_date",
+                "value": "",
+                "type": "query",
+                "description": "Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime."
+              },
+              {
+                "name": "min_taken_date",
+                "value": "",
+                "type": "query",
+                "description": "Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp."
+              },
+              {
+                "name": "max_taken_date",
+                "value": "",
+                "type": "query",
+                "description": "Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp."
+              },
+              {
+                "name": "license",
+                "value": "",
+                "type": "query",
+                "description": "The license id for photos (for possible values see the flickr.photos.licenses.getInfo method). Multiple licenses may be comma-separated."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "The order in which to sort returned photos. Deafults to date-posted-desc (unless you are doing a radial geo query, in which case the default sorting is by ascending distance from the point specified). The possible values are:\n  date-posted-asc,\n  date-posted-desc,\n  date-taken-asc,\n  date-taken-desc,\n  interestingness-desc,\n  interestingness-asc, and\n  relevance.\n"
+              },
+              {
+                "name": "privacy_filter",
+                "value": "",
+                "type": "query",
+                "description": "Return photos only matching a certain privacy level. This only applies when making an authenticated call to view photos you own. Valid values are:,\n  1: public photos,\n  2: private photos visible to friends,\n  3: private photos visible to family,\n  4: private photos visible to friends & family,\n  5: completely private photos\n"
+              },
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched."
+              },
+              {
+                "name": "accuracy",
+                "value": "",
+                "type": "query",
+                "description": "Recorded accuracy level of the location information. Current range is 1-16:\n  World level is 1\n  Country is ~3\n  Region is ~6\n  City is ~11\n  Street is ~16\n"
+              },
+              {
+                "name": "safe_search",
+                "value": "",
+                "type": "query",
+                "description": "Safe search setting:\n  1: for safe,\n  2: for moderate,\n  3: for restricted\n"
+              },
+              {
+                "name": "content_type",
+                "value": "",
+                "type": "query",
+                "description": "Content Type setting:\n  1: photos only.\n  2: screenshots only.\n  3: 'other' only.\n  4: photos and screenshots.\n  5: screenshots and 'other'.\n  6: photos and 'other'.\n  7: photos, screenshots, and 'other' (all).\n"
+              },
+              {
+                "name": "machine_tags",
+                "value": "",
+                "type": "query",
+                "description": "Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : \"machine_tags\" => \"dc:\" Find photos with a title in the 'dc' namespace : \"machine_tags\" => \"dc:title=\" Find photos titled \"mr. camera\" in the 'dc' namespace : \"machine_tags\" => \"dc:title=\\\"mr. camera\\\" Find photos whose value is \"mr. camera\" : \"machine_tags\" => \"*:*=\\\"mr. camera\\\"\" Find photos that have a title, in any namespace : \"machine_tags\" => \"*:title=\" Find photos that have a title, in any namespace, whose value is \"mr. camera\" : \"machine_tags\" => \"*:title=\\\"mr. camera\\\"\" Find photos, in the 'dc' namespace whose value is \"mr. camera\" : \"machine_tags\" => \"dc:*=\\\"mr. camera\\\"\" Multiple machine tags may be queried by passing a comma-separated list. The number of machine tags you can pass in a single query depends on the tag mode (AND or OR) that you are querying with. \"AND\" queries are limited to (16) machine tags. \"OR\" queries are limited to (8).\n"
+              },
+              {
+                "name": "machine_tag_mode",
+                "value": "",
+                "type": "query",
+                "description": "Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified."
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query",
+                "description": "The id of a group who's pool to search. If specified, only matching photos posted to the group's pool will be returned."
+              },
+              {
+                "name": "contacts",
+                "value": "",
+                "type": "query",
+                "description": "Search your contacts. Either 'all' or 'ff' for just friends and family. (Experimental)"
+              },
+              {
+                "name": "woe_id",
+                "value": "",
+                "type": "query",
+                "description": "A 32-bit identifier that uniquely represents spatial entities. (not used if bbox argument is present)."
+              },
+              {
+                "name": "place_id",
+                "value": "",
+                "type": "query",
+                "description": "A Flickr place id. (not used if bbox argument is present). Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n"
+              },
+              {
+                "name": "media",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by media type. Possible values are all (default), photos or videos"
+              },
+              {
+                "name": "has_geo",
+                "value": "",
+                "type": "query",
+                "description": "Any photo that has been geotagged, or if the value is \"0\" any photo that has not been geotagged. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n"
+              },
+              {
+                "name": "geo_context",
+                "value": "",
+                "type": "query",
+                "description": "Geo context is a numeric value representing the photo's geotagginess beyond latitude and longitude. For example, you may wish to search for photos that were taken \"indoors\" or \"outdoors\". The current list of context IDs is: 0, not defined. 1, indoors. 2, outdoors. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n"
+              },
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query",
+                "description": "A valid latitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query",
+                "description": "A valid longitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n"
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query",
+                "description": "A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries. The default value is 5 (km)."
+              },
+              {
+                "name": "radius_units",
+                "value": "",
+                "type": "query",
+                "description": "The unit of measure when doing radial geo queries. Valid options are \"mi\" (miles) and \"km\" (kilometers). The default is \"km\"."
+              },
+              {
+                "name": "is_commons",
+                "value": "",
+                "type": "query",
+                "description": "Limit the scope of the search to only photos that are part of the Flickr Commons project. Default is false."
+              },
+              {
+                "name": "in_gallery",
+                "value": "",
+                "type": "query",
+                "description": "Limit the scope of the search to only photos that are in a gallery? Default is false, search all photos."
+              },
+              {
+                "name": "is_getty",
+                "value": "",
+                "type": "query",
+                "description": "Limit the scope of the search to only photos that are for sale on Getty. Default is false."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page of results to return. If this argument is omitted, it defaults to 1."
+              }
+            ]
+          },
+          "docs": "Return a list of photos matching some criteria."
+        },
+        {
+          "info": {
+            "name": "uploadPhoto",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/upload"
+          },
+          "docs": "Uploads a new photo to Flickr"
+        },
+        {
+          "info": {
+            "name": "echo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest?method=flickr.test.echo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "echo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Echos the input parameters back in the response"
+        },
+        {
+          "info": {
+            "name": "getRequestToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/oauth/request_token",
+            "params": [
+              {
+                "name": "oauth_consumer_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_nonce",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_timestamp",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_signature_method",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_signature",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_callback",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns an oauth token and oauth token secret"
+        },
+        {
+          "info": {
+            "name": "getAccessToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/oauth/access_token",
+            "params": [
+              {
+                "name": "oauth_consumer_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_nonce",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_timestamp",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_signature_method",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_signature",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_verifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oauth_token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns an access token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Reflection API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reflection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Invoke Any Flickr Method",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest",
+            "params": [
+              {
+                "name": "method",
+                "value": "flickr.photos.search",
+                "type": "query",
+                "description": "Fully qualified flickr method, e.g. `flickr.photos.search`."
+              },
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "Response format (json/xml/php_serial/rest)."
+              },
+              {
+                "name": "nojsoncallback",
+                "value": "1",
+                "type": "query",
+                "description": "Set to 1 to receive raw JSON instead of JSONP."
+              }
+            ]
+          },
+          "docs": "Dispatches a call to any flickr.* method. The `method` query parameter\nselects which method to invoke and the remaining query parameters are\nthe arguments for that method. This single endpoint backs every\nper-method operation defined below.\n"
+        },
+        {
+          "info": {
+            "name": "List Available API Methods",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.reflection.getMethods",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns a list of available Flickr API methods."
+        },
+        {
+          "info": {
+            "name": "Get API Method Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.reflection.getMethodInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "method_name",
+                "value": "flickr.photos.search",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns information about a particular API method including its arguments and errors."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

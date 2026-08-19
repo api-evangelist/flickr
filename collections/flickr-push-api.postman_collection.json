@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "341eaacf-5874-4820-869b-c1d69e092bb6",
+      "name": "Push",
+      "description": {
+        "content": "PubSubHubbub push subscriptions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "904fb2f4-e073-4730-908a-509ef289617d",
+          "name": "List Push Subscription Topics",
+          "request": {
+            "name": "List Push Subscription Topics",
+            "description": {
+              "content": "Returns the list of available PubSubHubbub push subscription topics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.push.getTopics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e9d9ddd-2661-484f-b631-2d8b61c88055",
+              "name": "Topics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.push.getTopics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"topic\": [\n    {\n      \"name\": \"Bay Area Photographers\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "03b39d0b-aba2-43ca-8af5-1bdf04db8fa8",
+    "name": "Flickr Activity Push API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

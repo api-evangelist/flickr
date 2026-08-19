@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Test API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Test",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Echo Test Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.test.echo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Echoes the parameters back to the caller as a test of connectivity and authentication."
+        },
+        {
+          "info": {
+            "name": "Test Authentication",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.test.login",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns information about the calling authenticated user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

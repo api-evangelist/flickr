@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Favorites API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Favorites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get A User's Favorites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.favorites.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned."
+        },
+        {
+          "info": {
+            "name": "Mark Photo As Favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.favorites.add",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a photo to the calling user's favorites list."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,647 @@
+{
+  "item": [
+    {
+      "id": "cce83c2c-4f8a-4a20-81db-2b2bc14c99a9",
+      "name": "Photos",
+      "description": {
+        "content": "Core photo metadata, search, comments, and lifecycle",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f3edf32-1de2-4d85-a9b8-f4dcc9cdeb94",
+          "name": "Search Photos",
+          "request": {
+            "name": "Search Photos",
+            "description": {
+              "content": "Returns a list of photos matching a search query. Combine text, tags,\nowner, geography, license, date, and content filters.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.photos.search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "text",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag_mode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "license",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "media",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "user_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "key": "extras",
+                  "value": "<string>",
+                  "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1db5d78-14be-4da9-afdb-afd241e260b8",
+              "name": "Matching photos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.photos.search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "text",
+                      "value": "golden gate"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "sunset,bridge"
+                    },
+                    {
+                      "key": "tag_mode",
+                      "value": "any"
+                    },
+                    {
+                      "key": "license",
+                      "value": "1,2,3"
+                    },
+                    {
+                      "key": "media",
+                      "value": "photos"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "12345678@N00"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "extras",
+                      "value": "owner_name,description,url_o,date_taken,geo"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"perpage\": 100,\n  \"total\": 1183,\n  \"photo\": [\n    {\n      \"id\": \"52345678901\",\n      \"owner\": \"12345678@N00\",\n      \"secret\": \"abc1234def\",\n      \"server\": \"65535\",\n      \"farm\": 66,\n      \"title\": \"Golden Gate Sunset\",\n      \"ispublic\": 1,\n      \"isfriend\": 0,\n      \"isfamily\": 0,\n      \"datetaken\": \"2026-04-12 18:24:11\",\n      \"url_o\": \"https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg\",\n      \"height_o\": 4032,\n      \"width_o\": 6048\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f9e8fcc-7767-47a6-bc4b-540aa06f3e9b",
+          "name": "Get Photo Info",
+          "request": {
+            "name": "Get Photo Info",
+            "description": {
+              "content": "Returns detailed information about a photo.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.photos.getInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "photo_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "secret",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e005c62b-ce79-4fb0-bb10-86fd4756485b",
+              "name": "Photo info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.photos.getInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": "52345678901"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "abc1234def"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"52345678901\",\n  \"owner\": \"12345678@N00\",\n  \"secret\": \"abc1234def\",\n  \"server\": \"65535\",\n  \"farm\": 66,\n  \"title\": \"Golden Gate Sunset\",\n  \"ispublic\": 1,\n  \"isfriend\": 0,\n  \"isfamily\": 0,\n  \"datetaken\": \"2026-04-12 18:24:11\",\n  \"url_o\": \"https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg\",\n  \"height_o\": 4032,\n  \"width_o\": 6048\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e1c5410-a09b-402d-b1c3-345edb891054",
+          "name": "Get Available Photo Sizes",
+          "request": {
+            "name": "Get Available Photo Sizes",
+            "description": {
+              "content": "Returns the available sizes for a photo.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.photos.getSizes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "photo_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96e4eca6-5a88-4b27-9872-29f9b2d0582c",
+              "name": "Sizes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.photos.getSizes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": "52345678901"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"canblog\": 0,\n  \"canprint\": 1,\n  \"candownload\": 1,\n  \"size\": [\n    {\n      \"label\": \"Original\",\n      \"width\": 6048,\n      \"height\": 4032,\n      \"source\": \"https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg\",\n      \"url\": \"https://www.flickr.com/galleries/12345678@N00/72157712345/\",\n      \"media\": \"photo\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee4cc51b-d37a-4525-9caa-cce5cd43097f",
+          "name": "Get Photo EXIF Data",
+          "request": {
+            "name": "Get Photo EXIF Data",
+            "description": {
+              "content": "Returns EXIF / TIFF / GPS tags for a photo.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.photos.getExif"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "photo_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "secret",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61347749-597b-4115-adbd-7b3536c9924b",
+              "name": "EXIF data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.photos.getExif"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": "52345678901"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "abc1234def"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"photo\": {\n    \"id\": \"52345678901\",\n    \"secret\": \"abc1234def\",\n    \"camera\": \"example\",\n    \"exif\": [\n      {\n        \"tagspace\": \"EXIF\",\n        \"tagspaceid\": 0,\n        \"tag\": \"ISO\",\n        \"label\": \"Original\",\n        \"raw\": {\n          \"_content\": \"100\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c321af25-11eb-4e7d-b801-6c60a9e90b41",
+          "name": "Get Recent Public Photos",
+          "request": {
+            "name": "Get Recent Public Photos",
+            "description": {
+              "content": "Returns the most recent public photos.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.photos.getRecent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "extras",
+                  "value": "<string>",
+                  "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a1527a0-bf8b-4569-a214-b574a6ec08e2",
+              "name": "Recent photos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.photos.getRecent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "extras",
+                      "value": "owner_name,description,url_o,date_taken,geo"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"perpage\": 100,\n  \"total\": 1183,\n  \"photo\": [\n    {\n      \"id\": \"52345678901\",\n      \"owner\": \"12345678@N00\",\n      \"secret\": \"abc1234def\",\n      \"server\": \"65535\",\n      \"farm\": 66,\n      \"title\": \"Golden Gate Sunset\",\n      \"ispublic\": 1,\n      \"isfriend\": 0,\n      \"isfamily\": 0,\n      \"datetaken\": \"2026-04-12 18:24:11\",\n      \"url_o\": \"https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg\",\n      \"height_o\": 4032,\n      \"width_o\": 6048\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bba380dc-5819-4271-8e18-3d09e786aa5b",
+    "name": "Flickr Activity Photos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

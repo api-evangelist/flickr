@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Stats API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Photo View Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.stats.getPhotoStats",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "date",
+                "value": "2026-04-30",
+                "type": "query"
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns view counts for a photo on a given date."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

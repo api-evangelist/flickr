@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Photosets API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photosets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List A User's Photosets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photosets.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns photosets belonging to a user."
+        },
+        {
+          "info": {
+            "name": "List Photos In A Photoset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photosets.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photoset_id",
+                "value": "72157712345",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns the photos in a given photoset."
+        },
+        {
+          "info": {
+            "name": "Create A New Photoset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photosets.create",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "title",
+                "value": "Sunsets",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "Best sunsets I have shot.",
+                "type": "query"
+              },
+              {
+                "name": "primary_photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Creates a new photoset for the calling user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

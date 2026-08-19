@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "36482415-0d0f-4ee5-9619-d9c5941aef32",
+      "name": "Groups Discuss",
+      "description": {
+        "content": "Group discussion topics and replies",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1128879d-65f5-4c9b-97c1-fd73bd0de60a",
+          "name": "List Group Discussion Topics",
+          "request": {
+            "name": "List Group Discussion Topics",
+            "description": {
+              "content": "Returns discussion topics for a group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.groups.discuss.topics.getList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "group_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "45e0b0f1-620f-418d-b030-3a36fd4ec42d",
+              "name": "Topics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.groups.discuss.topics.getList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "group_id",
+                      "value": "12345678@N00"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"total\": 1183,\n  \"topic\": [\n    {\n      \"id\": \"52345678901\",\n      \"subject\": \"Tips for sunset photography\",\n      \"author\": \"12345678@N00\",\n      \"author_name\": \"shutterbug\",\n      \"datecreate\": \"1715000000\",\n      \"count_replies\": 7\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "835f7f1c-5e66-4e41-a01c-6894f19982a9",
+          "name": "List Replies For A Discussion Topic",
+          "request": {
+            "name": "List Replies For A Discussion Topic",
+            "description": {
+              "content": "Returns the replies for a discussion topic.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.groups.discuss.replies.getList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "topic_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5637e8b7-6a48-4e7e-b979-ab955158b615",
+              "name": "Replies",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.groups.discuss.replies.getList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "topic_id",
+                      "value": "72157712345"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"total\": 1183,\n  \"reply\": [\n    {\n      \"id\": \"52345678901\",\n      \"author\": \"12345678@N00\",\n      \"message\": {\n        \"_content\": \"100\"\n      },\n      \"datecreate\": \"1715000000\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "01d3006c-6248-41c2-8842-1ac8d879c743",
+    "name": "Flickr Activity Groups Discuss API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

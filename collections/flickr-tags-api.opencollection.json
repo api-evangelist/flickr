@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Tags API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Currently Hot Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.tags.getHotList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "period",
+                "value": "week",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "200",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the popular tags for a given period."
+        },
+        {
+          "info": {
+            "name": "Get Tag Clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.tags.getClusters",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "tag",
+                "value": "sunset",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the related \"clusters\" for a given tag."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

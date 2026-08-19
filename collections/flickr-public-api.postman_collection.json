@@ -1,0 +1,3132 @@
+{
+  "item": [
+    {
+      "id": "2457899d-2090-4bb0-895a-96c45800ac29",
+      "name": "Public",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5f7e46ac-40c4-40d3-8f27-27964bda7f1f",
+          "name": "get Favorites By Person ID",
+          "request": {
+            "name": "get Favorites By Person ID",
+            "description": {
+              "content": "Returns a list of the user's favorite photos. Only photos which the calling user has permission to see are returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.favorites.getList"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "min_fave_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "max_fave_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "per_page",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6b5ce0c-fda3-4a3a-b4ac-742f33e15c60",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_fave_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_fave_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9a5028d-3ea6-407e-a408-3bd78518a107",
+          "name": "get Media By Person ID",
+          "request": {
+            "name": "get Media By Person ID",
+            "description": {
+              "content": "Return photos from the given user's photostream",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.people.getPhotos"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "safe_search",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "min_upload_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "max_upload_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "min_taken_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "max_taken_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "content_type",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "privacy_filter",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "per_page",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5933762f-c258-4ca7-b741-fae8772d3912",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "safe_search",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "content_type",
+                      "value": ""
+                    },
+                    {
+                      "key": "privacy_filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec10bc1c-b417-4171-ae90-afc3b8bdd806",
+          "name": "get Albums By Person ID",
+          "request": {
+            "name": "get Albums By Person ID",
+            "description": {
+              "content": "Returns the albums belonging to the specified user",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photosets.getList"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "per_page",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85713992-338a-43fc-bc2b-f222285902c4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad53e72e-883b-4e7a-b7d4-c102ba7336d5",
+          "name": "get Favorites Context By ID",
+          "request": {
+            "name": "get Favorites Context By ID",
+            "description": {
+              "content": "Returns next and previous favorites for a photo in a user's favorites",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.favorites.getContext"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "user_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8f48f06-6cee-41f3-ad46-305700ad0b33",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d073c3b-085a-4a61-9458-f4fb177a1427",
+          "name": "get Group By ID",
+          "request": {
+            "name": "get Group By ID",
+            "description": {
+              "content": "Get information about a group",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.getInfo"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "group_path_alias",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "lang",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7fd2a341-04ad-4ae6-94cb-4560b0040353",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_path_alias",
+                      "value": ""
+                    },
+                    {
+                      "key": "lang",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a538b427-654b-421e-94e6-8350c1272a4c",
+          "name": "get Group Photos By ID",
+          "request": {
+            "name": "get Group Photos By ID",
+            "description": {
+              "content": "Returns a list of pool photos for a given group",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.pools.getPhotos"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "group_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0bb527a-1bd7-4288-8f0a-ddb243a37e44",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd522c04-eba6-4fc2-9800-df8a4b360a97",
+          "name": "get Group Discussions By ID",
+          "request": {
+            "name": "get Group Discussions By ID",
+            "description": {
+              "content": "Get a list of discussion topics in a group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.discuss.topics.getList"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "page",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "per_page",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fac11d2-521c-4a26-9139-54fcde521048",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e512ae04-516f-4660-81bf-917cef4b1cb6",
+          "name": "get Group Topic Replies By ID",
+          "request": {
+            "name": "get Group Topic Replies By ID",
+            "description": {
+              "content": "Get information on a group topic reply",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.discuss.replies.getInfo"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "topic_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "reply_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7a1a359-3a89-44d6-b68c-a3bd383607d8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "topic_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "reply_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7140318b-9cf9-4ed9-bbf3-236ec3466062",
+          "name": "get Group Topic By ID",
+          "request": {
+            "name": "get Group Topic By ID",
+            "description": {
+              "content": "Get information about a group discussion topic",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.discuss.topics.getInfo"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "topic_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6a1e148-ab81-4368-a4b4-8ee6cf7562cd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "topic_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d2c3ea3-e834-436b-8a0e-e0e1649ad534",
+          "name": "get Group Photos By ID",
+          "request": {
+            "name": "get Group Photos By ID",
+            "description": {
+              "content": "Returns next and previous photos for a photo in a group pool",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.groups.pools.getContext"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "group_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74a2e472-6916-4d64-8be4-0838d2fb65d3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e107615-f372-4f97-b496-5a78dc19653f",
+          "name": "get Photolist Context By ID",
+          "request": {
+            "name": "get Photolist Context By ID",
+            "description": {
+              "content": "Returns next and previous photos in a photo list",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photolist.getContext"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photolist_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63a30155-6104-4afe-9905-4688fa44dc38",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "photolist_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3b15fd7-fb0e-4f5c-b449-277e56cc01f2",
+          "name": "get Photostream Context By ID",
+          "request": {
+            "name": "get Photostream Context By ID",
+            "description": {
+              "content": "Returns next and previous photos for a photo in a photostream",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getContext"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf5296ce-57bb-4034-a18e-6fda9cc6cf07",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b160fc46-b7d6-4694-a2b1-2990bbcab7fb",
+          "name": "get License By ID",
+          "request": {
+            "name": "get License By ID",
+            "description": {
+              "content": "Fetches a list of available photo licenses for Flickr",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.licenses.getInfo"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e3db841-8efc-407c-b4d8-68a4f35557c0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0a010ca-fe1f-4303-869b-b61f4ee63f56",
+          "name": "get Person By ID",
+          "request": {
+            "name": "get Person By ID",
+            "description": {
+              "content": "Returns a person",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.people.getInfo"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "user_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64549547-3ace-4b89-9de0-4e62e901b9d9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb1cf7e2-3b63-4d58-9759-da1a9ab2570a",
+          "name": "get Photo Exif By ID",
+          "request": {
+            "name": "get Photo Exif By ID",
+            "description": {
+              "content": "Retrieves a list of EXIF/TIFF/GPS tags for a given photo. The calling user must have permission to view the photo.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getExif"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "secret",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33c6f13d-0ebc-4a0d-ae98-a5ff37f2b00d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "secret",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "978b5a30-b591-4cba-95dc-6b109185a15f",
+          "name": "get Photo By ID",
+          "request": {
+            "name": "get Photo By ID",
+            "description": {
+              "content": "Returns a photo",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getInfo"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3bea2bfe-407c-42ca-9372-4d091f970e8b",
+              "name": "a photo",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95b51487-ff60-4b10-9110-238563fc062b",
+          "name": "get Photo Sizes By ID",
+          "request": {
+            "name": "get Photo Sizes By ID",
+            "description": {
+              "content": "Returns photo sizes",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.getSizes"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a384ecba-5061-4324-850a-fbc8947db92d",
+              "name": "Photo sizes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87fa743b-cec6-4f31-9919-b5d7f6bb0b37",
+          "name": "get Album Context By ID",
+          "request": {
+            "name": "get Album Context By ID",
+            "description": {
+              "content": "Returns next and previous photos for a photo in a set",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photosets.getContext"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photo_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "photoset_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "60f521dc-73f1-41c1-bd38-b6a0ec90e22d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photo_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "photoset_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2284a1fa-b2a4-4251-9980-364f4f168f26",
+          "name": "get Album By ID",
+          "request": {
+            "name": "get Album By ID",
+            "description": {
+              "content": "Returns a list of photos in an album.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photosets.getPhotos"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "photoset_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a770506-9a21-4146-9b81-178c4c7b8795",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "photoset_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ba3b2b2-b53e-4a0d-b992-e2bb5b0a628e",
+          "name": "get Gallery Photos By ID",
+          "request": {
+            "name": "get Gallery Photos By ID",
+            "description": {
+              "content": "Returns a list of photos in a gallery.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.galleries.getPhotos"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "gallery_id",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c3e5bcd-550e-42f9-9eaf-a901a4061d53",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "gallery_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b2f11a3-54b8-4447-9696-20b80ba5867b",
+          "name": "get Media By Search",
+          "request": {
+            "name": "get Media By Search",
+            "description": {
+              "content": "Return a list of photos matching some criteria.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.photos.search"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A free text search. Photos who's title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character.",
+                    "type": "text/plain"
+                  },
+                  "key": "text",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character.",
+                    "type": "text/plain"
+                  },
+                  "key": "tags",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The NSID of the user who's photo to search. If this parameter isn't passed then everybody's public photos will be searched. A value of \"me\" will search against the calling user's photos for authenticated calls.",
+                    "type": "text/plain"
+                  },
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Minimum upload date. Photos with an upload date greater than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime.",
+                    "type": "text/plain"
+                  },
+                  "key": "min_upload_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Maximum upload date. Photos with an upload date less than or equal to this value will be returned. The date can be in the form of a unix timestamp or mysql datetime.",
+                    "type": "text/plain"
+                  },
+                  "key": "max_upload_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Minimum taken date. Photos with an taken date greater than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp.",
+                    "type": "text/plain"
+                  },
+                  "key": "min_taken_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Maximum taken date. Photos with an taken date less than or equal to this value will be returned. The date can be in the form of a mysql datetime or unix timestamp.",
+                    "type": "text/plain"
+                  },
+                  "key": "max_taken_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The license id for photos (for possible values see the flickr.photos.licenses.getInfo method). Multiple licenses may be comma-separated.",
+                    "type": "text/plain"
+                  },
+                  "key": "license",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The order in which to sort returned photos. Deafults to date-posted-desc (unless you are doing a radial geo query, in which case the default sorting is by ascending distance from the point specified). The possible values are:\n  date-posted-asc,\n  date-posted-desc,\n  date-taken-asc,\n  date-taken-desc,\n  interestingness-desc,\n  interestingness-asc, and\n  relevance.\n",
+                    "type": "text/plain"
+                  },
+                  "key": "sort",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Return photos only matching a certain privacy level. This only applies when making an authenticated call to view photos you own. Valid values are:,\n  1: public photos,\n  2: private photos visible to friends,\n  3: private photos visible to family,\n  4: private photos visible to friends & family,\n  5: completely private photos\n",
+                    "type": "text/plain"
+                  },
+                  "key": "privacy_filter",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched.",
+                    "type": "text/plain"
+                  },
+                  "key": "bbox",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Recorded accuracy level of the location information. Current range is 1-16:\n  World level is 1\n  Country is ~3\n  Region is ~6\n  City is ~11\n  Street is ~16\n",
+                    "type": "text/plain"
+                  },
+                  "key": "accuracy",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Safe search setting:\n  1: for safe,\n  2: for moderate,\n  3: for restricted\n",
+                    "type": "text/plain"
+                  },
+                  "key": "safe_search",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Content Type setting:\n  1: photos only.\n  2: screenshots only.\n  3: 'other' only.\n  4: photos and screenshots.\n  5: screenshots and 'other'.\n  6: photos and 'other'.\n  7: photos, screenshots, and 'other' (all).\n",
+                    "type": "text/plain"
+                  },
+                  "key": "content_type",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : \"machine_tags\" => \"dc:\" Find photos with a title in the 'dc' namespace : \"machine_tags\" => \"dc:title=\" Find photos titled \"mr. camera\" in the 'dc' namespace : \"machine_tags\" => \"dc:title=\\\"mr. camera\\\" Find photos whose value is \"mr. camera\" : \"machine_tags\" => \"*:*=\\\"mr. camera\\\"\" Find photos that have a title, in any namespace : \"machine_tags\" => \"*:title=\" Find photos that have a title, in any namespace, whose value is \"mr. camera\" : \"machine_tags\" => \"*:title=\\\"mr. camera\\\"\" Find photos, in the 'dc' namespace whose value is \"mr. camera\" : \"machine_tags\" => \"dc:*=\\\"mr. camera\\\"\" Multiple machine tags may be queried by passing a comma-separated list. The number of machine tags you can pass in a single query depends on the tag mode (AND or OR) that you are querying with. \"AND\" queries are limited to (16) machine tags. \"OR\" queries are limited to (8).\n",
+                    "type": "text/plain"
+                  },
+                  "key": "machine_tags",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified.",
+                    "type": "text/plain"
+                  },
+                  "key": "machine_tag_mode",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The id of a group who's pool to search. If specified, only matching photos posted to the group's pool will be returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "group_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Search your contacts. Either 'all' or 'ff' for just friends and family. (Experimental)",
+                    "type": "text/plain"
+                  },
+                  "key": "contacts",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A 32-bit identifier that uniquely represents spatial entities. (not used if bbox argument is present).",
+                    "type": "text/plain"
+                  },
+                  "key": "woe_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A Flickr place id. (not used if bbox argument is present). Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                    "type": "text/plain"
+                  },
+                  "key": "place_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Filter results by media type. Possible values are all (default), photos or videos",
+                    "type": "text/plain"
+                  },
+                  "key": "media",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Any photo that has been geotagged, or if the value is \"0\" any photo that has not been geotagged. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                    "type": "text/plain"
+                  },
+                  "key": "has_geo",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Geo context is a numeric value representing the photo's geotagginess beyond latitude and longitude. For example, you may wish to search for photos that were taken \"indoors\" or \"outdoors\". The current list of context IDs is: 0, not defined. 1, indoors. 2, outdoors. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                    "type": "text/plain"
+                  },
+                  "key": "geo_context",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A valid latitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                    "type": "text/plain"
+                  },
+                  "key": "lat",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A valid longitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against \"parameterless searches\" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).\n",
+                    "type": "text/plain"
+                  },
+                  "key": "lon",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries. The default value is 5 (km).",
+                    "type": "text/plain"
+                  },
+                  "key": "radius",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The unit of measure when doing radial geo queries. Valid options are \"mi\" (miles) and \"km\" (kilometers). The default is \"km\".",
+                    "type": "text/plain"
+                  },
+                  "key": "radius_units",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Limit the scope of the search to only photos that are part of the Flickr Commons project. Default is false.",
+                    "type": "text/plain"
+                  },
+                  "key": "is_commons",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Limit the scope of the search to only photos that are in a gallery? Default is false, search all photos.",
+                    "type": "text/plain"
+                  },
+                  "key": "in_gallery",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Limit the scope of the search to only photos that are for sale on Getty. Default is false.",
+                    "type": "text/plain"
+                  },
+                  "key": "is_getty",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.",
+                    "type": "text/plain"
+                  },
+                  "key": "per_page",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "The page of results to return. If this argument is omitted, it defaults to 1.",
+                    "type": "text/plain"
+                  },
+                  "key": "page",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d7bf0eb-6bf7-480e-81ea-d185bad2b104",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "text",
+                      "value": ""
+                    },
+                    {
+                      "key": "tags",
+                      "value": ""
+                    },
+                    {
+                      "key": "user_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_upload_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "min_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "max_taken_date",
+                      "value": ""
+                    },
+                    {
+                      "key": "license",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": ""
+                    },
+                    {
+                      "key": "privacy_filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "bbox",
+                      "value": ""
+                    },
+                    {
+                      "key": "accuracy",
+                      "value": ""
+                    },
+                    {
+                      "key": "safe_search",
+                      "value": ""
+                    },
+                    {
+                      "key": "content_type",
+                      "value": ""
+                    },
+                    {
+                      "key": "machine_tags",
+                      "value": ""
+                    },
+                    {
+                      "key": "machine_tag_mode",
+                      "value": ""
+                    },
+                    {
+                      "key": "group_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "contacts",
+                      "value": ""
+                    },
+                    {
+                      "key": "woe_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "place_id",
+                      "value": ""
+                    },
+                    {
+                      "key": "media",
+                      "value": ""
+                    },
+                    {
+                      "key": "has_geo",
+                      "value": ""
+                    },
+                    {
+                      "key": "geo_context",
+                      "value": ""
+                    },
+                    {
+                      "key": "lat",
+                      "value": ""
+                    },
+                    {
+                      "key": "lon",
+                      "value": ""
+                    },
+                    {
+                      "key": "radius",
+                      "value": ""
+                    },
+                    {
+                      "key": "radius_units",
+                      "value": ""
+                    },
+                    {
+                      "key": "is_commons",
+                      "value": ""
+                    },
+                    {
+                      "key": "in_gallery",
+                      "value": ""
+                    },
+                    {
+                      "key": "is_getty",
+                      "value": ""
+                    },
+                    {
+                      "key": "per_page",
+                      "value": ""
+                    },
+                    {
+                      "key": "page",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4711fb5-e19d-47a3-850c-5cc4a8de3b1e",
+          "name": "upload Photo",
+          "request": {
+            "name": "upload Photo",
+            "description": {
+              "content": "Uploads a new photo to Flickr",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "124ad60b-d2dc-462b-a4a0-b04af6c6d443",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8340bcc8-a3b5-4ae8-9f91-24f1896049a6",
+          "name": "echo",
+          "request": {
+            "name": "echo",
+            "description": {
+              "content": "Echos the input parameters back in the response",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "method",
+                  "value": "flickr.test.echo"
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "api_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "echo",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "35a35f78-491f-4c6b-9879-2cbf7f3f3028",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "echo",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c7a4629-8d0f-4810-9f49-dc3de967c545",
+          "name": "get Request Token",
+          "request": {
+            "name": "get Request Token",
+            "description": {
+              "content": "Returns an oauth token and oauth token secret",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "oauth",
+                "request_token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_consumer_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_nonce",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_timestamp",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_signature_method",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_version",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_signature",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_callback",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8914016-4623-44a9-90a5-3c26a1392680",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth",
+                    "request_token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "oauth_consumer_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_nonce",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_timestamp",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_signature_method",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_version",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_signature",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_callback",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c67c191c-ee65-4353-9be8-229826959473",
+          "name": "get Access Token",
+          "request": {
+            "name": "get Access Token",
+            "description": {
+              "content": "Returns an access token",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "oauth",
+                "access_token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_consumer_key",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_nonce",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_timestamp",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_signature_method",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_version",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_signature",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_verifier",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "oauth_token",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0530fd93-f4bb-4dda-8f91-81680b4c20c4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth",
+                    "access_token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "oauth_consumer_key",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_nonce",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_timestamp",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_signature_method",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_version",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_signature",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_verifier",
+                      "value": ""
+                    },
+                    {
+                      "key": "oauth_token",
+                      "value": ""
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0b9b7e59-eff4-40b1-aff9-c0aaefc23bb3",
+    "name": "Flickr Activity Public API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Photos Notes API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photos Notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add Photo Note",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.notes.add",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "note_x",
+                "value": "320",
+                "type": "query"
+              },
+              {
+                "name": "note_y",
+                "value": "240",
+                "type": "query"
+              },
+              {
+                "name": "note_w",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "note_h",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "note_text",
+                "value": "Look at this sunset.",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a note (annotation) to a photo."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

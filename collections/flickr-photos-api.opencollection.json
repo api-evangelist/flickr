@@ -1,0 +1,208 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Photos API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "text",
+                "value": "golden gate",
+                "type": "query"
+              },
+              {
+                "name": "tags",
+                "value": "sunset,bridge",
+                "type": "query"
+              },
+              {
+                "name": "tag_mode",
+                "value": "any",
+                "type": "query"
+              },
+              {
+                "name": "license",
+                "value": "1,2,3",
+                "type": "query"
+              },
+              {
+                "name": "media",
+                "value": "photos",
+                "type": "query"
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns a list of photos matching a search query. Combine text, tags,\nowner, geography, license, date, and content filters.\n"
+        },
+        {
+          "info": {
+            "name": "Get Photo Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "secret",
+                "value": "abc1234def",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns detailed information about a photo."
+        },
+        {
+          "info": {
+            "name": "Get Available Photo Sizes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getSizes",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the available sizes for a photo."
+        },
+        {
+          "info": {
+            "name": "Get Photo EXIF Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getExif",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "secret",
+                "value": "abc1234def",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns EXIF / TIFF / GPS tags for a photo."
+        },
+        {
+          "info": {
+            "name": "Get Recent Public Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.getRecent",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the most recent public photos."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

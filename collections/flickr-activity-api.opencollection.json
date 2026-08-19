@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Activity On The User's Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.activity.userPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "timeframe",
+                "value": "12h",
+                "type": "query",
+                "description": "Time window such as \"1h\" or \"12h\"."
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns recent activity on photos belonging to the calling user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

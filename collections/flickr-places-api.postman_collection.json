@@ -1,0 +1,264 @@
+{
+  "item": [
+    {
+      "id": "1ab0b02b-ef85-497c-afe2-60437754c875",
+      "name": "Places",
+      "description": {
+        "content": "Place IDs, hierarchies, and resolution",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e777309c-2a55-4370-9ee0-9a05115cc5f3",
+          "name": "Find Place By Query",
+          "request": {
+            "name": "Find Place By Query",
+            "description": {
+              "content": "Searches places by text query.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.places.find"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be530ae8-675e-4a00-a927-0008c14f0e6d",
+              "name": "Places",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.places.find"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "query",
+                      "value": "San Francisco"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"place\": [\n    {\n      \"place_id\": \"kH8dLOBTUrHLjKxQqw\",\n      \"woeid\": \"2487956\",\n      \"latitude\": 37.7749,\n      \"longitude\": -122.4194,\n      \"place_url\": \"/United+States/California/San+Francisco\",\n      \"place_type\": \"locality\",\n      \"_content\": \"100\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa4bc076-6095-45c4-b020-b0117006f17c",
+          "name": "Find Place By Lat/Lon",
+          "request": {
+            "name": "Find Place By Lat/Lon",
+            "description": {
+              "content": "Resolves a latitude/longitude pair to the smallest enclosing Place.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.places.findByLatLon"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "accuracy",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bbcb9bee-013b-44b7-8802-a90d3ba578f6",
+              "name": "Place",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.places.findByLatLon"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "lat",
+                      "value": "37.7749"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "-122.4194"
+                    },
+                    {
+                      "key": "accuracy",
+                      "value": "16"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"place\": [\n    {\n      \"place_id\": \"kH8dLOBTUrHLjKxQqw\",\n      \"woeid\": \"2487956\",\n      \"latitude\": 37.7749,\n      \"longitude\": -122.4194,\n      \"place_url\": \"/United+States/California/San+Francisco\",\n      \"place_type\": \"locality\",\n      \"_content\": \"100\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "705a8cb3-10c0-436b-ba9a-156e84201253",
+    "name": "Flickr Activity Places API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

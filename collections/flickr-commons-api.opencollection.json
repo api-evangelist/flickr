@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Commons API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Commons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flickr Commons Institutions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.commons.getInstitutions",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns the list of institutions participating in The Commons."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

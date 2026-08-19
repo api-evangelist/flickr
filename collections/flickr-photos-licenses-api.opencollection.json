@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Photos Licenses API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photos Licenses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Photo Licenses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.licenses.getInfo",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns the list of available photo licenses."
+        },
+        {
+          "info": {
+            "name": "Set Photo License",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.licenses.setLicense",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "license_id",
+                "value": "4",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the license for a photo."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

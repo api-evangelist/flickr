@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Photos Upload API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photos Upload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check Async Upload Tickets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.upload.checkTickets",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "tickets",
+                "value": "1234567,1234568",
+                "type": "query",
+                "description": "Comma-delimited list of ticket IDs."
+              }
+            ]
+          },
+          "docs": "Returns the status of one or more asynchronous photo upload tickets."
+        },
+        {
+          "info": {
+            "name": "Upload A Photo Or Video",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/upload",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "photo",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "title",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "description",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "tags",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_public",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_friend",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_family",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "safety_level",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "content_type",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "hidden",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "async",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Uploads a photo or video. Uses `https://up.flickr.com/services/upload`\nwith a multipart/form-data POST. Returns the new photo ID (synchronous)\nor ticket ID (asynchronous).\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

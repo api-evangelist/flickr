@@ -1,0 +1,371 @@
+{
+  "item": [
+    {
+      "id": "0e6879ad-b506-4c9e-abb2-25aeb5214e72",
+      "name": "People",
+      "description": {
+        "content": "People (users), their info, public photos, and groups",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef1b25ef-2762-44bc-aaf4-71594edf6482",
+          "name": "Get Person Info",
+          "request": {
+            "name": "Get Person Info",
+            "description": {
+              "content": "Returns information about a person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.people.getInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "user_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6793c1eb-308a-4d8d-92bc-9e9a78436578",
+              "name": "Person info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.people.getInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "12345678@N00"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"52345678901\",\n  \"nsid\": \"12345678@N00\",\n  \"username\": \"shutterbug\",\n  \"realname\": \"Jane Photographer\",\n  \"location\": \"San Francisco, CA\",\n  \"photosurl\": \"https://www.flickr.com/photos/12345678@N00/\",\n  \"profileurl\": \"https://www.flickr.com/people/12345678@N00/\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8abb3aac-df6c-47b9-9fcc-342dc1ae53a9",
+          "name": "Get A User's Photos",
+          "request": {
+            "name": "Get A User's Photos",
+            "description": {
+              "content": "Returns photos from the given user's photostream.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.people.getPhotos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "user_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "extras",
+                  "value": "<string>",
+                  "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "591d69ca-2428-4e4f-b5b9-c168bc6b68fa",
+              "name": "Photos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.people.getPhotos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "12345678@N00"
+                    },
+                    {
+                      "key": "extras",
+                      "value": "owner_name,description,url_o,date_taken,geo"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"perpage\": 100,\n  \"total\": 1183,\n  \"photo\": [\n    {\n      \"id\": \"52345678901\",\n      \"owner\": \"12345678@N00\",\n      \"secret\": \"abc1234def\",\n      \"server\": \"65535\",\n      \"farm\": 66,\n      \"title\": \"Golden Gate Sunset\",\n      \"ispublic\": 1,\n      \"isfriend\": 0,\n      \"isfamily\": 0,\n      \"datetaken\": \"2026-04-12 18:24:11\",\n      \"url_o\": \"https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg\",\n      \"height_o\": 4032,\n      \"width_o\": 6048\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46b0ab51-57d3-4d5c-bb67-97885ebe31f7",
+          "name": "Find User By Email",
+          "request": {
+            "name": "Find User By Email",
+            "description": {
+              "content": "Look up a Flickr user by email.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.people.findByEmail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "find_email",
+                  "value": "<email>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "34d6841b-71f0-4d20-be8f-f9d3b1b9f9a2",
+              "name": "User",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.people.findByEmail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "find_email",
+                      "value": "jane@example.com"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"52345678901\",\n  \"nsid\": \"12345678@N00\",\n  \"username\": \"shutterbug\",\n  \"realname\": \"Jane Photographer\",\n  \"location\": \"San Francisco, CA\",\n  \"photosurl\": \"https://www.flickr.com/photos/12345678@N00/\",\n  \"profileurl\": \"https://www.flickr.com/people/12345678@N00/\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "40fb3cbf-e6c4-46d9-94cd-a6e8be411cc9",
+    "name": "Flickr Activity People API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

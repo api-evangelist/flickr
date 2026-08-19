@@ -1,0 +1,291 @@
+{
+  "item": [
+    {
+      "id": "ae0f50e5-2df7-4bff-88d8-f25297243edd",
+      "name": "Galleries",
+      "description": {
+        "content": "Curated, themed galleries of photos",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "92d6975b-90f7-4923-859c-5e9494a79f99",
+          "name": "List A User's Galleries",
+          "request": {
+            "name": "List A User's Galleries",
+            "description": {
+              "content": "Returns a list of galleries created by a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.galleries.getList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "user_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a90fe2f3-1a53-47d5-af5b-0583f66d7503",
+              "name": "Galleries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.galleries.getList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "12345678@N00"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"total\": 1183,\n  \"gallery\": [\n    {\n      \"id\": \"52345678901\",\n      \"url\": \"https://www.flickr.com/galleries/12345678@N00/72157712345/\",\n      \"owner\": \"12345678@N00\",\n      \"date_create\": \"1715000000\",\n      \"count_photos\": 18,\n      \"count_videos\": 0\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99b1b17a-dc55-4a09-afab-10ae15da2990",
+          "name": "List Photos In A Gallery",
+          "request": {
+            "name": "List Photos In A Gallery",
+            "description": {
+              "content": "Returns the photos for a given gallery.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.galleries.getPhotos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "gallery_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "key": "extras",
+                  "value": "<string>",
+                  "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca1c4293-8029-433c-b5de-b58eb389b7ac",
+              "name": "Gallery photos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.galleries.getPhotos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "gallery_id",
+                      "value": "12345678-72157712345"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    },
+                    {
+                      "key": "extras",
+                      "value": "owner_name,description,url_o,date_taken,geo"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"perpage\": 100,\n  \"total\": 1183,\n  \"photo\": [\n    {\n      \"id\": \"52345678901\",\n      \"owner\": \"12345678@N00\",\n      \"secret\": \"abc1234def\",\n      \"server\": \"65535\",\n      \"farm\": 66,\n      \"title\": \"Golden Gate Sunset\",\n      \"ispublic\": 1,\n      \"isfriend\": 0,\n      \"isfamily\": 0,\n      \"datetaken\": \"2026-04-12 18:24:11\",\n      \"url_o\": \"https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg\",\n      \"height_o\": 4032,\n      \"width_o\": 6048\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7ee891a1-4f0d-4183-8ac8-11701ec7907c",
+    "name": "Flickr Activity Galleries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

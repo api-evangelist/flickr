@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity URLs API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "URLs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look Up User By URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.urls.lookupUser",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "url",
+                "value": "https://www.flickr.com/photos/shutterbug/",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a user NSID given the URL to a user's photos or profile."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

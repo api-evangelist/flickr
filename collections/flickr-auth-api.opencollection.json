@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Auth API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check OAuth Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.auth.oauth.checkToken",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "oauth_token",
+                "value": "72157712345-abcdef0123456789",
+                "type": "query",
+                "description": "The OAuth authentication token to check."
+              }
+            ]
+          },
+          "docs": "Returns the credentials attached to an OAuth authentication token."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Push API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Push",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Push Subscription Topics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.push.getTopics",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns the list of available PubSubHubbub push subscription topics."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

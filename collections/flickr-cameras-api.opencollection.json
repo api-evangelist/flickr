@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Cameras API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cameras",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Camera Brands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.cameras.getBrands",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns all camera brands supported in the Flickr camera taxonomy."
+        },
+        {
+          "info": {
+            "name": "List Camera Models For A Brand",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.cameras.getBrandModels",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "brand",
+                "value": "nikon",
+                "type": "query",
+                "description": "The brand ID."
+              }
+            ]
+          },
+          "docs": "Returns all camera models for the given brand."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

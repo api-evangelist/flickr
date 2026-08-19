@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "0488097d-c136-44ec-acd2-00e8f8654422",
+      "name": "Panda",
+      "description": {
+        "content": "The Flickr Panda firehose of \"interesting\" photos",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "83b3fa59-d9b2-46df-b059-171f89b82f83",
+          "name": "List Flickr Panda Feeds",
+          "request": {
+            "name": "List Flickr Panda Feeds",
+            "description": {
+              "content": "Returns a list of available Flickr Panda firehose feeds.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.panda.getList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48fee965-1267-4c52-bce3-03c665ff9bde",
+              "name": "Panda feeds",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.panda.getList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"panda\": [\n    {\n      \"_content\": \"100\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4384e9a7-831a-4495-96e5-9d9c360d2a1c",
+          "name": "Get Panda Firehose Photos",
+          "request": {
+            "name": "Get Panda Firehose Photos",
+            "description": {
+              "content": "Returns photos for the given Panda feed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rest",
+                "flickr.panda.getPhotos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Application API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "panda_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "extras",
+                  "value": "<string>",
+                  "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7c41e83f-0786-4b46-8b5d-e7f885ee743f",
+              "name": "Panda photos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rest",
+                    "flickr.panda.getPhotos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "ab1234567890cdef1234567890abcd12"
+                    },
+                    {
+                      "key": "panda_name",
+                      "value": "example"
+                    },
+                    {
+                      "key": "extras",
+                      "value": "owner_name,description,url_o,date_taken,geo"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1,\n  \"pages\": 12,\n  \"perpage\": 100,\n  \"total\": 1183,\n  \"photo\": [\n    {\n      \"id\": \"52345678901\",\n      \"owner\": \"12345678@N00\",\n      \"secret\": \"abc1234def\",\n      \"server\": \"65535\",\n      \"farm\": 66,\n      \"title\": \"Golden Gate Sunset\",\n      \"ispublic\": 1,\n      \"isfriend\": 0,\n      \"isfamily\": 0,\n      \"datetaken\": \"2026-04-12 18:24:11\",\n      \"url_o\": \"https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg\",\n      \"height_o\": 4032,\n      \"width_o\": 6048\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.flickr.com/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d1eece32-8ffa-4701-b667-a815746c7e58",
+    "name": "Flickr Activity Panda API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Flickr API exposes the photo, group, people, place, tag, gallery, and\nphotoset capabilities that power flickr.com. Almost all flickr.com\nfunctionality is reachable through a single REST-like endpoint\n`https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`\nquery parameter and `format=json&nojsoncallback=1` for JSON output.\n\nThis OpenAPI specification models a curated set of the most widely used\nmethods across the Flickr API's 250+ method namespaces (activity, auth,\nblogs, cameras, collections, commons, contacts, favorites, galleries,\ngroups, groupsDiscuss, interestingness, machinetags, panda, people, photos,\nphotos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,\nphotosets, places, prefs, profile, push, reflection, stats, tags, test, urls).\n\nAuthentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the\nAPI requires prior permission from Flickr.\n\n\nContact Support:\n Name: Flickr API Support",
+      "type": "text/plain"
+    }
+  }
+}

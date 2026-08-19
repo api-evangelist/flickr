@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Places API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Places",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find Place By Query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.places.find",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "query",
+                "value": "San Francisco",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Searches places by text query."
+        },
+        {
+          "info": {
+            "name": "Find Place By Lat/Lon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.places.findByLatLon",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "lat",
+                "value": "37.7749",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "-122.4194",
+                "type": "query"
+              },
+              {
+                "name": "accuracy",
+                "value": "16",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Resolves a latitude/longitude pair to the smallest enclosing Place."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

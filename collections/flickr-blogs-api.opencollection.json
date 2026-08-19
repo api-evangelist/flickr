@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Blogs API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blogs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Configured Blogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.blogs.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "service",
+                "value": "blogger",
+                "type": "query",
+                "description": "Optional service ID filter."
+              }
+            ]
+          },
+          "docs": "Returns a list of Flickr-supported blogging services the calling user has configured."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

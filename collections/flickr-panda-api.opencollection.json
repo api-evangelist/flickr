@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Panda API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Panda",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Flickr Panda Feeds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.panda.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              }
+            ]
+          },
+          "docs": "Returns a list of available Flickr Panda firehose feeds."
+        },
+        {
+          "info": {
+            "name": "Get Panda Firehose Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.panda.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "panda_name",
+                "value": "example",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns photos for the given Panda feed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

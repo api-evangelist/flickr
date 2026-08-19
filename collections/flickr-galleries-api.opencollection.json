@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Galleries API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Galleries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List A User's Galleries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.galleries.getList",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "user_id",
+                "value": "12345678@N00",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of galleries created by a user."
+        },
+        {
+          "info": {
+            "name": "List Photos In A Gallery",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.flickr.com/services/rest/flickr.galleries.getPhotos",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "gallery_id",
+                "value": "12345678-72157712345",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query"
+              },
+              {
+                "name": "extras",
+                "value": "owner_name,description,url_o,date_taken,geo",
+                "type": "query",
+                "description": "Comma-delimited list of extra fields (e.g. owner_name, url_o, geo)."
+              }
+            ]
+          },
+          "docs": "Returns the photos for a given gallery."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

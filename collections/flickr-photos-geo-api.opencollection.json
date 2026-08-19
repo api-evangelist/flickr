@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flickr Activity Photos Geo API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photos Geo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set Photo Geo Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.flickr.com/services/rest/flickr.photos.geo.setLocation",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "ab1234567890cdef1234567890abcd12",
+                "type": "query",
+                "description": "Application API key."
+              },
+              {
+                "name": "photo_id",
+                "value": "52345678901",
+                "type": "query"
+              },
+              {
+                "name": "lat",
+                "value": "37.7749",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "-122.4194",
+                "type": "query"
+              },
+              {
+                "name": "accuracy",
+                "value": "16",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the geo data (latitude, longitude, accuracy) for a photo."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
