@@ -33,6 +33,11 @@ x-tier-reason: bulk-registered-from-public-apis
 tags:
   - Photography
   - Photos
+  - Social-Media
+  - Public APIs
+tags_raw:
+  - Photography
+  - Photos
   - Social Media
   - Public APIs
 apis:
@@ -66,6 +71,8 @@ apis:
   humanURL: https://www.flickr.com/services/api/
   baseURL: https://api.flickr.com/services
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -90,6 +97,8 @@ apis:
   humanURL: https://www.flickr.com/services/api/
   baseURL: https://api.flickr.com/services
   tags:
+  - Blog
+  tags_raw:
   - Blogs
   properties:
   - type: OpenAPI
@@ -114,6 +123,8 @@ apis:
   humanURL: https://www.flickr.com/services/api/
   baseURL: https://api.flickr.com/services
   tags:
+  - Camera
+  tags_raw:
   - Cameras
   properties:
   - type: OpenAPI
@@ -138,6 +149,8 @@ apis:
   humanURL: https://www.flickr.com/services/api/
   baseURL: https://api.flickr.com/services
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -258,6 +271,8 @@ apis:
   humanURL: https://www.flickr.com/services/api/
   baseURL: https://api.flickr.com/services
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -761,7 +776,8 @@ apis:
   description: Echo, login, and null test methods
   humanURL: https://www.flickr.com/services/api/
   baseURL: https://api.flickr.com/services
-  tags:
+  tags: []
+  tags_raw:
   - Test
   properties:
   - type: OpenAPI
