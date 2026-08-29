@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Photosets API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -200,6 +200,14 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
     PerPage:
       name: per_page
       in: query
@@ -208,12 +216,6 @@ components:
         default: 100
         maximum: 500
       example: 100
-    UserIdOptional:
-      name: user_id
-      in: query
-      schema:
-        type: string
-      example: 12345678@N00
     Page:
       name: page
       in: query
@@ -228,64 +230,13 @@ components:
       schema:
         type: string
       example: owner_name,description,url_o,date_taken,geo
-    ApiKey:
-      name: api_key
+    UserIdOptional:
+      name: user_id
       in: query
-      required: true
-      description: Application API key.
       schema:
         type: string
-      example: ab1234567890cdef1234567890abcd12
+      example: 12345678@N00
   schemas:
-    Photoset:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        primary:
-          type: string
-          example: '52345678901'
-        owner:
-          type: string
-          example: 12345678@N00
-        title:
-          type: object
-          properties:
-            _content:
-              type: string
-              example: '100'
-        description:
-          type: object
-          properties:
-            _content:
-              type: string
-              example: '100'
-        photos:
-          type: integer
-          example: 248
-        videos:
-          type: integer
-          example: 3
-    PhotosetList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photoset:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photoset'
     Photo:
       type: object
       description: A photo.
@@ -330,6 +281,25 @@ components:
         width_o:
           type: integer
           example: 6048
+    PhotosetList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photoset:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photoset'
     PhotoList:
       type: object
       properties:
@@ -349,6 +319,36 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Photo'
+    Photoset:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        primary:
+          type: string
+          example: '52345678901'
+        owner:
+          type: string
+          example: 12345678@N00
+        title:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
+        description:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
+        photos:
+          type: integer
+          example: 248
+        videos:
+          type: integer
+          example: 3
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

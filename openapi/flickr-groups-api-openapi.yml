@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Groups API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -186,6 +186,14 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
     PerPage:
       name: per_page
       in: query
@@ -208,15 +216,44 @@ components:
       schema:
         type: string
       example: owner_name,description,url_o,date_taken,geo
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
   schemas:
+    GroupList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        group:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        nsid:
+          type: string
+          example: 12345678@N00
+        name:
+          type: string
+          example: Bay Area Photographers
+        members:
+          type: integer
+          example: 18324
+        pool_count:
+          type: integer
+          example: 942113
+        topic_count:
+          type: integer
+          example: 8421
     Photo:
       type: object
       description: A photo.
@@ -261,43 +298,6 @@ components:
         width_o:
           type: integer
           example: 6048
-    GroupList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        group:
-          type: array
-          items:
-            $ref: '#/components/schemas/Group'
-    Group:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        nsid:
-          type: string
-          example: 12345678@N00
-        name:
-          type: string
-          example: Bay Area Photographers
-        members:
-          type: integer
-          example: 18324
-        pool_count:
-          type: integer
-          example: 942113
-        topic_count:
-          type: integer
-          example: 8421
     PhotoList:
       type: object
       properties:

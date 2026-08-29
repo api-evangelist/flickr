@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Tags API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -138,27 +138,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    TagClusterList:
-      type: object
-      properties:
-        source:
-          type: string
-          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
-        total:
-          type: integer
-          example: 1183
-        cluster:
-          type: array
-          items:
-            type: object
-            properties:
-              total:
-                type: integer
-                example: 1183
-              tag:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Tag'
     Tag:
       type: object
       properties:
@@ -185,6 +164,27 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tag'
+    TagClusterList:
+      type: object
+      properties:
+        source:
+          type: string
+          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+        total:
+          type: integer
+          example: 1183
+        cluster:
+          type: array
+          items:
+            type: object
+            properties:
+              total:
+                type: integer
+                example: 1183
+              tag:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag'
   parameters:
     ApiKey:
       name: api_key

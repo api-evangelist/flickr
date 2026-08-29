@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Groups Discuss API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -140,6 +140,14 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
     PerPage:
       name: per_page
       in: query
@@ -155,33 +163,7 @@ components:
         type: integer
         default: 1
       example: 1
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
   schemas:
-    TopicReply:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        author:
-          type: string
-          example: 12345678@N00
-        message:
-          type: object
-          properties:
-            _content:
-              type: string
-              example: '100'
-        datecreate:
-          type: string
-          example: '1715000000'
     TopicReplyList:
       type: object
       properties:
@@ -235,6 +217,24 @@ components:
         count_replies:
           type: integer
           example: 7
+    TopicReply:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        author:
+          type: string
+          example: 12345678@N00
+        message:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
+        datecreate:
+          type: string
+          example: '1715000000'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

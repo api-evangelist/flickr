@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Public API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -1182,6 +1182,252 @@ components:
             write: Modify content owned by the user
             delete: Delete content owned by the user
 definitions:
+  URL:
+    type: object
+    properties:
+      type:
+        type: string
+      _content:
+        type: string
+  Tag:
+    type: object
+    properties:
+      id:
+        type: string
+      author:
+        type: string
+      authorname:
+        type: string
+      raw:
+        type: string
+      _content:
+        type: string
+      machine_tag:
+        type: boolean
+  Cover:
+    type: object
+    properties:
+      id:
+        type: string
+      owner:
+        type: string
+      secret:
+        type: string
+      server:
+        type: string
+      farm:
+        type: string
+      title:
+        type: string
+      ispublic:
+        type: boolean
+      isfriend:
+        type: boolean
+      isfamily:
+        type: boolean
+      y:
+        type: string
+  Person:
+    type: object
+    properties:
+      id:
+        type: string
+      nsid:
+        type: string
+      ispro:
+        type: boolean
+      can_buy_pro:
+        type: boolean
+      iconserver:
+        type: string
+      iconfarm:
+        type: string
+      path_alias:
+        type: string
+      has_stats:
+        type: boolean
+      coverphoto_server:
+        type: string
+      coverphoto_farm:
+        type: string
+      is_ad_free:
+        type: boolean
+      coverphoto:
+        $ref: '#/definitions/PhotoURLs'
+      expire:
+        type: boolean
+      user_secret:
+        type: string
+      username:
+        type: object
+        properties:
+          _content:
+            type: string
+      realname:
+        type: object
+        properties:
+          _content:
+            type: string
+      mbox_sha1sum:
+        type: object
+        properties:
+          _content:
+            type: string
+      location:
+        type: object
+        properties:
+          _content:
+            type: string
+      timezone:
+        type: object
+        properties:
+          label:
+            type: string
+          offset:
+            type: string
+          timezone_id:
+            type: string
+      description:
+        type: object
+        properties:
+          _content:
+            type: string
+      photosurl:
+        type: object
+        properties:
+          _content:
+            type: string
+      profileurl:
+        type: object
+        properties:
+          _content:
+            type: string
+      mobileurl:
+        type: object
+        properties:
+          _content:
+            type: string
+      photos:
+        type: object
+        properties:
+          firstdatetaken:
+            type: object
+            properties:
+              _content:
+                type: string
+          firstdate:
+            type: object
+            properties:
+              _content:
+                type: string
+          count:
+            type: object
+            properties:
+              _content:
+                type: string
+          views:
+            type: object
+            properties:
+              _content:
+                type: string
+      yintl:
+        type: string
+      unread_messages:
+        type: object
+        properties:
+          _content:
+            type: string
+      cover:
+        $ref: '#/definitions/Cover'
+      disable_keyboard_shortcuts:
+        type: object
+        properties:
+          _content:
+            type: string
+  Owner:
+    type: object
+    properties:
+      nsid:
+        type: string
+      username:
+        type: string
+      realname:
+        type: string
+      location:
+        type: string
+      iconserver:
+        type: string
+      iconfarm:
+        type: string
+      path_alias:
+        type: string
+      noindexfollow:
+        type: boolean
+      ispro:
+        type: boolean
+      is_ad_free:
+        type: boolean
+  TopicReply:
+    type: object
+    properties:
+      id:
+        type: string
+      message:
+        type: object
+        properties:
+          _content:
+            type: string
+      author:
+        type: string
+      authorname:
+        type: string
+      author_path_alias:
+        type: string
+      author_is_deleted:
+        type: boolean
+      is_pro:
+        type: boolean
+      iconserver:
+        type: string
+      iconfarm:
+        type: string
+      can_edit:
+        type: boolean
+      can_delete:
+        type: boolean
+      datecreate:
+        type: string
+      lastedit:
+        type: string
+  ContextPhoto:
+    type: object
+    properties:
+      id:
+        type: string
+      secret:
+        type: string
+      server:
+        type: string
+      farm:
+        type: string
+      title:
+        type: string
+      url:
+        type: string
+      thumb:
+        type: string
+      media:
+        type: string
+      owner:
+        type: string
+      license:
+        type: integer
+      safe:
+        type: boolean
+      is_faved:
+        type: boolean
+  Stat:
+    type: string
   Size:
     type: object
     properties:
@@ -1196,6 +1442,101 @@ definitions:
       url:
         type: string
       media:
+        type: string
+  PhotoURLs:
+    type: object
+    properties:
+      h:
+        type: string
+      l:
+        type: string
+      s:
+        type: string
+      t:
+        type: string
+  Album:
+    type: object
+    properties:
+      id:
+        type: string
+      primary:
+        type: string
+      secret:
+        type: string
+      server:
+        type: string
+      farm:
+        type: string
+      photos:
+        type: number
+      videos:
+        type: number
+      count_views:
+        type: number
+      count_comments:
+        type: number
+      can_comment:
+        type: boolean
+      date_create:
+        type: number
+      date_update:
+        type: number
+      title:
+        type: string
+      description:
+        type: string
+  Note:
+    type: object
+    properties:
+      description:
+        type: string
+  Topic:
+    type: object
+    properties:
+      id:
+        type: string
+      subject:
+        type: string
+      message:
+        type: object
+        properties:
+          _content:
+            type: string
+      author:
+        type: string
+      authorname:
+        type: string
+      author_path_alias:
+        type: string
+      author_is_deleted:
+        type: boolean
+      is_pro:
+        type: boolean
+      role:
+        type: string
+      iconserver:
+        type: string
+      iconfarm:
+        type: string
+      count_replies:
+        type: integer
+      can_edit:
+        type: boolean
+      can_delete:
+        type: boolean
+      can_reply:
+        type: boolean
+      is_sticky:
+        type: boolean
+      is_locked:
+        type: boolean
+      datecreate:
+        type: string
+      datelastpost:
+        type: string
+      last_reply:
+        type: string
+      lastedit:
         type: string
   Photo:
     type: object
@@ -1323,8 +1664,6 @@ definitions:
         type: boolean
       media:
         type: string
-  Stat:
-    type: string
   Group:
     type: object
     properties:
@@ -1439,342 +1778,3 @@ definitions:
             type: boolean
       cover:
         $ref: '#/definitions/Cover'
-  Topic:
-    type: object
-    properties:
-      id:
-        type: string
-      subject:
-        type: string
-      message:
-        type: object
-        properties:
-          _content:
-            type: string
-      author:
-        type: string
-      authorname:
-        type: string
-      author_path_alias:
-        type: string
-      author_is_deleted:
-        type: boolean
-      is_pro:
-        type: boolean
-      role:
-        type: string
-      iconserver:
-        type: string
-      iconfarm:
-        type: string
-      count_replies:
-        type: integer
-      can_edit:
-        type: boolean
-      can_delete:
-        type: boolean
-      can_reply:
-        type: boolean
-      is_sticky:
-        type: boolean
-      is_locked:
-        type: boolean
-      datecreate:
-        type: string
-      datelastpost:
-        type: string
-      last_reply:
-        type: string
-      lastedit:
-        type: string
-  TopicReply:
-    type: object
-    properties:
-      id:
-        type: string
-      message:
-        type: object
-        properties:
-          _content:
-            type: string
-      author:
-        type: string
-      authorname:
-        type: string
-      author_path_alias:
-        type: string
-      author_is_deleted:
-        type: boolean
-      is_pro:
-        type: boolean
-      iconserver:
-        type: string
-      iconfarm:
-        type: string
-      can_edit:
-        type: boolean
-      can_delete:
-        type: boolean
-      datecreate:
-        type: string
-      lastedit:
-        type: string
-  URL:
-    type: object
-    properties:
-      type:
-        type: string
-      _content:
-        type: string
-  Owner:
-    type: object
-    properties:
-      nsid:
-        type: string
-      username:
-        type: string
-      realname:
-        type: string
-      location:
-        type: string
-      iconserver:
-        type: string
-      iconfarm:
-        type: string
-      path_alias:
-        type: string
-      noindexfollow:
-        type: boolean
-      ispro:
-        type: boolean
-      is_ad_free:
-        type: boolean
-  ContextPhoto:
-    type: object
-    properties:
-      id:
-        type: string
-      secret:
-        type: string
-      server:
-        type: string
-      farm:
-        type: string
-      title:
-        type: string
-      url:
-        type: string
-      thumb:
-        type: string
-      media:
-        type: string
-      owner:
-        type: string
-      license:
-        type: integer
-      safe:
-        type: boolean
-      is_faved:
-        type: boolean
-  Cover:
-    type: object
-    properties:
-      id:
-        type: string
-      owner:
-        type: string
-      secret:
-        type: string
-      server:
-        type: string
-      farm:
-        type: string
-      title:
-        type: string
-      ispublic:
-        type: boolean
-      isfriend:
-        type: boolean
-      isfamily:
-        type: boolean
-      y:
-        type: string
-  Tag:
-    type: object
-    properties:
-      id:
-        type: string
-      author:
-        type: string
-      authorname:
-        type: string
-      raw:
-        type: string
-      _content:
-        type: string
-      machine_tag:
-        type: boolean
-  Person:
-    type: object
-    properties:
-      id:
-        type: string
-      nsid:
-        type: string
-      ispro:
-        type: boolean
-      can_buy_pro:
-        type: boolean
-      iconserver:
-        type: string
-      iconfarm:
-        type: string
-      path_alias:
-        type: string
-      has_stats:
-        type: boolean
-      coverphoto_server:
-        type: string
-      coverphoto_farm:
-        type: string
-      is_ad_free:
-        type: boolean
-      coverphoto:
-        $ref: '#/definitions/PhotoURLs'
-      expire:
-        type: boolean
-      user_secret:
-        type: string
-      username:
-        type: object
-        properties:
-          _content:
-            type: string
-      realname:
-        type: object
-        properties:
-          _content:
-            type: string
-      mbox_sha1sum:
-        type: object
-        properties:
-          _content:
-            type: string
-      location:
-        type: object
-        properties:
-          _content:
-            type: string
-      timezone:
-        type: object
-        properties:
-          label:
-            type: string
-          offset:
-            type: string
-          timezone_id:
-            type: string
-      description:
-        type: object
-        properties:
-          _content:
-            type: string
-      photosurl:
-        type: object
-        properties:
-          _content:
-            type: string
-      profileurl:
-        type: object
-        properties:
-          _content:
-            type: string
-      mobileurl:
-        type: object
-        properties:
-          _content:
-            type: string
-      photos:
-        type: object
-        properties:
-          firstdatetaken:
-            type: object
-            properties:
-              _content:
-                type: string
-          firstdate:
-            type: object
-            properties:
-              _content:
-                type: string
-          count:
-            type: object
-            properties:
-              _content:
-                type: string
-          views:
-            type: object
-            properties:
-              _content:
-                type: string
-      yintl:
-        type: string
-      unread_messages:
-        type: object
-        properties:
-          _content:
-            type: string
-      cover:
-        $ref: '#/definitions/Cover'
-      disable_keyboard_shortcuts:
-        type: object
-        properties:
-          _content:
-            type: string
-  Note:
-    type: object
-    properties:
-      description:
-        type: string
-  PhotoURLs:
-    type: object
-    properties:
-      h:
-        type: string
-      l:
-        type: string
-      s:
-        type: string
-      t:
-        type: string
-  Album:
-    type: object
-    properties:
-      id:
-        type: string
-      primary:
-        type: string
-      secret:
-        type: string
-      server:
-        type: string
-      farm:
-        type: string
-      photos:
-        type: number
-      videos:
-        type: number
-      count_views:
-        type: number
-      count_comments:
-        type: number
-      can_comment:
-        type: boolean
-      date_create:
-        type: number
-      date_update:
-        type: number
-      title:
-        type: string
-      description:
-        type: string

@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity People API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -173,6 +173,14 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
     PerPage:
       name: per_page
       in: query
@@ -202,14 +210,6 @@ components:
       schema:
         type: string
       example: 12345678@N00
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
   schemas:
     Photo:
       type: object
@@ -255,6 +255,25 @@ components:
         width_o:
           type: integer
           example: 6048
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
     Person:
       type: object
       properties:
@@ -281,25 +300,6 @@ components:
           type: string
           format: uri
           example: https://www.flickr.com/people/12345678@N00/
-    PhotoList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Commons API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -85,13 +85,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    InstitutionList:
-      type: object
-      properties:
-        institution:
-          type: array
-          items:
-            $ref: '#/components/schemas/Institution'
     Institution:
       type: object
       properties:
@@ -104,6 +97,13 @@ components:
         date_launch:
           type: string
           example: '1232409600'
+    InstitutionList:
+      type: object
+      properties:
+        institution:
+          type: array
+          items:
+            $ref: '#/components/schemas/Institution'
   parameters:
     ApiKey:
       name: api_key

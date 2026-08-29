@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Photos Licenses API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -133,6 +133,19 @@ components:
         type: string
       example: ab1234567890cdef1234567890abcd12
   schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        stat:
+          type: string
+          example: ok
+    LicenseList:
+      type: object
+      properties:
+        license:
+          type: array
+          items:
+            $ref: '#/components/schemas/License'
     License:
       type: object
       properties:
@@ -146,19 +159,6 @@ components:
           type: string
           format: uri
           example: https://www.flickr.com/galleries/12345678@N00/72157712345/
-    LicenseList:
-      type: object
-      properties:
-        license:
-          type: array
-          items:
-            $ref: '#/components/schemas/License'
-    SuccessResponse:
-      type: object
-      properties:
-        stat:
-          type: string
-          example: ok
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Reflection API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -167,6 +167,39 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    NoJsonCallback:
+      name: nojsoncallback
+      in: query
+      description: Set to 1 to receive raw JSON instead of JSONP.
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    Format:
+      name: format
+      in: query
+      description: Response format (json/xml/php_serial/rest).
+      schema:
+        type: string
+        default: json
+      example: json
+    Method:
+      name: method
+      in: query
+      required: true
+      description: Fully qualified flickr method, e.g. `flickr.photos.search`.
+      schema:
+        type: string
+      example: flickr.photos.search
   schemas:
     MethodInfo:
       type: object
@@ -226,20 +259,6 @@ components:
                   _content:
                     type: string
                     example: '100'
-    MethodList:
-      type: object
-      properties:
-        methods:
-          type: object
-          properties:
-            method:
-              type: array
-              items:
-                type: object
-                properties:
-                  _content:
-                    type: string
-                    example: '100'
     MethodResponse:
       type: object
       description: Generic method response (varies by method).
@@ -256,39 +275,20 @@ components:
         message:
           type: string
           example: Invalid API Key
-  parameters:
-    Format:
-      name: format
-      in: query
-      description: Response format (json/xml/php_serial/rest).
-      schema:
-        type: string
-        default: json
-      example: json
-    Method:
-      name: method
-      in: query
-      required: true
-      description: Fully qualified flickr method, e.g. `flickr.photos.search`.
-      schema:
-        type: string
-      example: flickr.photos.search
-    NoJsonCallback:
-      name: nojsoncallback
-      in: query
-      description: Set to 1 to receive raw JSON instead of JSONP.
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
+    MethodList:
+      type: object
+      properties:
+        methods:
+          type: object
+          properties:
+            method:
+              type: array
+              items:
+                type: object
+                properties:
+                  _content:
+                    type: string
+                    example: '100'
   responses:
     FlickrError:
       description: Flickr error response

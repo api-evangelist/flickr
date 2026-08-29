@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Panda API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -131,14 +131,23 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
   schemas:
-    PandaList:
-      type: object
-      properties:
-        panda:
-          type: array
-          items:
-            $ref: '#/components/schemas/Panda'
     Photo:
       type: object
       description: A photo.
@@ -183,12 +192,6 @@ components:
         width_o:
           type: integer
           example: 6048
-    Panda:
-      type: object
-      properties:
-        _content:
-          type: string
-          example: '100'
     PhotoList:
       type: object
       properties:
@@ -208,22 +211,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Photo'
-  parameters:
-    Extras:
-      name: extras
-      in: query
-      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
-      schema:
-        type: string
-      example: owner_name,description,url_o,date_taken,geo
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
+    PandaList:
+      type: object
+      properties:
+        panda:
+          type: array
+          items:
+            $ref: '#/components/schemas/Panda'
+    Panda:
+      type: object
+      properties:
+        _content:
+          type: string
+          example: '100'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

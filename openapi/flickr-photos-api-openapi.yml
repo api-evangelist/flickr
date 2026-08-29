@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Flickr Activity Photos API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
@@ -303,6 +303,21 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
     PerPage:
       name: per_page
       in: query
@@ -311,19 +326,6 @@ components:
         default: 100
         maximum: 500
       example: 100
-    UserIdOptional:
-      name: user_id
-      in: query
-      schema:
-        type: string
-      example: 12345678@N00
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
     Page:
       name: page
       in: query
@@ -338,36 +340,13 @@ components:
       schema:
         type: string
       example: owner_name,description,url_o,date_taken,geo
-    ApiKey:
-      name: api_key
+    UserIdOptional:
+      name: user_id
       in: query
-      required: true
-      description: Application API key.
       schema:
         type: string
-      example: ab1234567890cdef1234567890abcd12
+      example: 12345678@N00
   schemas:
-    Exif:
-      type: object
-      properties:
-        tagspace:
-          type: string
-          example: EXIF
-        tagspaceid:
-          type: integer
-          example: 0
-        tag:
-          type: string
-          example: ISO
-        label:
-          type: string
-          example: Original
-        raw:
-          type: object
-          properties:
-            _content:
-              type: string
-              example: '100'
     Size:
       type: object
       properties:
@@ -391,6 +370,27 @@ components:
         media:
           type: string
           example: photo
+    Exif:
+      type: object
+      properties:
+        tagspace:
+          type: string
+          example: EXIF
+        tagspaceid:
+          type: integer
+          example: 0
+        tag:
+          type: string
+          example: ISO
+        label:
+          type: string
+          example: Original
+        raw:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
     Photo:
       type: object
       description: A photo.
@@ -435,6 +435,25 @@ components:
         width_o:
           type: integer
           example: 6048
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
     ExifList:
       type: object
       properties:
@@ -470,25 +489,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Size'
-    PhotoList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
