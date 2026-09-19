@@ -647,6 +647,8 @@ apis:
   humanURL: https://www.flickr.com/services/api/
   baseURL: https://api.flickr.com/services
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
