@@ -1,35 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Flickr Activity Groups Discuss API
+  title: Flickr Groups Discuss API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
 
-    photoset capabilities that power flickr.com. Almost all flickr.com
-
-    functionality is reachable through a single REST-like endpoint
-
-    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
-
-    query parameter and `format=json&nojsoncallback=1` for JSON output.
-
-
-    This OpenAPI specification models a curated set of the most widely used
-
-    methods across the Flickr API''s 250+ method namespaces (activity, auth,
-
-    blogs, cameras, collections, commons, contacts, favorites, galleries,
-
-    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
-
-    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
-
-    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
-
-
-    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
-
-    API requires prior permission from Flickr.
-
-    '
+    photoset capabilities that power flickr.com.'
   version: 1.0.0
   termsOfService: https://www.flickr.com/services/api/tos/
   contact:
@@ -148,6 +122,13 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
     PerPage:
       name: per_page
       in: query
@@ -156,14 +137,28 @@ components:
         default: 100
         maximum: 500
       example: 100
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
   schemas:
+    Topic:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        subject:
+          type: string
+          example: Tips for sunset photography
+        author:
+          type: string
+          example: 12345678@N00
+        author_name:
+          type: string
+          example: shutterbug
+        datecreate:
+          type: string
+          example: '1715000000'
+        count_replies:
+          type: integer
+          example: 7
     TopicReplyList:
       type: object
       properties:
@@ -196,27 +191,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Topic'
-    Topic:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        subject:
-          type: string
-          example: Tips for sunset photography
-        author:
-          type: string
-          example: 12345678@N00
-        author_name:
-          type: string
-          example: shutterbug
-        datecreate:
-          type: string
-          example: '1715000000'
-        count_replies:
-          type: integer
-          example: 7
     TopicReply:
       type: object
       properties:

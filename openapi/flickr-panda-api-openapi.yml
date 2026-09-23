@@ -1,35 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Flickr Activity Panda API
+  title: Flickr Panda API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
 
-    photoset capabilities that power flickr.com. Almost all flickr.com
-
-    functionality is reachable through a single REST-like endpoint
-
-    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
-
-    query parameter and `format=json&nojsoncallback=1` for JSON output.
-
-
-    This OpenAPI specification models a curated set of the most widely used
-
-    methods across the Flickr API''s 250+ method namespaces (activity, auth,
-
-    blogs, cameras, collections, commons, contacts, favorites, galleries,
-
-    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
-
-    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
-
-    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
-
-
-    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
-
-    API requires prior permission from Flickr.
-
-    '
+    photoset capabilities that power flickr.com.'
   version: 1.0.0
   termsOfService: https://www.flickr.com/services/api/tos/
   contact:
@@ -148,6 +122,38 @@ components:
         type: string
       example: owner_name,description,url_o,date_taken,geo
   schemas:
+    PandaList:
+      type: object
+      properties:
+        panda:
+          type: array
+          items:
+            $ref: '#/components/schemas/Panda'
+    Panda:
+      type: object
+      properties:
+        _content:
+          type: string
+          example: '100'
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
     Photo:
       type: object
       description: A photo.
@@ -192,38 +198,6 @@ components:
         width_o:
           type: integer
           example: 6048
-    PhotoList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-    PandaList:
-      type: object
-      properties:
-        panda:
-          type: array
-          items:
-            $ref: '#/components/schemas/Panda'
-    Panda:
-      type: object
-      properties:
-        _content:
-          type: string
-          example: '100'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

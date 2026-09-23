@@ -1,35 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Flickr Activity Galleries API
+  title: Flickr Galleries API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
 
-    photoset capabilities that power flickr.com. Almost all flickr.com
-
-    functionality is reachable through a single REST-like endpoint
-
-    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
-
-    query parameter and `format=json&nojsoncallback=1` for JSON output.
-
-
-    This OpenAPI specification models a curated set of the most widely used
-
-    methods across the Flickr API''s 250+ method namespaces (activity, auth,
-
-    blogs, cameras, collections, commons, contacts, favorites, galleries,
-
-    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
-
-    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
-
-    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
-
-
-    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
-
-    API requires prior permission from Flickr.
-
-    '
+    photoset capabilities that power flickr.com.'
   version: 1.0.0
   termsOfService: https://www.flickr.com/services/api/tos/
   contact:
@@ -144,7 +118,67 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
   schemas:
+    Gallery:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        url:
+          type: string
+          format: uri
+          example: https://www.flickr.com/galleries/12345678@N00/72157712345/
+        owner:
+          type: string
+          example: 12345678@N00
+        date_create:
+          type: string
+          example: '1715000000'
+        count_photos:
+          type: integer
+          example: 18
+        count_videos:
+          type: integer
+          example: 0
     GalleryList:
       type: object
       properties:
@@ -161,6 +195,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Gallery'
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
     Photo:
       type: object
       description: A photo.
@@ -205,85 +258,6 @@ components:
         width_o:
           type: integer
           example: 6048
-    PhotoList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-    Gallery:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        url:
-          type: string
-          format: uri
-          example: https://www.flickr.com/galleries/12345678@N00/72157712345/
-        owner:
-          type: string
-          example: 12345678@N00
-        date_create:
-          type: string
-          example: '1715000000'
-        count_photos:
-          type: integer
-          example: 18
-        count_videos:
-          type: integer
-          example: 0
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    Extras:
-      name: extras
-      in: query
-      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
-      schema:
-        type: string
-      example: owner_name,description,url_o,date_taken,geo
-    UserId:
-      name: user_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: 12345678@N00
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

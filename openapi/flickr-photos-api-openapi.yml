@@ -1,35 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Flickr Activity Photos API
+  title: Flickr Photos API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
 
-    photoset capabilities that power flickr.com. Almost all flickr.com
-
-    functionality is reachable through a single REST-like endpoint
-
-    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
-
-    query parameter and `format=json&nojsoncallback=1` for JSON output.
-
-
-    This OpenAPI specification models a curated set of the most widely used
-
-    methods across the Flickr API''s 250+ method namespaces (activity, auth,
-
-    blogs, cameras, collections, commons, contacts, favorites, galleries,
-
-    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
-
-    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
-
-    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
-
-
-    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
-
-    API requires prior permission from Flickr.
-
-    '
+    photoset capabilities that power flickr.com.'
   version: 1.0.0
   termsOfService: https://www.flickr.com/services/api/tos/
   contact:
@@ -61,9 +35,7 @@ paths:
       summary: Search Photos
       description: 'Returns a list of photos matching a search query. Combine text, tags,
 
-        owner, geography, license, date, and content filters.
-
-        '
+        owner, geography, license, date, and content filters.'
       tags:
       - Photos
       parameters:
@@ -303,13 +275,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
     ApiKey:
       name: api_key
       in: query
@@ -318,14 +283,19 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
-    PerPage:
-      name: per_page
+    UserIdOptional:
+      name: user_id
       in: query
       schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
+        type: string
+      example: 12345678@N00
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
     Page:
       name: page
       in: query
@@ -340,13 +310,90 @@ components:
       schema:
         type: string
       example: owner_name,description,url_o,date_taken,geo
-    UserIdOptional:
-      name: user_id
+    PerPage:
+      name: per_page
       in: query
       schema:
-        type: string
-      example: 12345678@N00
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
   schemas:
+    ExifList:
+      type: object
+      properties:
+        photo:
+          type: object
+          properties:
+            id:
+              type: string
+              example: '52345678901'
+            secret:
+              type: string
+              example: abc1234def
+            camera:
+              type: string
+              example: example
+            exif:
+              type: array
+              items:
+                $ref: '#/components/schemas/Exif'
+    Exif:
+      type: object
+      properties:
+        tagspace:
+          type: string
+          example: EXIF
+        tagspaceid:
+          type: integer
+          example: 0
+        tag:
+          type: string
+          example: ISO
+        label:
+          type: string
+          example: Original
+        raw:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+    SizeList:
+      type: object
+      properties:
+        canblog:
+          type: integer
+          example: 0
+        canprint:
+          type: integer
+          example: 1
+        candownload:
+          type: integer
+          example: 1
+        size:
+          type: array
+          items:
+            $ref: '#/components/schemas/Size'
     Size:
       type: object
       properties:
@@ -370,27 +417,6 @@ components:
         media:
           type: string
           example: photo
-    Exif:
-      type: object
-      properties:
-        tagspace:
-          type: string
-          example: EXIF
-        tagspaceid:
-          type: integer
-          example: 0
-        tag:
-          type: string
-          example: ISO
-        label:
-          type: string
-          example: Original
-        raw:
-          type: object
-          properties:
-            _content:
-              type: string
-              example: '100'
     Photo:
       type: object
       description: A photo.
@@ -435,60 +461,6 @@ components:
         width_o:
           type: integer
           example: 6048
-    PhotoList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-    ExifList:
-      type: object
-      properties:
-        photo:
-          type: object
-          properties:
-            id:
-              type: string
-              example: '52345678901'
-            secret:
-              type: string
-              example: abc1234def
-            camera:
-              type: string
-              example: example
-            exif:
-              type: array
-              items:
-                $ref: '#/components/schemas/Exif'
-    SizeList:
-      type: object
-      properties:
-        canblog:
-          type: integer
-          example: 0
-        canprint:
-          type: integer
-          example: 1
-        candownload:
-          type: integer
-          example: 1
-        size:
-          type: array
-          items:
-            $ref: '#/components/schemas/Size'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

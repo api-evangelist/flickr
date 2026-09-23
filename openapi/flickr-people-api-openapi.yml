@@ -1,35 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Flickr Activity People API
+  title: Flickr People API
   description: 'The Flickr API exposes the photo, group, people, place, tag, gallery, and
 
-    photoset capabilities that power flickr.com. Almost all flickr.com
-
-    functionality is reachable through a single REST-like endpoint
-
-    `https://api.flickr.com/services/rest` using a `method=flickr.{namespace}.{method}`
-
-    query parameter and `format=json&nojsoncallback=1` for JSON output.
-
-
-    This OpenAPI specification models a curated set of the most widely used
-
-    methods across the Flickr API''s 250+ method namespaces (activity, auth,
-
-    blogs, cameras, collections, commons, contacts, favorites, galleries,
-
-    groups, groupsDiscuss, interestingness, machinetags, panda, people, photos,
-
-    photos.geo, photos.licenses, photos.notes, photos.transform, photos.upload,
-
-    photosets, places, prefs, profile, push, reflection, stats, tags, test, urls).
-
-
-    Authentication is API key + OAuth 1.0a (HMAC-SHA1). Commercial use of the
-
-    API requires prior permission from Flickr.
-
-    '
+    photoset capabilities that power flickr.com.'
   version: 1.0.0
   termsOfService: https://www.flickr.com/services/api/tos/
   contact:
@@ -181,14 +155,6 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
     Page:
       name: page
       in: query
@@ -203,6 +169,14 @@ components:
       schema:
         type: string
       example: owner_name,description,url_o,date_taken,geo
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
     UserId:
       name: user_id
       in: query
@@ -211,50 +185,6 @@ components:
         type: string
       example: 12345678@N00
   schemas:
-    Photo:
-      type: object
-      description: A photo.
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        owner:
-          type: string
-          example: 12345678@N00
-        secret:
-          type: string
-          example: abc1234def
-        server:
-          type: string
-          example: '65535'
-        farm:
-          type: integer
-          example: 66
-        title:
-          type: string
-          example: Golden Gate Sunset
-        ispublic:
-          type: integer
-          example: 1
-        isfriend:
-          type: integer
-          example: 0
-        isfamily:
-          type: integer
-          example: 0
-        datetaken:
-          type: string
-          example: '2026-04-12 18:24:11'
-        url_o:
-          type: string
-          format: uri
-          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
-        height_o:
-          type: integer
-          example: 4032
-        width_o:
-          type: integer
-          example: 6048
     PhotoList:
       type: object
       properties:
@@ -300,6 +230,50 @@ components:
           type: string
           format: uri
           example: https://www.flickr.com/people/12345678@N00/
+    Photo:
+      type: object
+      description: A photo.
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        owner:
+          type: string
+          example: 12345678@N00
+        secret:
+          type: string
+          example: abc1234def
+        server:
+          type: string
+          example: '65535'
+        farm:
+          type: integer
+          example: 66
+        title:
+          type: string
+          example: Golden Gate Sunset
+        ispublic:
+          type: integer
+          example: 1
+        isfriend:
+          type: integer
+          example: 0
+        isfamily:
+          type: integer
+          example: 0
+        datetaken:
+          type: string
+          example: '2026-04-12 18:24:11'
+        url_o:
+          type: string
+          format: uri
+          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+        height_o:
+          type: integer
+          example: 4032
+        width_o:
+          type: integer
+          example: 6048
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
