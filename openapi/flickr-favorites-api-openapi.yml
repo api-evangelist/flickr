@@ -102,21 +102,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
     Page:
       name: page
       in: query
@@ -124,6 +109,20 @@ components:
         type: integer
         default: 1
       example: 1
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
     PerPage:
       name: per_page
       in: query
@@ -132,13 +131,14 @@ components:
         default: 100
         maximum: 500
       example: 100
-    UserId:
-      name: user_id
+    ApiKey:
+      name: api_key
       in: query
       required: true
+      description: Application API key.
       schema:
         type: string
-      example: 12345678@N00
+      example: ab1234567890cdef1234567890abcd12
   schemas:
     PhotoList:
       type: object

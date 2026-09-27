@@ -68,6 +68,13 @@ components:
         type: string
       example: ab1234567890cdef1234567890abcd12
   schemas:
+    InstitutionList:
+      type: object
+      properties:
+        institution:
+          type: array
+          items:
+            $ref: '#/components/schemas/Institution'
     Institution:
       type: object
       properties:
@@ -80,13 +87,6 @@ components:
         date_launch:
           type: string
           example: '1232409600'
-    InstitutionList:
-      type: object
-      properties:
-        institution:
-          type: array
-          items:
-            $ref: '#/components/schemas/Institution'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

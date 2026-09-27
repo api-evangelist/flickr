@@ -105,22 +105,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    Extras:
-      name: extras
-      in: query
-      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
-      schema:
-        type: string
-      example: owner_name,description,url_o,date_taken,geo
   schemas:
     PandaList:
       type: object
@@ -129,12 +113,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Panda'
-    Panda:
-      type: object
-      properties:
-        _content:
-          type: string
-          example: '100'
     PhotoList:
       type: object
       properties:
@@ -154,6 +132,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Photo'
+    Panda:
+      type: object
+      properties:
+        _content:
+          type: string
+          example: '100'
     Photo:
       type: object
       description: A photo.
@@ -198,6 +182,22 @@ components:
         width_o:
           type: integer
           example: 6048
+  parameters:
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

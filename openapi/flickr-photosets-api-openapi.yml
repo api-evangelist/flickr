@@ -174,20 +174,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    UserIdOptional:
-      name: user_id
-      in: query
-      schema:
-        type: string
-      example: 12345678@N00
     Page:
       name: page
       in: query
@@ -195,6 +181,12 @@ components:
         type: integer
         default: 1
       example: 1
+    UserIdOptional:
+      name: user_id
+      in: query
+      schema:
+        type: string
+      example: 12345678@N00
     Extras:
       name: extras
       in: query
@@ -210,6 +202,14 @@ components:
         default: 100
         maximum: 500
       example: 100
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   schemas:
     Photoset:
       type: object

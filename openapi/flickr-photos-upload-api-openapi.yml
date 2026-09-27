@@ -145,16 +145,14 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
   schemas:
+    TicketList:
+      type: object
+      properties:
+        ticket:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ticket'
     UploadResponse:
       type: object
       description: XML upload response containing `<photoid>` or `<ticketid>`.
@@ -183,13 +181,15 @@ components:
         invalid:
           type: integer
           example: 0
-    TicketList:
-      type: object
-      properties:
-        ticket:
-          type: array
-          items:
-            $ref: '#/components/schemas/Ticket'
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

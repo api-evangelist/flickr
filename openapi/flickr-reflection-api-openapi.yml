@@ -140,30 +140,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    Format:
-      name: format
-      in: query
-      description: Response format (json/xml/php_serial/rest).
-      schema:
-        type: string
-        default: json
-      example: json
-    Method:
-      name: method
-      in: query
-      required: true
-      description: Fully qualified flickr method, e.g. `flickr.photos.search`.
-      schema:
-        type: string
-      example: flickr.photos.search
     NoJsonCallback:
       name: nojsoncallback
       in: query
@@ -172,11 +148,38 @@ components:
         type: integer
         default: 1
       example: 1
+    Format:
+      name: format
+      in: query
+      description: Response format (json/xml/php_serial/rest).
+      schema:
+        type: string
+        default: json
+      example: json
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    Method:
+      name: method
+      in: query
+      required: true
+      description: Fully qualified flickr method, e.g. `flickr.photos.search`.
+      schema:
+        type: string
+      example: flickr.photos.search
+  responses:
+    FlickrError:
+      description: Flickr error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FlickrError'
   schemas:
-    MethodResponse:
-      type: object
-      description: Generic method response (varies by method).
-      additionalProperties: true
     FlickrError:
       type: object
       properties:
@@ -247,6 +250,10 @@ components:
                   _content:
                     type: string
                     example: '100'
+    MethodResponse:
+      type: object
+      description: Generic method response (varies by method).
+      additionalProperties: true
     MethodList:
       type: object
       properties:
@@ -261,13 +268,6 @@ components:
                   _content:
                     type: string
                     example: '100'
-  responses:
-    FlickrError:
-      description: Flickr error response
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/FlickrError'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

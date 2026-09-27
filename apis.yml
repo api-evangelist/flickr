@@ -47,13 +47,14 @@ x-tier-reason: bulk-registered-from-public-apis
 tags:
   - Photography
   - Photos
-  - Social-Media
+  - Social Media
   - Public APIs
 tags_raw:
   - Photography
   - Photos
   - Social Media
   - Public APIs
+  - Social-Media
 apis:
 - aid: flickr:flickr-activity-api
   name: Flickr Activity API

@@ -451,7 +451,7 @@ paths:
       x-summary-source: derived
   /rest?method=flickr.groups.pools.getContext:
     get:
-      operationId: getGroupPhotosByID
+      operationId: getRest?method=flickrGroupsPoolsGetContext
       description: Returns next and previous photos for a photo in a group pool
       tags:
       - Public
@@ -494,6 +494,8 @@ paths:
                     $ref: '#/components/schemas/Stat'
       summary: Get group photos by ID
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: getGroupPhotosByID
   /rest?method=flickr.photolist.getContext:
     get:
       operationId: getPhotolistContextByID
@@ -1313,124 +1315,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Topic:
-      type: object
-      properties:
-        id:
-          type: string
-        subject:
-          type: string
-        message:
-          type: object
-          properties:
-            _content:
-              type: string
-        author:
-          type: string
-        authorname:
-          type: string
-        author_path_alias:
-          type: string
-        author_is_deleted:
-          type: boolean
-        is_pro:
-          type: boolean
-        role:
-          type: string
-        iconserver:
-          type: string
-        iconfarm:
-          type: string
-        count_replies:
-          type: integer
-        can_edit:
-          type: boolean
-        can_delete:
-          type: boolean
-        can_reply:
-          type: boolean
-        is_sticky:
-          type: boolean
-        is_locked:
-          type: boolean
-        datecreate:
-          type: string
-        datelastpost:
-          type: string
-        last_reply:
-          type: string
-        lastedit:
-          type: string
-    Note:
-      type: object
-      properties:
-        description:
-          type: string
-    PhotoURLs:
-      type: object
-      properties:
-        h:
-          type: string
-        l:
-          type: string
-        s:
-          type: string
-        t:
-          type: string
-    Album:
-      type: object
-      properties:
-        id:
-          type: string
-        primary:
-          type: string
-        secret:
-          type: string
-        server:
-          type: string
-        farm:
-          type: string
-        photos:
-          type: number
-        videos:
-          type: number
-        count_views:
-          type: number
-        count_comments:
-          type: number
-        can_comment:
-          type: boolean
-        date_create:
-          type: number
-        date_update:
-          type: number
-        title:
-          type: string
-        description:
-          type: string
-    Owner:
-      type: object
-      properties:
-        nsid:
-          type: string
-        username:
-          type: string
-        realname:
-          type: string
-        location:
-          type: string
-        iconserver:
-          type: string
-        iconfarm:
-          type: string
-        path_alias:
-          type: string
-        noindexfollow:
-          type: boolean
-        ispro:
-          type: boolean
-        is_ad_free:
-          type: boolean
     Person:
       type: object
       properties:
@@ -1548,6 +1432,92 @@ components:
           properties:
             _content:
               type: string
+    Album:
+      type: object
+      properties:
+        id:
+          type: string
+        primary:
+          type: string
+        secret:
+          type: string
+        server:
+          type: string
+        farm:
+          type: string
+        photos:
+          type: number
+        videos:
+          type: number
+        count_views:
+          type: number
+        count_comments:
+          type: number
+        can_comment:
+          type: boolean
+        date_create:
+          type: number
+        date_update:
+          type: number
+        title:
+          type: string
+        description:
+          type: string
+    Owner:
+      type: object
+      properties:
+        nsid:
+          type: string
+        username:
+          type: string
+        realname:
+          type: string
+        location:
+          type: string
+        iconserver:
+          type: string
+        iconfarm:
+          type: string
+        path_alias:
+          type: string
+        noindexfollow:
+          type: boolean
+        ispro:
+          type: boolean
+        is_ad_free:
+          type: boolean
+    ContextPhoto:
+      type: object
+      properties:
+        id:
+          type: string
+        secret:
+          type: string
+        server:
+          type: string
+        farm:
+          type: string
+        title:
+          type: string
+        url:
+          type: string
+        thumb:
+          type: string
+        media:
+          type: string
+        owner:
+          type: string
+        license:
+          type: integer
+        safe:
+          type: boolean
+        is_faved:
+          type: boolean
+    Note:
+      type: object
+      properties:
+        description:
+          type: string
     Group:
       type: object
       properties:
@@ -1662,33 +1632,32 @@ components:
               type: boolean
         cover:
           $ref: '#/components/schemas/Cover'
-    ContextPhoto:
+    Size:
       type: object
       properties:
-        id:
+        label:
           type: string
-        secret:
-          type: string
-        server:
-          type: string
-        farm:
-          type: string
-        title:
+        width:
+          type: number
+        height:
+          type: number
+        source:
           type: string
         url:
           type: string
-        thumb:
-          type: string
         media:
           type: string
-        owner:
+    PhotoURLs:
+      type: object
+      properties:
+        h:
           type: string
-        license:
-          type: integer
-        safe:
-          type: boolean
-        is_faved:
-          type: boolean
+        l:
+          type: string
+        s:
+          type: string
+        t:
+          type: string
     Cover:
       type: object
       properties:
@@ -1712,10 +1681,12 @@ components:
           type: boolean
         y:
           type: string
-    TopicReply:
+    Topic:
       type: object
       properties:
         id:
+          type: string
+        subject:
           type: string
         message:
           type: object
@@ -1732,40 +1703,47 @@ components:
           type: boolean
         is_pro:
           type: boolean
+        role:
+          type: string
         iconserver:
           type: string
         iconfarm:
           type: string
+        count_replies:
+          type: integer
         can_edit:
           type: boolean
         can_delete:
           type: boolean
+        can_reply:
+          type: boolean
+        is_sticky:
+          type: boolean
+        is_locked:
+          type: boolean
         datecreate:
+          type: string
+        datelastpost:
+          type: string
+        last_reply:
           type: string
         lastedit:
           type: string
-    URL:
+    Tag:
       type: object
       properties:
-        type:
+        id:
+          type: string
+        author:
+          type: string
+        authorname:
+          type: string
+        raw:
           type: string
         _content:
           type: string
-    Size:
-      type: object
-      properties:
-        label:
-          type: string
-        width:
-          type: number
-        height:
-          type: number
-        source:
-          type: string
-        url:
-          type: string
-        media:
-          type: string
+        machine_tag:
+          type: boolean
     Photo:
       type: object
       properties:
@@ -1892,20 +1870,44 @@ components:
           type: boolean
         media:
           type: string
-    Tag:
+    URL:
+      type: object
+      properties:
+        type:
+          type: string
+        _content:
+          type: string
+    Stat:
+      type: string
+    TopicReply:
       type: object
       properties:
         id:
           type: string
+        message:
+          type: object
+          properties:
+            _content:
+              type: string
         author:
           type: string
         authorname:
           type: string
-        raw:
+        author_path_alias:
           type: string
-        _content:
-          type: string
-        machine_tag:
+        author_is_deleted:
           type: boolean
-    Stat:
-      type: string
+        is_pro:
+          type: boolean
+        iconserver:
+          type: string
+        iconfarm:
+          type: string
+        can_edit:
+          type: boolean
+        can_delete:
+          type: boolean
+        datecreate:
+          type: string
+        lastedit:
+          type: string

@@ -112,6 +112,19 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Tag:
+      type: object
+      properties:
+        _content:
+          type: string
+          example: '100'
+        score:
+          type: integer
+          example: 87
+        thm_data:
+          type: object
+          additionalProperties: true
+          example: {}
     TagClusterList:
       type: object
       properties:
@@ -133,19 +146,6 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/Tag'
-    Tag:
-      type: object
-      properties:
-        _content:
-          type: string
-          example: '100'
-        score:
-          type: integer
-          example: 87
-        thm_data:
-          type: object
-          additionalProperties: true
-          example: {}
     TagList:
       type: object
       properties:

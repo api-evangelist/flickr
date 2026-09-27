@@ -114,14 +114,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
     Page:
       name: page
       in: query
@@ -137,7 +129,47 @@ components:
         default: 100
         maximum: 500
       example: 100
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   schemas:
+    TopicList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        topic:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+    TopicReplyList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        reply:
+          type: array
+          items:
+            $ref: '#/components/schemas/TopicReply'
     Topic:
       type: object
       properties:
@@ -159,38 +191,6 @@ components:
         count_replies:
           type: integer
           example: 7
-    TopicReplyList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        reply:
-          type: array
-          items:
-            $ref: '#/components/schemas/TopicReply'
-    TopicList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        topic:
-          type: array
-          items:
-            $ref: '#/components/schemas/Topic'
     TopicReply:
       type: object
       properties:

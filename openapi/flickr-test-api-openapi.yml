@@ -93,6 +93,9 @@ components:
         type: string
       example: ab1234567890cdef1234567890abcd12
   schemas:
+    EchoResponse:
+      type: object
+      additionalProperties: true
     LoginInfo:
       type: object
       properties:
@@ -111,9 +114,6 @@ components:
             path_alias:
               type: string
               example: shutterbug
-    EchoResponse:
-      type: object
-      additionalProperties: true
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

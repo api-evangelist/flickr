@@ -65,6 +65,15 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   schemas:
     BlogList:
       type: object
@@ -89,15 +98,6 @@ components:
           type: string
           format: uri
           example: https://www.flickr.com/galleries/12345678@N00/72157712345/
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

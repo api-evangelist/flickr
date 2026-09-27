@@ -90,22 +90,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
   schemas:
     LicenseList:
       type: object
@@ -133,6 +117,22 @@ components:
         stat:
           type: string
           example: ok
+  parameters:
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
