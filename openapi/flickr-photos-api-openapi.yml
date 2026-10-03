@@ -275,41 +275,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    SizeList:
-      type: object
-      properties:
-        canblog:
-          type: integer
-          example: 0
-        canprint:
-          type: integer
-          example: 1
-        candownload:
-          type: integer
-          example: 1
-        size:
-          type: array
-          items:
-            $ref: '#/components/schemas/Size'
-    ExifList:
-      type: object
-      properties:
-        photo:
-          type: object
-          properties:
-            id:
-              type: string
-              example: '52345678901'
-            secret:
-              type: string
-              example: abc1234def
-            camera:
-              type: string
-              example: example
-            exif:
-              type: array
-              items:
-                $ref: '#/components/schemas/Exif'
     PhotoList:
       type: object
       properties:
@@ -373,6 +338,22 @@ components:
         media:
           type: string
           example: photo
+    SizeList:
+      type: object
+      properties:
+        canblog:
+          type: integer
+          example: 0
+        canprint:
+          type: integer
+          example: 1
+        candownload:
+          type: integer
+          example: 1
+        size:
+          type: array
+          items:
+            $ref: '#/components/schemas/Size'
     Photo:
       type: object
       description: A photo.
@@ -417,27 +398,32 @@ components:
         width_o:
           type: integer
           example: 6048
+    ExifList:
+      type: object
+      properties:
+        photo:
+          type: object
+          properties:
+            id:
+              type: string
+              example: '52345678901'
+            secret:
+              type: string
+              example: abc1234def
+            camera:
+              type: string
+              example: example
+            exif:
+              type: array
+              items:
+                $ref: '#/components/schemas/Exif'
   parameters:
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
     UserIdOptional:
       name: user_id
       in: query
       schema:
         type: string
       example: 12345678@N00
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
     Extras:
       name: extras
       in: query
@@ -445,6 +431,13 @@ components:
       schema:
         type: string
       example: owner_name,description,url_o,date_taken,geo
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
     PerPage:
       name: per_page
       in: query
@@ -453,6 +446,13 @@ components:
         default: 100
         maximum: 500
       example: 100
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
     ApiKey:
       name: api_key
       in: query

@@ -146,26 +146,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    TicketList:
-      type: object
-      properties:
-        ticket:
-          type: array
-          items:
-            $ref: '#/components/schemas/Ticket'
-    UploadResponse:
-      type: object
-      description: XML upload response containing `<photoid>` or `<ticketid>`.
-      properties:
-        stat:
-          type: string
-          example: ok
-        photoid:
-          type: string
-          example: '52345678901'
-        ticketid:
-          type: string
-          example: '1234567'
     Ticket:
       type: object
       properties:
@@ -181,6 +161,26 @@ components:
         invalid:
           type: integer
           example: 0
+    UploadResponse:
+      type: object
+      description: XML upload response containing `<photoid>` or `<ticketid>`.
+      properties:
+        stat:
+          type: string
+          example: ok
+        photoid:
+          type: string
+          example: '52345678901'
+        ticketid:
+          type: string
+          example: '1234567'
+    TicketList:
+      type: object
+      properties:
+        ticket:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ticket'
   parameters:
     ApiKey:
       name: api_key

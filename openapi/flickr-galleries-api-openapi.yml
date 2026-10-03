@@ -118,61 +118,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    Extras:
-      name: extras
-      in: query
-      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
-      schema:
-        type: string
-      example: owner_name,description,url_o,date_taken,geo
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    UserId:
-      name: user_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: 12345678@N00
   schemas:
-    GalleryList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        gallery:
-          type: array
-          items:
-            $ref: '#/components/schemas/Gallery'
     PhotoList:
       type: object
       properties:
@@ -192,6 +138,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Photo'
+    GalleryList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        gallery:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gallery'
     Gallery:
       type: object
       properties:
@@ -258,6 +220,44 @@ components:
         width_o:
           type: integer
           example: 6048
+  parameters:
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

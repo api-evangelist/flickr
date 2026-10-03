@@ -100,22 +100,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Camera'
-    Brand:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        name:
-          type: string
-          example: Bay Area Photographers
-    BrandList:
-      type: object
-      properties:
-        brand:
-          type: array
-          items:
-            $ref: '#/components/schemas/Brand'
     Camera:
       type: object
       properties:
@@ -129,6 +113,22 @@ components:
           type: object
           additionalProperties: true
           example: {}
+    BrandList:
+      type: object
+      properties:
+        brand:
+          type: array
+          items:
+            $ref: '#/components/schemas/Brand'
+    Brand:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        name:
+          type: string
+          example: Bay Area Photographers
   parameters:
     ApiKey:
       name: api_key

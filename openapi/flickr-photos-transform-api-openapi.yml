@@ -66,7 +66,21 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        stat:
+          type: string
+          example: ok
   parameters:
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
     ApiKey:
       name: api_key
       in: query
@@ -75,20 +89,6 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
-  schemas:
-    SuccessResponse:
-      type: object
-      properties:
-        stat:
-          type: string
-          example: ok
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

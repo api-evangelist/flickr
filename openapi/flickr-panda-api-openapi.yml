@@ -106,13 +106,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    PandaList:
-      type: object
-      properties:
-        panda:
-          type: array
-          items:
-            $ref: '#/components/schemas/Panda'
     PhotoList:
       type: object
       properties:
@@ -132,6 +125,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Photo'
+    PandaList:
+      type: object
+      properties:
+        panda:
+          type: array
+          items:
+            $ref: '#/components/schemas/Panda'
     Panda:
       type: object
       properties:

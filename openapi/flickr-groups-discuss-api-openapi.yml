@@ -113,31 +113,28 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
   schemas:
+    Topic:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        subject:
+          type: string
+          example: Tips for sunset photography
+        author:
+          type: string
+          example: 12345678@N00
+        author_name:
+          type: string
+          example: shutterbug
+        datecreate:
+          type: string
+          example: '1715000000'
+        count_replies:
+          type: integer
+          example: 7
     TopicList:
       type: object
       properties:
@@ -170,27 +167,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TopicReply'
-    Topic:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        subject:
-          type: string
-          example: Tips for sunset photography
-        author:
-          type: string
-          example: 12345678@N00
-        author_name:
-          type: string
-          example: shutterbug
-        datecreate:
-          type: string
-          example: '1715000000'
-        count_replies:
-          type: integer
-          example: 7
     TopicReply:
       type: object
       properties:
@@ -209,6 +185,30 @@ components:
         datecreate:
           type: string
           example: '1715000000'
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

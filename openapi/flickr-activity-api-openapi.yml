@@ -98,22 +98,6 @@ components:
         type: string
       example: ab1234567890cdef1234567890abcd12
   schemas:
-    ActivityList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        item:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActivityItem'
     ActivityItem:
       type: object
       properties:
@@ -138,6 +122,22 @@ components:
         title:
           type: string
           example: Golden Gate Sunset
+    ActivityList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        item:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActivityItem'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

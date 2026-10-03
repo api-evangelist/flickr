@@ -118,6 +118,13 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PlaceList:
+      type: object
+      properties:
+        place:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
     Place:
       type: object
       properties:
@@ -142,13 +149,6 @@ components:
         _content:
           type: string
           example: '100'
-    PlaceList:
-      type: object
-      properties:
-        place:
-          type: array
-          items:
-            $ref: '#/components/schemas/Place'
   parameters:
     ApiKey:
       name: api_key

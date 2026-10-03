@@ -71,7 +71,38 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
   schemas:
+    Stat:
+      type: object
+      properties:
+        date:
+          type: string
+          example: '2026-04-30'
+        views:
+          type: integer
+          example: 1842
+        comments:
+          type: integer
+          example: 12
+        favorites:
+          type: integer
+          example: 47
     StatList:
       type: object
       properties:
@@ -91,37 +122,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Stat'
-    Stat:
-      type: object
-      properties:
-        date:
-          type: string
-          example: '2026-04-30'
-        views:
-          type: integer
-          example: 1842
-        comments:
-          type: integer
-          example: 12
-        favorites:
-          type: integer
-          example: 47
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

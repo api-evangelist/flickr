@@ -91,13 +91,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    LicenseList:
-      type: object
-      properties:
-        license:
-          type: array
-          items:
-            $ref: '#/components/schemas/License'
     License:
       type: object
       properties:
@@ -111,6 +104,13 @@ components:
           type: string
           format: uri
           example: https://www.flickr.com/galleries/12345678@N00/72157712345/
+    LicenseList:
+      type: object
+      properties:
+        license:
+          type: array
+          items:
+            $ref: '#/components/schemas/License'
     SuccessResponse:
       type: object
       properties:

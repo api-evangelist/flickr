@@ -79,22 +79,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    ContactList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        contact:
-          type: array
-          items:
-            $ref: '#/components/schemas/Contact'
     Contact:
       type: object
       properties:
@@ -119,6 +103,22 @@ components:
         ignored:
           type: integer
           example: 0
+    ContactList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        contact:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contact'
   parameters:
     Page:
       name: page
