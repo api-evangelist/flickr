@@ -114,6 +114,56 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    TopicReplyList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        reply:
+          type: array
+          items:
+            $ref: '#/components/schemas/TopicReply'
+    TopicList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        topic:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+    TopicReply:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        author:
+          type: string
+          example: 12345678@N00
+        message:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
+        datecreate:
+          type: string
+          example: '1715000000'
     Topic:
       type: object
       properties:
@@ -135,72 +185,7 @@ components:
         count_replies:
           type: integer
           example: 7
-    TopicList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        topic:
-          type: array
-          items:
-            $ref: '#/components/schemas/Topic'
-    TopicReplyList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        reply:
-          type: array
-          items:
-            $ref: '#/components/schemas/TopicReply'
-    TopicReply:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        author:
-          type: string
-          example: 12345678@N00
-        message:
-          type: object
-          properties:
-            _content:
-              type: string
-              example: '100'
-        datecreate:
-          type: string
-          example: '1715000000'
   parameters:
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
     ApiKey:
       name: api_key
       in: query
@@ -209,6 +194,21 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

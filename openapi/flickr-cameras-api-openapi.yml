@@ -93,13 +93,13 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    CameraList:
+    BrandList:
       type: object
       properties:
-        camera:
+        brand:
           type: array
           items:
-            $ref: '#/components/schemas/Camera'
+            $ref: '#/components/schemas/Brand'
     Camera:
       type: object
       properties:
@@ -113,13 +113,6 @@ components:
           type: object
           additionalProperties: true
           example: {}
-    BrandList:
-      type: object
-      properties:
-        brand:
-          type: array
-          items:
-            $ref: '#/components/schemas/Brand'
     Brand:
       type: object
       properties:
@@ -129,6 +122,13 @@ components:
         name:
           type: string
           example: Bay Area Photographers
+    CameraList:
+      type: object
+      properties:
+        camera:
+          type: array
+          items:
+            $ref: '#/components/schemas/Camera'
   parameters:
     ApiKey:
       name: api_key

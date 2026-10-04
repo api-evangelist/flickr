@@ -84,6 +84,9 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    EchoResponse:
+      type: object
+      additionalProperties: true
     LoginInfo:
       type: object
       properties:
@@ -102,9 +105,6 @@ components:
             path_alias:
               type: string
               example: shutterbug
-    EchoResponse:
-      type: object
-      additionalProperties: true
   parameters:
     ApiKey:
       name: api_key

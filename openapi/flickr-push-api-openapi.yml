@@ -56,20 +56,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  schemas:
-    PushTopic:
-      type: object
-      properties:
-        name:
-          type: string
-          example: Bay Area Photographers
-    PushTopicList:
-      type: object
-      properties:
-        topic:
-          type: array
-          items:
-            $ref: '#/components/schemas/PushTopic'
   parameters:
     ApiKey:
       name: api_key
@@ -79,6 +65,20 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
+  schemas:
+    PushTopicList:
+      type: object
+      properties:
+        topic:
+          type: array
+          items:
+            $ref: '#/components/schemas/PushTopic'
+    PushTopic:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Bay Area Photographers
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

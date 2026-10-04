@@ -106,32 +106,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    PhotoList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-    PandaList:
-      type: object
-      properties:
-        panda:
-          type: array
-          items:
-            $ref: '#/components/schemas/Panda'
     Panda:
       type: object
       properties:
@@ -182,14 +156,33 @@ components:
         width_o:
           type: integer
           example: 6048
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+    PandaList:
+      type: object
+      properties:
+        panda:
+          type: array
+          items:
+            $ref: '#/components/schemas/Panda'
   parameters:
-    Extras:
-      name: extras
-      in: query
-      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
-      schema:
-        type: string
-      example: owner_name,description,url_o,date_taken,geo
     ApiKey:
       name: api_key
       in: query
@@ -198,6 +191,13 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

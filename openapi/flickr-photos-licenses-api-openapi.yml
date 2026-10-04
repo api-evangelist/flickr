@@ -91,6 +91,12 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        stat:
+          type: string
+          example: ok
     License:
       type: object
       properties:
@@ -111,20 +117,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/License'
-    SuccessResponse:
-      type: object
-      properties:
-        stat:
-          type: string
-          example: ok
   parameters:
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
     ApiKey:
       name: api_key
       in: query
@@ -133,6 +126,13 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

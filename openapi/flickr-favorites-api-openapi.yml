@@ -102,25 +102,12 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    PhotoList:
+    SuccessResponse:
       type: object
       properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
+        stat:
+          type: string
+          example: ok
     Photo:
       type: object
       description: A photo.
@@ -165,35 +152,26 @@ components:
         width_o:
           type: integer
           example: 6048
-    SuccessResponse:
+    PhotoList:
       type: object
       properties:
-        stat:
-          type: string
-          example: ok
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
   parameters:
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    UserId:
-      name: user_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: 12345678@N00
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
     ApiKey:
       name: api_key
       in: query
@@ -202,6 +180,21 @@ components:
       schema:
         type: string
       example: ab1234567890cdef1234567890abcd12
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
     PhotoId:
       name: photo_id
       in: query
@@ -209,6 +202,13 @@ components:
       schema:
         type: string
       example: '52345678901'
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

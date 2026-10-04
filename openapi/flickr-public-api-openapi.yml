@@ -1315,54 +1315,21 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Topic:
+    Tag:
       type: object
       properties:
         id:
           type: string
-        subject:
-          type: string
-        message:
-          type: object
-          properties:
-            _content:
-              type: string
         author:
           type: string
         authorname:
           type: string
-        author_path_alias:
+        raw:
           type: string
-        author_is_deleted:
+        _content:
+          type: string
+        machine_tag:
           type: boolean
-        is_pro:
-          type: boolean
-        role:
-          type: string
-        iconserver:
-          type: string
-        iconfarm:
-          type: string
-        count_replies:
-          type: integer
-        can_edit:
-          type: boolean
-        can_delete:
-          type: boolean
-        can_reply:
-          type: boolean
-        is_sticky:
-          type: boolean
-        is_locked:
-          type: boolean
-        datecreate:
-          type: string
-        datelastpost:
-          type: string
-        last_reply:
-          type: string
-        lastedit:
-          type: string
     Person:
       type: object
       properties:
@@ -1594,86 +1561,15 @@ components:
               type: boolean
         cover:
           $ref: '#/components/schemas/Cover'
-    Cover:
+    URL:
       type: object
       properties:
-        id:
-          type: string
-        owner:
-          type: string
-        secret:
-          type: string
-        server:
-          type: string
-        farm:
-          type: string
-        title:
-          type: string
-        ispublic:
-          type: boolean
-        isfriend:
-          type: boolean
-        isfamily:
-          type: boolean
-        y:
-          type: string
-    Album:
-      type: object
-      properties:
-        id:
-          type: string
-        primary:
-          type: string
-        secret:
-          type: string
-        server:
-          type: string
-        farm:
-          type: string
-        photos:
-          type: number
-        videos:
-          type: number
-        count_views:
-          type: number
-        count_comments:
-          type: number
-        can_comment:
-          type: boolean
-        date_create:
-          type: number
-        date_update:
-          type: number
-        title:
-          type: string
-        description:
-          type: string
-    PhotoURLs:
-      type: object
-      properties:
-        h:
-          type: string
-        l:
-          type: string
-        s:
-          type: string
-        t:
-          type: string
-    Tag:
-      type: object
-      properties:
-        id:
-          type: string
-        author:
-          type: string
-        authorname:
-          type: string
-        raw:
+        type:
           type: string
         _content:
           type: string
-        machine_tag:
-          type: boolean
+    Stat:
+      type: string
     Size:
       type: object
       properties:
@@ -1689,28 +1585,64 @@ components:
           type: string
         media:
           type: string
-    Owner:
+    TopicReply:
       type: object
       properties:
-        nsid:
+        id:
           type: string
-        username:
+        message:
+          type: object
+          properties:
+            _content:
+              type: string
+        author:
           type: string
-        realname:
+        authorname:
           type: string
-        location:
+        author_path_alias:
           type: string
+        author_is_deleted:
+          type: boolean
+        is_pro:
+          type: boolean
         iconserver:
           type: string
         iconfarm:
           type: string
-        path_alias:
+        can_edit:
+          type: boolean
+        can_delete:
+          type: boolean
+        datecreate:
           type: string
-        noindexfollow:
+        lastedit:
+          type: string
+    ContextPhoto:
+      type: object
+      properties:
+        id:
+          type: string
+        secret:
+          type: string
+        server:
+          type: string
+        farm:
+          type: string
+        title:
+          type: string
+        url:
+          type: string
+        thumb:
+          type: string
+        media:
+          type: string
+        owner:
+          type: string
+        license:
+          type: integer
+        safe:
           type: boolean
-        ispro:
-          type: boolean
-        is_ad_free:
+        is_faved:
           type: boolean
     Photo:
       type: object
@@ -1838,10 +1770,40 @@ components:
           type: boolean
         media:
           type: string
-    TopicReply:
+    Note:
+      type: object
+      properties:
+        description:
+          type: string
+    Cover:
       type: object
       properties:
         id:
+          type: string
+        owner:
+          type: string
+        secret:
+          type: string
+        server:
+          type: string
+        farm:
+          type: string
+        title:
+          type: string
+        ispublic:
+          type: boolean
+        isfriend:
+          type: boolean
+        isfamily:
+          type: boolean
+        y:
+          type: string
+    Topic:
+      type: object
+      properties:
+        id:
+          type: string
+        subject:
           type: string
         message:
           type: object
@@ -1858,29 +1820,38 @@ components:
           type: boolean
         is_pro:
           type: boolean
+        role:
+          type: string
         iconserver:
           type: string
         iconfarm:
           type: string
+        count_replies:
+          type: integer
         can_edit:
           type: boolean
         can_delete:
           type: boolean
+        can_reply:
+          type: boolean
+        is_sticky:
+          type: boolean
+        is_locked:
+          type: boolean
         datecreate:
+          type: string
+        datelastpost:
+          type: string
+        last_reply:
           type: string
         lastedit:
           type: string
-    Stat:
-      type: string
-    Note:
-      type: object
-      properties:
-        description:
-          type: string
-    ContextPhoto:
+    Album:
       type: object
       properties:
         id:
+          type: string
+        primary:
           type: string
         secret:
           type: string
@@ -1888,26 +1859,55 @@ components:
           type: string
         farm:
           type: string
+        photos:
+          type: number
+        videos:
+          type: number
+        count_views:
+          type: number
+        count_comments:
+          type: number
+        can_comment:
+          type: boolean
+        date_create:
+          type: number
+        date_update:
+          type: number
         title:
           type: string
-        url:
+        description:
           type: string
-        thumb:
-          type: string
-        media:
-          type: string
-        owner:
-          type: string
-        license:
-          type: integer
-        safe:
-          type: boolean
-        is_faved:
-          type: boolean
-    URL:
+    Owner:
       type: object
       properties:
-        type:
+        nsid:
           type: string
-        _content:
+        username:
+          type: string
+        realname:
+          type: string
+        location:
+          type: string
+        iconserver:
+          type: string
+        iconfarm:
+          type: string
+        path_alias:
+          type: string
+        noindexfollow:
+          type: boolean
+        ispro:
+          type: boolean
+        is_ad_free:
+          type: boolean
+    PhotoURLs:
+      type: object
+      properties:
+        h:
+          type: string
+        l:
+          type: string
+        s:
+          type: string
+        t:
           type: string

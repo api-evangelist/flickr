@@ -64,22 +64,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    UserId:
-      name: user_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: 12345678@N00
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
   schemas:
     Profile:
       type: object
@@ -112,6 +96,22 @@ components:
           type: string
           format: uri
           example: https://janephotographer.example.com
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

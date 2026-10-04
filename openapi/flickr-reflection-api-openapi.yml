@@ -140,10 +140,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    MethodResponse:
-      type: object
-      description: Generic method response (varies by method).
-      additionalProperties: true
     FlickrError:
       type: object
       properties:
@@ -156,20 +152,6 @@ components:
         message:
           type: string
           example: Invalid API Key
-    MethodList:
-      type: object
-      properties:
-        methods:
-          type: object
-          properties:
-            method:
-              type: array
-              items:
-                type: object
-                properties:
-                  _content:
-                    type: string
-                    example: '100'
     MethodInfo:
       type: object
       properties:
@@ -225,6 +207,24 @@ components:
                   message:
                     type: string
                     example: Invalid API Key
+                  _content:
+                    type: string
+                    example: '100'
+    MethodResponse:
+      type: object
+      description: Generic method response (varies by method).
+      additionalProperties: true
+    MethodList:
+      type: object
+      properties:
+        methods:
+          type: object
+          properties:
+            method:
+              type: array
+              items:
+                type: object
+                properties:
                   _content:
                     type: string
                     example: '100'
