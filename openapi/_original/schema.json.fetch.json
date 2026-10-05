@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/flickr/flickr-api-swagger/master/dist/schema.json",
+ "requested_url": "https://raw.githubusercontent.com/flickr/flickr-api-swagger/master/dist/schema.json",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 69892,
+ "sha256": "0bb9aa5f48a752a4a64160197aa2552c3f8b1a38e470a318ee101474008dc71d",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
