@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-05-30 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-05-30'
 specification: API Commons Plans
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
@@ -89,3 +94,30 @@ plans:
       - name: OAuth 1.0a HMAC-SHA1 authentication
       - name: Photo upload (synchronous and asynchronous)
       - name: PubSubHubbub push subscriptions
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units:
+  - object
+  - request
+  plans:
+  - name: Non-Commercial API Key
+    access: freemium
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    - request
+    periods:
+    - per-use
+  - name: Commercial API Key
+    access: enterprise
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    - request
+    periods:
+    - per-use
