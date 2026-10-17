@@ -146,6 +146,21 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Ticket:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        complete:
+          type: integer
+          example: 1
+        photoid:
+          type: string
+          example: '52345678901'
+        invalid:
+          type: integer
+          example: 0
     TicketList:
       type: object
       properties:
@@ -166,21 +181,6 @@ components:
         ticketid:
           type: string
           example: '1234567'
-    Ticket:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        complete:
-          type: integer
-          example: 1
-        photoid:
-          type: string
-          example: '52345678901'
-        invalid:
-          type: integer
-          example: 0
   parameters:
     ApiKey:
       name: api_key

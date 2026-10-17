@@ -274,6 +274,50 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    PhotoId:
+      name: photo_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: '52345678901'
+    UserIdOptional:
+      name: user_id
+      in: query
+      schema:
+        type: string
+      example: 12345678@N00
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
   schemas:
     ExifList:
       type: object
@@ -294,22 +338,48 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Exif'
-    SizeList:
+    PhotoList:
       type: object
       properties:
-        canblog:
-          type: integer
-          example: 0
-        canprint:
+        page:
           type: integer
           example: 1
-        candownload:
+        pages:
           type: integer
-          example: 1
-        size:
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
           type: array
           items:
-            $ref: '#/components/schemas/Size'
+            $ref: '#/components/schemas/Photo'
+    Size:
+      type: object
+      properties:
+        label:
+          type: string
+          example: Original
+        width:
+          type: integer
+          example: 6048
+        height:
+          type: integer
+          example: 4032
+        source:
+          type: string
+          format: uri
+          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
+        url:
+          type: string
+          format: uri
+          example: https://www.flickr.com/galleries/12345678@N00/72157712345/
+        media:
+          type: string
+          example: photo
     Exif:
       type: object
       properties:
@@ -375,92 +445,22 @@ components:
         width_o:
           type: integer
           example: 6048
-    Size:
+    SizeList:
       type: object
       properties:
-        label:
-          type: string
-          example: Original
-        width:
+        canblog:
           type: integer
-          example: 6048
-        height:
-          type: integer
-          example: 4032
-        source:
-          type: string
-          format: uri
-          example: https://live.staticflickr.com/65535/52345678901_abc1234def_o.jpg
-        url:
-          type: string
-          format: uri
-          example: https://www.flickr.com/galleries/12345678@N00/72157712345/
-        media:
-          type: string
-          example: photo
-    PhotoList:
-      type: object
-      properties:
-        page:
+          example: 0
+        canprint:
           type: integer
           example: 1
-        pages:
+        candownload:
           type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
+          example: 1
+        size:
           type: array
           items:
-            $ref: '#/components/schemas/Photo'
-  parameters:
-    UserIdOptional:
-      name: user_id
-      in: query
-      schema:
-        type: string
-      example: 12345678@N00
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    Extras:
-      name: extras
-      in: query
-      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
-      schema:
-        type: string
-      example: owner_name,description,url_o,date_taken,geo
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    PhotoId:
-      name: photo_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: '52345678901'
+            $ref: '#/components/schemas/Size'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

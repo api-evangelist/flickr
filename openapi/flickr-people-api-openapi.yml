@@ -146,33 +146,64 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    Extras:
+      name: extras
+      in: query
+      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
+      schema:
+        type: string
+      example: owner_name,description,url_o,date_taken,geo
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 100
+        maximum: 500
+      example: 100
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      example: 1
   schemas:
-    Person:
+    PhotoList:
       type: object
       properties:
-        id:
-          type: string
-          example: '52345678901'
-        nsid:
-          type: string
-          example: 12345678@N00
-        username:
-          type: string
-          example: shutterbug
-        realname:
-          type: string
-          example: Jane Photographer
-        location:
-          type: string
-          example: San Francisco, CA
-        photosurl:
-          type: string
-          format: uri
-          example: https://www.flickr.com/photos/12345678@N00/
-        profileurl:
-          type: string
-          format: uri
-          example: https://www.flickr.com/people/12345678@N00/
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
     Photo:
       type: object
       description: A photo.
@@ -217,63 +248,32 @@ components:
         width_o:
           type: integer
           example: 6048
-    PhotoList:
+    Person:
       type: object
       properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    Extras:
-      name: extras
-      in: query
-      description: Comma-delimited list of extra fields (e.g. owner_name, url_o, geo).
-      schema:
-        type: string
-      example: owner_name,description,url_o,date_taken,geo
-    PerPage:
-      name: per_page
-      in: query
-      schema:
-        type: integer
-        default: 100
-        maximum: 500
-      example: 100
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    UserId:
-      name: user_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: 12345678@N00
+        id:
+          type: string
+          example: '52345678901'
+        nsid:
+          type: string
+          example: 12345678@N00
+        username:
+          type: string
+          example: shutterbug
+        realname:
+          type: string
+          example: Jane Photographer
+        location:
+          type: string
+          example: San Francisco, CA
+        photosurl:
+          type: string
+          format: uri
+          example: https://www.flickr.com/photos/12345678@N00/
+        profileurl:
+          type: string
+          format: uri
+          example: https://www.flickr.com/people/12345678@N00/
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

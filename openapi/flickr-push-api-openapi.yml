@@ -66,6 +66,12 @@ components:
         type: string
       example: ab1234567890cdef1234567890abcd12
   schemas:
+    PushTopic:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Bay Area Photographers
     PushTopicList:
       type: object
       properties:
@@ -73,12 +79,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PushTopic'
-    PushTopic:
-      type: object
-      properties:
-        name:
-          type: string
-          example: Bay Area Photographers
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

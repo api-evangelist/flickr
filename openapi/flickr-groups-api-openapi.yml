@@ -160,27 +160,41 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Group:
+    GroupList:
       type: object
       properties:
-        id:
-          type: string
-          example: '52345678901'
-        nsid:
-          type: string
-          example: 12345678@N00
-        name:
-          type: string
-          example: Bay Area Photographers
-        members:
+        page:
           type: integer
-          example: 18324
-        pool_count:
+          example: 1
+        pages:
           type: integer
-          example: 942113
-        topic_count:
+          example: 12
+        total:
           type: integer
-          example: 8421
+          example: 1183
+        group:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
     Photo:
       type: object
       description: A photo.
@@ -225,41 +239,27 @@ components:
         width_o:
           type: integer
           example: 6048
-    PhotoList:
+    Group:
       type: object
       properties:
-        page:
+        id:
+          type: string
+          example: '52345678901'
+        nsid:
+          type: string
+          example: 12345678@N00
+        name:
+          type: string
+          example: Bay Area Photographers
+        members:
           type: integer
-          example: 1
-        pages:
+          example: 18324
+        pool_count:
           type: integer
-          example: 12
-        perpage:
+          example: 942113
+        topic_count:
           type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
-    GroupList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        group:
-          type: array
-          items:
-            $ref: '#/components/schemas/Group'
+          example: 8421
   parameters:
     ApiKey:
       name: api_key

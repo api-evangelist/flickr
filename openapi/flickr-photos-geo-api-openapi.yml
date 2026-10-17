@@ -75,13 +75,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  schemas:
-    SuccessResponse:
-      type: object
-      properties:
-        stat:
-          type: string
-          example: ok
   parameters:
     ApiKey:
       name: api_key
@@ -98,6 +91,13 @@ components:
       schema:
         type: string
       example: '52345678901'
+  schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        stat:
+          type: string
+          example: ok
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

@@ -68,7 +68,30 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    UserId:
+      name: user_id
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 12345678@N00
   schemas:
+    CollectionTree:
+      type: object
+      properties:
+        collection:
+          type: array
+          items:
+            $ref: '#/components/schemas/Collection'
     Collection:
       type: object
       properties:
@@ -96,29 +119,6 @@ components:
               title:
                 type: string
                 example: Golden Gate Sunset
-    CollectionTree:
-      type: object
-      properties:
-        collection:
-          type: array
-          items:
-            $ref: '#/components/schemas/Collection'
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    UserId:
-      name: user_id
-      in: query
-      required: true
-      schema:
-        type: string
-      example: 12345678@N00
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

@@ -113,78 +113,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  schemas:
-    TopicReplyList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        reply:
-          type: array
-          items:
-            $ref: '#/components/schemas/TopicReply'
-    TopicList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        total:
-          type: integer
-          example: 1183
-        topic:
-          type: array
-          items:
-            $ref: '#/components/schemas/Topic'
-    TopicReply:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        author:
-          type: string
-          example: 12345678@N00
-        message:
-          type: object
-          properties:
-            _content:
-              type: string
-              example: '100'
-        datecreate:
-          type: string
-          example: '1715000000'
-    Topic:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '52345678901'
-        subject:
-          type: string
-          example: Tips for sunset photography
-        author:
-          type: string
-          example: 12345678@N00
-        author_name:
-          type: string
-          example: shutterbug
-        datecreate:
-          type: string
-          example: '1715000000'
-        count_replies:
-          type: integer
-          example: 7
   parameters:
     ApiKey:
       name: api_key
@@ -209,6 +137,78 @@ components:
         type: integer
         default: 1
       example: 1
+  schemas:
+    TopicReplyList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        reply:
+          type: array
+          items:
+            $ref: '#/components/schemas/TopicReply'
+    TopicReply:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        author:
+          type: string
+          example: 12345678@N00
+        message:
+          type: object
+          properties:
+            _content:
+              type: string
+              example: '100'
+        datecreate:
+          type: string
+          example: '1715000000'
+    TopicList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        total:
+          type: integer
+          example: 1183
+        topic:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+    Topic:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '52345678901'
+        subject:
+          type: string
+          example: Tips for sunset photography
+        author:
+          type: string
+          example: 12345678@N00
+        author_name:
+          type: string
+          example: shutterbug
+        datecreate:
+          type: string
+          example: '1715000000'
+        count_replies:
+          type: integer
+          example: 7
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

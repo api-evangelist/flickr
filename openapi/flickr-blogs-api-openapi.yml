@@ -66,6 +66,13 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    BlogList:
+      type: object
+      properties:
+        blog:
+          type: array
+          items:
+            $ref: '#/components/schemas/Blog'
     Blog:
       type: object
       properties:
@@ -82,13 +89,6 @@ components:
           type: string
           format: uri
           example: https://www.flickr.com/galleries/12345678@N00/72157712345/
-    BlogList:
-      type: object
-      properties:
-        blog:
-          type: array
-          items:
-            $ref: '#/components/schemas/Blog'
   parameters:
     ApiKey:
       name: api_key

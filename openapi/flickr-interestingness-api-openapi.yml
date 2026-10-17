@@ -114,6 +114,25 @@ components:
         default: 1
       example: 1
   schemas:
+    PhotoList:
+      type: object
+      properties:
+        page:
+          type: integer
+          example: 1
+        pages:
+          type: integer
+          example: 12
+        perpage:
+          type: integer
+          example: 100
+        total:
+          type: integer
+          example: 1183
+        photo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
     Photo:
       type: object
       description: A photo.
@@ -158,25 +177,6 @@ components:
         width_o:
           type: integer
           example: 6048
-    PhotoList:
-      type: object
-      properties:
-        page:
-          type: integer
-          example: 1
-        pages:
-          type: integer
-          example: 12
-        perpage:
-          type: integer
-          example: 100
-        total:
-          type: integer
-          example: 1183
-        photo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Photo'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

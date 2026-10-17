@@ -139,19 +139,54 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    NoJsonCallback:
+      name: nojsoncallback
+      in: query
+      description: Set to 1 to receive raw JSON instead of JSONP.
+      schema:
+        type: integer
+        default: 1
+      example: 1
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: Application API key.
+      schema:
+        type: string
+      example: ab1234567890cdef1234567890abcd12
+    Format:
+      name: format
+      in: query
+      description: Response format (json/xml/php_serial/rest).
+      schema:
+        type: string
+        default: json
+      example: json
+    Method:
+      name: method
+      in: query
+      required: true
+      description: Fully qualified flickr method, e.g. `flickr.photos.search`.
+      schema:
+        type: string
+      example: flickr.photos.search
   schemas:
-    FlickrError:
+    MethodList:
       type: object
       properties:
-        stat:
-          type: string
-          example: fail
-        code:
-          type: integer
-          example: 100
-        message:
-          type: string
-          example: Invalid API Key
+        methods:
+          type: object
+          properties:
+            method:
+              type: array
+              items:
+                type: object
+                properties:
+                  _content:
+                    type: string
+                    example: '100'
     MethodInfo:
       type: object
       properties:
@@ -210,24 +245,22 @@ components:
                   _content:
                     type: string
                     example: '100'
+    FlickrError:
+      type: object
+      properties:
+        stat:
+          type: string
+          example: fail
+        code:
+          type: integer
+          example: 100
+        message:
+          type: string
+          example: Invalid API Key
     MethodResponse:
       type: object
       description: Generic method response (varies by method).
       additionalProperties: true
-    MethodList:
-      type: object
-      properties:
-        methods:
-          type: object
-          properties:
-            method:
-              type: array
-              items:
-                type: object
-                properties:
-                  _content:
-                    type: string
-                    example: '100'
   responses:
     FlickrError:
       description: Flickr error response
@@ -235,39 +268,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/FlickrError'
-  parameters:
-    Format:
-      name: format
-      in: query
-      description: Response format (json/xml/php_serial/rest).
-      schema:
-        type: string
-        default: json
-      example: json
-    NoJsonCallback:
-      name: nojsoncallback
-      in: query
-      description: Set to 1 to receive raw JSON instead of JSONP.
-      schema:
-        type: integer
-        default: 1
-      example: 1
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: Application API key.
-      schema:
-        type: string
-      example: ab1234567890cdef1234567890abcd12
-    Method:
-      name: method
-      in: query
-      required: true
-      description: Fully qualified flickr method, e.g. `flickr.photos.search`.
-      schema:
-        type: string
-      example: flickr.photos.search
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
